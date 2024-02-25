@@ -1,0 +1,35 @@
+{
+  "window.zoomLevel": 1,
+  "workbench.sideBar.location": "right",
+  "files.autoSave": "onFocusChange",
+  "window.titleBarStyle": "custom",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.startupEditor": "none",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "solidity.telemetry": true,
+  "[solidity]": {
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "mikeburgh.xml-format"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "update.mode": "none",
+  "terminal.integrated.commandsToSkipShell": [
+    "-workbench.action.quickOpen" // ctrl+p for previous-command instead of quick-open while in terminal
+  ],
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "workbench.editor.enablePreview": false,
+}

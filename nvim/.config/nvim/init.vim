@@ -6,23 +6,28 @@ set number " numbers on left side
 set autoindent " auto-indent new lines based on indentation of previous lines
 set mouse=a " enable mouse in all modes
 
-" ------------- mapping for normal mode -----------
+
+" nnoremap == mapping only for normal-mode
+" xnoremap == mapping only for visual-mode
+" noremap == mapping only for all modes (normal, visual, select, etc)
+
+" ---------------- mapping for normal mode ---------------
+" if commands are not moving as expected, then check if there is whitespace at
+"	the end of the command, ending whitespace leads commands to behave
+"	differently
+
 " append at the end of line
 nnoremap a A
 
 " move to end of the line
 nnoremap 9 $
 
+" move up half of the file
+noremap q <C-u>
+
+" move down half of the file
+noremap ; <C-d>
+
 " redo 
 nnoremap r <C-r>
 
-" move up half of the file
-nnoremap q <C-u>
-
-" move down half of the file
-nnoremap ; <C-d>
-
-" -------------- mapping for visual mode ----------
-xnoremap 9 $ 
-xnoremap q <C-u>
-xnoremap ; <C-d>

@@ -7,10 +7,11 @@ set autoindent " auto-indent new lines based on indentation of previous lines
 set mouse=a " enable mouse in all modes
 
 " mapping for normal mode
-nnoremap a <C-u>
+nnoremap a A
+nnoremap q <C-u>
 nnoremap ; <C-d>
 
 " mapping for visual mode
-xnoremap a <C-u>
+xnoremap q <C-u>
 xnoremap ; <C-d>
 

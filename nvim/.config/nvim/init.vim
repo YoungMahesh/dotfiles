@@ -9,7 +9,7 @@ set mouse=a " enable mouse in all modes
 
 " nnoremap == mapping only for normal-mode
 " xnoremap == mapping only for visual-mode
-" noremap == mapping only for all modes (normal, visual, select, etc)
+" noremap == mapping for all modes (normal, visual, select, etc)
 
 " ---------------- mapping for normal mode ---------------
 " if commands are not moving as expected, then check if there is whitespace at
@@ -20,7 +20,7 @@ set mouse=a " enable mouse in all modes
 nnoremap a A
 
 " move to end of the line
-nnoremap 9 $
+noremap 9 $
 
 " move up half of the file
 noremap q <C-u>

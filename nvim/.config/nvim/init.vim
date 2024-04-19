@@ -31,3 +31,7 @@ noremap ; <C-d>
 " redo 
 nnoremap r <C-r>
 
+
+" ----------------- default mapping i am using ---------------------
+"  gd  -> go to defination (opens declared function/variable when executed 'gd' on called function/variable)
+"

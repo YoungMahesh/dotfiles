@@ -38,4 +38,7 @@
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
   "editor.minimap.enabled": false,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
 }

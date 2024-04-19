@@ -15,5 +15,5 @@ stow --adopt .  # copy configuration to dotfiles here, if any config file alread
 
 ### bash
 - `.bashrc` files comes with some default configuration, to keep default configuration intact, all the custom .bashrc configuration is added to `.bashrc-extra` file
-- append line `source ./.bashrc-extra` to `.bashrc` file to import custom changes
+- append line `source ~/.bashrc-extra` to `~/.bashrc` file to import custom changes
     - create `.bashrc-extra` file with `stow bash` from present-working-directory

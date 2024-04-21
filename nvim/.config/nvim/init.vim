@@ -5,7 +5,7 @@ set smarttab    " if(beginning of line) insert tab-char, else insert spaces defi
 set number " numbers on left side
 set autoindent " auto-indent new lines based on indentation of previous lines
 set mouse=a " enable mouse in all modes
-
+set clipboard+=unnamedplus   " copy to system clipboard 
 
 " nnoremap == mapping only for normal-mode
 " xnoremap == mapping only for visual-mode

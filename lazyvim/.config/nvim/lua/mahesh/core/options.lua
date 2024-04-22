@@ -6,12 +6,11 @@ vim.cmd("let g:netrw_liststyle = 3")
 local opt = vim.opt
 
 -- relativenumber considers current line as 0 and tells distance up or down of other lines from current line
--- this helps in movement such as to move the fourth line above - 4k, move to 4th line below - 4j 
+-- this helps in movement such as to move the fourth line above - 4k, move to 4th line below - 4j
 opt.relativenumber = true
 
 -- due to 'relativenumber' option, current line is shown as 0, show actual line number for current line
 opt.number = true
-
 
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
@@ -21,11 +20,9 @@ opt.autoindent = true -- copy indent from current line when starting new one
 
 opt.wrap = false -- do not wrap lines
 
-
 -- search settings
 opt.ignorecase = true -- ignore case (e.g. "c" can be equal to "C") when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case sensitive
-
 
 -- opt.cursorline = true  -- underline the line on which cursor is present
 

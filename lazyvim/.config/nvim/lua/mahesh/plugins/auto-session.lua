@@ -10,7 +10,7 @@ return {
 
 		local keymap = vim.keymap
 
-		keymap.set("n", "<leader>ww", "<cmd>w<CR>", { desc = "Restore session for current-working-directory" })
+		keymap.set("n", "<leader>ww", "<cmd>w<CR>", { desc = "save current file" })
 		keymap.set(
 			"n",
 			"<leader>wr",

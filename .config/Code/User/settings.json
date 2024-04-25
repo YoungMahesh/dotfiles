@@ -41,4 +41,11 @@
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "python": false
+  },
 }

@@ -48,4 +48,5 @@
     "scminput": false,
     "python": false
   },
+  "extensions.ignoreRecommendations": true,
 }

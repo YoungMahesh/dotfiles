@@ -85,7 +85,7 @@
     "when": "terminal.active"
   },
   {
-    "key": "ctrl+shift+t",
+    "key": "ctrl+shift+n",
     "command": "workbench.action.terminal.new",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   },

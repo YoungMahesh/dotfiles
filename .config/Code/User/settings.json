@@ -49,4 +49,5 @@
     "python": false
   },
   "extensions.ignoreRecommendations": true,
+  "diffEditor.ignoreTrimWhitespace": false,
 }

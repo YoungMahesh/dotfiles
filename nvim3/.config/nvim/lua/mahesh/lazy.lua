@@ -19,5 +19,5 @@ vim.opt.rtp:prepend(lazypath)
 
 
 -- load the `lazy.nvim` plugin and calls its `setup` function. The argument `"mahesh.plugins"` is the module where your plugins are defined. The `lazy.nvim` plugin will handle loading these plugins when they are needed, rather than loading them all at startup.
-require("lazy").setup("mahesh.plugins")
-
+-- require("lazy").setup("mahesh.plugins")
+require("lazy").setup({ {import = "mahesh.plugins"}, {import = "mahesh.plugins.lsp"}})

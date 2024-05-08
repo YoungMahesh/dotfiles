@@ -5,10 +5,27 @@ return {
 		local nvimtree = require("nvim-tree")
 
 		-- recommended settings from nvim-tree documentation
+		-- https://github.com/nvim-tree/nvim-tree.lua?tab=readme-ov-file#setup
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
 
+		-- https://github.com/nvim-tree/nvim-tree.lua?tab=readme-ov-file#custom-mappings
+		local function my_on_attach(bufnr)
+			local api = require("nvim-tree.api")
+			local function opts(desc)
+				return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+			end
+
+			-- default mappings
+			api.config.mappings.default_on_attach(bufnr)
+
+			-- custom mappings
+			-- <CR> == carriage return == Enter
+			vim.keymap.set("n", "<CR>", api.node.open.tab, opts("Open: New tab"))
+		end
+
 		nvimtree.setup({
+			on_attach = my_on_attach,
 			view = {
 				width = 35,
 				-- relativenumber = true,

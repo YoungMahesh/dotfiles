@@ -6,6 +6,7 @@ local keymap = vim.keymap
 -- <C-u> == Ctrl+u
 keymap.set("n", "a", "A", { desc = "move and insert at end of line" })
 keymap.set("n", "r", "<C-r>", { desc = "redo" })
+keymap.set("n", "s", "<cmd>w<CR>", { desc = "save file" })
 keymap.set({ "n", "v" }, "9", "$", { desc = "moved to end of line" })
 keymap.set({ "n", "v" }, "q", "<C-u>", { desc = "move up half of viewport" })
 keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })

@@ -46,8 +46,8 @@ return {
 		})
 
 		local keymap = vim.keymap
-		-- all nvim-tree commands: https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt
+		-- ->e == explorer, all nvim-tree commands: https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt
 		keymap.set("n", "<leader>ee", "<cmd>NvimTreeFindFile<CR>", { desc = "Open file explorer on current file" })
-		keymap.set("n", "<leader>ec", "<cmd>NvimTreeClose<CR>", { desc = "Close file explorer" })
+		keymap.set("n", "<leader>ex", "<cmd>NvimTreeClose<CR>", { desc = "Close file explorer" })
 	end,
 }

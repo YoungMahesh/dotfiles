@@ -19,9 +19,8 @@ return {
 			callback = function(ev)
 				local opts = { buffer = ev.buf, silent = true }
 
-
-				opts.desc = 'Show line diagnostics'
-				keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts)
+				opts.desc = "Show line diagnostics"
+				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 
 				opts.desc = "Show LSP references"
 				keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
@@ -32,8 +31,11 @@ return {
 				opts.desc = "Show LSP definitions"
 				keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
 
-				opts.desc = "SHow documentation for what is under cursor"
+				opts.desc = "Show documentation for what is under cursor"
 				keymap.set("n", "K", vim.lsp.buf.hover, opts)
+
+				opts.desc = "Restart LSP"
+				keymap.set("n", "<leader>rs", ":LSPRestart<CR>", opts)
 
 				-- opts.desc = 'Show LSP implementations'
 				-- keymap.set('n', 'gi', '<cmd>Telescope lsp_implementations<CR>', opts)

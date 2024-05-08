@@ -11,7 +11,7 @@ return {
 		nvimtree.setup({
 			view = {
 				width = 35,
-				relativenumber = true,
+				-- relativenumber = true,
 			},
 
 			-- change folder arrow icons
@@ -46,7 +46,8 @@ return {
 		})
 
 		local keymap = vim.keymap
-		keymap.set("n", "<leader>ee", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file"})
-		keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
+		-- all nvim-tree commands: https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt
+		keymap.set("n", "<leader>ee", "<cmd>NvimTreeFindFile<CR>", { desc = "Open file explorer on current file" })
+		keymap.set("n", "<leader>ec", "<cmd>NvimTreeClose<CR>", { desc = "Close file explorer" })
 	end,
 }

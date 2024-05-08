@@ -11,3 +11,10 @@ keymap.set("", "9", "$", { desc = "moved to end of line" })
 keymap.set("", "q", "<C-u>", { desc = "move up half of viewport" })
 keymap.set("", ";", "<C-d>", { desc = "move down half of viewport" })
 
+
+keymap.set('n', '<leader>to', '<cmd>tabnew<CR>', {desc = 'Open new tab'})
+keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', {desc = 'Close current tab'})
+keymap.set('n', '<leader>tn', '<cmd>tabn<CR>', {desc = 'Go to next tab'})
+keymap.set('n', '<leader>tp', '<cmd>tabp<CR>', {desc = 'Go to previous tab'})
+keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', {desc = 'Open current buffer in new tab'})
+

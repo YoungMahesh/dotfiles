@@ -74,11 +74,11 @@ return {
 				-- to learn the available actions
 				lsp_zero.default_keymaps({ buffer = bufnr })
 
-
-				local opts = { buffer = bufnr }
-				vim.keymap.set({ 'n', 'x' }, 'fm', function()
-					vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
-				end, opts)
+				-- cannot specify indentation with lsf format
+				--local opts = { buffer = bufnr }
+				--vim.keymap.set({ 'n', 'x' }, 'fm', function()
+				--	vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
+				--end, opts)
 			end)
 
 			require('mason-lspconfig').setup({

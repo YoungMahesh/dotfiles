@@ -1,4 +1,4 @@
-return {
+return {{
 	-- parser, syntax highlighting for language
 	    "nvim-treesitter/nvim-treesitter",
     -- from treesitter-docs: on first install, treesitter will throw error, error will go after installation
@@ -7,10 +7,16 @@ return {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-          ensure_installed = {"help", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "html" },
+          ensure_installed = {"lua", "vim", "vimdoc", "query", "javascript", "typescript", "html" },
           sync_install = false,
           highlight = { enable = true },
           indent = { enable = true },  
         })
     end
-    }
+    },{
+'nvim-treesitter/playground',
+--  :InspectTree,   :q
+	--  :Inspect
+	--  :EditQuery
+	--  TSPlaygroundToggle
+}}

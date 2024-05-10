@@ -24,6 +24,7 @@ keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" })
 
 -->p explorer
+-- %: create new file, d: create new directory
 keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 -- search and replace all lines: `%s/<search-word>/<replace-word>/g` %s=substitute, g=global

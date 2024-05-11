@@ -1,3 +1,12 @@
+-- check default keymap: :help <keymap>
+-- check specific keymap: `:map <keymap>`
+-- check all keymaps: `:map` or `:map <leader>`
+-- check all keymaps in normal mode: `:nmap`
+-- check all keymaps in insert mode: `:imap`
+-- check all keymaps in visual mode: `:vmap`
+-- check all keymaps in command mode: `:cmap`
+-- check all keymaps in select mode: `:smap`
+
 vim.g.mapleader = " " -- set <space> as leader key
 
 local keymap = vim.keymap

@@ -38,3 +38,20 @@ keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 -- search and replace all lines: `%s/<search-word>/<replace-word>/g` %s=substitute, g=global
 -- search and replace current line: s/<search-word>/<replace-word>/g
+--
+--------------------- `:help m` `help: mark`--------------------------------
+-- ma: set mark a, 'a: go to line of mark a, `m: go to position of mark, [': go to previous mark, ]': go to next mark 
+-- :marks: show all marks 
+--
+-- `:delm` delete all marks in current buffer
+-- `:delm abc` delete mark a, mark b, mark c
+-- `:delm A-Z` delete all global marks
+-- `:delm 0-9` delete all numbered marks
+--
+-- lowercase marks (a-z): local to current buffer, uppercase marks (A-Z): global
+--
+-- ----------------- `:help fold` ------------------------------
+-- select text in visual mode and `zf` to fold, `zo` to open fold, `zc` to close fold
+-- you can created nested folds as well
+-- `zE` to delete all folds, `zd` to delete current fold at cursor, `zD` to delete all-folds(nested) at cursor
+-- `zR` to open all folds, `zM` to close all folds

@@ -36,6 +36,10 @@ keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" 
 -- %: create new file, d: create new directory
 keymap.set('n', '<leader>fv', vim.cmd.Ex)
 
+-->x == close 
+keymap.set('n', '<leader>x', '<cmd>xa<CR>', {desc = 'Save session for auto session'})
+keymap.set('n', '<leader>q', '<cmd>qa<CR>', {desc = 'Save session for auto session'})
+
 -- add comments, using visual-block mode
 -- `ctrl-v` to enter visual-block mode, select lines, `I` to insert, type `--` and press `esc` to add comments to selected lines
 

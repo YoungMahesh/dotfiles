@@ -34,7 +34,10 @@ keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" 
 
 -->p explorer
 -- %: create new file, d: create new directory
-keymap.set('n', '<leader>pv', vim.cmd.Ex)
+keymap.set('n', '<leader>fv', vim.cmd.Ex)
+
+-- add comments, using visual-block mode
+-- `ctrl-v` to enter visual-block mode, select lines, `I` to insert, type `--` and press `esc` to add comments to selected lines
 
 -- search and replace all lines: `%s/<search-word>/<replace-word>/g` %s=substitute, g=global
 -- search and replace current line: s/<search-word>/<replace-word>/g

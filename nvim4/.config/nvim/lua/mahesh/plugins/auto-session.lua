@@ -18,5 +18,6 @@ return {
 		-- keymap.set('n', '<leader>x', '<cmd>SessionSave<CR><BAR><cmd>xa<CR>', {desc = 'Save session for auto session'})
 		-- auto-session automatically saves session when we exit, hence no need to add <cmd>SessionSave<CR>
 		keymap.set('n', '<leader>x', '<cmd>xa<CR>', {desc = 'Save session for auto session'})
+		keymap.set('n', '<leader>q', '<cmd>qa<CR>', {desc = 'Save session for auto session'})
 	end,
 }

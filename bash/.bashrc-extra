@@ -19,7 +19,7 @@ export PATH=${PATH}:`go env GOPATH`/bin
 export PATH=$PATH:$HOME/.local/bin
 
 # folder color to orange
-export LS_COLORS="$LS_COLORS:di=38;5;208"
+#export LS_COLORS="$LS_COLORS:di=38;5;208"
 
 # for ansible
 export LC_ALL="en_US.UTF-8"

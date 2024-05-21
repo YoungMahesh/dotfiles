@@ -5,3 +5,7 @@ require("mahesh.core") -- import all config from lua/mahesh/core directory to th
 
 -- type neovim-cmd `:Lazy` to view lazyvim plugins table
 require("mahesh.lazy")
+
+
+
+

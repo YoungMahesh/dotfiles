@@ -15,7 +15,6 @@ local keymap = vim.keymap
 -- <C-u> == Ctrl+u
 keymap.set("n", "a", "A", { desc = "move and insert at end of line" })
 keymap.set("n", "r", "<C-r>", { desc = "redo" })
-keymap.set("n", "s", "<cmd>w<CR>", { desc = "save file" })
 keymap.set({ "n", "v" }, "9", "$", { desc = "moved to end of line" })
 keymap.set({ "n", "v" }, "q", "<C-u>", { desc = "move up half of viewport" })
 keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })
@@ -32,13 +31,19 @@ keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" })
 
+--> quickfix list
+-- `:copen` to open quickfix list
+-- `:cclose` to close quickfix list
+-- `Ctrl+w` to move to and out of quickfix list window
+
 -->p explorer
 -- %: create new file, d: create new directory
 keymap.set('n', '<leader>fv', vim.cmd.Ex)
 
--->x == close 
-keymap.set('n', '<leader>x', '<cmd>xa<CR>', {desc = 'Save session for auto session'})
-keymap.set('n', '<leader>q', '<cmd>qa<CR>', {desc = 'Save session for auto session'})
+-->s== save 
+keymap.set("n", "<leader>sf", "<cmd>w<CR>", { desc = "save curretn file" })
+keymap.set('n', '<leader>ss', '<cmd>xa<CR>', { desc = 'Save all changes and quit' })
+keymap.set('n', '<leader>sq', '<cmd>qa<CR>', { desc = 'Quit all without saving changes' })
 
 -- add comments, using visual-block mode
 -- `ctrl-v` to enter visual-block mode, select lines, `I` to insert, type `--` and press `esc` to add comments to selected lines
@@ -47,8 +52,11 @@ keymap.set('n', '<leader>q', '<cmd>qa<CR>', {desc = 'Save session for auto sessi
 -- search and replace current line: s/<search-word>/<replace-word>/g
 --
 --------------------- `:help m` `help: mark`--------------------------------
--- ma: set mark a, 'a: go to line of mark a, `m: go to position of mark, [': go to previous mark, ]': go to next mark 
--- :marks: show all marks 
+-->m=marks
+keymap.set("n", "<leader>ml", "<cmd>marks abcdef<cr>", {desc = "show marks list from a to f"}) -- a-f does not work here
+keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", {desc = "delele marks from a to f"})
+-- ma: set mark a, 'a: go to line of mark a, `m: go to position of mark, [': go to previous mark, ]': go to next mark
+-- :marks: show all marks
 --
 -- `:delm` delete all marks in current buffer
 -- `:delm abc` delete mark a, mark b, mark c
@@ -58,7 +66,12 @@ keymap.set('n', '<leader>q', '<cmd>qa<CR>', {desc = 'Save session for auto sessi
 -- lowercase marks (a-z): local to current buffer, uppercase marks (A-Z): global
 --
 -- ----------------- `:help fold` ------------------------------
--- select text in visual mode and `zf` to fold, `zo` to open fold, `zc` to close fold
+-- visual mode
+	-- `zf`: fold 
+	-- `zo` to open fold 
+	-- `zc` to close fold
 -- you can created nested folds as well
--- `zE` to delete all folds, `zd` to delete current fold at cursor, `zD` to delete all-folds(nested) at cursor
+-- `zE` to delete all folds 
+-- `zd` to delete current fold at cursor, 
+-- `zD` to delete all-folds(nested) at cursor
 -- `zR` to open all folds, `zM` to close all folds

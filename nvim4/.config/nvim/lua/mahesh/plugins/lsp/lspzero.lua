@@ -123,9 +123,7 @@ return {
           -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
           tsserver = function()
             -- (Optional) Configure tsserver for neovim
-            require('lspconfig').tsserver.setup({
-
-            })
+            require('lspconfig').tsserver.setup({ })
           end,
         }
       })

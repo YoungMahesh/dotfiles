@@ -5,7 +5,7 @@ live_config_reload = true
 #import = ["~/.config/alacritty/themes/rose-pine-dawn.toml"] # variable names are not properly visible
 #import = ["~/.config/alacritty/themes/dracula.toml"] # terminal status is too light (light green background, black text)
 #import = ["~/.config/alacritty/themes/catppuccin-frappe.toml"] # background is grey instead of black
-import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"] # background is grey instead of black
+#import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"] # not much different than original alacrity theme 
 
 [window]
 #opacity = 0.85

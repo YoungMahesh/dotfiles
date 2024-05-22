@@ -1,5 +1,12 @@
 live_config_reload = true
 
+#import = ["~/.config/alacritty/themes/rose-pine.toml"]# terminal status bar names are not properly visible (black text, blue background)
+#import = ["~/.config/alacritty/themes/rose-pine-moon.toml"] # terminal status bar names are not properly visible (black text, blue background)
+#import = ["~/.config/alacritty/themes/rose-pine-dawn.toml"] # variable names are not properly visible
+#import = ["~/.config/alacritty/themes/dracula.toml"] # terminal status is too light (light green background, black text)
+#import = ["~/.config/alacritty/themes/catppuccin-frappe.toml"] # background is grey instead of black
+import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"] # background is grey instead of black
+
 [window]
 #opacity = 0.85
 #startup_mode = "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"

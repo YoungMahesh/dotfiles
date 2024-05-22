@@ -31,16 +31,21 @@ keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" })
 
---> quickfix list
--- `:copen` to open quickfix list
--- `:cclose` to close quickfix list
+--------------------------------- quickfix list ----------------------------------------
+--:copen " Open the quickfix window
+--:ccl   " Close it
+--:cw    " Open it if there are "errors", close it otherwise (some people prefer this)
+--:cn    " Go to the next error in the window
+--:cp    " Go to the previous error in the window
+--:cnf   " Go to the first error in the next file
+--:.cc   " Go to error under cursor (if cursor is in quickfix window)
 -- `Ctrl+w` to move to and out of quickfix list window
 
--->p explorer
+----------------------------> f == explorer -------------------------------------------------
 -- %: create new file, d: create new directory
 keymap.set('n', '<leader>fv', vim.cmd.Ex)
 
--->s== save 
+-----------------------------> s == save ------------------------------------
 keymap.set("n", "<leader>sf", "<cmd>w<CR>", { desc = "save curretn file" })
 keymap.set('n', '<leader>ss', '<cmd>xa<CR>', { desc = 'Save all changes and quit' })
 keymap.set('n', '<leader>sq', '<cmd>qa<CR>', { desc = 'Quit all without saving changes' })
@@ -53,8 +58,8 @@ keymap.set('n', '<leader>sq', '<cmd>qa<CR>', { desc = 'Quit all without saving c
 --
 --------------------- `:help m` `help: mark`--------------------------------
 -->m=marks
-keymap.set("n", "<leader>ml", "<cmd>marks abcdef<cr>", {desc = "show marks list from a to f"}) -- a-f does not work here
-keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", {desc = "delele marks from a to f"})
+keymap.set("n", "<leader>ml", "<cmd>marks abcdef<cr>", { desc = "show marks list from a to f" }) -- a-f does not work here
+keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks from a to f" })
 -- ma: set mark a, 'a: go to line of mark a, `m: go to position of mark, [': go to previous mark, ]': go to next mark
 -- :marks: show all marks
 --
@@ -67,11 +72,11 @@ keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", {desc = "delele marks fro
 --
 -- ----------------- `:help fold` ------------------------------
 -- visual mode
-	-- `zf`: fold 
-	-- `zo` to open fold 
-	-- `zc` to close fold
+-- `zf`: fold
+-- `zo` to open fold
+-- `zc` to close fold
 -- you can created nested folds as well
--- `zE` to delete all folds 
--- `zd` to delete current fold at cursor, 
+-- `zE` to delete all folds
+-- `zd` to delete current fold at cursor,
 -- `zD` to delete all-folds(nested) at cursor
 -- `zR` to open all folds, `zM` to close all folds

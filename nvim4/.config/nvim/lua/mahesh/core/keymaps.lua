@@ -1,6 +1,6 @@
 -- check default keymap: :help <keymap>
--- check specific keymap: `:map <keymap>`
--- check all keymaps: `:map` or `:map <leader>`
+-- check specific keymap: `:map <keymap>` or `:map <leader><keymap>`
+-- check all keymaps: `:map` or `:map <leader>` 
 -- check all keymaps in normal mode: `:nmap`
 -- check all keymaps in insert mode: `:imap`
 -- check all keymaps in visual mode: `:vmap`
@@ -26,7 +26,10 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tc", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
--- ->w == window
+-- ------------------------ :help buffers ----------------------------------
+-- :buffers  = view buffers
+
+-- ------------------------ :help window ------------------------------------- 
 keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" })
@@ -44,7 +47,7 @@ keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" 
 ----------------------------> f == explorer -------------------------------------------------
 -- %: create new file, d: create new directory
 keymap.set('n', '<leader>fv', vim.cmd.Ex)
-
+keymap.set('n', '<leader>fp', '<cmd>e#<cr>', {desc = 'go to previous file'})
 -----------------------------> s == save ------------------------------------
 keymap.set("n", "<leader>sf", "<cmd>w<CR>", { desc = "save curretn file" })
 keymap.set('n', '<leader>ss', '<cmd>wa<CR>', { desc = 'Save all changes' })

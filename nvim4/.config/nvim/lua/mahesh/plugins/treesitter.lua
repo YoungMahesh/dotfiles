@@ -7,7 +7,10 @@ return { {
     local configs = require("nvim-treesitter.configs")
 
     configs.setup({
-      ensure_installed = { "lua", "javascript", "typescript", "html", "prisma", "go" },
+      --https://github.com/nvim-treesitter/nvim-treesitter/wiki/List-of-parsers
+      -- query represents - https://github.com/tree-sitter-grammars/tree-sitter-query and required in vim `:help <cmd>` docs
+      -- if some language is giving error, update it - e.g. for vimdoc =>  :TSUpdate vimdoc
+      ensure_installed = { "lua", "vim", "vimdoc", "query", "javascript", "typescript", "html", "prisma", "go", },
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },

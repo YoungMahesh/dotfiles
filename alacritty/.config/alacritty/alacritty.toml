@@ -1,5 +1,7 @@
 live_config_reload = true
 
+# open alacritty from default terminal (bash or fish) instead of setting up desktop: `alacritty & disown`
+
 #import = ["~/.config/alacritty/themes/rose-pine.toml"]# terminal status bar names are not properly visible (black text, blue background)
 #import = ["~/.config/alacritty/themes/rose-pine-moon.toml"] # terminal status bar names are not properly visible (black text, blue background)
 #import = ["~/.config/alacritty/themes/rose-pine-dawn.toml"] # variable names are not properly visible
@@ -20,3 +22,12 @@ normal = {family = "JetBrainsMono Nerd Font", style = "Regular"}
 bindings = [
 { key = "N", mods = "Control|Shift", action = "CreateNewWindow"},
 ]
+
+
+### installation
+#1. install cargo: https://doc.rust-lang.org/cargo/getting-started/installation.html
+#1. install dependencies for alacritty: https://github.com/alacritty/alacritty/blob/master/INSTALL.md#dependencies
+#1. install alacritty: https://github.com/alacritty/alacritty/blob/master/INSTALL.md#cargo-installation
+#1. add desktop-entry: https://github.com/alacritty/alacritty/blob/master/INSTALL.md#desktop-entry
+#    - logout and login if desktop-entry is not visible after changes
+#		 - if it suddently stops in future, check if `alacritty` cmd is working in default terminal, if not fix it, logout and login

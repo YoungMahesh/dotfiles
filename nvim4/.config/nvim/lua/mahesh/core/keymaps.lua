@@ -31,6 +31,7 @@ keymap.set("n", "<leader>tc", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 -- ------------------------ :help window ------------------------------------- 
 keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
+keymap.set("n", "<leader>ww", "<C-w>w", { desc = "Cycle cursor to the next window" })
 keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" })
 

@@ -47,7 +47,8 @@ keymap.set('n', '<leader>fv', vim.cmd.Ex)
 
 -----------------------------> s == save ------------------------------------
 keymap.set("n", "<leader>sf", "<cmd>w<CR>", { desc = "save curretn file" })
-keymap.set('n', '<leader>ss', '<cmd>xa<CR>', { desc = 'Save all changes and quit' })
+keymap.set('n', '<leader>ss', '<cmd>wa<CR>', { desc = 'Save all changes' })
+keymap.set('n', '<leader>sx', '<cmd>xa<CR>', { desc = 'Save all changes and quit' })
 keymap.set('n', '<leader>sq', '<cmd>qa<CR>', { desc = 'Quit all without saving changes' })
 
 -- add comments, using visual-block mode

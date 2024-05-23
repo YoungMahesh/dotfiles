@@ -22,12 +22,24 @@ bind \t accept-autosuggestion
 # neovim lsp does not work with fish, switch to using `bash` and then use nvim
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
+# alacrity path
+export PATH="$PATH:/home/mahesh/.cargo/bin"
+
 starship init fish | source
 
 # messages when we open terminal
 set -U fish_greeting "rejecting failure == rejecting success"
 
 
+
+# git shortcuts
+alias gs='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias ga='git add .'
+alias gl='git log'
+alias gc='git commit -m'
+alias gp='git push'
 
 #set -g fish_color_keyword white
 #set -g fish_color_quote yellow

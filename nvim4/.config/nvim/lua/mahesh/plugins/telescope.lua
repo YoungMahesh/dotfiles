@@ -11,6 +11,7 @@ return {
     --	<C-x> go to file selection as a split
     --	<C-v> go to file selection as a vsplit
     --	<C-t> go to a file in a new tab
+		--	<C-q> send all items to quickfix list
 
     -->f == find, fl=find-list,  fb=find-buffer, fh=find-help, fr=find-recent
     -- default mappings in docs are does not get enabled by default, need to be enabled here, 

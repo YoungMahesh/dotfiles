@@ -16,6 +16,13 @@ return {
     'williamboman/mason.nvim',
     lazy = false,
     config = true,
+    -- :Mason shows list of Installed/Available packages by Mason
+    -- https://github.com/williamboman/mason.nvim?tab=readme-ov-file#default-configuration
+    -- In Mason list: i - install, u - update, X - uninstall
+
+    -- https://mason-registry.dev/registry/list
+    -- Mason installs - 1.LSP(Language servers - provide list of functions/variables available on current variable)
+    -- 2.DAP(debuggers)   3.Linter(Show warnings/errors in syntax)   4.Formatter(rearrange code make is more readable)
   },
 
   -- Autocompletion
@@ -101,10 +108,9 @@ return {
       end)
 
 
-
       require('mason-lspconfig').setup({
         -- available servers: https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
-        ensure_installed = { "lua_ls", "tsserver", "eslint", "prismals", "gopls" },
+        ensure_installed = { "lua_ls", "tsserver", "prismals", "gopls" },
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"
@@ -123,7 +129,8 @@ return {
           -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
           tsserver = function()
             -- (Optional) Configure tsserver for neovim
-            require('lspconfig').tsserver.setup({ })
+						-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
+            require('lspconfig').tsserver.setup()
           end,
         }
       })

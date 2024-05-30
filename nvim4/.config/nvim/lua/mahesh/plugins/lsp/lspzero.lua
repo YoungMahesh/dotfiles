@@ -130,7 +130,8 @@ return {
           tsserver = function()
             -- (Optional) Configure tsserver for neovim
 						-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-            require('lspconfig').tsserver.setup()
+						-- if you use `setup()` instead of `setup({})`, it will give error: attempt to index local 'user_config' (a nil value)
+            require('lspconfig').tsserver.setup({})
           end,
         }
       })

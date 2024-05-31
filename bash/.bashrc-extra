@@ -38,3 +38,6 @@ alias ga='git add .'
 alias gl='git log'
 alias gc='git commit -m'
 alias gp='git push'
+
+# directory shortcuts
+alias ncf='cd ~/company/nft-clash/apps/frontend'

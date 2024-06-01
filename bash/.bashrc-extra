@@ -41,4 +41,6 @@ alias gp='git push'
 
 # directory shortcuts
 alias ncf='cd ~/company/nft-clash/apps/frontend'
+alias ncc='cd ~/company/nft-clash/contracts'
 alias neovim='cd ~/dotfiles/neovim/.config/nvim && tree -a'
+

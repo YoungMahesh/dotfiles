@@ -39,24 +39,26 @@ keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" 
 --:copen " Open the quickfix window
 --:ccl   " Close it
 --:cw    " Open it if there are "errors", close it otherwise (some people prefer this)
---:cn    " Go to the next error in the window
---:cp    " Go to the previous error in the window
+--:[count]cn    " Go to the next error in the window, if count is given go to count-th next error
+--:[count]cp    " Go to the previous error in the window, if count is given go to count-th previous error
 --:cnf   " Go to the first error in the next file
---:.cc   " Go to error under cursor (if cursor is in quickfix window)
+--:[count]cc   " Go to error under cursor (if cursor is in quickfix window), if count is given go to count-th error
 -- `Ctrl+w` to move to and out of quickfix list window
+-- chistory     " Open all quickfix lists opened until now in current session
+-- [count]chistory     " open count'th quickfix list from chistory-list 
 
 ----------------------------> f == explorer -------------------------------------------------
 -- %: create new file, d: create new directory
 keymap.set('n', '<leader>fv', vim.cmd.Ex)
 keymap.set('n', '<leader>fp', '<cmd>e#<cr>', {desc = 'go to previous file'})
 -----------------------------> s == save ------------------------------------
-keymap.set("n", "<leader>sf", "<cmd>w<CR>", { desc = "save curretn file" })
-keymap.set('n', '<leader>ss', '<cmd>wa<CR>', { desc = 'Save all changes' })
-keymap.set('n', '<leader>sx', '<cmd>xa<CR>', { desc = 'Save all changes and quit' })
-keymap.set('n', '<leader>sq', '<cmd>qa<CR>', { desc = 'Quit all without saving changes' })
+-- :w        save changes in current file
+-- :x        save changes in current file and quit
+-- :wa       save changes in all files
+-- :xa			 save changes in all files and quit
 
--- add comments, using visual-block mode
--- `ctrl-v` to enter visual-block mode, select lines, `I` to insert, type `--` and press `esc` to add comments to selected lines
+-- ------------------------ comments ---------------------------------------------------------------
+-- -- `ctrl-v` to enter visual-block mode, select lines, `I` to insert, type `--` and press `esc` to add comments to selected lines
 
 -- search and replace all lines: `%s/<search-word>/<replace-word>/g` %s=substitute, g=global
 -- search and replace current line: s/<search-word>/<replace-word>/g

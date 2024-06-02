@@ -7,6 +7,7 @@ return {
     local lint = require("lint");
     -- linters_by_ft: linters by file type
 		-- you can install eslint_d by :Mason -> Linters -> eslint_d -> i
+		-- if not working properly, execute: !eslint_d restart, then restart neovim 
     lint.linters_by_ft = {
       javascript = { "eslint_d" },
       typescript = { "eslint_d" },

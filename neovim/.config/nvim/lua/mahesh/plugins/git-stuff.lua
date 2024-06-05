@@ -29,7 +29,7 @@ return {
         --end)
 
         -- Actions
-        map('n', '<leader>hs', gitsigns.stage_hunk)
+        map('n', '<leader>hs', gitsigns.stage_hunk) -- <leader>ha is booked for harpoon-add
         map('n', '<leader>hr', gitsigns.reset_hunk)
         --map('v', '<leader>hs', function() gitsigns.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end)
         --map('v', '<leader>hr', function() gitsigns.reset_hunk { vim.fn.line('.'), vim.fn.line('v') } end)

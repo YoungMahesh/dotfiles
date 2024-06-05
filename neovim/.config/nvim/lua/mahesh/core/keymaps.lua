@@ -18,6 +18,8 @@ keymap.set("n", "r", "<C-r>", { desc = "redo" })
 keymap.set({ "n", "v" }, "9", "$", { desc = "moved to end of line" })
 keymap.set({ "n", "v" }, "q", "<C-u>", { desc = "move up half of viewport" })
 keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })
+keymap.set("n", "<leader>ss", "<cmd>wa<CR>", { desc = "save all files" })
+keymap.set("n", "<leader>sx", "<cmd>xa<CR>", { desc = "save all files and close" })
 
 -- ->t == tab
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })

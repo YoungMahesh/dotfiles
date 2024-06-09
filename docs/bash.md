@@ -1,0 +1,7 @@
+- start browsing large file
+  - from top to bottom: `less <fileName>`
+  - from bottom to top: `less +G <fileName>`
+- print lines
+  - all: `cat <fileName>` || `head <fileName>` || `tail <fileName>`
+  - first 5: `head -n 5 <fileName>`
+  - last 5: `tail -n 5 <fileName>`

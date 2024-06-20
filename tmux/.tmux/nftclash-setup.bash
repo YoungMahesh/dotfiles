@@ -20,6 +20,8 @@ tmux send-keys -t nc:localhost.1 'cd ~/company/nft-clash/contracts' C-m
 
 tmux new-window -t nc:3 -n note
 
+tmux new-window -t nc:4 -n server
+
 tmux select-window -t nc:ncf-vim
 tmux attach-session -t nc
 

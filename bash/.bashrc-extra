@@ -44,4 +44,4 @@ alias nftclash='bash ~/.tmux/nftclash-setup.bash'
 alias ncf='cd ~/company/nft-clash/apps/frontend'
 alias ncc='cd ~/company/nft-clash/contracts'
 alias neovim='cd ~/dotfiles/neovim/.config/nvim'
-
+alias nccache='cd ~/company/nft-clash/utilities/cache-server'

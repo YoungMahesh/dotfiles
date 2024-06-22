@@ -35,7 +35,6 @@ return {
     -- custom mappings
     keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Fuzzy find recent files' })
     keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<cr>', { desc = 'Find string under cursor in cwd' })
-
     --keymap.set('n', '<leader>fm', "<cmd>Telescope marks mark_type=local<cr>", { desc = 'Find marks' }) -- does not work
     --keymap.set('n', '<leader>fm', builtin.marks, { desc = 'Find string under cursor in cwd' })
     -- vim.keymap.set('n', '<leader>ps', function()
@@ -44,18 +43,13 @@ return {
     -- <C-p> = Ctrl+p
     keymap.set('n', '<C-p>', builtin.git_files, {})
 
-
-
-    --vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-    --vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-    --vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-
     telescope.setup {
       defaults = {
         file_ignore_patterns = {
           -- in lua: The dash in the string is interpreted as quantifier so I need to escape them.
           -- For example the package-lock.json should be package%-lock.json
-          "package%-lock.json"
+          "package%-lock.json",
+          ".git/" -- we need hidden=true to see .env files, but it results in showing .git files also, hence excluding them
         }
       }
 

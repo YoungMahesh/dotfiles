@@ -11,11 +11,14 @@ return {
     --	<C-x> go to file selection as a split
     --	<C-v> go to file selection as a vsplit
     --	<C-t> go to a file in a new tab
-		--	<C-q> send all items to quickfix list
+    --	<C-q> send all items to quickfix list
 
     -->f == find, fl=find-list,  fb=find-buffer, fh=find-help, fr=find-recent
-    -- default mappings in docs are does not get enabled by default, need to be enabled here, 
+    -- default mappings in docs are does not get enabled by default, need to be enabled here,
+    -- :help telescope.command
     keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Fuzzy find files in cwd' })
+    -- include find hidden files like .env
+    keymap.set('n', '<leader>fa', ':Telescope find_files hidden=true<cr>', { desc = 'Fuzzy all files in cwd' })
     keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find string in cwd' })
     keymap.set('n', '<leader>fb', builtin.buffers, {})
     keymap.set('n', '<leader>fh', builtin.help_tags, {})
@@ -36,5 +39,16 @@ return {
     --vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
     --vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
     --vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+    require('telescope').setup {
+      defaults = {
+        file_ignore_patterns = {
+          -- in lua: The dash in the string is interpreted as quantifier so I need to escape them.
+          -- For example the package-lock.json should be package%-lock.json
+          "package%-lock.json"
+        }
+      }
+
+    }
   end,
 }

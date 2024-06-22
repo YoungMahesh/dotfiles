@@ -18,6 +18,13 @@ keymap.set("n", "r", "<C-r>", { desc = "redo" })
 keymap.set({ "n", "v" }, "9", "$", { desc = "moved to end of line" })
 keymap.set({ "n", "v" }, "q", "<C-u>", { desc = "move up half of viewport" })
 keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })
+
+--When yanking content, it goes to the Unnamed register ("") but also to register "0. Thus, you can still paste the most recent yanked text 
+-- (after using the paste command) using "0p.
+-- :reg or :register to check all enteries in register
+-- Refer to :help quote0 for more info.
+-- use P to paste text copied from browser after this change
+--keymap.set({ "n", "v" }, "p", '"0p', { desc = "paste but retain pasted-text in register" }) -- not using, as it does paste text which is cut with 'd'
 keymap.set("n", "<leader>ss", "<cmd>wa<CR>", { desc = "save all files" })
 keymap.set("n", "<leader>sq", "<cmd>qa<CR>", { desc = "close all files" })
 keymap.set("n", "<leader>sx", "<cmd>xa<CR>", { desc = "save all files and close" })
@@ -69,6 +76,8 @@ keymap.set('n', '<leader>fp', '<cmd>e#<cr>', {desc = 'go to previous file'})
 --------------------- `:help m` `help: mark`--------------------------------
 -->m=marks
 keymap.set("n", "<leader>ml", "<cmd>marks abcdef<cr>", { desc = "show marks list from a to f" }) -- a-f does not work here
+keymap.set("n", "<leader>mm", "<cmd>marks ABCDE<cr>", { desc = "show marks list from a to f" })
+-- :delm A -> delete mark A
 keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks from a to f" })
 -- ma: set mark a, 'a: go to line of mark a, `m: go to position of mark, [': go to previous mark, ]': go to next mark
 -- :marks: show all marks

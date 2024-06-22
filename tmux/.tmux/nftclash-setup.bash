@@ -6,11 +6,12 @@
 # -h splits the window horizontally
 
 # ncf-vim
-tmux new-session -d -s nc -n 'ncf-vim'
-tmux send-keys -t nc:ncf-vim 'cd ~/company/nft-clash/apps/frontend' C-m
+tmux new-session -d -s nc -n 'nftclash'
 
-tmux new-window -t nc:1 -n ncc
-tmux send-keys -t nc:ncc 'cd ~/company/nft-clash/contracts' C-m
+tmux send-keys -t nc:nftclash 'cd ~/company/nft-clash/apps/frontend' C-m
+
+tmux new-window -t nc:1 -n contracts
+tmux send-keys -t nc:contracts 'cd ~/company/nft-clash/contracts' C-m
 
 tmux new-window -t nc:2 -n localhost
 tmux send-keys -t nc:localhost 'cd ~/company/nft-clash/apps/frontend' C-m
@@ -26,6 +27,6 @@ tmux new-window -t nc:4 -n server
 tmux new-window -t nc:5 -n dotfiles
 tmux send-keys -t nc:dotfiles 'cd ~/dotfiles' C-m
 
-tmux select-window -t nc:ncf-vim
+tmux select-window -t nc:nftclash # after tmux attach-session, connect to this window
 tmux attach-session -t nc
 

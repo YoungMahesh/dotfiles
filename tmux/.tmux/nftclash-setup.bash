@@ -19,8 +19,12 @@ tmux send-keys -t nc:localhost.1 'cd ~/company/nft-clash/contracts' C-m
 #tmux send-keys -t nc:localhost.1 'bash start.localnet.bash' C-m
 
 tmux new-window -t nc:3 -n note
+tmux send-keys -t nc:note 'notes ls' C-m
 
 tmux new-window -t nc:4 -n server
+
+tmux new-window -t nc:5 -n dotfiles
+tmux send-keys -t nc:dotfiles 'cd ~/dotfiles' C-m
 
 tmux select-window -t nc:ncf-vim
 tmux attach-session -t nc

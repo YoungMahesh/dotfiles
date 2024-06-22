@@ -45,3 +45,12 @@ alias ncf='cd ~/company/nft-clash/apps/frontend'
 alias ncc='cd ~/company/nft-clash/contracts'
 alias neovim='cd ~/dotfiles/neovim/.config/nvim'
 alias nccache='cd ~/company/nft-clash/utilities/cache-server'
+
+# program shortcuts
+alias v=nvim
+
+# password-store 
+# remember: if you want to swich store, you need to run command in new terminal
+# e.g. if you ran `pass` in current terminal-window, you need to open new window to run `notes`
+#alias pass='export PASSWORD_STORE_DIR=~/.password-store; pass'  # .password-store is default, hence no need to define separately
+alias notes='export PASSWORD_STORE_DIR=~/.notes-store; pass'

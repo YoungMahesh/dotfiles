@@ -104,3 +104,11 @@ keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks fr
 -- fm: move cursor to next character 'm' on current line
 -- Fk: move cursor to last character 'k' on current line
 
+
+----------------------- vim cmd erros -------------------------------------- 
+-- https://vi.stackexchange.com/a/31071
+-- :messages    -- view errors thrown in current session
+-- :put =execute('messages')  -- copy errors to current buffer
+--
+--
+-- echo $XDG_RUNTIME_DIR

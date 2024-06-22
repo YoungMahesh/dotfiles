@@ -1,0 +1,19 @@
+# when you create another user on your debian/ubuntu using `useradd`, paste following in .bashrc file for proper working of 'pass' and 'nvim' 
+# neovim
+export EDITOR=nvim
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
+# for gpg key activation
+# need to execute `script /dev/null` to make pass work 
+# following script automatically execute `script /dev/null` on login
+if [ -z "$SCRIPT" ]; then
+		SCRIPT=/dev/null script -q
+fi
+
+# copy paste will not work for neovim, if you does not followed following process
+# (:health :clipboard) neovim uses clipboard either from wayland or tmux  
+# most probably, not default user does not have access to wayland
+# to give access to tmux, we need to first login into user and then open tmux
+# 1. login to this user through 'alacrity' 
+# 2. open tmux
+

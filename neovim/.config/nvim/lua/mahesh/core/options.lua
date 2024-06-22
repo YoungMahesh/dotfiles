@@ -22,6 +22,10 @@ opt.incsearch = true
 -- NOTE: unlike lua-plugins changes in this file does not reflect across all session immediately when you restart nvim, don't know why for now
 opt.foldmethod = 'indent'  -- :set foldmethod=syntax,manual,indent
 
+-- by default, all folds are closed, to keep all folds open when we open new file :set foldenable!
+opt.foldenable = false
+
+----------------------- does not work --------------------------------------------------
 -- :h fold-foldlevel 			:h foldlevel
 -- high foldlevel is needed to keep all folds open by default
-opt.foldlevel = 100 -- :h 
+-- opt.foldlevel = 100 -- :h 

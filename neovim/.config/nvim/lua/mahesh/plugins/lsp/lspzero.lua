@@ -102,7 +102,7 @@ return {
         --  vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts) -- default
 
         -- https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
-        vim.keymap.set({ 'n', 'x' }, 'fm', function()
+        vim.keymap.set({ 'n', 'x' }, '<leader>fm', function()
           vim.lsp.buf.format({ async = false, timeout_ms = 10000, formatting_options = { tabSize = 2, insertSpaces = true } })
         end, opts)
       end)

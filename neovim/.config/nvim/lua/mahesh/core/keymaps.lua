@@ -99,3 +99,8 @@ keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks fr
 -- `zd` to delete current fold at cursor,
 -- `zD` to delete all-folds(nested) at cursor
 -- `zR` to open all folds, `zM` to close all folds
+--
+---------------------- :help f ---------------------------------------- 
+-- fm: move cursor to next character 'm' on current line
+-- Fk: move cursor to last character 'k' on current line
+

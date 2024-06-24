@@ -8,5 +8,11 @@
 -- 2. installation script: https://github.com/neovim/neovim/blob/master/INSTALL.md#linux
 -- nvim --version
 -- :checkhealth
+
 require("mahesh.core")
-require("mahesh.lazy")
+
+local username = os.getenv("USER")
+if username == "mahesh" then
+  -- load plugins
+  require("mahesh.lazy")
+end

@@ -108,6 +108,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
         pkgs.pass
         pkgs.gnupg
         pkgs.wget
+	pkgs.home-manager
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];

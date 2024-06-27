@@ -109,6 +109,11 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
         pkgs.gnupg
         pkgs.wget
 	pkgs.home-manager
+	# for neovim
+	pkgs.gcc  # for neovim-treesitter
+	pkgs.nodejs_20  # projects, neovim Mason
+	pkgs.go  # projects, neovim Mason
+	pkgs.zip pkgs.unzip
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];

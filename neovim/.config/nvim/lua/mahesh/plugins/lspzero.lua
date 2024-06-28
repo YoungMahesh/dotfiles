@@ -93,7 +93,7 @@ return {
         --  vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts) -- default
         --  vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts) -- default
         vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<cr>', opts) -- lr=lsp reference
-        --  vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts) -- default 
+        --  vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts) -- default
         --  vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)  -- default
         --  vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)  -- default
         --  vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts) -- default
@@ -107,10 +107,9 @@ return {
         end, opts)
       end)
 
-
       require('mason-lspconfig').setup({
         -- available servers: https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
-        ensure_installed = { "lua_ls", "tsserver", "prismals", "gopls", "clangd", "solidity_ls_nomicfoundation" },
+        ensure_installed = { "lua_ls", "tsserver", "cssls", "prismals", "gopls", "clangd", "solidity_ls_nomicfoundation" },
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"

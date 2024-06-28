@@ -47,7 +47,7 @@ alias neovim='cd ~/dotfiles/neovim/.config/nvim'
 alias nccache='cd ~/company/nft-clash/utilities/cache-server'
 
 # program shortcuts
-alias v=nvim
+alias vi=nvim
 
 # password-store 
 # remember: if you want to swich store, you need to run command in new terminal

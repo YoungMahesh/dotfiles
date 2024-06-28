@@ -7,9 +7,12 @@ local opt = vim.opt
 
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
-opt.tabstop = 2 -- spaces for tabs
-opt.shiftwidth = 2 -- spaces for indent width
---opt.expandtab = true -- expand tab to spaces
+opt.tabstop = 2                     -- Tab character width (2 spaces)
+opt.shiftwidth = 2                  -- Indentation size (2 spaces)
+
+-- without expandtab when you copy code from neovim, paste into another editor, another editor will show more spaces/indentation than what you see in neovim
+opt.expandtab = true  -- Show tabs as spaces
+
 opt.autoindent = true -- copy indent from current line when starting new one
 
 opt.number = true
@@ -20,7 +23,7 @@ opt.wrap = false
 opt.incsearch = true
 
 -- NOTE: unlike lua-plugins changes in this file does not reflect across all session immediately when you restart nvim, don't know why for now
-opt.foldmethod = 'indent'  -- :set foldmethod=syntax,manual,indent
+opt.foldmethod = 'indent' -- :set foldmethod=syntax,manual,indent
 
 -- by default, all folds are closed, to keep all folds open when we open new file :set foldenable!
 opt.foldenable = false
@@ -28,4 +31,4 @@ opt.foldenable = false
 ----------------------- does not work --------------------------------------------------
 -- :h fold-foldlevel 			:h foldlevel
 -- high foldlevel is needed to keep all folds open by default
--- opt.foldlevel = 100 -- :h 
+-- opt.foldlevel = 100 -- :h

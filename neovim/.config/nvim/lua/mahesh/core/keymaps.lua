@@ -1,6 +1,6 @@
 -- check default keymap: :help <keymap>
 -- check specific keymap: `:map <keymap>` or `:map <leader><keymap>`
--- check all keymaps: `:map` or `:map <leader>` 
+-- check all keymaps: `:map` or `:map <leader>`
 -- check all keymaps in normal mode: `:nmap`
 -- check all keymaps in insert mode: `:imap`
 -- check all keymaps in visual mode: `:vmap`
@@ -13,13 +13,13 @@ local keymap = vim.keymap
 
 -- .set first-argument (n == normal mode, i == insert mode, v == visual mode, <empty> == all modes)
 -- <C-u> == Ctrl+u
-keymap.set("n", "a", "A", { desc = "move and insert at end of line" })
+keymap.set({ "n", "v" }, "a", "A", { desc = "move and insert at end of line" })
 keymap.set("n", "r", "<C-r>", { desc = "redo" })
 keymap.set({ "n", "v" }, "9", "$", { desc = "moved to end of line" })
 keymap.set({ "n", "v" }, "q", "<C-u>", { desc = "move up half of viewport" })
 keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })
 
---When yanking content, it goes to the Unnamed register ("") but also to register "0. Thus, you can still paste the most recent yanked text 
+--When yanking content, it goes to the Unnamed register ("") but also to register "0. Thus, you can still paste the most recent yanked text
 -- (after using the paste command) using "0p.
 -- :reg or :register to check all enteries in register
 -- Refer to :help quote0 for more info.
@@ -39,7 +39,7 @@ keymap.set("n", "<leader>tc", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 -- ------------------------ :help buffers ----------------------------------
 -- :buffers  = view buffers
 
--- ------------------------ :help window ------------------------------------- 
+-- ------------------------ :help window -------------------------------------
 keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>ww", "<C-w>w", { desc = "Cycle cursor to the next window" })
 keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
@@ -55,12 +55,12 @@ keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" 
 --:[count]cc   " Go to error under cursor (if cursor is in quickfix window), if count is given go to count-th error
 -- `Ctrl+w` to move to and out of quickfix list window
 -- chistory     " Open all quickfix lists opened until now in current session
--- [count]chistory     " open count'th quickfix list from chistory-list 
+-- [count]chistory     " open count'th quickfix list from chistory-list
 
 ----------------------------> f == explorer -------------------------------------------------
 -- %: create new file, d: create new directory
 keymap.set('n', '<leader>fv', vim.cmd.Ex)
-keymap.set('n', '<leader>fp', '<cmd>e#<cr>', {desc = 'go to previous file'})
+keymap.set('n', '<leader>fp', '<cmd>e#<cr>', { desc = 'go to previous file' })
 -----------------------------> s == save ------------------------------------
 -- :w        save changes in current file
 -- :x        save changes in current file and quit
@@ -100,12 +100,12 @@ keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks fr
 -- `zD` to delete all-folds(nested) at cursor
 -- `zR` to open all folds, `zM` to close all folds
 --
----------------------- :help f ---------------------------------------- 
+---------------------- :help f ----------------------------------------
 -- fm: move cursor to next character 'm' on current line
 -- Fk: move cursor to last character 'k' on current line
 
 
------------------------ vim cmd erros -------------------------------------- 
+----------------------- vim cmd erros --------------------------------------
 -- https://vi.stackexchange.com/a/31071
 -- :messages    -- view errors thrown in current session
 -- :put =execute('messages')  -- copy errors to current buffer

@@ -1,6 +1,12 @@
 return {
   {
-    "tpope/vim-fugitive"
+    "tpope/vim-fugitive",
+    -- :G  # open fugitive editor, :0G for fullscreen
+    -- inside fugitive-editor
+    --  move to file-name
+    --    `=` to open changes
+    --    `-` toggle staged<->unstaged
+    -- :G commit # commit changes
   },
   {
     "lewis6991/gitsigns.nvim",

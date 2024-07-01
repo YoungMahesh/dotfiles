@@ -19,5 +19,6 @@
   "rose-pine": { "branch": "main", "commit": "e10c9c6436556405ec6b187fd459a718f5c55156" },
   "telescope-live-grep-args.nvim": { "branch": "master", "commit": "8ad632f793fd437865f99af5684f78300dac93fb" },
   "telescope.nvim": { "branch": "master", "commit": "6312868392331c9c0f22725041f1ec2bef57c751" },
-  "trouble.nvim": { "branch": "main", "commit": "88c3be40c061ce053ab326ce4fdcb973a1f785ff" }
+  "trouble.nvim": { "branch": "main", "commit": "88c3be40c061ce053ab326ce4fdcb973a1f785ff" },
+  "vim-fugitive": { "branch": "master", "commit": "d0c1a437536778bcc8174b7cb2ffdf98f611e6fe" }
 }

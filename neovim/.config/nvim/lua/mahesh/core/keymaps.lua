@@ -112,3 +112,10 @@ keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks fr
 --
 --
 -- echo $XDG_RUNTIME_DIR
+
+---------------------- ->search and replace ---------------------------------
+-- search word with :/<word><cr>
+-- type `cw` (change word) -> type new word -> Esc
+-- move to next word by typing `n`
+-- if you want to change word, type `.` which will follow previous process
+-- else type `n` to move to next word

@@ -34,6 +34,7 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 alias gs='git status'
 alias gd='git diff'
 alias gdc='git diff --cached'
+#alias ga='git add -p'
 alias ga='git add .'
 alias gl='git log'
 alias gc='git commit -m'

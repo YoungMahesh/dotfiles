@@ -15,6 +15,8 @@
     chmod +x .git/hooks/post-commit
     ```
 
+### install latest version (officially)
+- https://git-scm.com/download/linux
 
 ## basic commands
 
@@ -94,8 +96,10 @@ git fetch <remote_area_name> <branch_name> # copy branch remote_area to commit_a
 git pull <remote_area_name> <branch_name> # merge remote branch to current branch
 git clone <remote_area_url> # copy git repository from remote server/area to current folder
 
-# for https-url
 git config credential.helper store # save remote repository credentials (username, password) permanently
+# if you get error: Repository not found, when you switch from credential.helper from 'cache' to 'store'
+# set username in credentials with: `git config credential.username xyz`
+# 'cache' is default credential.helper
 git config credential.helper cache   # save remote repository credentials temporarity (15 minutes)
 
 # ------------------------ branch management ----------------------------------

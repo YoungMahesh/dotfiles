@@ -28,6 +28,7 @@ keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })
 keymap.set("n", "<leader>ss", "<cmd>wa<CR>", { desc = "save all files" })
 keymap.set("n", "<leader>sq", "<cmd>qa<CR>", { desc = "close all files" })
 keymap.set("n", "<leader>sx", "<cmd>xa<CR>", { desc = "save all files and close" })
+keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "close current file" })
 
 -- ->t == tab
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
@@ -119,3 +120,11 @@ keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks fr
 -- move to next word by typing `n`
 -- if you want to change word, type `.` which will follow previous process
 -- else type `n` to move to next word
+--
+
+---------------------- ->netrw keybindings ---------------------------------
+-- %          - create new file
+-- d          - create new directory
+-- R          - rename path/file
+-- D          - delete
+-- delete non-empty directory: mf(mark directory) -> mx(apply shell commands to marked files) -> rm -rf <enter>

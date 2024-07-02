@@ -2,10 +2,12 @@ return {
   {
     "tpope/vim-fugitive",
     -- :G  # open fugitive editor, :0G for fullscreen
+    -- :G pull
     -- inside fugitive-editor
     --  move to file-name
     --    `=` to open changes
     --    `-` toggle staged<->unstaged
+    --    `P`  push
     -- :G commit # commit changes
   },
   {

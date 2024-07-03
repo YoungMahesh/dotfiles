@@ -29,12 +29,18 @@ return {
     -- keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Fuzzy find files in cwd' })
     -- include find hidden files like .env
     keymap.set('n', '<leader>ff', ':Telescope find_files hidden=true<cr>', { desc = 'Fuzzy all files in cwd' })
-    keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find string in cwd' })
+    keymap.set('n', '<leader>fg',
+      ":Telescope live_grep vimgrep_arguments=rg,--color=never,--no-heading,--no-heading,--line-number,--column,--smart-case,--hidden,--no-ignore<cr>",
+      { desc = 'Find string in cwd' })
     keymap.set('n', '<leader>fb', builtin.buffers, {})
     keymap.set('n', '<leader>fh', builtin.help_tags, {})
     -- custom mappings
     keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Fuzzy find recent files' })
-    keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<cr>', { desc = 'Find string under cursor in cwd' })
+
+    keymap.set('n', '<leader>fc',
+      ":Telescope grep_string vimgrep_arguments=rg,--color=never,--no-heading,--no-heading,--line-number,--column,--smart-case,--hidden,--no-ignore<cr>",
+      { desc = 'Find string under cursor in cwd' })
+
     --keymap.set('n', '<leader>fm', "<cmd>Telescope marks mark_type=local<cr>", { desc = 'Find marks' }) -- does not work
     --keymap.set('n', '<leader>fm', builtin.marks, { desc = 'Find string under cursor in cwd' })
     -- vim.keymap.set('n', '<leader>ps', function()

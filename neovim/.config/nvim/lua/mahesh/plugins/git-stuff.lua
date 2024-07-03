@@ -1,14 +1,17 @@
 return {
   {
     "tpope/vim-fugitive",
-    -- :G  # open fugitive editor, :0G for fullscreen
+    -- :G # open fugitive editor, :0G for fullscreen
     -- :G pull
     -- inside fugitive-editor
-    --  move to file-name
-    --    `=` to open changes
-    --    `-` toggle staged<->unstaged
-    --    `P`  push
+    --  `=` to open changes
+    --  `-` toggle staged<->unstaged
+    --  `P` push
+    --  `O` open file under cursor in new tab
     -- :G commit # commit changes
+    config = function()
+      vim.keymap.set("n", "<leader>go", ":0G<cr>")
+    end,
   },
   {
     "lewis6991/gitsigns.nvim",

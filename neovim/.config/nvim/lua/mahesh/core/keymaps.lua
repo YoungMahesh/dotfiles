@@ -128,3 +128,4 @@ keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks fr
 -- R          - rename path/file
 -- D          - delete
 -- delete non-empty directory: mf(mark directory) -> mx(apply shell commands to marked files) -> rm -rf <enter>
+-- move file: mt(mark target directory) -> mf(mark file) -> mc(copy marked file to target directory)

@@ -32,7 +32,7 @@ keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "close current file" })
 
 -- ->t == tab
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
-keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
+keymap.set("n", "<leader>tx", "<cmd>w<cr><cmd>tabclose<cr>", { desc = "save changes and close current tab" })
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tc", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
@@ -123,9 +123,12 @@ keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks fr
 --
 
 ---------------------- ->netrw keybindings ---------------------------------
+-- change Vim's current directory to match the directory you're browsing in Netrw, helps during copy-file
+-- vim.g.netrw_keepdir = 0  -- cannot use as harpoon, telescope shows files only in current directory once netrw is opened
 -- %          - create new file
 -- d          - create new directory
 -- R          - rename path/file
 -- D          - delete
 -- delete non-empty directory: mf(mark directory) -> mx(apply shell commands to marked files) -> rm -rf <enter>
 -- move file: mt(mark target directory) -> mf(mark file) -> mc(copy marked file to target directory)
+-- copy file in same directory: mt(go outside and mark current directory) -> mf(come inside and mark file) -> mc(copy file) -> you will get prompt for name of the file

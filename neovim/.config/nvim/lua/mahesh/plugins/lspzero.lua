@@ -113,9 +113,10 @@ return {
         -- marksman
         --    does not support formatting
         -- sqlls
+        --    not using as it is giving more wrong syntax errors than helping with syntax, may need configuration, but i don't have time
         --    need to create `.sqllsrc.json` file at the root of your project (https://github.com/joe-re/sql-language-server?tab=readme-ov-file#configuration)
         --      content can be empty json: {}
-        ensure_installed = { "lua_ls", "tsserver", "cssls", "tailwindcss", "prismals", "sqlls", "gopls", "clangd", "solidity_ls_nomicfoundation" },
+        ensure_installed = { "lua_ls", "tsserver", "cssls", "tailwindcss", "prismals", "gopls", "clangd", "solidity_ls_nomicfoundation" },
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"

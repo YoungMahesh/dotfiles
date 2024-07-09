@@ -1,5 +1,6 @@
 return { {
   -- parser, syntax highlighting for language
+  -- needs `gcc` installed on system, as it compiles downloaded packages
   "nvim-treesitter/nvim-treesitter",
   -- from treesitter-docs: on first install, treesitter will throw error, error will go after installation
   build = ":TSUpdate",
@@ -10,7 +11,7 @@ return { {
       --https://github.com/nvim-treesitter/nvim-treesitter/wiki/List-of-parsers
       -- query represents - https://github.com/tree-sitter-grammars/tree-sitter-query and required in vim `:help <cmd>` docs
       -- if some language is giving error, update it - e.g. for vimdoc =>  :TSUpdate vimdoc
-      ensure_installed = { "lua", "vim", "vimdoc", "query", "javascript", "typescript", "html", "prisma", "go", "cpp", "markdown" },
+      ensure_installed = { "lua", "vim", "vimdoc", "query", "javascript", "typescript", "html", "prisma", "sql", "go", "cpp", "markdown" },
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },

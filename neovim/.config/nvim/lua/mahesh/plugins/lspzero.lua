@@ -110,7 +110,12 @@ return {
       require('mason-lspconfig').setup({
         -- available servers: https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
         -- list of available servers ->    :Mason  -> 2)LSP
-        ensure_installed = { "lua_ls", "marksman", "tsserver", "cssls", "tailwindcss", "prismals", "gopls", "clangd", "solidity_ls_nomicfoundation" },
+        -- marksman
+        --    does not support formatting
+        -- sqlls
+        --    need to create `.sqllsrc.json` file at the root of your project (https://github.com/joe-re/sql-language-server?tab=readme-ov-file#configuration)
+        --      content can be empty json: {}
+        ensure_installed = { "lua_ls", "tsserver", "cssls", "tailwindcss", "prismals", "sqlls", "gopls", "clangd", "solidity_ls_nomicfoundation" },
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"

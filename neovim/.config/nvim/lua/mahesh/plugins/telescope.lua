@@ -54,7 +54,7 @@ return {
         -- vimgrep_arguments = {'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden', '--no-ignore' },
         file_ignore_patterns = {
           -- put `.ignore` file to exclude specific folders in specific directory, it works same as .gitignore (.gitignore for git, .ignore for telescope)
-          -- put * in home-directory's .ignore, to exclude infinite file searching which happens when we open telescope at home directory 
+          -- note: there is no way to ignore files in subdirectories, if you put * in home-directory's .ignore, it will not show files when you open telescope in any subdirectory 
           -- in lua: The dash in the string is interpreted as quantifier so I need to escape them.
           -- For example the package-lock.json should be package%-lock.json
           "package%-lock.json", -- nodejs project depedency installation history

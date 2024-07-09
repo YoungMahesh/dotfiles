@@ -33,6 +33,7 @@ keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "close current file" })
 -- ->t == tab
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 keymap.set("n", "<leader>tx", "<cmd>w<cr><cmd>tabclose<cr>", { desc = "save changes and close current tab" })
+keymap.set("n", "<leader>tq", "<cmd>tabclose<cr>", { desc = "close current tab" })
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tc", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })

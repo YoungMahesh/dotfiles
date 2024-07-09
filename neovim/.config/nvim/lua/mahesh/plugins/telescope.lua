@@ -29,17 +29,16 @@ return {
     -- keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Fuzzy find files in cwd' })
     -- include find hidden files like .env
     keymap.set('n', '<leader>ff', ':Telescope find_files hidden=true<cr>', { desc = 'Fuzzy all files in cwd' })
-    keymap.set('n', '<leader>fg',
-      ":Telescope live_grep vimgrep_arguments=rg,--color=never,--no-heading,--no-heading,--line-number,--column,--smart-case,--hidden,--no-ignore<cr>",
-      { desc = 'Find string in cwd' })
+    keymap.set('n', '<leader>fg', ":Telescope live_grep<cr>", { desc = 'Find string in cwd' })
     keymap.set('n', '<leader>fb', builtin.buffers, {})
     keymap.set('n', '<leader>fh', builtin.help_tags, {})
     -- custom mappings
     keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Fuzzy find recent files' })
 
-    keymap.set('n', '<leader>fc',
-      ":Telescope grep_string vimgrep_arguments=rg,--color=never,--no-heading,--no-heading,--line-number,--column,--smart-case,--hidden,--no-ignore<cr>",
-      { desc = 'Find string under cursor in cwd' })
+    keymap.set('n', '<leader>fc', ":Telescope grep_string <cr>", { desc = 'Find string under cursor in cwd' })
+    --keymap.set('n', '<leader>fc',
+    --  ":Telescope grep_string vimgrep_arguments=rg,--color=never,--no-heading,--no-heading,--line-number,--column,--smart-case,--hidden,--no-ignore<cr>",
+    --  { desc = 'Find string under cursor in cwd' })
 
     --keymap.set('n', '<leader>fm', "<cmd>Telescope marks mark_type=local<cr>", { desc = 'Find marks' }) -- does not work
     --keymap.set('n', '<leader>fm', builtin.marks, { desc = 'Find string under cursor in cwd' })
@@ -51,14 +50,22 @@ return {
 
     telescope.setup {
       defaults = {
+        -- vimgrep_arguments can be applied to all commands through here or to specific command, as shown in one of the comments above
+        -- vimgrep_arguments = {'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden', '--no-ignore' },
         file_ignore_patterns = {
+          -- put `.ignore` file to exclude specific folders in specific directory, it works same as .gitignore (.gitignore for git, .ignore for telescope)
+          -- put * in home-directory's .ignore, to exclude infinite file searching which happens when we open telescope at home directory 
           -- in lua: The dash in the string is interpreted as quantifier so I need to escape them.
           -- For example the package-lock.json should be package%-lock.json
-          "package%-lock.json",
-          ".git/" -- we need hidden=true to see .env files, but it results in showing .git files also, hence excluding them
+          "package%-lock.json", -- nodejs project depedency installation history
+          "pnpm%-lock.yaml",
+          ".git/",              -- we need hidden=true to see .env files, but it results in showing .git files also, hence excluding them
+          "node_modules",       -- path for nodejs modules
+          ".next",              -- output of 'nextjs build'
+          "typechain",          -- types directory created by typechain npm package
+          "artifacts",          -- solidity contract artifacts
         }
       }
-
     }
 
     telescope.load_extension("live_grep_args")

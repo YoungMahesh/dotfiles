@@ -109,7 +109,8 @@ return {
 
       require('mason-lspconfig').setup({
         -- available servers: https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
-        ensure_installed = { "lua_ls", "tsserver", "cssls", "tailwindcss", "prismals", "gopls", "clangd", "solidity_ls_nomicfoundation" },
+        -- list of available servers ->    :Mason  -> 2)LSP
+        ensure_installed = { "lua_ls", "marksman", "tsserver", "cssls", "tailwindcss", "prismals", "gopls", "clangd", "solidity_ls_nomicfoundation" },
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"

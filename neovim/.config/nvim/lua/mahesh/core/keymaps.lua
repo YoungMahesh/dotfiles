@@ -24,10 +24,14 @@ keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })
 -- :reg or :register to check all enteries in register
 -- Refer to :help quote0 for more info.
 -- use P to paste text copied from browser after this change
---keymap.set({ "n", "v" }, "p", '"0p', { desc = "paste but retain pasted-text in register" }) -- not using, as it does paste text which is cut with 'd'
-keymap.set("n", "<leader>ss", "<cmd>wa<CR>", { desc = "save all files" })
-keymap.set("n", "<leader>sq", "<cmd>qa<CR>", { desc = "close all files" })
-keymap.set("n", "<leader>sx", "<cmd>xa<CR>", { desc = "save all files and close" })
+-- keymap.set({ "n", "v" }, "p", '"0p', { desc = "paste but retain pasted-text in register" }) -- not using, as it does paste text which is cut with 'd'
+-- `noremap = true` makes mapping non-recursive
+keymap.set("n", "s", "<Nop>", { noremap = true, desc = "remove key s" }) -- avoid accidentail-execution (due to delay) of `s` while using keymaps like `ss`
+keymap.set("n", "x", "<Nop>", { noremap = true, desc = "remove key s" }) -- avoid accidentail-execution (due to delay) of `x` while using keymaps like `sx`
+keymap.set("n", "T", "<Nop>", { noremap = true, desc = "Toggle maximize window" }) -- used by tmux-config
+keymap.set("n", "ss", "<cmd>wa<CR>", { desc = "save all files" })
+keymap.set("n", "sq", "<cmd>qa<CR>", { desc = "close all files" })
+keymap.set("n", "sx", "<cmd>xa<CR>", { desc = "save all files and close" })
 keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "close current file" })
 
 -- ->t == tab

@@ -67,7 +67,7 @@ keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" 
 -- %: create new file, d: create new directory
 keymap.set('n', '<leader>fv', vim.cmd.Ex)
 --keymap.set('n', '<leader>ff', '<cmd>e#<cr>', { desc = 'go to previous file' })
-keymap.set('n', '<C-i>', '<cmd>e#<cr>', { noremap = true, silent = true })  -- <C-i> == tab 
+keymap.set('n', '<C-i>', '<cmd>e#<cr>', { noremap = true, silent = true }) -- <C-i> == tab
 -----------------------------> s == save ------------------------------------
 -- :w        save changes in current file
 -- :x        save changes in current file and quit
@@ -145,4 +145,5 @@ end, { noremap = true, silent = true })
 keymap.set('n', 'td', function()
   vim.api.nvim_put({ '<div></div>' }, '', true, false)
 end, { noremap = true, silent = true })
+
 

@@ -102,9 +102,45 @@ return {
         --  vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts) -- default
 
         -- https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
-        vim.keymap.set({ 'n', 'x' }, '<leader>fm', function()
-          vim.lsp.buf.format({ async = false, timeout_ms = 10000, formatting_options = { tabSize = 2, insertSpaces = true } })
-        end, opts)
+        -- formatting using lsp-server
+        --vim.keymap.set({ 'n', 'x' }, '<leader>fm', function()
+        --  vim.lsp.buf.format({ async = false, timeout_ms = 10000, formatting_options = { tabSize = 2, insertSpaces = true } })
+        --end, opts)
+
+
+        vim.keymap.set('n', '<leader>ff', function()
+          local file_type = vim.bo.filetype
+          if file_type ~= "typescript" and file_type ~= "javascript" and file_type ~= "typescriptreact" and file_type ~= "javascriptreact" then
+            --  vim.notify('Prettier formatting is only enabled for TypeScript/JavaScript files', vim.log.levels.WARN)
+            vim.lsp.buf.format({ async = false, timeout_ms = 10000, formatting_options = { tabSize = 2, insertSpaces = true } })
+            return
+          end
+
+          -- format using prettier 
+          -- install prettier globally: npm install -g prettier
+          -- format all files initially: prettier --write .
+          -- format spacific file: prettier --write <file_path>, in neovim terminal '%' return path of current file
+          -- below is logic to format through keymap
+          -- Get the current buffer content
+          local bufnr2 = vim.api.nvim_get_current_buf()
+          local lines = vim.api.nvim_buf_get_lines(bufnr2, 0, -1, false)
+          local content = table.concat(lines, '\n')
+
+          -- Run Prettier on the content
+          local prettier_output = vim.fn.system('prettier --stdin-filepath ' .. vim.fn.shellescape(vim.fn.expand('%')),
+            content)
+
+          if vim.v.shell_error ~= 0 then
+            vim.notify('Prettier encountered an error', vim.log.levels.ERROR)
+            return
+          end
+
+          -- Replace buffer content with formatted content
+          local formatted_lines = vim.split(prettier_output, '\n')
+          vim.api.nvim_buf_set_lines(bufnr2, 0, -1, false, formatted_lines)
+
+          --vim.notify('Buffer formatted', vim.log.levels.INFO)
+        end, { desc = "Format current buffer with Prettier (TypeScript/JavaScript only)" })
       end)
 
       require('mason-lspconfig').setup({

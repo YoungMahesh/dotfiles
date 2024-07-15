@@ -1,0 +1,26 @@
+[ // https://zed.dev/docs/vim#custom-key-bindings
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "a": "vim::InsertEndOfLine",
+      ";": "vim::ScrollDown",
+      "q": "vim::ScrollUp"
+      // put key-bindings here if you want them to work in normal & visual mode
+    }
+  }
+  //{
+  //  "context": "vim_mode == insert",
+  //  "bindings": {
+  //    // "j k": "vim::NormalBefore" // remap jk in insert mode to escape.
+  //  }
+  //},
+  //{
+  //  "context": "EmptyPane || SharedScreen",
+  //  "bindings": {
+  //    // put key-bindings here (in addition to above) if you want them to
+  //    // work when no editor exists
+  //    // "space f": "file_finder::Toggle"
+  //  }
+  //}
+]
+

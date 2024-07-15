@@ -26,8 +26,8 @@ keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })
 -- use P to paste text copied from browser after this change
 -- keymap.set({ "n", "v" }, "p", '"0p', { desc = "paste but retain pasted-text in register" }) -- not using, as it does paste text which is cut with 'd'
 -- `noremap = true` makes mapping non-recursive
-keymap.set("n", "s", "<Nop>", { noremap = true, desc = "remove key s" }) -- avoid accidentail-execution (due to delay) of `s` while using keymaps like `ss`
-keymap.set("n", "x", "<Nop>", { noremap = true, desc = "remove key s" }) -- avoid accidentail-execution (due to delay) of `x` while using keymaps like `sx`
+keymap.set("n", "s", "<Nop>", { noremap = true, desc = "remove key s" })           -- avoid accidentail-execution (due to delay) of `s` while using keymaps like `ss`
+keymap.set("n", "x", "<Nop>", { noremap = true, desc = "remove key s" })           -- avoid accidentail-execution (due to delay) of `x` while using keymaps like `sx`
 keymap.set("n", "T", "<Nop>", { noremap = true, desc = "Toggle maximize window" }) -- used by tmux-config
 keymap.set("n", "ss", "<cmd>wa<CR>", { desc = "save all files" })
 keymap.set("n", "sq", "<cmd>qa<CR>", { desc = "close all files" })
@@ -66,7 +66,7 @@ keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" 
 ----------------------------> f == explorer -------------------------------------------------
 -- %: create new file, d: create new directory
 keymap.set('n', '<leader>fv', vim.cmd.Ex)
-keymap.set('n', '<leader>fp', '<cmd>e#<cr>', { desc = 'go to previous file' })
+keymap.set('n', '<leader>ff', '<cmd>e#<cr>', { desc = 'go to previous file' })
 -----------------------------> s == save ------------------------------------
 -- :w        save changes in current file
 -- :x        save changes in current file and quit
@@ -81,20 +81,15 @@ keymap.set('n', '<leader>fp', '<cmd>e#<cr>', { desc = 'go to previous file' })
 --
 --------------------- `:help m` `help: mark`--------------------------------
 -->m=marks
-keymap.set("n", "<leader>ml", "<cmd>marks abcdef<cr>", { desc = "show marks list from a to f" }) -- a-f does not work here
-keymap.set("n", "<leader>mm", "<cmd>marks ABCDE<cr>", { desc = "show marks list from a to f" })
--- :delm A -> delete mark A
-keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks from a to f" })
--- ma: set mark a, 'a: go to line of mark a, `m: go to position of mark, [': go to previous mark, ]': go to next mark
+-- lowercase marks (a-z): current buffer, uppercase marks (A-Z): global buffers
+keymap.set("n", "ml", "<cmd>marks abcdef<cr>", { desc = "show marks list from a to f" })
+keymap.set("n", "mm", "<cmd>marks ABCDE<cr>", { desc = "show marks list from a to f" })
+-- `ma`: set mark a, `'a`: go to line of mark a, ``m`: go to position of mark, `['`: go to previous mark, `]'`: go to next mark
+-- `:delm A` to delete mark A, `:delm a` to delete mark a
 -- :marks: show all marks
---
--- `:delm` delete all marks in current buffer
--- `:delm abc` delete mark a, mark b, mark c
--- `:delm A-Z` delete all global marks
--- `:delm 0-9` delete all numbered marks
---
--- lowercase marks (a-z): local to current buffer, uppercase marks (A-Z): global
---
+-- keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks from a to f" }) -- we rarely delete marks, hence no need to create shortcut for it
+-- `:delm` delete all marks in current buffer, `:delm abc` delete mark a, mark b, mark c
+-- `:delm A-Z` delete all global marks, `:delm 0-9` delete all numbered marks
 -- ----------------- `:help fold` ------------------------------
 -- visual mode
 -- `zf`: fold
@@ -106,16 +101,19 @@ keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks fr
 -- `zD` to delete all-folds(nested) at cursor
 -- `zR` to open all folds, `zM` to close all folds
 --
----------------------- :help f ----------------------------------------
+---------------------- :help f (movement on current line) ----------------------------------------
 -- fm: move cursor to next character 'm' on current line
 -- Fk: move cursor to last character 'k' on current line
 
+---------------------- :help [ (jump lines) ---------------------------
+-- [(: move to previous (,   ]): move to next )
+-- [{: move to previous {,   ]}: move to next }
+-- [[: move to previous [,   ]]: move to next ]
 
 ----------------------- vim cmd erros --------------------------------------
 -- https://vi.stackexchange.com/a/31071
 -- :messages    -- view errors thrown in current session
 -- :put =execute('messages')  -- copy errors to current buffer
---
 --
 -- echo $XDG_RUNTIME_DIR
 
@@ -126,7 +124,6 @@ keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks fr
 -- if you want to change word, type `.` which will follow previous process
 -- else type `n` to move to next word
 --
-
 ---------------------- ->netrw keybindings ---------------------------------
 -- change Vim's current directory to match the directory you're browsing in Netrw, helps during copy-file
 -- vim.g.netrw_keepdir = 0  -- cannot use as harpoon, telescope shows files only in current directory once netrw is opened
@@ -137,3 +134,14 @@ keymap.set("n", "<leader>md", "<cmd>delmarks a-f<cr>", { desc = "delele marks fr
 -- delete non-empty directory: mf(mark directory) -> mx(apply shell commands to marked files) -> rm -rf <enter>
 -- move file: mt(mark target directory) -> mf(mark file) -> mc(copy marked file to target directory)
 -- copy file in same directory: mt(go outside and mark current directory) -> mf(come inside and mark file) -> mc(copy file) -> you will get prompt for name of the file
+--
+--
+-- ------------------ -> code snippets -----------------------
+-- t == type, te = type-empty, td = type-div
+keymap.set('n', 'te', function()
+  vim.api.nvim_put({ '<></>' }, '', true, false)
+end, { noremap = true, silent = true })
+keymap.set('n', 'td', function()
+  vim.api.nvim_put({ '<div></div>' }, '', true, false)
+end, { noremap = true, silent = true })
+

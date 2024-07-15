@@ -23,12 +23,12 @@ return {
     --	<C-t> go to a file in a new tab
     --	<C-q> send all items to quickfix list
 
-    -->f == find, fl=find-list,  fb=find-buffer, fh=find-help, fr=find-recent
+    -->f == files, fl=files-list,  fb=files-buffer, fh=files-help, fr=files-recent
     -- default mappings in docs are does not get enabled by default, need to be enabled here,
     -- :help telescope.command
     -- keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Fuzzy find files in cwd' })
     -- include find hidden files like .env
-    keymap.set('n', '<leader>ff', ':Telescope find_files hidden=true<cr>', { desc = 'Fuzzy all files in cwd' })
+    keymap.set('n', '<leader>fl', ':Telescope find_files hidden=true<cr>', { desc = 'Fuzzy all files in cwd' })
     keymap.set('n', '<leader>fg', ":Telescope live_grep<cr>", { desc = 'Find string in cwd' })
     keymap.set('n', '<leader>fb', builtin.buffers, {})
     keymap.set('n', '<leader>fh', builtin.help_tags, {})
@@ -54,7 +54,7 @@ return {
         -- vimgrep_arguments = {'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden', '--no-ignore' },
         file_ignore_patterns = {
           -- put `.ignore` file to exclude specific folders in specific directory, it works same as .gitignore (.gitignore for git, .ignore for telescope)
-          -- note: there is no way to ignore files in subdirectories, if you put * in home-directory's .ignore, it will not show files when you open telescope in any subdirectory 
+          -- note: there is no way to ignore files in subdirectories, if you put * in home-directory's .ignore, it will not show files when you open telescope in any subdirectory
           -- in lua: The dash in the string is interpreted as quantifier so I need to escape them.
           -- For example the package-lock.json should be package%-lock.json
           "package%-lock.json", -- nodejs project depedency installation history

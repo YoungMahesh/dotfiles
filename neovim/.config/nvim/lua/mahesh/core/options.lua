@@ -4,6 +4,8 @@ local opt = vim.opt
 -- :echo <variable-name> -- check current value of variable name
 -- :echo &<option-name>  -- check current value of option name
 -- :echo &tabstop
+-- :set foldmethod? -- check current value of option - foldmethod
+-- :set foldmethod=syntax -- change value of option - foldmethod
 
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 

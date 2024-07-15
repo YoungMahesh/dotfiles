@@ -28,7 +28,8 @@ return {
     -- :help telescope.command
     -- keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Fuzzy find files in cwd' })
     -- include find hidden files like .env
-    keymap.set('n', '<leader>fl', ':Telescope find_files hidden=true<cr>', { desc = 'Fuzzy all files in cwd' })
+    --keymap.set('n', '<leader>fl', ':Telescope find_files hidden=true<cr>', { desc = 'Fuzzy all files in cwd' })
+    keymap.set('n', '<C-p>', ':Telescope find_files hidden=true<cr>', { desc = 'Fuzzy all files in cwd' })
     keymap.set('n', '<leader>fg', ":Telescope live_grep<cr>", { desc = 'Find string in cwd' })
     keymap.set('n', '<leader>fb', builtin.buffers, {})
     keymap.set('n', '<leader>fh', builtin.help_tags, {})
@@ -46,7 +47,7 @@ return {
     --  builtin.grep_string({ search = vim.fn.input("Grep > ") });
     -- end)
     -- <C-p> = Ctrl+p
-    keymap.set('n', '<C-p>', builtin.git_files, {})
+    --keymap.set('n', '<C-p>', builtin.git_files, {})
 
     telescope.setup {
       defaults = {

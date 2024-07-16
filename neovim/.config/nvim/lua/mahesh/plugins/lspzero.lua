@@ -120,6 +120,9 @@ return {
           -- install prettier globally: npm install -g prettier
           -- format all files initially: prettier --write .
           -- format spacific file: prettier --write <file_path>, in neovim terminal '%' return path of current file
+          -- https://prettier.io/playground/
+          -- prettier does not put multiple function parameters on single line, even if they are few -> https://prettier.io/docs/en/option-philosophy
+          -- https://prettier.io/docs/en/options
           -- below is logic to format through keymap
           -- Get the current buffer content
           local bufnr2 = vim.api.nvim_get_current_buf()

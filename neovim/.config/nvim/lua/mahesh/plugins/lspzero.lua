@@ -110,13 +110,14 @@ return {
 
         vim.keymap.set('n', '<leader>ff', function()
           local file_type = vim.bo.filetype
-          if file_type ~= "typescript" and file_type ~= "javascript" and file_type ~= "typescriptreact" and file_type ~= "javascriptreact" then
-            --  vim.notify('Prettier formatting is only enabled for TypeScript/JavaScript files', vim.log.levels.WARN)
+          -- check file-type using ->  :LspInfo
+          local prettier_file_types = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'markdown' }
+          if not vim.tbl_contains(prettier_file_types, file_type) then
             vim.lsp.buf.format({ async = false, timeout_ms = 10000, formatting_options = { tabSize = 2, insertSpaces = true } })
             return
           end
 
-          -- format using prettier 
+          -- format using prettier
           -- install prettier globally: npm install -g prettier
           -- format all files initially: prettier --write .
           -- format spacific file: prettier --write <file_path>, in neovim terminal '%' return path of current file

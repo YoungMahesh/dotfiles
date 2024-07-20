@@ -29,7 +29,10 @@ return {
     -- keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Fuzzy find files in cwd' })
     -- include find hidden files like .env
     --keymap.set('n', '<leader>fl', ':Telescope find_files hidden=true<cr>', { desc = 'Fuzzy all files in cwd' })
-    keymap.set('n', '<C-p>', ':Telescope find_files hidden=true<cr>', { desc = 'Fuzzy all files in cwd' })
+    -- hidden=true - show files starting with . - like .env
+    -- no_ignore=true - show files form paths which are mentioned in .gitignore
+    --    large directories like node_modules are handled through defaults.file_ignore_patterns in telescope.setup
+    keymap.set('n', '<C-p>', ':Telescope find_files hidden=true no_ignore=true<cr>', { desc = 'Fuzzy all files in cwd' })
     keymap.set('n', '<leader>fg', ":Telescope live_grep<cr>", { desc = 'Find string in cwd' })
     keymap.set('n', '<leader>fb', builtin.buffers, {})
     keymap.set('n', '<leader>fh', builtin.help_tags, {})

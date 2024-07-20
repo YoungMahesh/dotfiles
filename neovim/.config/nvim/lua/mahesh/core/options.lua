@@ -29,6 +29,9 @@ opt.foldmethod = 'indent' -- :set foldmethod=syntax,manual,indent
 
 -- by default, all folds are closed, to keep all folds open when we open new file :set foldenable!
 opt.foldenable = false
+-- pressing zc will turn on folding (see :help zc), and this will make Vim apply 'foldlevel' which is 0 by default (meaning all folds will be closed). 
+-- So if you set 'foldlevel' to a high value in your vimrc it should work as expected. https://stackoverflow.com/a/5786588/12344647
+opt.foldlevel = 50
 
 ----------------------- does not work --------------------------------------------------
 -- :h fold-foldlevel 			:h foldlevel

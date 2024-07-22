@@ -94,12 +94,9 @@ keymap.set("n", "mm", "<cmd>marks ABCDE<cr>", { desc = "show marks list from a t
 -- ----------------- `:help fold` ------------------------------
 -- visual mode
 -- `zf`: fold
--- `zo` to open fold
+-- `zo` to open fold, `zO` open folds recursively
 -- `zc` to close fold
 -- you can created nested folds as well
--- `zE` to delete all folds
--- `zd` to delete current fold at cursor,
--- `zD` to delete all-folds(nested) at cursor
 -- `zR` to open all folds, `zM` to close all folds
 --
 ---------------------- :help f (movement on current line) ----------------------------------------

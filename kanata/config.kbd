@@ -1,0 +1,20 @@
+;; https://github.com/jtroo/kanata/blob/v1.6.1/docs/config.adoc
+;; https://youtu.be/XuQVbZ0wENE?si=9KHWEr9lcHhurzQC&t=356
+
+;; start temporarily (https://github.com/jtroo/kanata/releases/tag/v1.6.1)
+;; chmod +x kanata   # may be downloaded without executable permissions
+;; sudo ./kanata --cfg <cfg_file>`
+
+;; permanent installation: https://github.com/jtroo/kanata/discussions/130#discussioncomment-9970020
+
+;; define which keys we want to overwrite (https://github.com/jtroo/kanata/blob/v1.6.1/docs/config.adoc#defsrc)
+(defsrc
+  caps
+)
+
+;; 'default' is layer name here (it is custom, you can give anything you want)
+(deflayer default
+  esc
+)
+
+

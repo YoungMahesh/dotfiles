@@ -8,6 +8,16 @@ export NVM_DIR="$HOME/.nvm"
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
+
+# pnpm
+export PNPM_HOME="/home/mahesh/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+alias pn='pnpm'
+
+
 # . /usr/share/autojump/autojump.sh # enable autojump, no need in fish
 eval "$(starship init bash)"
 

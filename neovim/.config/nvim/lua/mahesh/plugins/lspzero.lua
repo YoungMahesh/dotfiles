@@ -1,5 +1,7 @@
 -- copied from docs: https://lsp-zero.netlify.app/v3.x/guide/lazy-loading-with-lazy-nvim.html
 -- :Mason to manage language servers
+-- :messages to check logs
+-- Ctrl+n to view all suggestions - such as available attributes on a react component
 return {
   {
     'VonHeikemen/lsp-zero.nvim',
@@ -177,7 +179,15 @@ return {
             -- (Optional) Configure tsserver for neovim
             -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
             -- if you use `setup()` instead of `setup({})`, it will give error: attempt to index local 'user_config' (a nil value)
-            require('lspconfig').tsserver.setup({})
+            require('lspconfig').tsserver.setup({
+              filetypes = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' }
+            })
+          end,
+
+          tailwindcss = function()
+            require('lspconfig').tailwindcss.setup({
+              filetypes = { 'typescriptreact', 'javascriptreact' }
+            })
           end,
         }
       })

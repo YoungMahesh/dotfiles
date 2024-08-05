@@ -15,7 +15,7 @@ local keymap = vim.keymap
 -- <C-u> == Ctrl+u
 keymap.set({ "n", "v" }, "a", "A", { desc = "move and insert at end of line" })
 keymap.set("n", "r", "<C-r>", { desc = "redo" })
-keymap.set({ "n", "v" }, "9", "$", { desc = "moved to end of line" })
+keymap.set({ "n", "v" }, "9", "$", { desc = "moved to end of line", noremap = true })
 keymap.set({ "n", "v" }, "q", "<C-u>", { desc = "move up half of viewport" })
 keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })
 
@@ -26,13 +26,15 @@ keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })
 -- use P to paste text copied from browser after this change
 -- keymap.set({ "n", "v" }, "p", '"0p', { desc = "paste but retain pasted-text in register" }) -- not using, as it does paste text which is cut with 'd'
 -- `noremap = true` makes mapping non-recursive
-keymap.set("n", "s", "<Nop>", { noremap = true, desc = "remove key s" })           -- avoid accidentail-execution (due to delay) of `s` while using keymaps like `ss`
-keymap.set("n", "x", "<Nop>", { noremap = true, desc = "remove key s" })           -- avoid accidentail-execution (due to delay) of `x` while using keymaps like `sx`
-keymap.set("n", "T", "<Nop>", { noremap = true, desc = "Toggle maximize window" }) -- used by tmux-config
+-- accidental-execution: unexpected cmd execution due accidental delay between <leader> and other-kay
+keymap.set("n", "s", "<Nop>", { noremap = true, desc = "remove key s" }) -- avoid accidental-execution (ss)
+keymap.set("n", "x", "<Nop>", { noremap = true, desc = "remove key s" }) -- avoid accidental-execution (sx)
+keymap.set("n", "T", "<Nop>", { noremap = true })                        -- used by tmux-config
+keymap.set('n', 'c', '<Nop>', { noremap = true })                        -- avoid accidental-execution (cn)
 keymap.set("n", "ss", "<cmd>wa<CR>", { desc = "save all files" })
 keymap.set("n", "sq", "<cmd>qa<CR>", { desc = "close all files" })
 keymap.set("n", "sx", "<cmd>xa<CR>", { desc = "save all files and close" })
-keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "close current file" })
+keymap.set('n', '<C-a>', '0ggvG$', { desc = 'select all text on current page/buffer' })
 
 -- ->t == tab
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
@@ -52,6 +54,8 @@ keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" })
 
 --------------------------------- quickfix list ----------------------------------------
+keymap.set("n", "<leader>cn", "<cmd>cn<CR>", { desc = "open next item in quickfix list" })
+keymap.set("n", "<leader>cp", "<cmd>cp<CR>", { desc = "open previous item in quickfix list" })
 --:copen " Open the quickfix window
 --:ccl   " Close it
 --:cw    " Open it if there are "errors", close it otherwise (some people prefer this)
@@ -122,18 +126,6 @@ keymap.set("n", "mm", "<cmd>marks ABCDE<cr>", { desc = "show marks list from a t
 -- if you want to change word, type `.` which will follow previous process
 -- else type `n` to move to next word
 --
----------------------- ->netrw keybindings ---------------------------------
--- change Vim's current directory to match the directory you're browsing in Netrw, helps during copy-file
--- vim.g.netrw_keepdir = 0  -- cannot use as harpoon, telescope shows files only in current directory once netrw is opened
--- %          - create new file
--- d          - create new directory
--- R          - rename path/file
--- D          - delete
--- delete non-empty directory: mf(mark directory) -> mx(apply shell commands to marked files) -> rm -rf <enter>
--- move file: mt(mark target directory) -> mf(mark file) -> mc(copy marked file to target directory)
--- copy file in same directory: mt(go outside and mark current directory) -> mf(come inside and mark file) -> mc(copy file) -> you will get prompt for name of the file
---
---
 -- ------------------ -> code snippets -----------------------
 -- t == type, te = type-empty, td = type-div
 keymap.set('n', 'te', function()
@@ -142,5 +134,3 @@ end, { noremap = true, silent = true })
 keymap.set('n', 'td', function()
   vim.api.nvim_put({ '<div></div>' }, '', true, false)
 end, { noremap = true, silent = true })
-
-

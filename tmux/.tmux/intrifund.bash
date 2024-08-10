@@ -13,9 +13,9 @@ tmux new-window -t nc:1 -n contracts
 tmux send-keys -t nc:contracts 'cd ~/company/intrifund/contracts' C-m
 
 tmux new-window -t nc:2 -n localhost
-tmux send-keys -t nc:localhost 'cd ~/company/intrifund/intrifund' C-m
+tmux send-keys -t nc:localhost 'cd ~/company/intrifund/contracts' C-m
 tmux split-window -h -t nc:localhost
-tmux send-keys -t nc:localhost.1 'cd ~/company/intrifund/contracts' C-m
+tmux send-keys -t nc:localhost.1 'cd ~/company/intrifund/intrifund' C-m
 #tmux send-keys -t nc:localhost.1 'bash start.localnet.bash' C-m
 
 tmux new-window -t nc:3 -n note

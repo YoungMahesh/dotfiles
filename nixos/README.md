@@ -2,6 +2,10 @@
 nixos-rebuild switch
 ```
 
+### after installation
+- brightness (this is simplest way)
+    - open firefox -> visit 'soft-brightness-plus' of gnome -> install -> done
+
 ### error while installation
 - fix partitioning error
     - format sdd/hdd where you want to install nixos with ext4 file system

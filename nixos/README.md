@@ -9,6 +9,7 @@ nixos-rebuild switch
 ### error while installation
 - fix partitioning error
     - format sdd/hdd where you want to install nixos with ext4 file system
+    - select 'no swap' option while partitioning
 
 ### manual partitioning
 - new partition table -> GUID, partition type: GPT

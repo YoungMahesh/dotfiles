@@ -63,11 +63,14 @@ return {
           -- For example the package-lock.json should be package%-lock.json
           "package%-lock.json", -- nodejs project depedency installation history
           "pnpm%-lock.yaml",
-          ".git/",              -- we need hidden=true to see .env files, but it results in showing .git files also, hence excluding them
+          "%.git/",              -- we need hidden=true to see .env files, but it results in showing .git files also, hence excluding them
           "node_modules",       -- path for nodejs modules
-          ".next",              -- output of 'nextjs build'
-          "typechain",          -- types directory created by typechain npm package
-          "artifacts",          -- solidity contract artifacts
+          -- output of 'nextjs build', trailng '/' ensures only folder is exclude and not any files with name 'next' in it
+          -- '.', is special character which will match with anything, to avoid hiding folders with 'next' in it, use "%" before '.'
+          "%.next/",
+          "typechain/", -- types directory created by typechain npm package
+          "artifacts/", -- solidity contract artifacts
+          "a%.out", -- output after cpp file compilation 
         }
       }
     }

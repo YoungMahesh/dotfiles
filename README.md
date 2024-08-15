@@ -1,3 +1,6 @@
+### installation steps
+- ssh-setup -> download dotfiles -> kanata -> neovim -> bash -> fonts -> alacritty -> 
+
 ### initialize
 ```bash
 sudo apt install stow  # install gnu-stow

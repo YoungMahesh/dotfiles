@@ -55,7 +55,16 @@ return {
     telescope.setup {
       defaults = {
         -- vimgrep_arguments can be applied to all commands through here or to specific command, as shown in one of the comments above
-        -- vimgrep_arguments = {'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden', '--no-ignore' },
+        -- -- rg (ripgrep - search utility),
+        -- The order of arguments in Lua functions matters. When calling a function, Lua adjusts the number of arguments to the number of parameters. Extra arguments are thrown away, and extra parameters get nil
+        -- --color=never  - ensures that the output does not include color codes.
+        -- --no-heading   - suppresses the heading line with the file name.
+        -- --with-filename - includes the file name in the output.
+        -- --line-number  - includes the line number in the output.
+        -- --column       - includes the column number in the output.
+        -- --smart-case   - enables smart case matching.
+        -- --hidden       - includes hidden files in the search.
+        vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden', '--no-ignore' },
         file_ignore_patterns = {
           -- put `.ignore` file to exclude specific folders in specific directory, it works same as .gitignore (.gitignore for git, .ignore for telescope)
           -- note: there is no way to ignore files in subdirectories, if you put * in home-directory's .ignore, it will not show files when you open telescope in any subdirectory
@@ -63,14 +72,14 @@ return {
           -- For example the package-lock.json should be package%-lock.json
           "package%-lock.json", -- nodejs project depedency installation history
           "pnpm%-lock.yaml",
-          "%.git/",              -- we need hidden=true to see .env files, but it results in showing .git files also, hence excluding them
+          "%.git/",             -- we need hidden=true to see .env files, but it results in showing .git files also, hence excluding them
           "node_modules",       -- path for nodejs modules
           -- output of 'nextjs build', trailng '/' ensures only folder is exclude and not any files with name 'next' in it
           -- '.', is special character which will match with anything, to avoid hiding folders with 'next' in it, use "%" before '.'
           "%.next/",
           "typechain/", -- types directory created by typechain npm package
           "artifacts/", -- solidity contract artifacts
-          "a%.out", -- output after cpp file compilation 
+          "a%.out",     -- output after cpp file compilation
         }
       }
     }

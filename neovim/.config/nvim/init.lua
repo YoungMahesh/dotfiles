@@ -17,6 +17,7 @@
 --    on nixos install `gcc` package
 -- nodejs to install packages like tsserver
 -- https://github.com/BurntSushi/ripgrep for telescope
+-- eslint_d :Mason -> eslint_d -> i
 
 require("mahesh.core")
 

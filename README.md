@@ -1,5 +1,5 @@
 ### installation steps
-- ssh-setup -> download dotfiles -> kanata -> neovim -> bash -> fonts -> alacritty -> 
+- ssh-setup -> download dotfiles -> kanata -> neovim -> bash -> fonts -> kitty -> 
 
 ### initialize
 ```bash

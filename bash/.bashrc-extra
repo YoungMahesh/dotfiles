@@ -1,4 +1,4 @@
-# custom .bashrc configuration
+# append this line to os generated .bashrc file: source ~/.bashrc-extra
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -19,7 +19,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # . /usr/share/autojump/autojump.sh # enable autojump, no need in fish
-eval "$(starship init bash)"
+eval "$(starship init bash)" # https://starship.rs/
 
 # golang path
 #export PATH=$PATH:/usr/local/go/bin
@@ -63,4 +63,4 @@ alias nccache='cd ~/company/nft-clash/utilities/cache-server'
 # remember: if you want to swich store, you need to run command in new terminal
 # e.g. if you ran `pass` in current terminal-window, you need to open new window to run `notes`
 #alias pass='export PASSWORD_STORE_DIR=~/.password-store; pass'  # .password-store is default, hence no need to define separately
-alias notes='export PASSWORD_STORE_DIR=~/.notes-store; pass'
+#alias notes='export PASSWORD_STORE_DIR=~/.notes-store; pass'

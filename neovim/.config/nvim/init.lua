@@ -15,6 +15,8 @@
 -- treesitter and mason needs c compiler such as gcc, 
 --    on ubuntu install compilers with: `sudo apt install build-essential`
 --    on nixos install `gcc` package
+-- nodejs to install packages like tsserver
+-- https://github.com/BurntSushi/ripgrep for telescope
 
 require("mahesh.core")
 

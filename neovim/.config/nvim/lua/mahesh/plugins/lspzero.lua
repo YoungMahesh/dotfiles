@@ -136,8 +136,11 @@ return {
           local prettier_output = vim.fn.system('prettier --stdin-filepath ' .. vim.fn.shellescape(vim.fn.expand('%')),
             content)
 
+          local output = vim.fn.systemlist('prettier --stdin-filepath ' .. vim.fn.shellescape(vim.fn.expand('%')),
+            content)
           if vim.v.shell_error ~= 0 then
-            vim.notify('Prettier encountered an error', vim.log.levels.ERROR)
+            local errmsg = table.concat(output, '\n')
+            vim.notify('Prettier encountered an error: ' .. errmsg, vim.log.levels.ERROR)
             return
           end
 
@@ -159,7 +162,7 @@ return {
         --    need to create `.sqllsrc.json` file at the root of your project (https://github.com/joe-re/sql-language-server?tab=readme-ov-file#configuration)
         --      content can be empty json: {}
         ensure_installed = { "lua_ls", "tsserver", "cssls", "tailwindcss", "prismals", "clangd", "solidity_ls_nomicfoundation" },
-        -- not needed for now:  "gopls" 
+        -- not needed for now:  "gopls"
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"

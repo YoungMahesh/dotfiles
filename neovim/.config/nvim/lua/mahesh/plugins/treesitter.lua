@@ -24,11 +24,13 @@ return { {
       indent = { enable = true },
     })
   end
-}, {
-  'nvim-treesitter/playground',
-  --  :InspectTree,   - AST (abstract syntax tree) - strutctured source code
-  --  :q
-  --  :Inspect
-  --  :EditQuerya  - extract specific data from AST using query
-  --  TSPlaygroundToggle
-} }
+},
+--{
+--  'nvim-treesitter/playground',
+--  --  :InspectTree,   - AST (abstract syntax tree) - strutctured source code
+--  --  :q
+--  --  :Inspect
+--  --  :EditQuerya  - extract specific data from AST using query
+--  --  TSPlaygroundToggle
+--} 
+}

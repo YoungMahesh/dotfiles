@@ -1,4 +1,4 @@
--- installation/upgrade, `nvim --version`: 0.9.5
+-- installation/upgrade, `nvim --version`: 0.9.5 -> 0.10.1 (on 26-august-2024)
 -- do not move to new version until it becomes 3 month old, as plugins may not be compatible with new version
 -- remove previous installation cache (taken from lazyvim installation script):
 --	 mv ~/.local/share/nvim{,.bak}

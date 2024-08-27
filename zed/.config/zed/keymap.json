@@ -5,7 +5,8 @@
     "bindings": {
       "a": "vim::InsertEndOfLine",
       ";": "vim::ScrollDown",
-      "q": "vim::ScrollUp"
+      "q": "vim::ScrollUp",
+      "9": "vim::EndOfLine"
       // put key-bindings here if you want them to work in normal & visual mode
     }
   }

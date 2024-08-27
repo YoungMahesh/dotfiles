@@ -109,6 +109,14 @@ return {
         --  vim.lsp.buf.format({ async = false, timeout_ms = 10000, formatting_options = { tabSize = 2, insertSpaces = true } })
         --end, opts)
 
+        local function find_prettier()
+          local prettier_path = vim.fn.getcwd() .. '/node_modules/.bin/prettier'
+          if vim.fn.executable(prettier_path) == 1 then
+            return prettier_path
+          else
+            return 'prettier'
+          end
+        end
 
         vim.keymap.set('n', '<leader>ff', function()
           local file_type = vim.bo.filetype
@@ -132,11 +140,13 @@ return {
           local lines = vim.api.nvim_buf_get_lines(bufnr2, 0, -1, false)
           local content = table.concat(lines, '\n')
 
+          local prettier_cmd = find_prettier()
+
           -- Run Prettier on the content
-          local prettier_output = vim.fn.system('prettier --stdin-filepath ' .. vim.fn.shellescape(vim.fn.expand('%')),
+          local prettier_output = vim.fn.system(prettier_cmd .. ' --stdin-filepath ' .. vim.fn.shellescape(vim.fn.expand('%')),
             content)
 
-          local output = vim.fn.systemlist('prettier --stdin-filepath ' .. vim.fn.shellescape(vim.fn.expand('%')),
+          local output = vim.fn.systemlist(prettier_cmd .. ' --stdin-filepath ' .. vim.fn.shellescape(vim.fn.expand('%')),
             content)
           if vim.v.shell_error ~= 0 then
             local errmsg = table.concat(output, '\n')

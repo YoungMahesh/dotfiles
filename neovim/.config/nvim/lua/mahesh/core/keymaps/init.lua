@@ -70,9 +70,8 @@ keymap.set("n", "<leader>cp", "<cmd>cp<CR>", { desc = "open previous item in qui
 -- [count]chistory     " open count'th quickfix list from chistory-list
 
 ----------------------------> f == explorer -------------------------------------------------
--- %: create new file, d: create new directory
+-- %: create new file, d: create new directory, D: delete file or empty directory
 keymap.set('n', '<leader>fv', vim.cmd.Ex)
---keymap.set('n', '<leader>ff', '<cmd>e#<cr>', { desc = 'go to previous file' })
 keymap.set('n', '<C-i>', '<cmd>e#<cr>', { noremap = true, silent = true }) -- <C-i> == tab
 -----------------------------> s == save ------------------------------------
 -- :w        save changes in current file

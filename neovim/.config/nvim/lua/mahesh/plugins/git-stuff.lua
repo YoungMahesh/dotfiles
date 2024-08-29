@@ -10,7 +10,7 @@ return {
     --  `O` open file under cursor in new tab
     -- :G commit # commit changes
     config = function()
-      vim.keymap.set("n", "<leader>go", ":0G<cr>")
+      vim.keymap.set("n", "<leader>go", "<cmd>0G<cr>")
     end,
   },
   --{

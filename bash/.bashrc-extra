@@ -65,6 +65,9 @@ alias nccache='cd ~/company/nft-clash/utilities/cache-server'
 #alias pass='export PASSWORD_STORE_DIR=~/.password-store; pass'  # .password-store is default, hence no need to define separately
 alias notes='export PASSWORD_STORE_DIR=~/.notes-store; pass'
 
+# notes
+alias private='export PASSWORD_STORE_DIR=~/.notes2; pass'
+
 # Check if we are already inside a tmux session
 if [ -z "$TMUX" ]; then
   # If not inside a tmux session, start a new one

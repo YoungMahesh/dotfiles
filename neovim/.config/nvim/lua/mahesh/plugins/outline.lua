@@ -2,8 +2,11 @@ return {
   "hedyhli/outline.nvim",
   config = function()
     -- Example mapping to toggle outline
-    vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>",
+    --    vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>",
+    --      { desc = "Toggle Outline" })
+    vim.keymap.set("n", "<leader>o", "<cmd>OutlineOpen<CR>",
       { desc = "Toggle Outline" })
+
 
     require("outline").setup {
       outline_window = {
@@ -167,11 +170,11 @@ return {
         -- Jump to symbol under cursor.
         -- It can auto close the outline window when triggered, see
         -- 'auto_close' option above.
-        goto_location = '<S-Cr>',
+        goto_location = '<Cr>',
         -- Jump to symbol under cursor but keep focus on outline window.
         peek_location = 'o',
         -- Visit location in code and close outline immediately
-        goto_and_close = '<Cr>',
+        goto_and_close = '<S-Cr>',
         -- Change cursor position of outline window to match current location in code.
         -- 'Opposite' of goto/peek_location.
         restore_location = '<C-g>',

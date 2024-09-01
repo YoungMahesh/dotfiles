@@ -17,6 +17,9 @@ export NVM_DIR="$HOME/.nvm"
 #esac
 #alias pn='pnpm'
 
+# if you have installed vlc through flathub
+#alias vlc='flatpak run org.videolan.VLC'
+
 
 # . /usr/share/autojump/autojump.sh # enable autojump, no need in fish
 eval "$(starship init bash)" # https://starship.rs/

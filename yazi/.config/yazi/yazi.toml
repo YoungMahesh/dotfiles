@@ -1,0 +1,10 @@
+# installation: 
+#     1. download .snap package from: https://github.com/sxyazi/yazi/releases
+#     2. sudo snap install --classic --dangerous ./yazi.snap
+# uninstall: sudo snap remove yazi
+
+# below code is not working properly
+#[opener]
+#play = [
+#  {run = 'vlc "$0"', desc = 'Open with VLC'}
+#]

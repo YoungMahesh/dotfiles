@@ -8,11 +8,11 @@
 -- 2. installation script: https://github.com/neovim/neovim/blob/master/INSTALL.md#linux
 -- nvim --version
 -- :checkhealth
--- :help config, default path: ~/.config/nvim/init.lua 
+-- :help config, default path: ~/.config/nvim/init.lua
 -- define config path: export $XDG_CONFIG_HOME=<path-name>, neovim will look for $XDG_CONFIG_HOME=/nvim/init.lua
 
 -- requirements:
--- treesitter, mason needs c compiler such as gcc, 
+-- treesitter, mason needs c compiler such as gcc,
 --    on ubuntu install compilers with: `sudo apt install build-essential`
 --    on nixos install `gcc` package
 -- tsserver needs npm to install packages

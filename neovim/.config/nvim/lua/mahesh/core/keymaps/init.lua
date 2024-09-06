@@ -1,6 +1,10 @@
+require("mahesh.core.keymaps.disabled")
 require("mahesh.core.keymaps.mark")
 require("mahesh.core.keymaps.netrw")
--- check default keymap: :help <keymap>
+require("mahesh.core.keymaps.quickfix")
+-- NOTE: when you update keymap, to test changes, you first need to close all nvim instances
+-- check default keymap documentation: :help <keymap>
+--    some of the default keymaps are disabled in keymaps.disabled file
 -- check specific keymap: `:map <keymap>` or `:map <leader><keymap>`
 -- check all keymaps: `:map` or `:map <leader>`
 -- check all keymaps in normal mode: `:nmap`
@@ -28,11 +32,6 @@ keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })
 -- use P to paste text copied from browser after this change
 -- keymap.set({ "n", "v" }, "p", '"0p', { desc = "paste but retain pasted-text in register" }) -- not using, as it does paste text which is cut with 'd'
 -- `noremap = true` makes mapping non-recursive
--- accidental-execution: unexpected cmd execution due accidental delay between <leader> and other-kay
-keymap.set("n", "s", "<Nop>", { noremap = true, desc = "remove key s" }) -- avoid accidental-execution (ss)
-keymap.set("n", "x", "<Nop>", { noremap = true, desc = "remove key s" }) -- avoid accidental-execution (sx)
-keymap.set("n", "T", "<Nop>", { noremap = true })                        -- used by tmux-config
-keymap.set('n', 'cn', '<Nop>', { noremap = true })                       -- avoid accidental-execution (cn), `:help cn`
 keymap.set("n", "ss", "<cmd>wa<CR>", { desc = "save all files" })
 keymap.set("n", "sq", "<cmd>qa<CR>", { desc = "close all files" })
 keymap.set("n", "sx", "<cmd>xa<CR>", { desc = "save all files and close" })
@@ -55,20 +54,6 @@ keymap.set("n", "<leader>ww", "<C-w>w", { desc = "Cycle cursor to the next windo
 keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" })
 
---------------------------------- quickfix list ----------------------------------------
-keymap.set("n", "<leader>cn", "<cmd>cn<CR>", { desc = "open next item in quickfix list" })
-keymap.set("n", "<leader>cp", "<cmd>cp<CR>", { desc = "open previous item in quickfix list" })
---:copen " Open the quickfix window
---:ccl   " Close it
---:cw    " Open it if there are "errors", close it otherwise (some people prefer this)
---:[count]cn    " Go to the next error in the window, if count is given go to count-th next error
---:[count]cp    " Go to the previous error in the window, if count is given go to count-th previous error
---:cnf   " Go to the first error in the next file
---:[count]cc   " Go to error under cursor (if cursor is in quickfix window), if count is given go to count-th error
--- `Ctrl+w` to move to and out of quickfix list window
--- chistory     " Open all quickfix lists opened until now in current session
--- [count]chistory     " open count'th quickfix list from chistory-list
-
 ----------------------------> f == explorer -------------------------------------------------
 -- %: create new file, d: create new directory, D: delete file or empty directory
 keymap.set('n', '<leader>fv', vim.cmd.Ex)
@@ -90,6 +75,8 @@ keymap.set('n', '<C-i>', '<cmd>e#<cr>', { noremap = true, silent = true }) -- <C
 -- you can created nested folds as well
 -- `zR` to open all folds, `zM` to close all folds
 --
+-- ------------------- visual line ------------------------
+-- Shift+v: enter visual line mode, start selecting whole lines
 ---------------------- :help f (movement on current line) ----------------------------------------
 -- fm: move cursor to next character 'm' on current line
 -- Fk: move cursor to last character 'k' on current line

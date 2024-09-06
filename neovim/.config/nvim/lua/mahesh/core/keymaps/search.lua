@@ -2,7 +2,8 @@
 -- 1) search text by typing ->   /<search-text>  -> in normal mode
 -- 2) search hovered word ->  type `*` in normal mode
 -- move through search results -> enter, after this use `n` or `N` to move through search-results
----------------------- ->search and replace ---------------------------------
+
+---------------------- ->search and replace (single page) ---------------------------------
 -- Trick 1 (:help /)
 --    1. search word with -> /<word><cr>
 --    2. type `cw` (change word) -> type new word -> Esc
@@ -14,3 +15,20 @@
 --        replace `~/` with `@/`:   1) `:%s/\~\/` search for ~/, we need escape both ~ and /
 --                                  2) `:%s/\~\//@\//g` here additional code is `/@\//g` where `/` boundary between search and replace
 --                                 `/@\/` defines replacement text as @/    `/@\//g` defines do this globally
+
+--  ----------- -> store search results in quickfix list ----------------
+--  Single File
+--    :vimgrep /pattern/ %
+--
+--  Multiple File
+--    search in telescope -> Ctrl+q -> will send search results to quickfix list
+
+--  -------------- search and replace (multiple pages)
+--  -> following things does not work with with special characters like ~ or /
+--      just open zed with `zed .` in path -> Ctrl+Shift+f to search in all files -> replace-one (to verify changes) -> replace all -> exit
+--  1. store search results in quickfix list
+--  2. execute ->   :cfdo %s/<text-to-remove>/<text-to-add>/g | update | bd
+--    reference -> cfdo == execute in each file in quickfix list, %s == substitute, 
+--    update == save modified buffer (else we need to write all changes), bd == delete buffer (to free ram)
+--    :help cfdo, :help %, :help s, :help update, :help bd 
+--

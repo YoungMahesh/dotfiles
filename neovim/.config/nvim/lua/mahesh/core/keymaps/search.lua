@@ -1,0 +1,16 @@
+---------------------- ->search ---------------------------------
+-- 1) search text by typing ->   /<search-text>  -> in normal mode
+-- 2) search hovered word ->  type `*` in normal mode
+-- move through search results -> enter, after this use `n` or `N` to move through search-results
+---------------------- ->search and replace ---------------------------------
+-- Trick 1
+--    1. search word with -> /<word><cr>
+--    2. type `cw` (change word) -> type new word -> Esc
+--    3. move to next word by typing `n`
+--    4. if you want to change word, type `.` which will follow previous process, else type `n` to move to the next word
+-- Trick 2
+--    search and replace all lines: `:%s/<search-word>/<replace-word>/g` 
+--        %s=substitute, g=global
+--        replace `~/` with `@/`:   1) `:%s/\~\/` search for ~/, we need escape both ~ and /
+--                                  2) `:%s/\~\//@\//g` here additional code is `/@\//g` where `/` boundary between search and replace
+--                                 `/@\/` defines replacement text as @/    `/@\//g` defines do this globally

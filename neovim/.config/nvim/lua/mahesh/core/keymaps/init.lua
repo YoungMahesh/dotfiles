@@ -32,7 +32,7 @@ keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })
 keymap.set("n", "s", "<Nop>", { noremap = true, desc = "remove key s" }) -- avoid accidental-execution (ss)
 keymap.set("n", "x", "<Nop>", { noremap = true, desc = "remove key s" }) -- avoid accidental-execution (sx)
 keymap.set("n", "T", "<Nop>", { noremap = true })                        -- used by tmux-config
-keymap.set('n', 'c', '<Nop>', { noremap = true })                        -- avoid accidental-execution (cn)
+keymap.set('n', 'cn', '<Nop>', { noremap = true })                       -- avoid accidental-execution (cn), `:help cn`
 keymap.set("n", "ss", "<cmd>wa<CR>", { desc = "save all files" })
 keymap.set("n", "sq", "<cmd>qa<CR>", { desc = "close all files" })
 keymap.set("n", "sx", "<cmd>xa<CR>", { desc = "save all files and close" })
@@ -82,9 +82,6 @@ keymap.set('n', '<C-i>', '<cmd>e#<cr>', { noremap = true, silent = true }) -- <C
 -- ------------------------ comments ---------------------------------------------------------------
 -- -- `ctrl-v` to enter visual-block mode, select lines, `I` to insert, type `--` and press `esc` to add comments to selected lines
 
--- search and replace all lines: `%s/<search-word>/<replace-word>/g` %s=substitute, g=global
--- search and replace current line: s/<search-word>/<replace-word>/g
-
 -- ----------------- `:help fold` ------------------------------
 -- visual mode
 -- `zf`: fold
@@ -109,13 +106,8 @@ keymap.set('n', '<C-i>', '<cmd>e#<cr>', { noremap = true, silent = true }) -- <C
 --
 -- echo $XDG_RUNTIME_DIR
 
----------------------- ->search and replace ---------------------------------
--- search word with :/<word><cr>
--- type `cw` (change word) -> type new word -> Esc
--- move to next word by typing `n`
--- if you want to change word, type `.` which will follow previous process
--- else type `n` to move to next word
---
+
+
 -- ------------------ -> code snippets -----------------------
 -- t == type, te = type-empty, td = type-div
 keymap.set('n', 'te', function()

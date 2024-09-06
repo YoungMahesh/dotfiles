@@ -3,12 +3,12 @@
 -- 2) search hovered word ->  type `*` in normal mode
 -- move through search results -> enter, after this use `n` or `N` to move through search-results
 ---------------------- ->search and replace ---------------------------------
--- Trick 1
+-- Trick 1 (:help /)
 --    1. search word with -> /<word><cr>
 --    2. type `cw` (change word) -> type new word -> Esc
 --    3. move to next word by typing `n`
 --    4. if you want to change word, type `.` which will follow previous process, else type `n` to move to the next word
--- Trick 2
+-- Trick 2 (:help %), (:help s)
 --    search and replace all lines: `:%s/<search-word>/<replace-word>/g` 
 --        %s=substitute, g=global
 --        replace `~/` with `@/`:   1) `:%s/\~\/` search for ~/, we need escape both ~ and /

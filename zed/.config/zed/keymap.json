@@ -1,27 +1,35 @@
 [
+  // ctrl-shift-p -> vim: open default keymap
+  // ctrl-shift-p -> zed: open default keymap
   // https://zed.dev/docs/vim#custom-key-bindings
   {
     "context": "VimControl && !menu",
     "bindings": {
+      // put key-bindings here if you want them to work in normal & visual mode
       "a": "vim::InsertEndOfLine",
       ";": "vim::ScrollDown",
       "q": "vim::ScrollUp",
-      "9": "vim::EndOfLine"
-      // put key-bindings here if you want them to work in normal & visual mode
+      "9": "vim::EndOfLine",
+      "space f f": "editor::Format",
+      "s s": "workspace::SaveAll",
+      "ctrl-w": "pane::CloseActiveItem",
+      "space f v": "project_panel::ToggleFocus",
+      "space o": "outline::Toggle"
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion",
+      "enter": "editor::Newline"
     }
   }
+  // documentation
+  // editor::LineDown - move view of screen down by one line
   //{
-  //  "context": "vim_mode == insert",
+  //  "context": "Workspace",
   //  "bindings": {
-  //    // "j k": "vim::NormalBefore" // remap jk in insert mode to escape.
-  //  }
-  //},
-  //{
-  //  "context": "EmptyPane || SharedScreen",
-  //  "bindings": {
-  //    // put key-bindings here (in addition to above) if you want them to
-  //    // work when no editor exists
-  //    // "space f": "file_finder::Toggle"
+  //    "ctrl-t": "terminal_panel::ToggleFocus"
   //  }
   //}
 ]

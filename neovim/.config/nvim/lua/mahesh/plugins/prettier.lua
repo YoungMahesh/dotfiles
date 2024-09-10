@@ -21,40 +21,33 @@ local function format_buffer()
     return
   end
 
-  -- format using prettier
+  -- install pip (package manager for python): sudo apt install python3 python3-pip -y
+  -- install autopep8 (formatter for python):
+
+  -------------------------- Format using Prettier -----------------------------------
   -- install prettier globally: npm install -g prettier
   -- format all files initially: prettier --write .
   -- format spacific file: !prettier --write %, in neovim terminal '%' return path of current file
   -- https://prettier.io/playground/
   -- prettier does not put multiple function parameters on single line, even if they are few -> https://prettier.io/docs/en/option-philosophy
   -- https://prettier.io/docs/en/options
-  -- below is logic to format through keymap
-  -- Get the current buffer content
-  local bufnr2 = vim.api.nvim_get_current_buf()
-  local lines = vim.api.nvim_buf_get_lines(bufnr2, 0, -1, false)
-  local content = table.concat(lines, '\n')
 
   local prettier_cmd = find_prettier()
 
-  -- Run Prettier on the content
-  local prettier_output = vim.fn.system(
-    prettier_cmd .. ' --stdin-filepath ' .. vim.fn.shellescape(vim.fn.expand('%')),
-    content)
+  -- Format the file
+  -- % refers to the current file name relative to the current working directory.
+  -- %:p expands to the full (absolute) path of the current file, p == path
+  local filename = vim.fn.expand('%:p')
+  local output = vim.fn.system(prettier_cmd .. ' --write ' .. vim.fn.shellescape(filename))
 
-  local output = vim.fn.systemlist(
-    prettier_cmd .. ' --stdin-filepath ' .. vim.fn.shellescape(vim.fn.expand('%')),
-    content)
+  -- handle error
   if vim.v.shell_error ~= 0 then
-    local errmsg = table.concat(output, '\n')
-    vim.notify('Prettier encountered an error: ' .. errmsg, vim.log.levels.ERROR)
+    vim.notify('Prettier encountered an error: ' .. output, vim.log.levels.ERROR)
     return
   end
 
-  -- Replace buffer content with formatted content
-  local formatted_lines = vim.split(prettier_output, '\n')
-  vim.api.nvim_buf_set_lines(bufnr2, 0, -1, false, formatted_lines)
-
-  --vim.notify('Buffer formatted', vim.log.levels.INFO)
+  -- Reload the buffer
+  vim.cmd('edit!')
 end
 
 vim.keymap.set('n', '<leader>ff', function()

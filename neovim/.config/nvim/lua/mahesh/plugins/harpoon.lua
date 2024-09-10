@@ -19,13 +19,13 @@ return {
       { desc = 'Open harpoon list' })
 
     --> Shift+a -> already mapped at append at end of the line
-    vim.keymap.set("n", "<leader>h1", function() harpoon:list():select(1) end)
-    vim.keymap.set("n", "<leader>h2", function() harpoon:list():select(2) end)
-    vim.keymap.set("n", "<leader>h3", function() harpoon:list():select(3) end)
-    vim.keymap.set("n", "<leader>h4", function() harpoon:list():select(4) end)
+    --vim.keymap.set("n", "<leader>h1", function() harpoon:list():select(1) end)
+    --vim.keymap.set("n", "<leader>h2", function() harpoon:list():select(2) end)
+    --vim.keymap.set("n", "<leader>h3", function() harpoon:list():select(3) end)
+    --vim.keymap.set("n", "<leader>h4", function() harpoon:list():select(4) end)
 
-    -- Toggle previous & next buffers stored within Harpoon list, A == Alt
-    vim.keymap.set("n", "<A-k>", function() harpoon:list():prev() end)
-    vim.keymap.set("n", "<A-j>", function() harpoon:list():next() end)
+    -- Toggle previous & next buffers stored within Harpoon list, A == Alt, C == Control
+    vim.keymap.set("n", "<C-k>", function() harpoon:list():prev() end)
+    vim.keymap.set("n", "<C-j>", function() harpoon:list():next() end)
   end,
 }

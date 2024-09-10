@@ -43,6 +43,8 @@ export EDITOR=nvim
 export PATH="$PATH:/opt/nvim-linux64/bin"
 alias vi=nvim
 
+# python
+alias python=python3
 
 # git shortcuts
 alias gs='git status'
@@ -57,10 +59,6 @@ alias gp='git push'
 # directory shortcuts
 alias nftclash='bash ~/.tmux/nftclash-setup.bash'
 alias intrifund='bash ~/.tmux/intrifund.bash'
-alias ncf='cd ~/company/nft-clash/apps/frontend'
-alias ncc='cd ~/company/nft-clash/contracts'
-alias neovim='cd ~/dotfiles/neovim/.config/nvim'
-alias nccache='cd ~/company/nft-clash/utilities/cache-server'
 
 # password-store 
 # remember: if you want to swich store, you need to run command in new terminal

@@ -13,6 +13,9 @@ local function find_prettier()
 end
 
 local function format_buffer()
+  -- save the current buffer
+  vim.cmd('silent! write')
+
   local file_type = vim.bo.filetype
   -- check file-type using ->  `:echo &filetype` or  `:LspInfo`
   local prettier_file_types = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'markdown' }
@@ -20,17 +23,6 @@ local function format_buffer()
     vim.lsp.buf.format({ async = false, timeout_ms = 10000, formatting_options = { tabSize = 2, insertSpaces = true } })
     return
   end
-
-  -- install pip (package manager for python): sudo apt install python3 python3-pip -y
-  -- install autopep8 (formatter for python):
-
-  -------------------------- Format using Prettier -----------------------------------
-  -- install prettier globally: npm install -g prettier
-  -- format all files initially: prettier --write .
-  -- format spacific file: !prettier --write %, in neovim terminal '%' return path of current file
-  -- https://prettier.io/playground/
-  -- prettier does not put multiple function parameters on single line, even if they are few -> https://prettier.io/docs/en/option-philosophy
-  -- https://prettier.io/docs/en/options
 
   local prettier_cmd = find_prettier()
 
@@ -55,3 +47,15 @@ vim.keymap.set('n', '<leader>ff', function()
 end, { desc = "Format current buffer with Prettier (TypeScript/JavaScript only)" })
 
 return {}
+
+
+-- install pip (package manager for python): sudo apt install python3 python3-pip -y
+-- install autopep8 (formatter for python):
+
+-------------------------- Format using Prettier -----------------------------------
+-- install prettier globally: npm install -g prettier
+-- format all files initially: prettier --write .
+-- format spacific file: !prettier --write %, in neovim terminal '%' return path of current file
+-- https://prettier.io/playground/
+-- prettier does not put multiple function parameters on single line, even if they are few -> https://prettier.io/docs/en/option-philosophy
+-- https://prettier.io/docs/en/options

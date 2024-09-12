@@ -93,7 +93,12 @@ keymap.set('n', '<C-i>', '<cmd>e#<cr>', { noremap = true, silent = true }) -- <C
 --
 -- echo $XDG_RUNTIME_DIR
 
-
+---------------------- wrap unwrap --
+keymap.set('n', '<leader>ww', function()
+  vim.wo.wrap = not vim.wo.wrap
+  print("Wrap is now " .. (vim.wo.wrap and "on" or "off"))
+end, { noremap = true, silent = true, desc = "Toggle wrap" }
+)
 
 -- ------------------ -> code snippets -----------------------
 -- t == type, te = type-empty, td = type-div

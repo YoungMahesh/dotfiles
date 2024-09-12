@@ -18,7 +18,7 @@ local function format_buffer()
 
   local file_type = vim.bo.filetype
   -- check file-type using ->  `:echo &filetype` or  `:LspInfo`
-  local prettier_file_types = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'markdown' }
+  local prettier_file_types = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'markdown', 'json' }
   if not vim.tbl_contains(prettier_file_types, file_type) then
     vim.lsp.buf.format({ async = false, timeout_ms = 10000, formatting_options = { tabSize = 2, insertSpaces = true } })
     return

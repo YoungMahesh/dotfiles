@@ -22,8 +22,8 @@ local keymap = vim.keymap
 keymap.set({ "n", "v" }, "a", "A", { desc = "move and insert at end of line" })
 keymap.set("n", "r", "<C-r>", { desc = "redo" })
 keymap.set({ "n", "v" }, "9", "$", { desc = "moved to end of line", noremap = true })
-keymap.set({ "n", "v" }, "q", "<C-u>", { desc = "move up half of viewport" })
-keymap.set({ "n", "v" }, ";", "<C-d>", { desc = "move down half of viewport" })
+keymap.set({ "n", "v" }, "q", "<C-u>zz", { desc = "move up half of viewport + cursor at middle(zz)" })
+keymap.set({ "n", "v" }, ";", "<C-d>zz", { desc = "move down half of viewport + cursor at middle" })
 
 --When yanking content, it goes to the Unnamed register ("") but also to register "0. Thus, you can still paste the most recent yanked text
 -- (after using the paste command) using "0p.

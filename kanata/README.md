@@ -1,5 +1,7 @@
-download katana binary: https://github.com/jtroo/kanata/releases/tag/v1.6.1
-install kanata binary: `sudo mv kanata /usr/bin/`
+- download katana binary: https://github.com/jtroo/kanata/releases/tag/v1.6.1
+- install kanata binary:
+    - chmod +x kanata
+    - sudo mv kanata /usr/bin/
 
 - try linux specific tool in future: https://github.com/rvaiya/keyd
 

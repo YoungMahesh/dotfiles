@@ -12,7 +12,7 @@
 -- define config path: export $XDG_CONFIG_HOME=<path-name>, neovim will look for $XDG_CONFIG_HOME=/nvim/init.lua
 
 -- requirements:
--- treesitter, mason needs c compiler such as gcc,
+-- treesitter, harpoon, telescope, mason needs c compiler such as gcc,
 --    on ubuntu install compilers with: `sudo apt install build-essential`
 --    on nixos install `gcc` package
 -- tsserver needs npm to install packages

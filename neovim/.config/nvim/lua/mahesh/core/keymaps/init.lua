@@ -2,6 +2,8 @@ require("mahesh.core.keymaps.disabled")
 require("mahesh.core.keymaps.mark")
 require("mahesh.core.keymaps.netrw")
 require("mahesh.core.keymaps.quickfix")
+require("mahesh.core.keymaps.tabs")
+
 -- NOTE: when you update keymap, to test changes, you first need to close all nvim instances
 -- check default keymap documentation: :help <keymap>
 --    some of the default keymaps are disabled in keymaps.disabled file
@@ -36,14 +38,6 @@ keymap.set("n", "ss", "<cmd>wa<CR>", { desc = "save all files" })
 keymap.set("n", "sq", "<cmd>qa<CR>", { desc = "close all files" })
 keymap.set("n", "sx", "<cmd>xa<CR>", { desc = "save all files and close" })
 keymap.set('n', '<C-a>', '0ggvG$', { desc = 'select all text on current page/buffer' })
-
--- ->t == tab
-keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
-keymap.set("n", "<leader>tx", "<cmd>w<cr><cmd>tabclose<cr>", { desc = "save changes and close current tab" })
-keymap.set("n", "<leader>tq", "<cmd>tabclose<cr>", { desc = "close current tab" })
-keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
-keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
-keymap.set("n", "<leader>tc", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- ------------------------ :help buffers ----------------------------------
 -- :buffers  = view buffers

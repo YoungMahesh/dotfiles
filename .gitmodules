@@ -1,3 +1,6 @@
 [submodule "docs"]
 	path = docs
 	url = https://github.com/YoungMahesh/syntax-notes.git
+[submodule "private"]
+	path = private
+	url = git@github.com:YoungMahesh/private-dotfiles.git

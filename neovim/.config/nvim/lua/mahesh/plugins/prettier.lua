@@ -44,7 +44,7 @@ end
 
 vim.keymap.set('n', '<leader>ff', function()
   format_buffer()
-end, { desc = "Format current buffer with Prettier (TypeScript/JavaScript only)" })
+end, { desc = "Format current buffer with Prettier (TS/JS only)" })
 
 return {}
 

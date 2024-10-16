@@ -3,6 +3,7 @@ local keymap = vim.keymap
 --------------------------------- quickfix list ----------------------------------------
 keymap.set("n", "cn", "<cmd>cn<CR>", { desc = "open next item in quickfix list" })
 keymap.set("n", "cp", "<cmd>cp<CR>", { desc = "open previous item in quickfix list" })
+keymap.set("n", "cl", "<cmd>ccl<CR>", { desc = "open previous item in quickfix list" })
 --:copen " Open the quickfix window
 --:ccl   " Close it
 --:cw    " Open it if there are "errors", close it otherwise (some people prefer this)

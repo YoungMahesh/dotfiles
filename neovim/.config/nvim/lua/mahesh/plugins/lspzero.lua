@@ -87,9 +87,9 @@ return {
         -- https://lsp-zero.netlify.app/v3.x/language-server-configuration.html#how-does-it-work
         local opts = { buffer = bufnr }
         -- 	vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts) -- default
-        vim.keymap.set('n', '<leader>li', '<cmd>lua vim.lsp.buf.hover()<cr>', opts) -- li=lsp info
+        --vim.keymap.set('n', '<leader>li', '<cmd>lua vim.lsp.buf.hover()<cr>', opts) -- li=lsp info
         -- 	vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts) -- default
-        -- 	vim.keymap.set('n', 'gd', '<cmd>tab split | lua vim.lsp.buf.definition()<cr>', opts) -- open definition in new tab
+        vim.keymap.set('n', 'gD', '<cmd>tab split | lua vim.lsp.buf.definition()<cr>', opts) -- open definition in new tab
         --  vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts) -- default
         --  vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts) -- default
         --  vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts) -- default

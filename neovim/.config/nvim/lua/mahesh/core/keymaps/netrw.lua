@@ -13,3 +13,47 @@
 -- copy file to parent-directory ->  :!cp % %:h/..
 --   pressing <TAB> opens list of files in current directory, you can directory put full path with -> :!cp <Tab>
 
+
+--vim.api.nvim_create_autocmd("FileType", {
+--  pattern = "netrw",
+--  callback = function()
+--    local opts = { noremap = true, silent = true, buffer = true }
+--
+--
+--    -- Remap 't' to do nothing
+--    --vim.keymap.set('n', 't', '<Nop>', opts)
+--
+--    -- Remap 'o' to open in new tab
+--    vim.keymap.set("n", "o", "t", opts)
+--  end
+--})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "netrw",
+  callback = function()
+    local opts = { noremap = true, silent = true, buffer = true }
+    
+    -- Disable 't' key
+    vim.keymap.set("n", "t", "<Nop>", opts)
+    
+    -- Assign 't' functionality to 'o'
+    vim.keymap.set("n", "o", function()
+      -- Get the current file/directory name
+      local file = vim.fn.expand("<cfile>")
+      
+      -- Get the current directory
+      local dir = vim.fn.expand("%:p:h")
+      
+      -- Construct the full path
+      local full_path = vim.fn.fnamemodify(dir .. "/" .. file, ":p")
+      
+      -- Open in a new tab
+      vim.cmd("tabnew " .. vim.fn.fnameescape(full_path))
+      
+      -- If it's a directory, explore it
+      if vim.fn.isdirectory(full_path) == 1 then
+        vim.cmd("Explore")
+      end
+    end, opts)
+  end
+})

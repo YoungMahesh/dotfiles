@@ -40,6 +40,10 @@ return {
     keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Fuzzy find recent files' })
 
     keymap.set('n', '<leader>fc', ":Telescope grep_string <cr>", { desc = 'Find string under cursor in cwd' })
+    keymap.set('n', '<leader>fs', function()
+      -- traditional grep_string, uses regex, so i need to use escape character(\) before special symbols like ".", "/", etc
+      builtin.grep_string({ search = vim.fn.input("Grep > ") })
+    end, { desc = 'search string (without regex) cursor in cwd' })
     --keymap.set('n', '<leader>fc',
     --  ":Telescope grep_string vimgrep_arguments=rg,--color=never,--no-heading,--no-heading,--line-number,--column,--smart-case,--hidden,--no-ignore<cr>",
     --  { desc = 'Find string under cursor in cwd' })

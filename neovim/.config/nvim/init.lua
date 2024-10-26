@@ -25,8 +25,16 @@
 
 require("mahesh.core")
 
-local username = os.getenv("USER")
-if username == "mahesh" then
-  -- load plugins
+
+
+if vim.g.vscode then
+  -- neovim for vscode: (asvetliakov.vscode-neovim)[https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#neovim-configuration]
+else
   require("mahesh.lazy")
 end
+
+local username = os.getenv("USER")
+--if username == "mahesh" then
+--  -- load plugins
+--  require("mahesh.lazy")
+--end

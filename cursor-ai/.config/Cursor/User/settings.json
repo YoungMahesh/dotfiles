@@ -1,0 +1,65 @@
+{
+  "window.zoomLevel": 1,
+  "workbench.sideBar.location": "right",
+  "files.autoSave": "onFocusChange",
+  "window.titleBarStyle": "custom",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.startupEditor": "none",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "solidity.telemetry": true,
+  "[solidity]": {
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "mikeburgh.xml-format"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "update.mode": "none",
+  "terminal.integrated.commandsToSkipShell": [
+    "-workbench.action.quickOpen" // ctrl+p for previous-command instead of quick-open while in terminal
+  ],
+  "workbench.editor.enablePreview": false,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.renderSideBySide": false,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "editor.minimap.enabled": false,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "python": false
+  },
+  "extensions.ignoreRecommendations": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "vscode-neovim.compositeKeys": {
+    "ss": {
+      // Use lua to execute any logic
+      "command": "vscode-neovim.lua",
+      "args": [
+        [
+          "local code = require('vscode')",
+          "code.action('workbench.action.files.save')"
+        ]
+      ]
+    }
+  }
+}

@@ -29,6 +29,20 @@ require("mahesh.core")
 
 if vim.g.vscode then
   -- neovim for vscode: (asvetliakov.vscode-neovim)[https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#neovim-configuration]
+  vim.keymap.set('n', '<leader>ff', function()
+    local vscode = require('vscode')
+    vscode.call('editor.action.formatDocument')
+  end, { desc = "Format document" })
+
+  vim.keymap.set("n", "tn", function()
+    local vscode = require('vscode')
+    vscode.call('workbench.action.nextEditor')
+  end, { desc = "Go to next tab" })
+
+  vim.keymap.set("n", "tp", function()
+    local vscode = require('vscode')
+    vscode.call('workbench.action.previousEditor')
+  end, { desc = "Go to next tab" })
 else
   require("mahesh.lazy")
 end

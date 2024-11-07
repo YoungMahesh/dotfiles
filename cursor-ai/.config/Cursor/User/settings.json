@@ -52,16 +52,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "vscode-neovim.compositeKeys": {
     // https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#composite-escape-keys
-    "ss": {
-      // Use lua to execute any logic
-      "command": "vscode-neovim.lua",
-      "args": [
-        [
-          "local code = require('vscode')",
-          "code.action('workbench.action.files.save')"
-        ]
-      ]
-    }
   },
   "cursor.chat.alwaysSearchWeb": true
 }

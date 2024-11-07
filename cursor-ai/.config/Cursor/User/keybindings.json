@@ -95,11 +95,6 @@
     "command": "workbench.action.closeAllEditors"
   },
   {
-    "key": "ctrl+tab",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
-  },
-  {
     "key": "ctrl+e",
     "command": "workbench.files.action.focusFilesExplorer"
   },

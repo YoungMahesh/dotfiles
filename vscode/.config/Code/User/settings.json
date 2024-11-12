@@ -50,4 +50,5 @@
   },
   "extensions.ignoreRecommendations": true,
   "diffEditor.ignoreTrimWhitespace": false,
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
 }

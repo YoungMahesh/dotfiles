@@ -114,16 +114,6 @@
     "when": "editorTextFocus && inDebugMode"
   },
   {
-    "key": "alt+f",
-    "command": "editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
-  },
-  {
-    "key": "alt+t",
-    "command": "notebook.formatCell",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
-  },
-  {
     "key": "ctrl+y",
     "command": "acceptSelectedSuggestion",
     "when": "suggestWidgetVisible"

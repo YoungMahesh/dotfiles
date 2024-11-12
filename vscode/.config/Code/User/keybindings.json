@@ -23,7 +23,8 @@
     "command": "editor.action.selectAll"
   },
   {
-    "key": "ctrl+v",
+    // paste-action is done with p with neovim, ctrl+v is freed so it can be used for neovim-visual_mode
+    "key": "ctrl+9",
     "command": "editor.action.clipboardPasteAction"
   },
   {
@@ -102,7 +103,7 @@
     "key": "ctrl+e",
     "command": "workbench.files.action.focusFilesExplorer"
   },
-{
+  {
     "key": "d",
     "command": "moveFileToTrash",
     "when": "explorerResourceMoveableToTrash && filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
@@ -118,23 +119,23 @@
     "when": "editorTextFocus && inDebugMode"
   },
   {
-    "key": "alt+f",
-    "command": "editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    "key": "ctrl+y",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible"
   },
   {
-    "key": "ctrl+shift+i",
-    "command": "-editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    "key": "ctrl+n",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
   },
   {
-    "key": "alt+t",
-    "command": "notebook.formatCell",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+    "key": "ctrl+n",
+    "command": "editor.action.triggerSuggest",
+    "when": "!suggestWidgetVisible && editorTextFocus"
   },
   {
-    "key": "ctrl+shift+i",
-    "command": "-notebook.formatCell",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+    "key": "ctrl+p",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
   },
 ]

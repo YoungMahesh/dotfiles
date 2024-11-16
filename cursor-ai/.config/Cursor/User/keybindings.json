@@ -127,5 +127,5 @@
     "key": "ctrl+p",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetVisible"
-  }
+  },
 ]

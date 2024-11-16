@@ -1,6 +1,7 @@
 -- copied from docs: https://lsp-zero.netlify.app/v3.x/guide/lazy-loading-with-lazy-nvim.html
 -- :Mason to manage language servers
 -- :messages to check logs
+-- :checkhealth mason
 -- Ctrl+n to view all suggestions - such as available attributes on a react component
 return {
   {
@@ -119,7 +120,7 @@ return {
         --    not using as it is giving more wrong syntax errors than helping with syntax, may need configuration, but i don't have time
         --    need to create `.sqllsrc.json` file at the root of your project (https://github.com/joe-re/sql-language-server?tab=readme-ov-file#configuration)
         --      content can be empty json: {}
-        ensure_installed = { "lua_ls", "tsserver", "cssls", "tailwindcss", "prismals", "clangd", "solidity_ls_nomicfoundation" },
+        ensure_installed = { "lua_ls", "ts_ls", "cssls", "tailwindcss", "prismals", "clangd", "solidity_ls_nomicfoundation" },
         -- not needed for now:  "gopls"
         handlers = {
           -- this first function is the "default handler"

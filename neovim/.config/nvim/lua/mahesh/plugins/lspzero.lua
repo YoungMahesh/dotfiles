@@ -90,12 +90,12 @@ return {
         -- 	vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts) -- default
         --vim.keymap.set('n', '<leader>li', '<cmd>lua vim.lsp.buf.hover()<cr>', opts) -- li=lsp info
         -- 	vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts) -- default
-        vim.keymap.set('n', 'gD', '<cmd>tab split | lua vim.lsp.buf.definition()<cr>', opts) -- open definition in new tab
+        vim.keymap.set('n', 'gd', '<cmd>tab split | lua vim.lsp.buf.definition()<cr>', opts) -- open definition in new tab
         --  vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts) -- default
         --  vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts) -- default
         --  vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts) -- default
         --  vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts) -- default
-        vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<cr>', opts) -- lr=lsp reference
+        vim.keymap.set('n', 'lr', '<cmd>lua vim.lsp.buf.references()<cr>', opts) -- lr=lsp reference
         --  vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts) -- default
         --  vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)  -- default
         --  vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)  -- default
@@ -137,12 +137,11 @@ return {
           end,
 
           -- this is the "custom handler" for `tsserver`
-          -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-          tsserver = function()
-            -- (Optional) Configure tsserver for neovim
-            -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
+          ts_ls = function()
+            -- (Optional) Configure ts_ls for neovim
+            --    https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ts_ls
             -- if you use `setup()` instead of `setup({})`, it will give error: attempt to index local 'user_config' (a nil value)
-            require('lspconfig').tsserver.setup({
+            require('lspconfig').ts_ls.setup({
               filetypes = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' }
             })
           end,

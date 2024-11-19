@@ -4,6 +4,10 @@
 -- move through search results -> enter, after this use `n` or `N` to move through search-results
 
 ---------------------- ->search and replace (single page) ---------------------------------
+--
+-- replace a word within a selected text (selected using v, V, Ctrl+v)
+--    type `:` -> `s/<old-word>/<new-word>` -> enter
+--      `:'<,'>` appears automatically when you press `:` in Visual mode - it indicates the range of the visual selection
 -- Trick 1 (:help /)
 --    1. search word with -> /<word><cr>
 --    2. type `cw` (change word) -> type new word -> Esc

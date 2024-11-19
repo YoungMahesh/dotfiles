@@ -18,10 +18,9 @@ return {
     local telescope = require('telescope')
 
     -- https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#default-mappings
+    -- :help telescope.actions
     --  <C-u>	Scroll up in preview window
     --  <C-d>	Scroll down in preview window
-    --  <C-f>	Scroll left in preview window
-    --  <C-k>	Scroll right in preview window
     --	<C-x> go to file selection as a split
     --	<C-v> go to file selection as a vsplit
     --	<C-t> go to a file in a new tab
@@ -63,12 +62,15 @@ return {
     telescope.setup {
       -- `:help telelscope.default`
       defaults = {
-        --mappings = {
-        --  i = {
-        --    ["<C-f>"] = false,
-        --    ["<C-h>"] = "preview_scrolling_left",
-        --  }
-        --},
+        mappings = {
+          i = {
+            -- scroll left/right in only for nightly for now:
+            --    https://github.com/nvim-telescope/telescope.nvim/issues/3110#issuecomment-2116467751
+            --    https://github.com/nvim-telescope/telescope.nvim/issues/3110#issuecomment-2395242266
+            --["<C-h>"] = "preview_scrolling_left",
+            --["<C-m>"] = "preview_scrolling_right",
+          }
+        },
         -- vimgrep_arguments can be applied to all commands through here or to specific command, as shown in one of the comments above
         -- -- rg (ripgrep - search utility),
         -- The order of arguments in Lua functions matters. When calling a function, Lua adjusts the number of arguments to the number of parameters. Extra arguments are thrown away, and extra parameters get nil

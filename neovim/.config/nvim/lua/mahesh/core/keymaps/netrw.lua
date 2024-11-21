@@ -32,10 +32,6 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "netrw",
   callback = function()
     local opts = { noremap = true, silent = true, buffer = true }
-    
-    -- Disable 't' key
-    vim.keymap.set("n", "t", "<Nop>", opts)
-    
     -- Assign 't' functionality to 'o'
     vim.keymap.set("n", "o", function()
       -- Get the current file/directory name

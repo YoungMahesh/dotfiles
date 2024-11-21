@@ -1,54 +1,60 @@
 {
+  // editor UI settings
   "window.zoomLevel": 1,
   "workbench.sideBar.location": "right",
-  "files.autoSave": "onFocusChange",
   "window.titleBarStyle": "custom",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "workbench.startupEditor": "none",
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "solidity.telemetry": true,
-  "[solidity]": {
-    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
-  },
-  "[xml]": {
-    "editor.defaultFormatter": "mikeburgh.xml-format"
-  },
+  "editor.minimap.enabled": false,
+
+  // editor behavior settings
   "security.workspace.trust.untrustedFiles": "open",
-  "[go]": {
-    "editor.defaultFormatter": "golang.go"
-  },
-  "git.openRepositoryInParentFolders": "never",
-  "files.associations": {
-    "*.json": "jsonc"
-  },
-  "update.mode": "none",
+  "update.mode": "none", // do not update vscode automatically
+  "extensions.ignoreRecommendations": true,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.commandsToSkipShell": [
     "-workbench.action.quickOpen" // ctrl+p for previous-command instead of quick-open while in terminal
   ],
-  "workbench.editor.enablePreview": false,
-  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "files.autoSave": "onFocusChange",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+
+  // git settings
+  "git.openRepositoryInParentFolders": "never",
+  "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.renderSideBySide": false,
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
-  "editor.minimap.enabled": false,
-  "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
-  },
+
+  // copilot settings
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "github.copilot.enable": {
     "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false,
-    "python": false
+    //"plaintext": false,
+    //"markdown": false,
+    //"python": false
   },
-  "extensions.ignoreRecommendations": true,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+
+  // language specific settings
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.prettierPath": "./node_modules/prettier",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "workbench.editor.enablePreview": false, // markdown preview
+  //"[dockerfile]": {
+  //  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  //},
+  //"[prisma]": {
+  //  "editor.defaultFormatter": "Prisma.prisma"
+  //},
+  //"solidity.telemetry": true,
+  //"[solidity]": {
+  //  "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  //},
+  //"[go]": {
+  //  "editor.defaultFormatter": "golang.go"
+  //},
 }

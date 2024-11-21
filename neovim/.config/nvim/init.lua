@@ -24,30 +24,45 @@
 -- eslint_d :Mason -> eslint_d -> i
 
 require("mahesh.core")
-
+require("mahesh.disabled")
 
 
 if vim.g.vscode then
+  local keymap = vim.keymap
   -- neovim for vscode: (asvetliakov.vscode-neovim)[https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#neovim-configuration]
-  vim.keymap.set('n', '<leader>ff', function()
+  keymap.set('n', '<leader>ff', function()
     local vscode = require('vscode')
     vscode.call('editor.action.formatDocument')
   end, { desc = "Format document" })
 
-  vim.keymap.set("n", "tn", function()
+  keymap.set("n", "tn", function()
     local vscode = require('vscode')
     vscode.call('workbench.action.nextEditor')
   end, { desc = "Go to next tab" })
 
-  vim.keymap.set("n", "tp", function()
+  keymap.set("n", "tp", function()
     local vscode = require('vscode')
     vscode.call('workbench.action.previousEditor')
   end, { desc = "Go to next tab" })
+
+  keymap.set("n", "zc", function()
+    local vscode = require('vscode')
+    vscode.call('editor.fold')
+  end, { desc = "fold code snippet" })
+  keymap.set("n", "zo", function()
+    local vscode = require('vscode')
+    vscode.call('editor.unfold')
+  end, { desc = "unfold code snippet" })
+
+  keymap.set("n", "<C-w>", function()
+    local vscode = require('vscode')
+    vscode.call('workbench.action.closeActiveEditor')
+  end, { desc = "close current file", nowait = true })
 else
   require("mahesh.lazy")
 end
 
-local username = os.getenv("USER")
+--local username = os.getenv("USER")
 --if username == "mahesh" then
 --  -- load plugins
 --  require("mahesh.lazy")

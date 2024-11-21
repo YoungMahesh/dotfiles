@@ -1,85 +1,6 @@
 // Place your key bindings in this file to override the defaults
 [
-  {
-    "key": "alt+p",
-    "command": "workbench.action.pinEditor",
-    "when": "!activeEditorIsPinned"
-  },
-  {
-    "key": "alt+p",
-    "command": "workbench.action.unpinEditor",
-    "when": "activeEditorIsPinned"
-  },
-  {
-    "key": "ctrl+w",
-    "command": "workbench.action.closeActiveEditor"
-  },
-  {
-    "key": "ctrl+c",
-    "command": "editor.action.clipboardCopyAction"
-  },
-  {
-    "key": "ctrl+a",
-    "command": "editor.action.selectAll"
-  },
-  {
-    "key": "ctrl+v",
-    "command": "editor.action.clipboardPasteAction"
-  },
-  {
-    "key": "alt+i",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "tab",
-    "command": "tab",
-    "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
-  },
-  {
-    "key": "shift+tab",
-    "command": "outdent",
-    "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "workbench.action.quickOpen"
-  },
-  {
-    "key": "tab",
-    "command": "acceptSelectedSuggestion",
-    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "workbench.action.quickOpenSelectNext",
-    "when": "inQuickOpen && neovim.wildMenuVisible || inQuickOpen && neovim.mode != 'cmdline'"
-  },
-  {
-    "key": "ctrl+x",
-    "command": "editor.action.clipboardCutAction"
-  },
-  {
-    // accept github-copilot suggestion
-    "key": "tab",
-    "command": "editor.action.inlineSuggest.commit",
-    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "actions.find",
-    "when": "editorFocus || editorIsOpen"
-  },
-  {
-    "key": "ctrl+o",
-    "command": "editor.action.revealDefinition",
-    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-  },
-  {
-    "key": "ctrl+/",
-    "command": "editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
-  },
+  // terminal
   {
     "key": "ctrl+t",
     "command": "workbench.action.terminal.toggleTerminal",
@@ -90,10 +11,28 @@
     "command": "workbench.action.terminal.new",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   },
+  // suggestion widget
   {
-    "key": "ctrl+shift+w",
-    "command": "workbench.action.closeAllEditors"
+    "key": "ctrl+n",
+    "command": "editor.action.triggerSuggest",
+    "when": "!suggestWidgetVisible && editorTextFocus"
   },
+  {
+    "key": "ctrl+n",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  // file manager
   {
     "key": "ctrl+e",
     "command": "workbench.files.action.focusFilesExplorer"
@@ -108,24 +47,11 @@
     "command": "renameFile",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+  // neovim extension 
   {
-    "key": "alt+i",
-    "command": "editor.debug.action.showDebugHover",
-    "when": "editorTextFocus && inDebugMode"
-  },
-  {
-    "key": "ctrl+y",
-    "command": "acceptSelectedSuggestion",
-    "when": "suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetVisible"
+    // paste-action is done with p with neovim, 
+    //  so free ctrl+v to be used for neovim-visual_mode
+    "key": "ctrl+v",
+    "command": "-editor.action.clipboardPasteAction"
   },
 ]

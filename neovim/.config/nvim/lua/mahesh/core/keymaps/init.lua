@@ -43,10 +43,11 @@ keymap.set('n', '<C-a>', '0ggvG$', { desc = 'select all text on current page/buf
 -- :buffers  = view buffers
 
 -- ------------------------ :help window -------------------------------------
-keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
-keymap.set("n", "<leader>ww", "<C-w>w", { desc = "Cycle cursor to the next window" })
-keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
-keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" })
+-- <C-w> is used for closing 
+--keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
+--keymap.set("n", "<leader>ww", "<C-w>w", { desc = "Cycle cursor to the next window" })
+--keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
+--keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current window" })
 
 ----------------------------> f == explorer -------------------------------------------------
 -- %: create new file, d: create new directory, D: delete file or empty directory

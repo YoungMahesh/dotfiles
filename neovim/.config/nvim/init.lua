@@ -28,36 +28,40 @@ require("mahesh.disabled")
 
 
 if vim.g.vscode then
+  local vscode = require('vscode')
   local keymap = vim.keymap
+
   -- neovim for vscode: (asvetliakov.vscode-neovim)[https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#neovim-configuration]
   keymap.set('n', '<leader>ff', function()
-    local vscode = require('vscode')
     vscode.call('editor.action.formatDocument')
   end, { desc = "Format document" })
 
+  -- tab switch
   keymap.set("n", "tn", function()
-    local vscode = require('vscode')
     vscode.call('workbench.action.nextEditor')
   end, { desc = "Go to next tab" })
-
   keymap.set("n", "tp", function()
-    local vscode = require('vscode')
     vscode.call('workbench.action.previousEditor')
   end, { desc = "Go to next tab" })
+  keymap.set("n", "<C-w>", function()
+    vscode.call('workbench.action.closeActiveEditor')
+  end, { desc = "close current file", nowait = true })
 
+  -- fold
   keymap.set("n", "zc", function()
-    local vscode = require('vscode')
     vscode.call('editor.fold')
   end, { desc = "fold code snippet" })
   keymap.set("n", "zo", function()
-    local vscode = require('vscode')
     vscode.call('editor.unfold')
   end, { desc = "unfold code snippet" })
-
-  keymap.set("n", "<C-w>", function()
-    local vscode = require('vscode')
-    vscode.call('workbench.action.closeActiveEditor')
-  end, { desc = "close current file", nowait = true })
+  -- as we are using folding from vscode, neovim is unware when we move through folding, which leads to fold-open when we use default
+  --  keybinding, hence use vscode keybinding for up and down movement
+  keymap.set('n', 'j', function()
+    vscode.call('cursorDown')
+  end, { desc = 'move down' })
+  keymap.set('n', 'k', function()
+    vscode.call('cursorUp')
+  end, { desc = 'move down' })
 else
   require("mahesh.lazy")
 end

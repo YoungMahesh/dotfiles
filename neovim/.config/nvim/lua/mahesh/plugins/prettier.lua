@@ -13,33 +13,36 @@ local function find_prettier()
 end
 
 local function format_buffer()
-  -- save the current buffer
-  vim.cmd('silent! write')
+  vim.cmd('silent! write') -- save the current buffer
 
   local file_type = vim.bo.filetype
+  local filename = vim.fn.expand('%:p')
   -- check file-type using ->  `:echo &filetype` or  `:LspInfo`
   local prettier_file_types = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'markdown', 'json' }
-  if not vim.tbl_contains(prettier_file_types, file_type) then
+  if vim.tbl_contains(prettier_file_types, file_type) then
+
+    local prettier_cmd = find_prettier()
+    -- Format the file
+    -- % refers to the current file name relative to the current working directory.
+    -- %:p expands to the full (absolute) path of the current file, p == path
+    local output = vim.fn.system(prettier_cmd .. ' --write ' .. vim.fn.shellescape(filename))
+
+    -- handle error
+    if vim.v.shell_error ~= 0 then
+      vim.notify('Prettier encountered an error: ' .. output, vim.log.levels.ERROR)
+      return
+    end
+  elseif vim.tbl_contains({'sql'}, file_type) then
+  local sqlfmt = vim.fn.expand('~/.local/share/nvim/mason/bin/sql-formatter')
+    local output = vim.fn.system(sqlfmt .. ' ' .. vim.fn.shellescape(filename) .. ' -o ' .. vim.fn.shellescape(filename))
+    if vim.v.shell_error ~= 0 then
+      vim.notify('sqlfmt encountered an error: ' .. output, vim.log.levels.ERROR)
+      return
+    end
+  else
     vim.lsp.buf.format({ async = false, timeout_ms = 10000, formatting_options = { tabSize = 2, insertSpaces = true } })
-    return
   end
-
-  local prettier_cmd = find_prettier()
-
-  -- Format the file
-  -- % refers to the current file name relative to the current working directory.
-  -- %:p expands to the full (absolute) path of the current file, p == path
-  local filename = vim.fn.expand('%:p')
-  local output = vim.fn.system(prettier_cmd .. ' --write ' .. vim.fn.shellescape(filename))
-
-  -- handle error
-  if vim.v.shell_error ~= 0 then
-    vim.notify('Prettier encountered an error: ' .. output, vim.log.levels.ERROR)
-    return
-  end
-
-  -- Reload the buffer
-  vim.cmd('edit!')
+  vim.cmd('edit!') -- Reload the buffer
 end
 
 vim.keymap.set('n', '<leader>ff', function()

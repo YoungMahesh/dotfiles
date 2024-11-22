@@ -32,20 +32,23 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "netrw",
   callback = function()
     local opts = { noremap = true, silent = true, buffer = true }
+    -- disable 't'
+    vim.keymap.set('n', 't', '', opts)
+
     -- Assign 't' functionality to 'o'
     vim.keymap.set("n", "o", function()
       -- Get the current file/directory name
       local file = vim.fn.expand("<cfile>")
-      
+
       -- Get the current directory
       local dir = vim.fn.expand("%:p:h")
-      
+
       -- Construct the full path
       local full_path = vim.fn.fnamemodify(dir .. "/" .. file, ":p")
-      
+
       -- Open in a new tab
       vim.cmd("tabnew " .. vim.fn.fnameescape(full_path))
-      
+
       -- If it's a directory, explore it
       if vim.fn.isdirectory(full_path) == 1 then
         vim.cmd("Explore")

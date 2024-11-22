@@ -19,6 +19,9 @@ return {
     'williamboman/mason.nvim',
     lazy = false,
     config = true,
+    
+    -- get path where mason is installing packages: 
+    --    :lua print(require("mason-core.path").install_prefix())
     -- :Mason shows list of Installed/Available packages by Mason
     -- https://github.com/williamboman/mason.nvim?tab=readme-ov-file#default-configuration
     -- In Mason list: i - install, u - update, X - uninstall
@@ -26,6 +29,20 @@ return {
     -- https://mason-registry.dev/registry/list
     -- Mason installs - 1.LSP(Language servers - provide list of functions/variables available on current variable)
     -- 2.DAP(debuggers)   3.Linter(Show warnings/errors in syntax)   4.Formatter(rearrange code make is more readable)
+  },
+  {
+    -- you can replace this package with just a script which run on start
+    -- vim.api.nvim_create_user_command("MasonInstallAll", function()          
+   --     local packages = table.concat(opts.ensure_installed, " ")
+   --     vim.cmd("MasonInstall " .. packages )     
+   --end, {})
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    config = function()
+      require('mason-tool-installer').setup {
+        -- sql-formatter is npm package
+        ensure_installed = { "sql-formatter" },
+      }
+    end,
   },
 
   -- Autocompletion
@@ -95,7 +112,8 @@ return {
         --  vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts) -- default
         --  vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts) -- default
         --  vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts) -- default
-        vim.keymap.set('n', 'lr', '<cmd>lua vim.lsp.buf.references()<cr>', opts) -- lr=lsp reference
+        --  no lr, as 'l' is used to move right
+        vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<cr>', opts) -- lr=lsp reference
         --  vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts) -- default
         --  vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)  -- default
         --  vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)  -- default

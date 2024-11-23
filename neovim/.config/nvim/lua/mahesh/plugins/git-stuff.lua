@@ -6,10 +6,18 @@ return {
     -- inside fugitive-editor
     --  `=` to open changes
     --  `-` toggle staged<->unstaged
-    --  `P` push
+    --  `P` push commit
     --  `O` open file under cursor in new tab
+    --  `cc` commit staged changes
     -- :G commit # commit changes
     config = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "fugitive",
+        callback = function()
+          -- 'a' key to move up in fugitive buffer
+          vim.keymap.set("n", "a", "<C-u>zz", { buffer = true, noremap=true })
+        end,
+      })
       vim.keymap.set("n", "<leader>go", "<cmd>0G<cr>")
     end,
   },

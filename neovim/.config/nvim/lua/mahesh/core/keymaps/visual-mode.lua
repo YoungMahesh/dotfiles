@@ -1,0 +1,1 @@
+-- `o`: change direction (left -> right or right -> left) while selecting text

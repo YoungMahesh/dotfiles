@@ -1,0 +1,59 @@
+// Place your key bindings in this file to override the defaults
+[
+  // terminal
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  // suggestion widget
+  {
+    "key": "ctrl+n",
+    "command": "editor.action.triggerSuggest",
+    "when": "!suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  // file manager
+  {
+    "key": "ctrl+e",
+    "command": "workbench.files.action.focusFilesExplorer"
+  },
+  {
+    "key": "d",
+    "command": "moveFileToTrash",
+    "when": "explorerResourceMoveableToTrash && filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // neovim extension 
+  {
+    // paste-action is done with p with neovim, 
+    //  so free ctrl+v to be used for neovim-visual_mode
+    "key": "ctrl+v",
+    "command": "-editor.action.clipboardPasteAction"
+  },
+  // windsurf
+  // ctrl+l to toggle cascade, ctrl+i to code edit
+]

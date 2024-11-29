@@ -4,6 +4,7 @@
   "window.titleBarStyle": "custom",
   "workbench.startupEditor": "none",
   "editor.minimap.enabled": false,
+
   // editor behavior settings
   "security.workspace.trust.untrustedFiles": "open",
   "update.mode": "none", // do not update vscode automatically
@@ -16,11 +17,13 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+
   // git settings
   "git.openRepositoryInParentFolders": "never",
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.renderSideBySide": false,
+
   // copilot settings
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "github.copilot.enable": {
@@ -29,6 +32,7 @@
     //"markdown": false,
     //"python": false
   },
+
   // language specific settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.prettierPath": "./node_modules/prettier",
@@ -52,6 +56,7 @@
   //"[go]": {
   //  "editor.defaultFormatter": "golang.go"
   //},
-  // curoser specific settings
-  "cursor.chat.alwaysSearchWeb": true
+  // windsurf settings
+  "windsurf.autocompleteSpeed": "fast",
 }
+

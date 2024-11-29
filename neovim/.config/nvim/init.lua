@@ -32,6 +32,10 @@ if vim.g.vscode then
   local keymap = vim.keymap
 
   -- neovim for vscode: (asvetliakov.vscode-neovim)[https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#neovim-configuration]
+  keymap.set('n', 'ss', function()
+    vscode.call('workbench.action.files.save')
+  end, {desc = 'save file'})
+
   keymap.set('n', '<leader>ff', function()
     vscode.call('editor.action.formatDocument')
   end, { desc = "Format document" })

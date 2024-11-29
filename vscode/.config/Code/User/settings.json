@@ -1,7 +1,6 @@
 {
   // editor UI settings
   "window.zoomLevel": 1,
-  "workbench.sideBar.location": "right",
   "window.titleBarStyle": "custom",
   "workbench.startupEditor": "none",
   "editor.minimap.enabled": false,

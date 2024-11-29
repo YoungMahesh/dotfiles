@@ -32,8 +32,9 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "netrw",
   callback = function()
     local opts = { noremap = true, silent = true, buffer = true }
-    -- disable 't'
-    vim.keymap.set('n', 't', '', opts)
+    vim.keymap.set('n', 't', '', opts) -- t for tabs (refer ./tabs.lua)
+    vim.keymap.set('n', 'x', '<Nop>', opts) -- disable 'x'
+
 
     -- Assign 't' functionality to 'o'
     vim.keymap.set("n", "o", function()
@@ -56,3 +57,5 @@ vim.api.nvim_create_autocmd("FileType", {
     end, opts)
   end
 })
+
+

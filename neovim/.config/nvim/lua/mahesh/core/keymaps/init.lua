@@ -3,6 +3,8 @@ require("mahesh.core.keymaps.mark")
 require("mahesh.core.keymaps.netrw")
 require("mahesh.core.keymaps.quickfix")
 require("mahesh.core.keymaps.tabs")
+require("mahesh.core.keymaps.search")
+require("mahesh.core.keymaps.visual-mode")
 
 -- NOTE: when you update keymap, to test changes, you first need to close all nvim instances
 -- check default keymap documentation: :help <keymap>

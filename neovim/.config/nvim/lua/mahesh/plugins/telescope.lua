@@ -35,7 +35,7 @@ return {
     -- hidden=true - show files starting with . - like .env
     -- no_ignore=true - show files form paths which are mentioned in .gitignore
     --    large directories like node_modules are handled through defaults.file_ignore_patterns in telescope.setup
-    keymap.set('n', '<C-p>', ':Telescope find_files hidden=true no_ignore=true<cr>', { desc = 'Fuzzy all files in cwd' })
+    keymap.set('n', '<C-p>', '<cmd>tab split | Telescope find_files hidden=true no_ignore=true<cr>', { desc = 'Fuzzy all files in cwd' })
     keymap.set('n', '<leader>fg', ":Telescope live_grep<cr>", { desc = 'Find string in cwd' })
     keymap.set('n', '<leader>fb', builtin.buffers, {})
     keymap.set('n', '<leader>fh', builtin.help_tags, {})
@@ -44,6 +44,7 @@ return {
 
     keymap.set('n', '<leader>fc', ":Telescope grep_string <cr>", { desc = 'Find string under cursor in cwd' })
     keymap.set('n', '<leader>fs', function()
+      vim.cmd('tabnew')
       -- traditional grep_string, uses regex, so i need to use escape character(\) before special symbols like ".", "/", etc
       builtin.grep_string({ search = vim.fn.input("Grep > ") })
     end, { desc = 'search string (without regex) cursor in cwd' })

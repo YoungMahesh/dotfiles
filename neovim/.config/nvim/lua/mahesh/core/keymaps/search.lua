@@ -3,6 +3,8 @@
 -- 2) search hovered word, line, group-of-words ->  type `*` in normal mode
 -- move through search results -> enter, after this use `n` or `N` to move through search-results
 
+vim.keymap.set('n', 'n', 'nzz', {desc='n = next-result, zz = cursor at center of screen'})
+vim.keymap.set('n', 'N', 'Nzz')
 ---------------------- ->search and replace (single page) ---------------------------------
 --
 -- replace a word within a selected text (selected using v, V, Ctrl+v)

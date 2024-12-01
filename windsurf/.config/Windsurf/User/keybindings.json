@@ -53,7 +53,7 @@
     //  so free ctrl+v to be used for neovim-visual_mode
     "key": "ctrl+v",
     "command": "-editor.action.clipboardPasteAction"
-  },
+  }
   // windsurf
   // ctrl+l to toggle cascade, ctrl+i to code edit
 ]

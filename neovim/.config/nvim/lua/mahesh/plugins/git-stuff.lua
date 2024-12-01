@@ -14,11 +14,12 @@ return {
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "fugitive",
         callback = function()
-          -- 'a' key to move up in fugitive buffer
+          -- keymaps for fugitive buffer (to be consistant with global keymap)
           vim.keymap.set("n", "a", "<C-u>zz", { buffer = true, noremap=true })
+          vim.keymap.set("n", "sx", "<cmd>xa<CR>", { desc = "save all files and close" })
         end,
       })
-      vim.keymap.set("n", "<leader>go", "<cmd>0G<cr>")
+      vim.keymap.set("n", "go", "<cmd>0G<cr>")
     end,
   },
   --{

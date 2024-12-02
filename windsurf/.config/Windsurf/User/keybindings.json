@@ -55,5 +55,5 @@
     "command": "-editor.action.clipboardPasteAction"
   }
   // windsurf
-  // ctrl+l to toggle cascade, ctrl+i to code edit
+  // ctrl+l to toggle cascade, ctrl+i to code edit, ctrl+1 move to file editor
 ]

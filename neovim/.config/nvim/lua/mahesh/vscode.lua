@@ -1,4 +1,3 @@
-
 -- neovim for vscode: (asvetliakov.vscode-neovim)[https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#neovim-configuration]
 local vscode = require('vscode')
 local keymap = vim.keymap
@@ -9,9 +8,12 @@ end, {desc = 'save file'})
 keymap.set('n', '<leader>ff', function()
   vscode.call('editor.action.formatDocument')
 end, { desc = "format current file" })
+keymap.set('n', '<leader>fv', function()
+  vscode.call('workbench.view.explorer')
+end, { desc = "format current file" })
 
 keymap.set('n', 'go', function()
-  vscode.call('workbench.scm.active')
+  vscode.call('workbench.view.scm')
 end, {desc = 'git open'})
 
 -- tab switch

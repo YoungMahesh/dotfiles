@@ -53,7 +53,7 @@ keymap.set('n', '<C-a>', '0ggvG$', { desc = 'select all text on current page/buf
 
 ----------------------------> f == explorer -------------------------------------------------
 -- %: create new file, d: create new directory, D: delete file or empty directory
-keymap.set('n', '<leader>fv', vim.cmd.Ex)
+-- keymap.set('n', '<leader>fv', vim.cmd.Ex)
 keymap.set('n', '<C-i>', '<cmd>e#<cr>', { noremap = true, silent = true }) -- <C-i> == tab
 -----------------------------> s == save ------------------------------------
 -- :w        save changes in current file

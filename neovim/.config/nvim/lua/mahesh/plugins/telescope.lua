@@ -43,11 +43,24 @@ return {
     keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Fuzzy find recent files' })
 
     keymap.set('n', '<leader>fc', ":Telescope grep_string <cr>", { desc = 'Find string under cursor in cwd' })
-    keymap.set('n', '<leader>fs', function()
+    -- traditional grep_string, uses regex, so i need to use escape character(\) before special symbols like ".", "/", etc
+    keymap.set('n', '<leader>fk', function()
       vim.cmd('tabnew')
-      -- traditional grep_string, uses regex, so i need to use escape character(\) before special symbols like ".", "/", etc
       builtin.grep_string({ search = vim.fn.input("Grep > ") })
     end, { desc = 'search string (without regex) cursor in cwd' })
+    -- fs - find specific (case sensitive)
+    keymap.set('n', '<leader>fs', function()
+        vim.cmd('tabnew')
+        builtin.grep_string({
+          search = vim.fn.input("Grep > "),
+          additional_args = function()
+              return { "--case-sensitive" }
+          end
+        })
+    end)
+
+    -- abcd
+    -- aBcd
     --keymap.set('n', '<leader>fc',
     --  ":Telescope grep_string vimgrep_arguments=rg,--color=never,--no-heading,--no-heading,--line-number,--column,--smart-case,--hidden,--no-ignore<cr>",
     --  { desc = 'Find string under cursor in cwd' })
@@ -80,8 +93,9 @@ return {
         -- --with-filename - includes the file name in the output.
         -- --line-number  - includes the line number in the output.
         -- --column       - includes the column number in the output.
-        -- --smart-case   - enables smart case matching.
+        -- --smart-case (enables smart case matching) or --case-sensitive
         -- --hidden       - includes hidden files in the search.
+        -- 1) :help telescope.defaults.vimgrep_arguments 2) K on vimgrep_arguments here 3) rg --help
         vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden', '--no-ignore' },
         file_ignore_patterns = {
           -- put `.ignore` file to exclude specific folders in specific directory, it works same as .gitignore (.gitignore for git, .ignore for telescope)

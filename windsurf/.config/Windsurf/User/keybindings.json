@@ -47,12 +47,13 @@
     "command": "renameFile",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
-  // neovim extension 
+  // neovim extension
   {
-    // paste-action is done with p with neovim, 
+    // paste-action is done with p with neovim,
     //  so free ctrl+v to be used for neovim-visual_mode
     "key": "ctrl+v",
-    "command": "-editor.action.clipboardPasteAction"
+    "command": "-editor.action.clipboardPasteAction",
+    "when": "editorTextFocus && neovim.mode != insert"
   }
   // windsurf
   // ctrl+l to toggle cascade, ctrl+i to code edit, ctrl+1 move to file editor

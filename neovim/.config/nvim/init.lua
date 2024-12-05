@@ -1,3 +1,23 @@
+----------------- keymaps -------------------
+-- find keymaps: :map <leader>ff
+-- c- == ctrl (e.g. <c-p> = Ctrl+p )
+
+require("mahesh.core")
+require("mahesh.disabled")
+
+if vim.g.vscode then
+  require("mahesh.vscode")
+else
+  require("mahesh.lazy")
+end
+
+--local username = os.getenv("USER")
+--if username == "mahesh" then
+--  -- load plugins
+--  require("mahesh.lazy")
+--end
+
+----------------- installation ----------------------
 -- installation/upgrade, `nvim --version`: 0.9.5 -> 0.10.1 (on 26-august-2024)
 -- do not move to new version until it becomes 3 month old, as plugins may not be compatible with new version
 -- remove previous installation cache (taken from lazyvim installation script):
@@ -22,18 +42,3 @@
 --    on ubuntu install nodejs,npm through nvm: https://nodejs.org/en/download/package-manager
 -- https://github.com/BurntSushi/ripgrep for telescope
 -- eslint_d :Mason -> eslint_d -> i
-
-require("mahesh.core")
-require("mahesh.disabled")
-
-if vim.g.vscode then
-  require("mahesh.vscode")
-else
-  require("mahesh.lazy")
-end
-
---local username = os.getenv("USER")
---if username == "mahesh" then
---  -- load plugins
---  require("mahesh.lazy")
---end

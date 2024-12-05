@@ -1,7 +1,6 @@
 -- :checkhealth telescope
 return {
   'nvim-telescope/telescope.nvim',
-
   tag = '0.1.8',
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -26,55 +25,68 @@ return {
     --	<C-t> go to a file in a new tab
     --	<C-q> send all items to quickfix list
 
-    -->f == files, fl=files-list,  fb=files-buffer, fh=files-help, fr=files-recent
-    -- default mappings in docs are does not get enabled by default, need to be enabled here,
-    -- :help telescope.command
-    -- keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Fuzzy find files in cwd' })
-    -- include find hidden files like .env
-    --keymap.set('n', '<leader>fl', ':Telescope find_files hidden=true<cr>', { desc = 'Fuzzy all files in cwd' })
-    -- hidden=true - show files starting with . - like .env
-    -- no_ignore=true - show files form paths which are mentioned in .gitignore
-    --    large directories like node_modules are handled through defaults.file_ignore_patterns in telescope.setup
-    keymap.set('n', '<C-p>', '<cmd>tab split | Telescope find_files hidden=true no_ignore=true<cr>', { desc = 'Fuzzy all files in cwd' })
-    keymap.set('n', '<leader>fg', ":Telescope live_grep<cr>", { desc = 'Find string in cwd' })
-    keymap.set('n', '<leader>fb', builtin.buffers, {})
-    keymap.set('n', '<leader>fh', builtin.help_tags, {})
-    -- custom mappings
-    keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Fuzzy find recent files' })
+    local function new_tab_on_result_select(prompt_bufnr)
+      local actions = require('telescope.actions')
+      actions.select_default:replace(function()
+        actions.close(prompt_bufnr)
+        local selection = require('telescope.actions.state').get_selected_entry()
+        local file_path = selection.filename or selection[1]
+        if selection.lnum then  -- If it's a grep result with line number
+            vim.cmd('tab split ' .. vim.fn.fnameescape(file_path))
+            vim.api.nvim_win_set_cursor(0, {selection.lnum, selection.col or 0})
+        else
+            vim.cmd('tab split ' .. vim.fn.fnameescape(file_path))
+        end
+      end)
+      return true
+    end
+
+    keymap.set('n', '<c-p>', function()
+      require('telescope.builtin').find_files({
+        hidden = true,
+        no_ignore = true,
+        attach_mappings = new_tab_on_result_select
+      })
+    end, { desc = 'Fuzzy all files in cwd' })
 
     keymap.set('n', '<leader>fc', ":Telescope grep_string <cr>", { desc = 'Find string under cursor in cwd' })
-    -- traditional grep_string, uses regex, so i need to use escape character(\) before special symbols like ".", "/", etc
+
+    -- traditional grep_string, uses regex, for which i need to use escape character(\) before special symbols like ".", "/", etc
+    -- hence search through Grep
     keymap.set('n', '<leader>fk', function()
-      vim.cmd('tabnew')
-      builtin.grep_string({ search = vim.fn.input("Grep > ") })
+      builtin.grep_string({
+        search = vim.fn.input("Grep > "),
+        attach_mappings = new_tab_on_result_select,
+        additional_args = function()
+          return {
+          "--glob", "!*.svg" -- exclude .svg files
+        }
+        end
+      })
     end, { desc = 'search string (without regex) cursor in cwd' })
+
     -- fs - find specific (case sensitive)
     keymap.set('n', '<leader>fs', function()
-        vim.cmd('tabnew')
-        builtin.grep_string({
-          search = vim.fn.input("Grep > "),
-          additional_args = function()
-              return { "--case-sensitive" }
-          end
-        })
+      builtin.grep_string({
+        search = vim.fn.input("Grep > "),
+        attach_mappings = new_tab_on_result_select,
+        additional_args = function()
+            return {
+          "--case-sensitive",
+          "--glob", "!*.svg" -- exclude .svg files
+        }
+        end
+      })
     end)
 
-    -- abcd
-    -- aBcd
-    --keymap.set('n', '<leader>fc',
-    --  ":Telescope grep_string vimgrep_arguments=rg,--color=never,--no-heading,--no-heading,--line-number,--column,--smart-case,--hidden,--no-ignore<cr>",
-    --  { desc = 'Find string under cursor in cwd' })
-
-    --keymap.set('n', '<leader>fm', "<cmd>Telescope marks mark_type=local<cr>", { desc = 'Find marks' }) -- does not work
-    --keymap.set('n', '<leader>fm', builtin.marks, { desc = 'Find string under cursor in cwd' })
-    -- vim.keymap.set('n', '<leader>ps', function()
-    --  builtin.grep_string({ search = vim.fn.input("Grep > ") });
-    -- end)
+    -- :help telescope.command
+    -- no_ignore=true - show files form paths which are mentioned in .gitignore
+    --    large directories like node_modules are handled through defaults.file_ignore_patterns in telescope.setup
+    -- hidden=true - show files starting with . - like .env
     -- <C-p> = Ctrl+p
-    --keymap.set('n', '<C-p>', builtin.git_files, {})
-
+    
     telescope.setup {
-      -- `:help telelscope.default`
+      -- `:help telelscope.defaults`
       defaults = {
         mappings = {
           i = {

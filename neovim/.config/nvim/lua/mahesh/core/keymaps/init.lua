@@ -25,9 +25,9 @@ local keymap = vim.keymap
 -- <C-u> == Ctrl+u
 keymap.set({ "n", "v" }, "q", "A", { desc = "move and insert at end of line", noremap = true })
 keymap.set("n", "r", "<C-r>", { desc = "redo", noremap = true })
-keymap.set({ "n", "v" }, "9", "$", { desc = "moved to end of line", noremap = true })
-keymap.set({ "n", "v" }, "a", "<C-u>zz", { desc = "move up half of viewport + cursor at middle(zz)", noremap= true })
-keymap.set({ "n", "v" }, ";", "<C-d>zz", { desc = "move down half of viewport + cursor at middle", noremap=true })
+keymap.set({ "n", "v" }, "9", "g_", { desc = "move to end of line", noremap = true })
+keymap.set({ "n", "v" }, "a", "<C-u>zz", { desc = "move up half of viewport + cursor at middle(zz)", noremap = true })
+keymap.set({ "n", "v" }, ";", "<C-d>zz", { desc = "move down half of viewport + cursor at middle", noremap = true })
 
 --When yanking content, it goes to the Unnamed register ("") but also to register "0. Thus, you can still paste the most recent yanked text
 -- (after using the paste command) using "0p.
@@ -101,7 +101,10 @@ end, { noremap = true, silent = true, desc = "Toggle wrap" }
 -- t == type, te = type-empty, td = type-div
 keymap.set('n', 'te', function()
   vim.api.nvim_put({ '<></>' }, '', true, false)
+  vim.cmd('normal! F>l') -- F>l: F>(move backward to >)  l (move one character right)
 end, { noremap = true, silent = true })
 keymap.set('n', 'td', function()
   vim.api.nvim_put({ '<div></div>' }, '', true, false)
+  vim.cmd('normal! F>l') -- F>l: F>(move backward to >)  l (move one character right)
 end, { noremap = true, silent = true })
+

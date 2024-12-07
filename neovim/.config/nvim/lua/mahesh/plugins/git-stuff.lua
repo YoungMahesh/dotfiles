@@ -4,12 +4,18 @@ return {
     -- :G # open fugitive editor, :0G for fullscreen
     -- :G pull
     -- inside fugitive-editor
+    --  `g?` open help
     --  `=` to open changes
     --  `-` toggle staged<->unstaged
     --  `P` push commit
     --  `O` open file under cursor in new tab
     --  `cc` commit staged changes
-    -- :G commit # commit changes
+    --  `ca` Amend the last commit and edit the message.
+    --
+    --  'cz?' stash help
+    --  'czz' push file to stash
+    --  'czp' pop file from stash
+    --
     config = function()
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "fugitive",
@@ -19,7 +25,8 @@ return {
           vim.keymap.set("n", "sx", "<cmd>xa<CR>", { desc = "save all files and close" })
         end,
       })
-      vim.keymap.set("n", "go", "<cmd>0G<cr>")
+      vim.keymap.set("n", "go", "<cmd>0G<cr>", {desc = 'open git status'})
+      vim.keymap.set("n", "gl", "<cmd>0Git log<cr>", {desc = 'open git status'})
     end,
   },
   --{

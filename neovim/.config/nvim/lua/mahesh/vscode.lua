@@ -23,9 +23,14 @@ end, { desc = "Go to next tab" })
 keymap.set("n", "tp", function()
   vscode.call('workbench.action.previousEditor')
 end, { desc = "Go to next tab" })
-keymap.set("n", "<C-w>", function()
+keymap.set("n", "tc", function()
   vscode.call('workbench.action.closeActiveEditor')
-end, { desc = "close current file", nowait = true })
+end, { desc = "close current file" })
+-- for <c-w> use { nowait = true}
+keymap.set("n", "to", function()
+  vscode.call('workbench.action.files.newUntitledFile')
+end, { desc = "close current file" })
+
 
 -- fold
 keymap.set("n", "zc", function()

@@ -1,5 +1,7 @@
 ----------------- keymaps -------------------
 -- find keymaps: :map <leader>ff
+--    provides file-path except for mahesh.vscode
+--
 -- c- == ctrl (e.g. <c-p> = Ctrl+p )
 
 require("mahesh.core")

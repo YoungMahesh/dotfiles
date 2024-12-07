@@ -35,10 +35,12 @@ end
 --    :help config, default path: ~/.config/nvim/init.lua
 
 -- requirements:
--- treesitter, harpoon, telescope, mason needs c compiler such as gcc,
---    on ubuntu install compilers with: `sudo apt install build-essential`
---    on nixos install `gcc` package
--- tsserver needs npm to install packages
---    on ubuntu install nodejs,npm through nvm: https://nodejs.org/en/download/package-manager
--- https://github.com/BurntSushi/ripgrep for telescope
--- eslint_d :Mason -> eslint_d -> i
+--    treesitter, harpoon, telescope, mason needs c compiler such as gcc,
+--       on ubuntu install compilers with: `sudo apt install build-essential`
+--       on nixos install `gcc` package
+--    tsserver needs npm to install packages
+--       on ubuntu install nodejs,npm through nvm: https://nodejs.org/en/download/package-manager
+--    https://github.com/BurntSushi/ripgrep for telescope
+--    eslint_d :Mason -> eslint_d -> i
+--    sudo apt install luarocks
+--    for more     :checkhealth -> /error\c 

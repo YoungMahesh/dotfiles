@@ -1,5 +1,6 @@
 ---------------------- ->search ---------------------------------
 -- 1) search text by typing ->   /<search-text>  -> in normal mode
+--    append \c to make search case-insensitive
 -- 2) search hovered word, line, group-of-words ->  type `*` in normal mode
 -- move through search results -> enter, after this use `n` or `N` to move through search-results
 

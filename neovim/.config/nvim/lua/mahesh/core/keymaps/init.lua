@@ -108,3 +108,7 @@ keymap.set('n', 'td', function()
   vim.cmd('normal! F>l') -- F>l: F>(move backward to >)  l (move one character right)
 end, { noremap = true, silent = true })
 
+----------------------- scratch pad ------------------
+vim.keymap.set('n', '<leader>.', function()
+    vim.cmd('edit ~/.local/share/nvim/raw.txt')
+end, { desc = 'Open raw.txt file' })

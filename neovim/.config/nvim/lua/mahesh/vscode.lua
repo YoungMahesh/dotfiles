@@ -41,9 +41,9 @@ keymap.set("n", "zo", function()
 end, { desc = "unfold code snippet" })
 -- as we are using folding from vscode, neovim is unware when we move through folding, which leads to fold-open when we use default
 --  keybinding, hence use vscode keybinding for up and down movement
-keymap.set('n', 'j', function()
+keymap.set({'n', 'v'}, 'j', function()
   vscode.call('cursorDown')
 end, { desc = 'move down' })
-keymap.set('n', 'k', function()
+keymap.set({'n', 'v'}, 'k', function()
   vscode.call('cursorUp')
 end, { desc = 'move down' })

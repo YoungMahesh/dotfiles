@@ -25,7 +25,8 @@ local keymap = vim.keymap
 -- <C-u> == Ctrl+u
 keymap.set({ "n", "v" }, "q", "A", { desc = "move and insert at end of line", noremap = true })
 keymap.set("n", "r", "<C-r>", { desc = "redo", noremap = true })
-keymap.set({ "n", "v" }, "9", "g_", { desc = "move to end of line", noremap = true })
+keymap.set({ "n", "v" }, "0", "^", { desc = "move to first char of line", noremap = true })
+keymap.set({ "n", "v" }, "9", "g_", { desc = "move to last char of line", noremap = true })
 keymap.set({ "n", "v" }, "a", "<C-u>zz", { desc = "move up half of viewport + cursor at middle(zz)", noremap = true })
 keymap.set({ "n", "v" }, ";", "<C-d>zz", { desc = "move down half of viewport + cursor at middle", noremap = true })
 

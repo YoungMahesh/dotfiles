@@ -24,18 +24,26 @@ return {
     --	<C-v> go to file selection as a vsplit
     --	<C-t> go to a file in a new tab
     --	<C-q> send all items to quickfix list
-
     local function new_tab_on_result_select(prompt_bufnr)
       local actions = require('telescope.actions')
+      local action_state = require('telescope.actions.state')
+
       actions.select_default:replace(function()
-        actions.close(prompt_bufnr)
-        local selection = require('telescope.actions.state').get_selected_entry()
-        local file_path = selection.filename or selection[1]
-        if selection.lnum then  -- If it's a grep result with line number
+        actions.close(prompt_bufnr) -- switch to normal mode (from insert mode) inside selected file
+
+        local selection = action_state.get_selected_entry()
+          if selection == nil then
+            vim.notify("No results found") -- shown after clicking 'Enter' in telescope-window
+            -- you cannot close telescope window prompt from here because this function (select_default) executes 
+            --    after you click 'Enter' in telescope window prompt
+        else
+          local file_path = selection.filename or selection[1]
+          if selection.lnum then  -- If it's a grep result with line number
             vim.cmd('tab split ' .. vim.fn.fnameescape(file_path))
             vim.api.nvim_win_set_cursor(0, {selection.lnum, selection.col or 0})
-        else
+          else
             vim.cmd('tab split ' .. vim.fn.fnameescape(file_path))
+          end
         end
       end)
       return true

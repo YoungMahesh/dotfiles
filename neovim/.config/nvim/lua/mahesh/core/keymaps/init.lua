@@ -5,6 +5,7 @@ require("mahesh.core.keymaps.quickfix")
 require("mahesh.core.keymaps.tabs")
 require("mahesh.core.keymaps.search")
 require("mahesh.core.keymaps.visual-mode")
+require("mahesh.core.keymaps.terminal")
 
 -- NOTE: when you update keymap, to test changes, you first need to close all nvim instances
 -- check default keymap documentation: :help <keymap>
@@ -17,7 +18,6 @@ require("mahesh.core.keymaps.visual-mode")
 -- check all keymaps in command mode: `:cmap`
 -- check all keymaps in select mode: `:smap`
 
-vim.g.mapleader = " " -- set <space> as leader key
 
 local keymap = vim.keymap
 
@@ -111,5 +111,24 @@ end, { noremap = true, silent = true })
 
 ----------------------- scratch pad ------------------
 vim.keymap.set('n', '<leader>.', function()
-    vim.cmd('edit ~/.local/share/nvim/raw.txt')
-end, { desc = 'Open raw.txt file' })
+  -- Define height and width as percentages of the screen size
+  local width_percent = 80
+  local height_percent = 80
+
+  -- Open a new window with specified dimensions
+  local width = math.floor(vim.o.columns * (width_percent / 100))
+  local height = math.floor(vim.o.lines * (height_percent / 100))
+  local buf = vim.api.nvim_create_buf(false, true) -- Create a new buffer
+  vim.api.nvim_open_win(buf, true, {
+      relative = 'editor',
+      width = width,
+      height = height,
+      col = math.floor((vim.o.columns - width) / 2),
+      row = math.floor((vim.o.lines - height) / 2),
+      border = 'rounded'
+  })
+  vim.cmd('edit ~/.local/share/nvim/raw.txt') -- open file content
+
+  -- :q or keymap you created for closing tab will close popup 
+end, { desc = 'open raw.txt file in a popup' })
+

@@ -1,6 +1,7 @@
+-- closing tab (:tabclose) will also close all its associated windows, if there is only one window then :q will close tab
+-- :map t
 local keymap = vim.keymap
 keymap.set("n", "to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
---keymap.set("n", "tx", "<cmd>w<cr><cmd>tabclose<cr>", { desc = "save changes and close current tab" })
 --keymap.set('n', '<C-w>', "<cmd>tabclose<cr><cmd>tabp<cr>", { noremap = true, silent = true, nowait = true, desc = 'Close current tab' })
 --keymap.set('n', "tc", "<cmd>tabclose<cr><cmd>tabp<cr>", { desc = 'Close current tab' })
 keymap.set('n', "tc", function()
@@ -10,7 +11,7 @@ keymap.set('n', "tc", function()
         vim.cmd('tabclose')
         vim.cmd('tabp')
     end
-end, { desc = 'Close current tab, quit if last tab' })
+end, { desc = 'close current tab, quit if last tab' })
 keymap.set("n", "tn", "<cmd>tabn<cr>", { desc = "Go to next tab" })
 keymap.set("n", "tp", "<cmd>tabp<cr>", { desc = "Go to previous tab" })
 keymap.set("n", "tt", "<cmd>tabnew %<cr>", { desc = "Open current buffer in new tab" })

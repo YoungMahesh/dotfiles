@@ -8,7 +8,7 @@ for mark = string.byte('a'), string.byte('d') do
   keymap.set('n', "'" .. string.char(mark), '`' .. string.char(mark) .. 'zz', {noremap = true, silent = true})
 end
 
-keymap.set("n", "ml", "<cmd>marks abcdef<cr>", { desc = "show marks list from a to f" })
+keymap.set("n", "ml", "<cmd>marks abcdefABCDEF<cr>", { desc = "show marks list from a to f" })
 --keymap.set("n", "mm", "<cmd>marks ABCDE<cr>", { desc = "show marks list from a to f" })
 -- `ma`: set mark a, `'a`: go to line of mark a, ``m`: go to position of mark, `['`: go to previous mark, `]'`: go to next mark
 -- `:delm A` to delete mark A, `:delm a` to delete mark a

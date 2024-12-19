@@ -6,6 +6,7 @@ require("mahesh.core.keymaps.tabs")
 require("mahesh.core.keymaps.search")
 require("mahesh.core.keymaps.visual-mode")
 require("mahesh.core.keymaps.terminal")
+require("mahesh.core.keymaps.window")
 
 -- NOTE: when you update keymap, to test changes, you first need to close all nvim instances
 -- check default keymap documentation: :help <keymap>
@@ -110,25 +111,29 @@ keymap.set('n', 'td', function()
 end, { noremap = true, silent = true })
 
 ----------------------- scratch pad ------------------
-vim.keymap.set('n', '<leader>.', function()
-  -- Define height and width as percentages of the screen size
-  local width_percent = 80
-  local height_percent = 80
+keymap.set('n', '<leader>.', '<cmd>vsplit ~/.local/share/nvim/raw.txt<cr>', {desc = 'open raw.txt in split'})
+--vim.keymap.set('n', '<leader>.', function()
+--  -- Define height and width as percentages of the screen size
+--  local width_percent = 80
+--  local height_percent = 80
+--
+--  -- Open a new window with specified dimensions
+--  local width = math.floor(vim.o.columns * (width_percent / 100))
+--  local height = math.floor(vim.o.lines * (height_percent / 100))
+--  local buf = vim.api.nvim_create_buf(false, true) -- Create a new buffer
+--  vim.api.nvim_open_win(buf, true, {
+--      relative = 'editor',
+--      width = width,
+--      height = height,
+--      col = math.floor((vim.o.columns - width) / 2),
+--      row = math.floor((vim.o.lines - height) / 2),
+--      border = 'rounded'
+--  })
+--  vim.cmd('edit ~/.local/share/nvim/raw.txt') -- open file content
+--
+--  -- :q or keymap you created for closing tab will close popup 
+--end, { desc = 'open raw.txt file in a popup' })
 
-  -- Open a new window with specified dimensions
-  local width = math.floor(vim.o.columns * (width_percent / 100))
-  local height = math.floor(vim.o.lines * (height_percent / 100))
-  local buf = vim.api.nvim_create_buf(false, true) -- Create a new buffer
-  vim.api.nvim_open_win(buf, true, {
-      relative = 'editor',
-      width = width,
-      height = height,
-      col = math.floor((vim.o.columns - width) / 2),
-      row = math.floor((vim.o.lines - height) / 2),
-      border = 'rounded'
-  })
-  vim.cmd('edit ~/.local/share/nvim/raw.txt') -- open file content
+keymap.set('n', '<leader>m', "<cmd>put =execute('messages')<cr>", {desc = 'copy neovim messages to buffer'})
 
-  -- :q or keymap you created for closing tab will close popup 
-end, { desc = 'open raw.txt file in a popup' })
 

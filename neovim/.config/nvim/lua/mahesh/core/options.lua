@@ -33,6 +33,9 @@ opt.foldenable = false
 -- So if you set 'foldlevel' to a high value in your vimrc it should work as expected. https://stackoverflow.com/a/5786588/12344647
 opt.foldlevel = 50
 
+-- open splits with :vsplit on right side
+vim.opt.splitright = true
+
 vim.g.markdown_recommended_style = 0 -- without this pressing tab will create 4 spaces instead of 2 in markdown files
 
 ----------------------- does not work --------------------------------------------------

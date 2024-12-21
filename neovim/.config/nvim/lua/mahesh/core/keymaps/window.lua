@@ -5,4 +5,3 @@
 
 vim.keymap.set('n', '<c-h>', '<c-w>h', {desc = 'move to left window'})
 vim.keymap.set('n', '<c-l>', '<c-w>l', {desc = 'move to right window'})
-vim.keymap.set('n', 'ts', '<cmd>wq<cr>', {desc = 'save and close current window'})

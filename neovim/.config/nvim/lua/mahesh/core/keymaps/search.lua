@@ -6,6 +6,10 @@
 
 vim.keymap.set('n', 'n', 'nzz', {desc='n = next-result, zz = cursor at center of screen'})
 vim.keymap.set('n', 'N', 'Nzz')
+-- x for visual mode, v for visual-block mode, n for normal mode
+
+vim.keymap.set('v', '/', "\"fy/\\V<C-R>f<CR>", { desc = 'Search highlighted text in current buffer' } )
+
 ---------------------- ->search and replace (single page) ---------------------------------
 --
 -- replace a word within a selected text (selected using v, V, Ctrl+v)

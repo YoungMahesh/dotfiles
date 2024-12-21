@@ -87,6 +87,23 @@ return {
       })
     end)
 
+    vim.keymap.set('v', '<leader>fs', function()
+      vim.cmd('normal! "vy') -- Yank the selected text into the default register
+      local selected_text = vim.fn.getreg('"') -- Get the yanked text
+      print("Selected Text: " .. selected_text)
+
+      builtin.grep_string({
+        search = selected_text,
+        attach_mappings = new_tab_on_result_select,
+        additional_args = function()
+          return {
+            "--case-sensitive",
+            "--glob", "!*.svg" -- exclude .svg files
+          }
+        end
+      })
+    end)
+
     -- :help telescope.command
     -- no_ignore=true - show files form paths which are mentioned in .gitignore
     --    large directories like node_modules are handled through defaults.file_ignore_patterns in telescope.setup

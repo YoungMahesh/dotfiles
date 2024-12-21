@@ -4,14 +4,10 @@ local keymap = vim.keymap
 keymap.set("n", "to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 --keymap.set('n', '<C-w>', "<cmd>tabclose<cr><cmd>tabp<cr>", { noremap = true, silent = true, nowait = true, desc = 'Close current tab' })
 --keymap.set('n', "tc", "<cmd>tabclose<cr><cmd>tabp<cr>", { desc = 'Close current tab' })
-keymap.set('n', "tc", function()
-    if #vim.api.nvim_list_tabpages() == 1 then
-        vim.cmd('quit')
-    else
-        vim.cmd('tabclose')
-        vim.cmd('tabp')
-    end
-end, { desc = 'close current tab, quit if last tab' })
+keymap.set('n', "t;", function()
+  vim.cmd('quit')
+  vim.cmd('tabp')
+end, { desc = 'close current window' })
 keymap.set("n", "tn", "<cmd>tabn<cr>", { desc = "Go to next tab" })
 keymap.set("n", "tp", "<cmd>tabp<cr>", { desc = "Go to previous tab" })
 keymap.set("n", "tt", "<cmd>tabnew %<cr>", { desc = "Open current buffer in new tab" })

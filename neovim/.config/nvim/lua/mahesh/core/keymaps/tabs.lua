@@ -6,7 +6,11 @@ keymap.set("n", "to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 --keymap.set('n', "tc", "<cmd>tabclose<cr><cmd>tabp<cr>", { desc = 'Close current tab' })
 keymap.set('n', "t;", function()
   vim.cmd('quit')
-  vim.cmd('tabp')
+  -- getwininfo() retrieves information about all windows in the current tab
+  -- # at the start, counts the number of windows 
+  if #vim.fn.getwininfo() == 1 then
+    vim.cmd('tabp')
+  end
 end, { desc = 'close current window' })
 keymap.set("n", "tn", "<cmd>tabn<cr>", { desc = "Go to next tab" })
 keymap.set("n", "tp", "<cmd>tabp<cr>", { desc = "Go to previous tab" })

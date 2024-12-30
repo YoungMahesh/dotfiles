@@ -44,7 +44,7 @@ return {
         -- Vim options for the outline window
         show_numbers = false,
         show_relative_numbers = false,
-        wrap = false,
+        wrap = true,
 
         -- true/false/'focus_in_outline'/'focus_in_code'.
         -- The last two means only show cursorline when the focus is in outline/code.
@@ -75,7 +75,7 @@ return {
 
       outline_items = {
         -- Show extra details with the symbols (lsp dependent) as virtual next
-        show_symbol_details = true,
+        show_symbol_details = false,
         -- Show corresponding line numbers of each symbol on the left column as
         -- virtual text, for quick navigation when not focused on outline.
         -- Why? See this comment:

@@ -49,13 +49,18 @@ return {
       return true
     end
 
+
+    keymap.set('n', '<c-o>', function()
+      builtin.find_files({
+        hidden = true, no_ignore = true
+      })
+    end, {desc = 'search files in cwd'} )
     keymap.set('n', '<c-p>', function()
-      require('telescope.builtin').find_files({
-        hidden = true,
-        no_ignore = true,
+      builtin.find_files({
+        hidden = true, no_ignore = true,
         attach_mappings = new_tab_on_result_select
       })
-    end, { desc = 'Fuzzy all files in cwd' })
+    end, { desc = 'search files in cwd; open in new tab' })
 
     keymap.set('n', '<leader>fc', ":Telescope grep_string <cr>", { desc = 'Find string under cursor in cwd' })
 

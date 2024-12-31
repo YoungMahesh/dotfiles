@@ -24,15 +24,6 @@
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.renderSideBySide": false,
 
-  // copilot settings
-  "chat.editing.alwaysSaveWithGeneratedChanges": true,
-  "github.copilot.enable": {
-    "*": true,
-    //"plaintext": false,
-    //"markdown": false,
-    //"python": false
-  },
-
   // language specific settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.prettierPath": "./node_modules/prettier",

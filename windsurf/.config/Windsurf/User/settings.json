@@ -33,21 +33,7 @@
   "files.associations": {
     "*.json": "jsonc"
   },
-  "workbench.editor.enablePreview": false, // markdown preview
-  //"[dockerfile]": {
-  //  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  //},
-  //"[prisma]": {
-  //  "editor.defaultFormatter": "Prisma.prisma"
-  //},
-  //"solidity.telemetry": true,
-  //"[solidity]": {
-  //  "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
-  //},
-  //"[go]": {
-  //  "editor.defaultFormatter": "golang.go"
-  //},
-  // windsurf settings
+  "workbench.editor.enablePreview": false,
   "windsurf.autocompleteSpeed": "fast",
 }
 

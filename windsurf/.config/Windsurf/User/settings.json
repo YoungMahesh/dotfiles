@@ -35,5 +35,7 @@
   },
   "workbench.editor.enablePreview": false,
   "windsurf.autocompleteSpeed": "fast",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "off",
 }
 

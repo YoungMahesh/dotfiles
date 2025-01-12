@@ -14,6 +14,7 @@ keymap.set('n', "t;", function()
 end, { desc = 'close current window' })
 keymap.set("n", "tn", "<cmd>tabn<cr>", { desc = "Go to next tab" })
 keymap.set("n", "tp", "<cmd>tabp<cr>", { desc = "Go to previous tab" })
+keymap.set('n', '<C-i>', '<cmd>e#<cr>', { noremap = true, silent = true, desc = "Toggle current, previous tab" }) -- <C-i> == <tab>
 keymap.set("n", "tt", "<cmd>tabnew %<cr>", { desc = "Open current buffer in new tab" })
 keymap.set("n", "tl", "<cmd>tabmove -1<cr>", { desc = "move current tab to left" })
 keymap.set("n", "tr", "<cmd>tabmove +1<cr>", { desc = "move current tab to right" })

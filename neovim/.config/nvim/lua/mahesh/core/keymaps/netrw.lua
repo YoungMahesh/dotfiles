@@ -1,4 +1,6 @@
 ---------------------- ->netrw keybindings ---------------------------------
+-- keymap.set('n', '<leader>fv', vim.cmd.Ex, {desc = "open netrw"})
+---
 -- change Vim's current directory to match the directory you're browsing in Netrw, helps during copy-file
 -- vim.g.netrw_keepdir = 0  -- cannot use as harpoon, telescope shows files only in current directory once netrw is opened
 -- %          - create new file
@@ -28,34 +30,34 @@
 --  end
 --})
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "netrw",
-  callback = function()
-    local opts = { noremap = true, silent = true, buffer = true }
-    vim.keymap.set('n', 't', '', opts) -- t for tabs (refer ./tabs.lua)
-    vim.keymap.set('n', 'x', '<Nop>', opts) -- disable 'x'
-
-
-    -- Assign 't' functionality to 'o'
-    vim.keymap.set("n", "o", function()
-      -- Get the current file/directory name
-      local file = vim.fn.expand("<cfile>")
-
-      -- Get the current directory
-      local dir = vim.fn.expand("%:p:h")
-
-      -- Construct the full path
-      local full_path = vim.fn.fnamemodify(dir .. "/" .. file, ":p")
-
-      -- Open in a new tab
-      vim.cmd("tabnew " .. vim.fn.fnameescape(full_path))
-
-      -- If it's a directory, explore it
-      if vim.fn.isdirectory(full_path) == 1 then
-        vim.cmd("Explore")
-      end
-    end, opts)
-  end
-})
+--vim.api.nvim_create_autocmd("FileType", {
+--  pattern = "netrw",
+--  callback = function()
+--    local opts = { noremap = true, silent = true, buffer = true }
+--    vim.keymap.set('n', 't', '', opts) -- t for tabs (refer ./tabs.lua)
+--    vim.keymap.set('n', 'x', '<Nop>', opts) -- disable 'x'
+--
+--
+--    -- Assign 't' functionality to 'o'
+--    vim.keymap.set("n", "o", function()
+--      -- Get the current file/directory name
+--      local file = vim.fn.expand("<cfile>")
+--
+--      -- Get the current directory
+--      local dir = vim.fn.expand("%:p:h")
+--
+--      -- Construct the full path
+--      local full_path = vim.fn.fnamemodify(dir .. "/" .. file, ":p")
+--
+--      -- Open in a new tab
+--      vim.cmd("tabnew " .. vim.fn.fnameescape(full_path))
+--
+--      -- If it's a directory, explore it
+--      if vim.fn.isdirectory(full_path) == 1 then
+--        vim.cmd("Explore")
+--      end
+--    end, opts)
+--  end
+--})
 
 

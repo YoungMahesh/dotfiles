@@ -26,6 +26,9 @@ end, { desc = "Go to next tab" })
 keymap.set("n", "t;", function()
   vscode.call('workbench.action.closeActiveEditor')
 end, { desc = "close current file" })
+keymap.set("n", "tq", function()
+  vscode.call('workbench.action.closeOtherEditors')
+end, { desc = "close other files" })
 -- for <c-w> use { nowait = true}
 keymap.set("n", "to", function()
   vscode.call('workbench.action.files.newUntitledFile')
@@ -47,3 +50,9 @@ end, { desc = 'move down' })
 keymap.set({'n', 'v'}, 'k', function()
   vscode.call('cursorUp')
 end, { desc = 'move down' })
+
+
+keymap.set({'n'}, '<leader>lr', function()
+  vscode.call('editor.action.goToReferences')
+end, { desc = 'open references' })
+

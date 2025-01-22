@@ -1,20 +1,28 @@
-;; https://github.com/jtroo/kanata/blob/v1.6.1/docs/config.adoc
-;; https://youtu.be/XuQVbZ0wENE?si=9KHWEr9lcHhurzQC&t=356
-
-;; start temporarily (https://github.com/jtroo/kanata/releases/tag/v1.6.1)
-;; chmod +x kanata   # may be downloaded without executable permissions
-;; sudo ./kanata --cfg <cfg_file>`
-
-;; permanent installation: https://github.com/jtroo/kanata/discussions/130#discussioncomment-9970020
-
-;; define which keys we want to overwrite (https://github.com/jtroo/kanata/blob/v1.6.1/docs/config.adoc#defsrc)
+;; --------------- 1. source layers ------------------------
 (defsrc
-  caps
+  caps  esc
 )
 
+;; ---------------- 2. default layer ---------------------------
 ;; 'default' is layer name here (it is custom, you can give anything you want)
 (deflayer default
-  esc
+  esc  grv
 )
 
 
+;; -------------------------- #keyboard --------------------------------------
+;; above configuration result: 
+;; caps(1st key in defsrc) will behave as esc(1st key in deflayer)
+;; esc(2nd key in defsrc) will behave as grv[backtick](2nd key in deflayer)
+
+;; source-layer: define which keys we want to overwrite (https://github.com/jtroo/kanata/blob/v1.6.1/docs/config.adoc#defsrc)
+;; default-layers: defaine new key remapping for source layer 
+;; reference: https://github.com/jtroo/kanata/wiki/Configuration-guide#defsrc
+;; -> The amount of whitespace (spaces, tabs, or newlines) between keys in Kanata configuration does not matter.
+;; -> The only requirement is that there must be at least some whitespace to separate the keys
+;; ----------------------- test configuration ----------------------
+;; kanata --version # if already installed
+;; sudo kanata --cfg <cfg_file>`
+;; ----------------------- additional info ---------------------------
+;; https://github.com/jtroo/kanata/blob/v1.6.1/docs/config.adoc
+;; https://youtu.be/XuQVbZ0wENE?si=9KHWEr9lcHhurzQC&t=356

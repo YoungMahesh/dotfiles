@@ -2,6 +2,7 @@
 local vscode = require('vscode')
 local keymap = vim.keymap
 
+-------------- save, format file ------------------------
 keymap.set('n', 'ss', function()
   vscode.call('workbench.action.files.save')
 end, {desc = 'save file'})
@@ -16,7 +17,7 @@ end, { desc = "format current file" })
 --  vscode.call('workbench.view.scm')
 --end, {desc = 'git open'})
 
--- tab switch
+------------------- tab switch -------------------
 keymap.set("n", "tn", function()
   vscode.call('workbench.action.nextEditor')
 end, { desc = "Go to next tab" })
@@ -41,7 +42,7 @@ keymap.set("n", "to", function()
 end, { desc = "close current file" })
 
 
--- vscode native folding 
+-------------- vscode native folding -------------------
 -- neovim's built-in folding does not affect vscode text, hence we are calling vscode's fold function to natively fold
 keymap.set("n", "zc", function()
   vscode.call('editor.fold')
@@ -74,7 +75,12 @@ end, { desc = 'move up select' })
 --  vscode.call('cursorColumnSelectUp')
 --end, { desc = 'move down to select column' })
 
+--------------- git -----------------------
+keymap.set({'n'}, 'go', function()
+  vscode.call('git.openChange')
+end, { desc = 'open git changes' })
 
+-------------- references ------------------
 keymap.set({'n'}, '<leader>lr', function()
   vscode.call('editor.action.goToReferences')
 end, { desc = 'open references' })

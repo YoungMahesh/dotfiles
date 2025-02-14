@@ -1,6 +1,6 @@
 // Place your key bindings in this file to override the defaults
 [
-  // terminal
+  // ------------------ terminal -----------------
   {
     "key": "ctrl+t",
     "command": "workbench.action.terminal.toggleTerminal",
@@ -11,7 +11,16 @@
     "command": "workbench.action.terminal.new",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   },
-  // suggestion widget
+  {
+    "key": "ctrl+shift+\\",
+    "command": "workbench.action.terminal.focusTabs",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.terminal.kill"
+  },
+  // ----------------- suggestion widget -----------------------
   {
     "key": "ctrl+n",
     "command": "editor.action.triggerSuggest",
@@ -48,7 +57,7 @@
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
 
-  // neovim extension
+  // --------------- neovim extension -----------------------
   {
     // paste-action is done with p with neovim,
     //  so free ctrl+v to be used for neovim-visual_mode
@@ -56,8 +65,20 @@
     "command": "-editor.action.clipboardPasteAction",
     "when": "editorTextFocus && neovim.mode != insert"
   },
-
-  // windsurf
+  // ------------------ git ----------------------
+  {
+    // stage selected lines
+    "key": "ctrl+s",
+    "command": "git.stageSelectedRanges",
+    "when": "editorTextFocus"
+  },
+  {
+    // remove untracked hunk on current line
+    "key": "ctrl+r",
+    "command": "git.revertSelectedRanges",
+    "when": "editorTextFocus"
+  },
+  //  ------------------ windsurf -------------------
   // ctrl+l to toggle cascade, ctrl+i to code edit, ctrl+1 move to file editor
   {
     "key": "ctrl+y",
@@ -85,5 +106,5 @@
     "key": "tab",
     "command": "-editor.action.inlineSuggest.commit",
     "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus || cursorAtInlineEdit && inlineEditIsVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus || cursorAtInlineEdit && inlineEditIsVisible && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus"
-  },
+  }
 ]

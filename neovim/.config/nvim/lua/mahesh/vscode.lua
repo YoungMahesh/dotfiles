@@ -41,21 +41,38 @@ keymap.set("n", "to", function()
 end, { desc = "close current file" })
 
 
--- fold
+-- vscode native folding 
+-- neovim's built-in folding does not affect vscode text, hence we are calling vscode's fold function to natively fold
 keymap.set("n", "zc", function()
   vscode.call('editor.fold')
 end, { desc = "fold code snippet" })
 keymap.set("n", "zo", function()
   vscode.call('editor.unfold')
 end, { desc = "unfold code snippet" })
--- as we are using folding from vscode, neovim is unware when we move through folding, which leads to fold-open when we use default
---  keybinding, hence use vscode keybinding for up and down movement
-keymap.set({'n', 'v'}, 'j', function()
+
+-- move over vscode folds
+-- as we are using folding from vscode, neovim is unware when we move through folding, which leads to 
+-- fold-open when we use default neovim keybinding to move up, down
+-- hence use vscode keybinding for up and down movement
+keymap.set({'n'}, 'j', function()
   vscode.call('cursorDown')
 end, { desc = 'move down' })
-keymap.set({'n', 'v'}, 'k', function()
+keymap.set({'v'}, 'j', function()
+  vscode.call('cursorDownSelect')
+end, { desc = 'move down select' })
+-- x for visual-block mode keybinding
+--keymap.set({'x'}, 'j', function()
+--  vscode.call('cursorColumnSelectDown')
+--end, { desc = 'move down to select column' })
+keymap.set({'n'}, 'k', function()
   vscode.call('cursorUp')
-end, { desc = 'move down' })
+end, { desc = 'move up' })
+keymap.set({'v'}, 'k', function()
+  vscode.call('cursorUpSelect')
+end, { desc = 'move up select' })
+--keymap.set({'x'}, 'k', function()
+--  vscode.call('cursorColumnSelectUp')
+--end, { desc = 'move down to select column' })
 
 
 keymap.set({'n'}, '<leader>lr', function()

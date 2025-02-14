@@ -37,5 +37,8 @@
   "windsurf.autocompleteSpeed": "fast",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
+  "windsurf.autoExecutionPolicy": "shred",
+  "windsurf.enableTabToJump": true,
+  "windsurf.cascadeOpenOnReload": false,
 }
 

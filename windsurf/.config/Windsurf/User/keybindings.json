@@ -47,6 +47,7 @@
     "command": "renameFile",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+
   // neovim extension
   {
     // paste-action is done with p with neovim,
@@ -54,7 +55,35 @@
     "key": "ctrl+v",
     "command": "-editor.action.clipboardPasteAction",
     "when": "editorTextFocus && neovim.mode != insert"
-  }
+  },
+
   // windsurf
   // ctrl+l to toggle cascade, ctrl+i to code edit, ctrl+1 move to file editor
+  {
+    "key": "ctrl+y",
+    "command": "editor.action.inlineEdit.accept",
+    "when": "cursorAtInlineEdit && inlineEditVisible && !editorReadonly"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "windsurf.prioritized.supercompleteAccept",
+    "when": "editorTextFocus && inlineSuggestionVisible || editorTextFocus && windsurf.customCompletionShown"
+  },
+  {
+    // even though tab 'ctrl+y' is bound to same command, tab continues to work unless we disable it
+    "key": "tab",
+    "command": "-windsurf.prioritized.supercompleteAccept",
+    "when": "editorTextFocus && inlineSuggestionVisible || editorTextFocus && windsurf.customCompletionShown"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus || cursorAtInlineEdit && inlineEditIsVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus || cursorAtInlineEdit && inlineEditIsVisible && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus"
+  },
+  {
+    // even though tab 'ctrl+y' is bound to same command, tab continues to work unless we disable it
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus || cursorAtInlineEdit && inlineEditIsVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus || cursorAtInlineEdit && inlineEditIsVisible && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus"
+  },
 ]

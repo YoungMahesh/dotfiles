@@ -2,16 +2,19 @@
 
 # ------------------ fzf -----------------------
 fz() {
-    local dirs
-    dirs=$(find ~/company ~/personal -maxdepth 1 | fzf)
+    local custom_dirs=(~/dotfiles ~/Documents) 
+    local dirs=$(
+        (find ~/company ~/personal -maxdepth 1 -type d; 
+         printf '%s\n' "${custom_dirs[@]}") | 
+        fzf
+    )
     
     if [ -n "$dirs" ]; then
         cd "$dirs" && clear
     fi
 }
 
-
-# ----------------- history ---------------------------
+# ----------------- bash history ---------------------------
 # Set maximum number of commands in memory during a session
 HISTSIZE=500
 # Set maximum number of commands to save in the history file
@@ -20,8 +23,22 @@ HISTFILESIZE=500
 HISTCONTROL=ignoreboth
 # Bind Ctrl+R to fzf history search
 __fzf_history__() {
-    local selected
-    selected=$(history | fzf --tac --no-sort --exact +m -e | awk '{$1=""; print $0}' | sed 's/^ *//')
+    # 1. Pass through fuzzy finder (fzf) `| fzf --tac --no-sort --exact +m -e`
+    #   | pipes the history output to fzf
+    #   --tac: Reverses the order (most recent commands first)
+    #   --no-sort: Keeps the original order of commands
+    #   --exact: Requires exact match when searching
+    #   +m: Allow only single selection
+    #   -e: Enable exact matching mode
+    # 2. Remove line numbers `| awk '{$1=""; print $0}'`
+    #   Removes the first field (history line number)
+    #   $1="" sets the first field to empty
+    #   print $0 prints the entire line (now without the line number)
+    # 3. Remove leading whitespace `| sed 's/^ *//'`
+    #   Removes leading whitespace from the beginning of the line
+    #   s/^ *// is a sed substitution that replaces leading spaces with nothing
+    #   Ensures the command starts exactly at the first character
+    local selected=$(history | fzf --tac --no-sort --exact +m -e | awk '{$1=""; print $0}' | sed 's/^ *//')
     
     if [ -n "$selected" ]; then
         READLINE_LINE="$selected"
@@ -43,45 +60,34 @@ alias gp='git push'
 
 
 # ---------------------- package installations ------------------------------
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
 
 # if you have installed vlc through flathub
 #alias vlc='flatpak run org.videolan.VLC'
 
-# golang path
-#export PATH=$PATH:/usr/local/go/bin
-#export PATH=${PATH}:`go env GOPATH`/bin
+path() {
+  # echo "$PATH" outputs the entire PATH string
+  # tr ':' '\n' translates (replaces) each colon : with a newline \n
+  echo "$PATH" | tr ':' '\n' | fzf
+}
+clean_path() {
+    # Remove duplicates while preserving order
+    export PATH=$(echo "$PATH" | tr ':' '\n' | awk '!seen[$0]++' | tr '\n' ':' | sed 's/:$//')
+    echo "PATH cleaned and updated."
+}
 
-# path for https://github.com/sharkdp/fd 
-#export PATH=$PATH:$HOME/.local/bin
-
-# folder color to orange, no need in alacritty
+# folder color to orange, only for default terminal [no need in alacritty or kitty]
 #export LS_COLORS="$LS_COLORS:di=38;5;208"
 
 # for ansible
 #export LC_ALL="en_US.UTF-8"
 #export LANG="en_US.UTF-8"
 
-# pnpm
-#export PNPM_HOME="/home/mahesh/.local/share/pnpm"
-#case ":$PATH:" in
-#  *":$PNPM_HOME:"*) ;;
-#  *) export PATH="$PNPM_HOME:$PATH" ;;
-#esac
 #alias pn='pnpm'
 
-# cli through docker, --network host tells cli to look network on host computer instead of inside docker-container
+# stripe: cli through docker, --network host tells cli to look network on host computer instead of inside docker-container
 #alias stripe='docker run --rm -it --network host stripe/stripe-cli:latest'
 
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 export EDITOR=nvim
-export PATH="$PATH:/opt/nvim-linux64/bin"
 alias vi=nvim
 
 alias python=python3

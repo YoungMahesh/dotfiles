@@ -1,7 +1,7 @@
 # append this line to os generated .bashrc file: source ~/.bashrc-1
 
 # ------------------ fzf -----------------------
-fz() {
+ff() {
     local custom_dirs=(~/dotfiles ~/Documents) 
     local dirs=$(
         (find ~/company ~/personal -maxdepth 1 -type d; 
@@ -87,7 +87,19 @@ clean_path() {
 # stripe: cli through docker, --network host tells cli to look network on host computer instead of inside docker-container
 #alias stripe='docker run --rm -it --network host stripe/stripe-cli:latest'
 
+export PATH="$PATH:/opt/nvim-linux64/bin"
 export EDITOR=nvim
 alias vi=nvim
+
+
+# set PATH so it includes user's private bin if it exists
+#PATH="$HOME/bin:$PATH"
+# set PATH so it includes user's private bin if it exists
+#PATH="$HOME/.local/bin:$PATH"
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+export PATH="$PATH:/home/mahesh/.bun/bin"
 
 alias python=python3

@@ -18,7 +18,7 @@ ff() {
 # Set maximum number of commands in memory during a session
 HISTSIZE=500
 # Set maximum number of commands to save in the history file
-HISTFILESIZE=500
+HISTFILESIZE=0
 # Optional: Ignore duplicate commands and commands starting with space
 HISTCONTROL=ignoreboth
 # Bind Ctrl+R to fzf history search

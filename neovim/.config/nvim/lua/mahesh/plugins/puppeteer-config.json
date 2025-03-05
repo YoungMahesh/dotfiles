@@ -1,0 +1,2 @@
+// NOT in use currently: for image.lua/3rd/diagram.nvim  
+{ "args": ["--no-sandbox"] }

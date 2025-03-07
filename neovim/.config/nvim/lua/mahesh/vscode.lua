@@ -17,6 +17,13 @@ end, { desc = "format current file" })
 --  vscode.call('workbench.view.scm')
 --end, {desc = 'git open'})
 
+------------- file explorer ---------------
+-- [default file manipulation](https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#explorer-file-manipulation-bindings)
+--  a[newFile], A[new folder], d[deleteFile], r[renameFile], x[cut], p[paste], y[copy]
+
+-- [default explorer navigation](https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#explorerlist-navigation-bindings)
+--  zm[collapseAll], gg[focusFirst], G[focusLast], j[down], k[up], h[focusParentFolder], enter[open file/folder]
+
 ------------------- tab switch -------------------
 keymap.set("n", "tn", function()
   vscode.call('workbench.action.nextEditor')
@@ -44,6 +51,7 @@ end, { desc = "close current file" })
 
 -------------- vscode native folding -------------------
 -- neovim's built-in folding does not affect vscode text, hence we are calling vscode's fold function to natively fold
+-- built-in 'j', 'k' does not recognize this fold, hence use half-page up/down to move above/below fold
 keymap.set("n", "zc", function()
   vscode.call('editor.fold')
 end, { desc = "fold code snippet" })
@@ -55,23 +63,29 @@ end, { desc = "unfold code snippet" })
 -- as we are using folding from vscode, neovim is unware when we move through folding, which leads to 
 -- fold-open when we use default neovim keybinding to move up, down
 -- hence use vscode keybinding for up and down movement
-keymap.set({'n', 'v', 'x'}, 'j', function()
-  vscode.call('cursorDown')
-end, { desc = 'move down' })
+
+
+-- keymap.set({'n', 'v', 'x'}, 'j', function()
+-- problem: if you select few lines in visual mode by pressing 'j', and then when you press 'k' instead of moving one line up, 
+--    it moves to one line up from where selection started
+--   vscode.call('cursorDown')
+-- end, { desc = 'move down' })
+--keymap.set({'n', 'v', 'x'}, 'k', function()
+--  vscode.call('cursorUp')
+--end, { desc = 'move up' })
+--
 --keymap.set({'v'}, 'j', function()
 --  vscode.call('cursorDownSelect')
 --end, { desc = 'move down select' })
 -- x for visual-block mode keybinding
---keymap.set({'x'}, 'j', function()
---  vscode.call('cursorColumnSelectDown')
---end, { desc = 'move down to select column' })
-keymap.set({'n', 'v', 'x'}, 'k', function()
-  vscode.call('cursorUp')
-end, { desc = 'move up' })
 --keymap.set({'v'}, 'k', function()
 --  -- problem: expected to move selection-cursor  'up', but it moves cursor 'left,up,right'
 --  vscode.call('cursorUpSelect')
 --end, { desc = 'move up select' })
+--
+--keymap.set({'x'}, 'j', function()
+--  vscode.call('cursorColumnSelectDown')
+--end, { desc = 'move down to select column' })
 --keymap.set({'x'}, 'k', function()
 --  vscode.call('cursorColumnSelectUp')
 --end, { desc = 'move down to select column' })

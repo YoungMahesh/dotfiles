@@ -1,0 +1,14 @@
+{
+  "keyMappings": "map ; scrollPageDown\nmap a scrollPageUp\nunmap >\nunmap <",
+  "settingsVersion": "2.1.2",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": ">,<,/,j,k,l,f",
+      "pattern": "https?://www.youtube.com/*"
+    }
+  ]
+}

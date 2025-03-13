@@ -1,3 +1,5 @@
+-- related: ../options.lua#search
+
 ---------------------- ->search ---------------------------------
 -- 1) search text by typing ->   /<search-text>  -> in normal mode
 --    append \c to make search case-insensitive

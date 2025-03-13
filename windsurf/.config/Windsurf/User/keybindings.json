@@ -41,22 +41,15 @@
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetVisible"
   },
-  // file manager
+  // ----------------- retain vscode shortcuts over neovim -------------------
   {
     "key": "ctrl+e",
     "command": "workbench.files.action.focusFilesExplorer"
   },
   {
-    "key": "d",
-    "command": "moveFileToTrash",
-    "when": "explorerResourceMoveableToTrash && filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+    "key": "ctrl+b",
+    "command": "workbench.action.toggleSidebarVisibility"
   },
-  {
-    "key": "r",
-    "command": "renameFile",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-
   // --------------- neovim extension -----------------------
   {
     // paste-action is done with p with neovim,

@@ -21,9 +21,16 @@ opt.number = true
 
 opt.wrap = false
 
+
+------------------------ #search ----------------------------------------
 -- incremental-search: highlight text 'while typing' search text with :/<search-text>
 opt.incsearch = true
 
+-- make search case-insitive; for case-sensitive search execute `:set noic`  [noic == noignorecase]
+opt.ignorecase = true
+
+-------------------------------------------------------------------
+---
 -- NOTE: unlike lua-plugins changes in this file does not reflect across all session immediately when you restart nvim, don't know why for now
 opt.foldmethod = 'indent' -- :set foldmethod=syntax,manual,indent
 
@@ -42,7 +49,4 @@ vim.g.markdown_recommended_style = 0 -- without this pressing tab will create 4 
 -- :h fold-foldlevel 			:h foldlevel
 -- high foldlevel is needed to keep all folds open by default
 -- opt.foldlevel = 100 -- :h
-
-
-
 

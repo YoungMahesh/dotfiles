@@ -21,8 +21,12 @@ return {
         pattern = "fugitive",
         callback = function()
           -- keymaps for fugitive buffer (to be consistant with global keymap)
-          vim.keymap.set("n", "a", "<C-u>zz", { buffer = true, noremap=true })
-          vim.keymap.set("n", "sx", "<cmd>xa<CR>", { desc = "save all files and close" })
+          -- Use vim.cmd to create buffer-local mappings in fugitive buffer
+          vim.cmd([[
+            nmap <buffer> a <C-u>zz
+            nnoremap <buffer> s <Nop>
+            nmap <buffer> sx <cmd>xa<CR>
+          ]])
         end,
       })
       vim.keymap.set("n", "go", "<cmd>0G<cr>", {desc = 'open git status'})

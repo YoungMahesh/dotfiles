@@ -50,11 +50,11 @@ return {
     end
 
 
-    keymap.set('n', '<c-o>', function()
-      builtin.find_files({
-        hidden = true, no_ignore = true
-      })
-    end, {desc = 'search files in cwd'} )
+    --keymap.set('n', '<c-o>', function()
+    --  builtin.find_files({
+    --    hidden = true, no_ignore = true
+    --  })
+    --end, {desc = 'search files in cwd'} )
     keymap.set('n', '<c-p>', function()
       builtin.find_files({
         hidden = true, no_ignore = true,

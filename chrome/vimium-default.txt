@@ -1,0 +1,15 @@
+shift+? - get list of available command
+shift+t - search browser tabs
+shift+h - go back to previous url on current page
+shift+w - move tab to new window
+shift+6 - move to last focused tab
+shift+j - move to left tab
+shift+k - move to right tab
+yy  - copy url of current page
+f   - show options to click on element/link on the page
+o   - omnibar - search across bookmarks and browser history; if none selected from suggestion it will search google
+y+t  - duplicate current tab
+
+
+------------ chrome defaults ----------------
+ctrl+w  - close current tab

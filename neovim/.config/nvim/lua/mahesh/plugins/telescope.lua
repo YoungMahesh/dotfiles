@@ -129,16 +129,17 @@ return {
         },
         -- vimgrep_arguments can be applied to all commands through here or to specific command, as shown in one of the comments above
         -- -- rg (ripgrep - search utility),
+        -- https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#common-options
         -- The order of arguments in Lua functions matters. When calling a function, Lua adjusts the number of arguments to the number of parameters. Extra arguments are thrown away, and extra parameters get nil
         -- --color=never  - ensures that the output does not include color codes.
         -- --no-heading   - suppresses the heading line with the file name.
         -- --with-filename - includes the file name in the output.
         -- --line-number  - includes the line number in the output.
         -- --column       - includes the column number in the output.
-        -- --smart-case (enables smart case matching) or --case-sensitive
+        -- --smart-case (similar to --ignore-case, but disables itself if the pattern contains any uppercase letters) / --ignore-case (ignore case differences)
         -- --hidden       - includes hidden files in the search.
         -- 1) :help telescope.defaults.vimgrep_arguments 2) K on vimgrep_arguments here 3) rg --help
-        vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden', '--no-ignore' },
+        vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--ignore-case', '--hidden', '--no-ignore' },
         file_ignore_patterns = {
           -- put `.ignore` file to exclude specific folders in specific directory, it works same as .gitignore (.gitignore for git, .ignore for telescope)
           -- note: there is no way to ignore files in subdirectories, if you put * in home-directory's .ignore, it will not show files when you open telescope in any subdirectory

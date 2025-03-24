@@ -1,0 +1,2 @@
+- files here will autostart application by executing `Exec` command on every reboot
+- to add new application, click 'Add' in 'Startup Applications' in gnome-search

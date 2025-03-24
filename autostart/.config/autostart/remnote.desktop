@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/snap/bin/chromium --app="https://www.remnote.com"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Remnote
+Name=Remnote
+Comment[en_US]=
+Comment=

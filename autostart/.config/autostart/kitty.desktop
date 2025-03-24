@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/mahesh/.local/kitty.app/bin/kitty
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=kitty
+Name=kitty
+Comment[en_US]=
+Comment=

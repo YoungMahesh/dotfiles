@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/snap/bin/chromium --app="https://www.remnote.com"
+Exec=/snap/bin/chromium --app="https://www.remnote.com" --profile-directory="Default"
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true

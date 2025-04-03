@@ -25,7 +25,8 @@ return {
           vim.cmd([[
             nmap <buffer> a <C-u>zz
             nnoremap <buffer> s <Nop>
-            nmap <buffer> sx <cmd>xa<CR>
+            nmap <buffer> sx <cmd>xa<cr>
+            nmap <buffer> p <cmd>Git push<cr>
           ]])
         end,
       })

@@ -43,5 +43,8 @@
   "editor.tabSize": 2,
   "editor.fontSize": 15,
   "windsurf.explainAndFixInCurrentConversation": true,
+  "windsurf.chatFontSize": "default",
+  "windsurf.rememberLastModelSelection": true,
+  "windsurf.openRecentConversation": true,
 }
 

@@ -1,6 +1,7 @@
 shift+? - get list of available command
 shift+t - search browser tabs
 shift+h - go back to previous url on current page
+shift+l - move forward to next url (from which you came backward)
 shift+w - move tab to new window
 shift+6 - move to last focused tab
 shift+j - move to left tab

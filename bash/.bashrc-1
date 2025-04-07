@@ -103,3 +103,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export PATH="$PATH:/home/mahesh/.bun/bin"
 
 alias python=python3
+# for python-poetry
+export PATH="/home/mahesh/.local/bin:$PATH"

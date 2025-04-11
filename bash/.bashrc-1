@@ -51,18 +51,31 @@ bind -x '"\C-r": __fzf_history__'
 
 # ---------- brightness ----------
 set_brightness() {
-  # assign the first argument passed to a local variable
   local level=$1
 
-  # divide the level by 10 using `bc`(a command-line calculator)
-  # scale=1 ensures result has one decimal place
-  local brightness=$(echo "scale=1; $level / 10" | bc)
-  # get HDMI device name by executing `xrandr`
+  # regex-verificaiton to check that number characters are provided, as argument instead of alphabet or other characters
+  if ! [[ "$level" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
+    echo "Error: Invalid brightness level. Please use a number between 1 and 10." >&2
+    return 1
+  fi
+
+  # number be between 1 to 10
+  if (( $(echo "$level < 1 || $level > 10" | bc -l) )); then
+    echo "Error: Brightness level must be between 1 and 10." >&2
+    return 1
+  fi
+
+  # divide level by 10 using `bc`(a command-line calculator) to get a decimal value
+  # scale=2 insures that result has 2 decimal places
+  local brightness=$(echo "scale=2; $level / 10" | bc)
+  
+  # set brightness using xrandr
+  # to get HDMI device name, execute `xrandr`
   xrandr --output HDMI-A-0 --brightness "$brightness"
 }
-for i in {1..10}; do
-  alias br"$i"="set_brightness $i"
-done
+# Make the function available directly using an alias
+alias br="set_brightness"
+
 
 # ------------------- git --------------------
 alias gs='git status'

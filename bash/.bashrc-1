@@ -49,6 +49,21 @@ __fzf_history__() {
 bind -x '"\C-r": __fzf_history__'
 
 
+# ---------- brightness ----------
+set_brightness() {
+  # assign the first argument passed to a local variable
+  local level=$1
+
+  # divide the level by 10 using `bc`(a command-line calculator)
+  # scale=1 ensures result has one decimal place
+  local brightness=$(echo "scale=1; $level / 10" | bc)
+  # get HDMI device name by executing `xrandr`
+  xrandr --output HDMI-A-0 --brightness "$brightness"
+}
+for i in {1..10}; do
+  alias br"$i"="set_brightness $i"
+done
+
 # ------------------- git --------------------
 alias gs='git status'
 #alias gd='git diff'

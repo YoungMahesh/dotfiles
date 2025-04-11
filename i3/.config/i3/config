@@ -13,10 +13,11 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
+# font <font-rendering-engine>:<font-name> <font-size>
 #font pango:DejaVu Sans Mono 8
 
 # Start XDG autostart .desktop files using dex. See also
@@ -63,10 +64,14 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+bindsym $mod+j focus down 
+#bindsym $mod+k focus down
+bindsym $mod+k focus up 
+#bindsym $mod+l focus up
+bindsym $mod+l focus right 
+#bindsym $mod+semicolon focus right
+bindsym $mod+h focus left 
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -87,7 +92,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+#bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -202,3 +207,19 @@ bindsym $mod+n exec --no-startup-id nautilus
 # mod+shift+q - close current window
 # Switch to workspace 2	$mod + 2
 # Move focused window to 2	$mod + Shift + 2
+
+bindsym $mod+Shift+s exec --no-startup-id systemctl suspend
+
+
+# ------------ installation --------
+# sudo apt install i3
+
+# Log out of your current session.
+# On the login screen, click the gear icon or session menu.
+# Select i3. -> Log in. 
+
+# On first launch, i3 will prompt you to:
+# Generate a default config file (~/.config/i3/config)
+# Choose a modifier key (usually Win/Super or Alt)
+
+# use xrandr to manage brightness

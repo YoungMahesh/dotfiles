@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
-Exec=/snap/bin/chromium --app="https://www.remnote.com" --profile-directory="Default"
+#Exec=/snap/bin/chromium --app="https://www.remnote.com" --profile-directory="Default"
+Exec=/home/mahesh/apps/remnote-1.19.11.AppImage --no-sandbox
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true

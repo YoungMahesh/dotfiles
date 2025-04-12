@@ -1,0 +1,2 @@
+- light-mode enable for chrome-ui
+  - visit settings -> appearance -> theme -> dark

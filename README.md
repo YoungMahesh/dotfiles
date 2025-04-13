@@ -1,3 +1,6 @@
+### links
+- #notes-site == https://www.remnote.com/profile/youngmahesh -> notes
+
 ### installation steps
 - ssh-setup -> download dotfiles -> kanata -> neovim -> github-repositories -> bash -> fonts -> kitty -> 
 

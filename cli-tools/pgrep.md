@@ -4,6 +4,9 @@
 # The -f flag makes pgrep search the full command line (including arguments), not just the process name.
 # Without -f, pgrep only matches the process name (the executable name).
 
+# pgrep <app-name> to list IDs of running processes by the app
+pgrep firefox 
+
 # get id of process containing search-pattern
 # this is used during script creation, where we want to check if certain app is already running
 pgrep -f <search-pattern>

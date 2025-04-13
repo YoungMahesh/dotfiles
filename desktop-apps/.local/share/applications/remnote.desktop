@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=remnote
+Exec=/home/mahesh/apps/remnote-1.19.11.AppImage --no-sandbox
+#Exec=/home/mahesh/apps/remnote-1.19.11.AppImage 
+Type=Application
+# either 1) provide full path of icon (usually .png or .svg)
+#        2) put remnote.{png/svg} in ~/.local/share/icons
+# Icon=remnote
+Categories=Utility;

@@ -46,21 +46,11 @@ tiling_drag modifier titlebar
 
 
 
-# change focus
-#bindsym $mod+j focus left
+# change focus ; switch window
 bindsym $mod+j focus down 
-#bindsym $mod+k focus down
 bindsym $mod+k focus up 
-#bindsym $mod+l focus up
 bindsym $mod+l focus right 
-#bindsym $mod+semicolon focus right
 bindsym $mod+h focus left 
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -82,9 +72,9 @@ bindsym $mod+v split v
 
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+bindsym $mod+o layout tabbed
+bindsym $mod+semicolon layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -168,8 +158,6 @@ bindsym $mod+Return exec $term
 
 # launch apps with keybinding
 bindsym $mod+n exec --no-startup-id nautilus
-bindsym $mod+m exec --no-startup-id telegram-desktop 
-bindsym $mod+o exec --no-startup-id /home/mahesh/apps/remnote-1.19.11.AppImage --no-sandbox
 
 # enter fullscreen mode for the focused container
 #bindsym $mod+f fullscreen toggle
@@ -207,7 +195,7 @@ bindsym $mod+0 workspace number $ws10
 
 # -> keybindings
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 # suspend
 bindsym $mod+Shift+s exec --no-startup-id systemctl suspend
 # reload the configuration file

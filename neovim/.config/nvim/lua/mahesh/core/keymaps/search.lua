@@ -17,7 +17,7 @@ vim.keymap.set('v', '/', "\"fy/\\V<C-R>f<CR>", { desc = 'Search highlighted text
 -- replace a word within a selected text (selected using v, V, Ctrl+v)
 --    type `:` -> `s/<old-word>/<new-word>` -> enter
 --      `:'<,'>` appears automatically when you press `:` in Visual mode - it indicates the range of the visual selection
--- Trick 1 (:help /)
+-- Trick 1 - one word at a time (:help /)
 --    1. search word with -> /<word><cr>
 --    2. type `cw` (change word) -> type new word -> Esc
 --    3. move to next word by typing `n`

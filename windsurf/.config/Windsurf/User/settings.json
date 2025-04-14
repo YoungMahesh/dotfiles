@@ -21,8 +21,7 @@
   // git settings
   "git.openRepositoryInParentFolders": "never",
   "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.hideUnchangedRegions.enabled": true,
-  "diffEditor.renderSideBySide": false,
+  "diffEditor.renderSideBySide": true,
 
   // language specific settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -46,5 +45,6 @@
   "windsurf.chatFontSize": "default",
   "windsurf.rememberLastModelSelection": true,
   "windsurf.openRecentConversation": true,
+  "diffEditor.useInlineViewWhenSpaceIsLimited": false,
 }
 

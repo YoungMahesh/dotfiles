@@ -158,9 +158,12 @@ bindsym $mod+Return exec $term
 
 # launch apps with keybinding
 bindsym $mod+n exec --no-startup-id nautilus
+bindsym $mod+g exec --no-startup-id gnome 
 
 # enter fullscreen mode for the focused container
-#bindsym $mod+f fullscreen toggle
+bindsym $mod+m fullscreen toggle
+# open all apps in fullscreen mode by default
+for_window [class=".*"] fullscreen enable
 
 # start dmenu (a program launcher)
 bindsym $mod+f exec --no-startup-id dmenu_run
@@ -197,7 +200,7 @@ bindsym $mod+0 workspace number $ws10
 # kill focused window
 bindsym $mod+q kill
 # suspend
-bindsym $mod+Shift+s exec --no-startup-id systemctl suspend
+bindsym $mod+s exec --no-startup-id systemctl suspend
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)

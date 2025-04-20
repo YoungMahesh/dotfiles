@@ -54,4 +54,8 @@
     "key": "ctrl+v",
     "command": "-editor.action.clipboardPasteAction"
   },
+  {
+    "key": "ctrl+i",
+    "command": "composerMode.agent"
+  },
 ]

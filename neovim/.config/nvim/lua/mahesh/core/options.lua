@@ -7,7 +7,8 @@ local opt = vim.opt
 -- :set foldmethod? -- check current value of option - foldmethod
 -- :set foldmethod=syntax -- change value of option - foldmethod
 
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+-- use system clipboard as default register
+opt.clipboard:append("unnamedplus")
 
 opt.tabstop = 2                     -- Tab character width (2 spaces)
 opt.shiftwidth = 2                  -- Indentation size (2 spaces)

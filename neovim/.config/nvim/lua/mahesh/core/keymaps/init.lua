@@ -7,7 +7,6 @@ require("mahesh.core.keymaps.search")
 require("mahesh.core.keymaps.visual-mode")
 require("mahesh.core.keymaps.terminal")
 require("mahesh.core.keymaps.window")
-
 -- NOTE: when you update keymap, to test changes, you first need to close all nvim instances
 -- check default keymap documentation: :help <keymap>
 --    some of the default keymaps are disabled in keymaps.disabled file
@@ -24,12 +23,13 @@ local keymap = vim.keymap
 
 -- .set first-argument (n == normal mode, i == insert mode, v == visual mode, <empty> == all modes)
 -- <C-u> == Ctrl+u
-keymap.set({ "n", "v" }, "q", "A", { desc = "move and insert at end of line", noremap = true })
-keymap.set("n", "r", "<C-r>", { desc = "redo", noremap = true })
 keymap.set({ "n", "v" }, "0", "^", { desc = "move to first char of line", noremap = true })
-keymap.set({ "n", "v" }, "9", "g_", { desc = "move to last char of line", noremap = true })
+--keymap.set({ "n", "v" }, 'L', '<Nop>', { noremap = true, silent = true })
+keymap.set({ "n", "v" }, "L", "g_", { desc = "move to last char of line", noremap = true })
+keymap.set({ "n", "v" }, "q", "A", { desc = "move and insert at end of line", noremap = true })
 keymap.set({ "n", "v" }, "a", "<C-u>zz", { desc = "move up half of viewport + cursor at middle(zz)", noremap = true })
 keymap.set({ "n", "v" }, ";", "<C-d>zz", { desc = "move down half of viewport + cursor at middle", noremap = true })
+keymap.set("n", "r", "<C-r>", { desc = "redo", noremap = true })
 
 --When yanking content, it goes to the Unnamed register ("") but also to register "0. Thus, you can still paste the most recent yanked text
 -- (after using the paste command) using "0p.
@@ -131,5 +131,4 @@ keymap.set('n', '<leader>.', '<cmd>vsplit ~/.local/share/nvim/raw.txt<cr>', {des
 --end, { desc = 'open raw.txt file in a popup' })
 
 keymap.set('n', '<leader>m', "<cmd>put =execute('messages')<cr>", {desc = 'copy neovim messages to buffer'})
-
 

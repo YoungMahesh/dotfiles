@@ -46,5 +46,9 @@
   "windsurf.rememberLastModelSelection": true,
   "windsurf.openRecentConversation": true,
   "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+  "solidity.telemetry": false,
+  "[solidity]": {
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  },
 }
 

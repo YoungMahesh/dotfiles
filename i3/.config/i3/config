@@ -44,19 +44,17 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 
-
-
 # change focus ; switch window
+bindsym $mod+h focus left 
+bindsym $mod+l focus right 
 bindsym $mod+j focus down 
 bindsym $mod+k focus up 
-bindsym $mod+l focus right 
-bindsym $mod+h focus left 
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -163,11 +161,6 @@ bindsym $mod+Return exec $term
 bindsym $mod+n exec --no-startup-id nautilus
 bindsym $mod+g exec --no-startup-id gnome 
 
-# enter fullscreen mode for the focused container
-bindsym $mod+m fullscreen toggle
-# open all apps in fullscreen mode by default
-for_window [class=".*"] fullscreen enable
-for_window [class="firefox_firefox"] fullscreen disable
 
 # start dmenu (a program launcher)
 bindsym $mod+f exec --no-startup-id dmenu_run
@@ -228,6 +221,12 @@ assign [class="firefox_firefox"] 2
 assign [class="Chromium"] 3
 assign [class="RemNote"] 5
 
+# enter fullscreen mode for the focused container
+bindsym $mod+m fullscreen toggle
+# open some apps in fullscreen mode 
+# for_window [class=".*"] fullscreen enable   # if you enable fullscreen for all apps then dialog/prompt window will also open as fullscreen
+for_window [class="TelegramDesktop"] fullscreen enable
+for_window [class="RemNote"] fullscreen enable
 
 # ------------ installation --------
 # sudo apt install i3

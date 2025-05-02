@@ -5,8 +5,8 @@ vnoremap 0 ^
 " Move to last char of line
 " nnoremap 9 g_  '9' and 'g_' keymap does not exist in obisidian-vim
 " --------- not working -------------
-nnoremap L $
-vnoremap L $
+nnoremap ' $
+vnoremap ' $
 
 " Move and insert at end of line
 nnoremap q A

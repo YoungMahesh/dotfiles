@@ -182,7 +182,7 @@ bindsym $mod+2 workspace number $ws2
 # pgrep gets 13 ids when chromium is running; 1 when it is not running
 bindsym $mod+3 workspace number $ws3; exec --no-startup-id sh -c '[ "$(pgrep -fc chromium)" -lt 5 ] && /snap/bin/chromium'
 # launch telegram whenever you visit workspace 4
-bindsym $mod+4 workspace number $ws4; exec --no-startup-id telegram-desktop
+bindsym $mod+4 workspace number $ws4; exec --no-startup-id pgrep telegram || telegram-desktop
 #bindsym $mod+5 workspace number $ws5; exec --no-startup-id pgrep remnote > /home/mahesh/rem 
 bindsym $mod+5 workspace number $ws5; exec --no-startup-id pgrep remnote || /home/mahesh/apps/remnote-1.19.11.AppImage --no-sandbox
 bindsym $mod+6 workspace number $ws6

@@ -70,6 +70,8 @@ bindsym $mod+v split v
 
 
 # change container layout (stacked, tabbed, toggle split)
+# set default layout as tabbed
+workspace_layout tabbed
 #bindsym $mod+s layout stacking
 bindsym $mod+o layout tabbed
 bindsym $mod+semicolon layout toggle split
@@ -189,15 +191,13 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-
 # how to move to left window, right window
-
 
 # -> keybindings
 # kill focused window
 bindsym $mod+q kill
 # suspend
-bindsym $mod+s exec --no-startup-id systemctl suspend
+bindsym $mod+z exec --no-startup-id systemctl suspend
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)

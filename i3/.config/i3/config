@@ -225,8 +225,8 @@ assign [class="RemNote"] 5
 bindsym $mod+m fullscreen toggle
 # open some apps in fullscreen mode 
 # for_window [class=".*"] fullscreen enable   # if you enable fullscreen for all apps then dialog/prompt window will also open as fullscreen
-for_window [class="TelegramDesktop"] fullscreen enable
-for_window [class="RemNote"] fullscreen enable
+#for_window [class="TelegramDesktop"] fullscreen enable
+#for_window [class="RemNote"] fullscreen enable
 
 # ------------ installation --------
 # sudo apt install i3

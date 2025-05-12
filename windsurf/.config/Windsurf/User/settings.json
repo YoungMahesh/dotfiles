@@ -50,5 +50,6 @@
   "[solidity]": {
     "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
   },
+  "editor.lineNumbers": "relative",
 }
 

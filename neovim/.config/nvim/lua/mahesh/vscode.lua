@@ -54,6 +54,20 @@ keymap.set("n", "to", function()
   vscode.call('workbench.action.files.newUntitledFile')
 end, { desc = "close current file" })
 
+----------------- bookmarks ---------------------
+-- https://github.com/alefragnani/vscode-bookmarks
+keymap.set('n', 'mm', function()
+  vscode.call('bookmarks.toggle')
+end, {desc = 'toggle bookmark'})
+keymap.set('n', 'ml', function()
+  vscode.call('bookmarks.listFromAllFiles')
+end, {desc = 'list bookmarks'})
+keymap.set('n', 'mn', function()
+  vscode.call('bookmarks.jumpToNext')
+end, {desc = 'next bookmark'})
+keymap.set('n', 'mp', function()
+  vscode.call('bookmarks.jumpToPrevious')
+end, {desc = 'previous bookmark'})
 
 -------------- vscode native folding -------------------
 -- neovim's built-in folding does not affect vscode text, hence we are calling vscode's fold function to natively fold

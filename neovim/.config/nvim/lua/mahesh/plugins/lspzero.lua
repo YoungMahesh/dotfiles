@@ -156,7 +156,7 @@ return {
           end,
 
           -- this is the "custom handler" for `tsserver`
-          ts_ls = function()
+          tsserver = function()
             -- (Optional) Configure ts_ls for neovim
             --    https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ts_ls
             -- if you use `setup()` instead of `setup({})`, it will give error: attempt to index local 'user_config' (a nil value)

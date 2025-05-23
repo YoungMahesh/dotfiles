@@ -15,12 +15,13 @@ mv ~/.cache/nvim{,.bak}
 #
 #    2) npm for tsserver 
 #      on ubuntu install nodejs,npm through nvm: https://nodejs.org/en/download/package-manager
-#    `sudo apt-get install ripgrep` (https://github.com/BurntSushi/ripgrep) for telescope
+#
+#    3) `sudo apt install ripgrep` (https://github.com/BurntSushi/ripgrep) for telescope
 #    eslint_d :Mason -> eslint_d -> i
 #    sudo apt install luarocks
 #    for more     :checkhealth -> /error\c 
 #
-#    3) disabled: image.lua 
+#    4) disabled: image.lua 
 #      sudo apt install libmagickwand-dev
 #      mermaid-support (NOT in use, as it is not working properly, more details in image.lua)
 #        npm install -g @mermaid-js/mermaid-cli

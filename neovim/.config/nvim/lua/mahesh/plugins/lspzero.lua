@@ -40,8 +40,8 @@ return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     config = function()
       require('mason-tool-installer').setup {
-        -- sql-formatter is npm package
-        ensure_installed = { "sql-formatter" },
+        -- sql-formatter is npm package, no longer needed as it does not format sql as i want it to
+        -- ensure_installed = { "sql-formatter" },
       }
     end,
   },
@@ -132,14 +132,14 @@ return {
 
       require('mason-lspconfig').setup({
         -- available servers: https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
-        -- list of available servers ->    :Mason  -> 2)LSP
+        -- list of available servers ->    :Mason  -> 2)LSP (alt+2) -> search name (`/typescript`)
         -- marksman
         --    does not support formatting
         -- sqlls
         --    not using as it is giving more wrong syntax errors than helping with syntax, may need configuration, but i don't have time
         --    need to create `.sqllsrc.json` file at the root of your project (https://github.com/joe-re/sql-language-server?tab=readme-ov-file#configuration)
         --      content can be empty json: {}
-        ensure_installed = { "lua_ls", "ts_ls", "cssls", "tailwindcss", "prismals", "clangd", "solidity_ls_nomicfoundation", "marksman" },
+        ensure_installed = { "lua_ls", "tsserver", "cssls", "tailwindcss", "prismals", "clangd", "solidity_ls_nomicfoundation", "marksman" },
         -- not needed for now:  "gopls"
         handlers = {
           -- this first function is the "default handler"

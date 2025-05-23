@@ -9,18 +9,18 @@ mv ~/.cache/nvim{,.bak}
 # modify code below into full-bash script during next installation, e.g. use curl to auto-download neovim binary
 # 1. download Tarball by visiting page: https://github.com/neovim/neovim/releases/tag/v0.10.1
 # 2. installation script for downloaded Tarball: https://github.com/neovim/neovim/blob/master/INSTALL.md#linux
-# 3. install requirements:
-#    treesitter, harpoon, telescope, mason needs c compiler such as gcc,
-#       on ubuntu install compilers with: `sudo apt install build-essential`
+# 3. install requirements [default commands are for ubuntu]:
+#    1) c-compiler [ `sudo apt install build-essential`] for treesitter, harpoon, telescope, mason 
 #       on nixos install `gcc` package
-#    tsserver needs npm to install packages
-#       on ubuntu install nodejs,npm through nvm: https://nodejs.org/en/download/package-manager
+#
+#    2) npm for tsserver 
+#      on ubuntu install nodejs,npm through nvm: https://nodejs.org/en/download/package-manager
 #    `sudo apt-get install ripgrep` (https://github.com/BurntSushi/ripgrep) for telescope
 #    eslint_d :Mason -> eslint_d -> i
 #    sudo apt install luarocks
 #    for more     :checkhealth -> /error\c 
 #
-#    image.lua 
+#    3) disabled: image.lua 
 #      sudo apt install libmagickwand-dev
 #      mermaid-support (NOT in use, as it is not working properly, more details in image.lua)
 #        npm install -g @mermaid-js/mermaid-cli

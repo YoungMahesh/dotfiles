@@ -19,6 +19,7 @@ opt.expandtab = true  -- Show tabs as spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
 opt.number = true
+-- :set relativenumber      :set norelativenumber
 opt.relativenumber = true
 
 opt.wrap = false

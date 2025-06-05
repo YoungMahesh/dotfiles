@@ -161,6 +161,7 @@ bindsym $mod+Return exec $term
 
 # launch apps with keybinding
 bindsym $mod+n exec --no-startup-id nautilus
+bindsym $mod+c exec --no-startup-id gnome-clocks
 bindsym $mod+g exec --no-startup-id gnome 
 bindsym $mod+p exec --no-startup-id flameshot gui
 
@@ -184,8 +185,8 @@ bindsym $mod+3 workspace number $ws3; exec --no-startup-id sh -c '[ "$(pgrep -fc
 # launch telegram whenever you visit workspace 4
 bindsym $mod+4 workspace number $ws4; exec --no-startup-id pgrep telegram || telegram-desktop
 #bindsym $mod+5 workspace number $ws5; exec --no-startup-id pgrep remnote > /home/mahesh/rem 
-bindsym $mod+5 workspace number $ws5; exec --no-startup-id pgrep remnote || /home/mahesh/apps/remnote-1.19.11.AppImage --no-sandbox
-bindsym $mod+6 workspace number $ws6
+bindsym $mod+5 workspace number $ws5; exec --no-startup-id pgrep remnote || remnote
+bindsym $mod+6 workspace number $ws6; exec --no-startup-id pgrep anytype || anytype
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
@@ -210,7 +211,7 @@ bindsym $mod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do 
 # ------- open app in specific workspace ---------
 # get window class of app
 #    1. execute: `xprop | grep WM_CLASS`; xprop is listener
-#    2. launch app
+#    2. launch app (if app is not already running)
 #    3. click on app window using mouse; this will print window-class under xprop-command in step 1
 
 # assign workspace 4 to Telegram window-class, this will open telegram app in workspace 4 on lauch
@@ -220,6 +221,8 @@ assign [class="kitty"] 1
 assign [class="firefox_firefox"] 2
 assign [class="Chromium"] 3
 assign [class="RemNote"] 5
+assign [class="Windsurf"] 10
+
 
 # enter fullscreen mode for the focused container
 bindsym $mod+m fullscreen toggle

@@ -139,7 +139,7 @@ return {
         --    not using as it is giving more wrong syntax errors than helping with syntax, may need configuration, but i don't have time
         --    need to create `.sqllsrc.json` file at the root of your project (https://github.com/joe-re/sql-language-server?tab=readme-ov-file#configuration)
         --      content can be empty json: {}
-        ensure_installed = { "lua_ls", "tsserver", "cssls", "tailwindcss", "prismals", "clangd", "solidity_ls_nomicfoundation", "marksman" },
+        ensure_installed = { "lua_ls", "ts_ls", "cssls", "tailwindcss", "prismals", "clangd", "solidity_ls_nomicfoundation", "marksman" },
         -- not needed for now:  "gopls"
         handlers = {
           -- this first function is the "default handler"
@@ -155,8 +155,8 @@ return {
             require('lspconfig').lua_ls.setup(lua_opts)
           end,
 
-          -- this is the "custom handler" for `tsserver`
-          tsserver = function()
+          -- this is the "custom handler" for `ts_ls`
+          ts_ls = function()
             -- (Optional) Configure ts_ls for neovim
             --    https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ts_ls
             -- if you use `setup()` instead of `setup({})`, it will give error: attempt to index local 'user_config' (a nil value)

@@ -187,7 +187,9 @@ bindsym $mod+4 workspace number $ws4; exec --no-startup-id pgrep telegram || tel
 #bindsym $mod+5 workspace number $ws5; exec --no-startup-id pgrep remnote > /home/mahesh/rem 
 bindsym $mod+5 workspace number $ws5; exec --no-startup-id pgrep remnote || remnote
 bindsym $mod+6 workspace number $ws6; exec --no-startup-id pgrep anytype || anytype
-bindsym $mod+7 workspace number $ws7
+bindsym $mod+7 workspace number $ws7; exec --no-startup-id pgrep obsidian || obsidian
+# if less than 3 processes of gnome are running, execute `gnome`, there are 2 processes when gnome-ui is not running else 4
+bindsym $mod+8 workspace number $ws8; exec --no-startup-id sh -c '[ "$(pgrep -c gnome)" -lt 3 ] && gnome'
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
@@ -221,8 +223,9 @@ assign [class="kitty"] 1
 assign [class="firefox_firefox"] 2
 assign [class="Chromium"] 3
 assign [class="RemNote"] 5
+assign [class="anytype"] 6
+assign [class="gnome-control-center"] 8
 assign [class="Windsurf"] 10
-
 
 # enter fullscreen mode for the focused container
 bindsym $mod+m fullscreen toggle
@@ -230,6 +233,14 @@ bindsym $mod+m fullscreen toggle
 # for_window [class=".*"] fullscreen enable   # if you enable fullscreen for all apps then dialog/prompt window will also open as fullscreen
 #for_window [class="TelegramDesktop"] fullscreen enable
 #for_window [class="RemNote"] fullscreen enable
+
+# Set screen blanking and Display Power Management Signaling (DPMS) timeouts to 1 hour (3600 seconds)
+# - 'xset s 3600 3600' sets the screen saver (blanking) timeout and cycle to 1 hour
+# - 'xset dpms 3600 3600 3600' sets DPMS (monitor power saving) standby, suspend, and off timeouts to 1 hour each
+# restart if you make any changes in xset
+exec --no-startup-id xset s 3600 3600
+exec --no-startup-id xset dpms 3600 3600 3600
+
 
 # ------------ installation --------
 # sudo apt install i3

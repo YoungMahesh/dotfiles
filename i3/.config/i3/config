@@ -150,6 +150,9 @@ bar {
       wheel_up_cmd nop
       wheel_down_cmd exec ~/.i3/scripts/custom_wheel_down
 }
+#bindsym button4 nop
+#bindsym button5 exec --no-startup-id ~/.i3/scripts/custom_wheel_down
+
 
 # ----------- my config --------
 
@@ -190,7 +193,6 @@ bindsym $mod+6 workspace number $ws6; exec --no-startup-id pgrep anytype || anyt
 bindsym $mod+7 workspace number $ws7; exec --no-startup-id pgrep obsidian || obsidian
 # if less than 3 processes of gnome are running, execute `gnome`, there are 2 processes when gnome-ui is not running else 4
 bindsym $mod+8 workspace number $ws8; exec --no-startup-id sh -c '[ "$(pgrep -c gnome)" -lt 3 ] && gnome'
-bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 

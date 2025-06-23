@@ -20,10 +20,10 @@ require("mahesh.core.keymaps.window")
 
 
 local keymap = vim.keymap
-
 -- .set first-argument (n == normal mode, i == insert mode, v == visual mode, <empty> == all modes)
 -- <C-u> == Ctrl+u
-keymap.set({ "n", "v" }, "0", "^", { desc = "move to first char of line", noremap = true })
+keymap.set({ "n", "v" }, "0", "^", { desc = "move to first char of current line", noremap = true })
+keymap.set({ "n", "v" }, "^", "0", { desc = "move to start of current line", noremap = true })
 --keymap.set({ "n", "v" }, "'", '<Nop>', { noremap = true, silent = true })
 keymap.set({ "n", "v" }, "'", "g_", { desc = "move to last char of line", noremap = true, nowait = true })
 keymap.set({ "n", "v" }, "q", "A", { desc = "move and insert at end of line", noremap = true })

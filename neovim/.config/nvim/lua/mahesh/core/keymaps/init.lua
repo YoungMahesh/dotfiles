@@ -18,6 +18,15 @@ require("mahesh.core.keymaps.window")
 -- check all keymaps in command mode: `:cmap`
 -- check all keymaps in select mode: `:smap`
 
+--• “n” → Normal 
+--• “i” → Insert (n -> i -> i)
+--• “v” → Visual + Select (any visual or select mode)
+--• “x” → Visual only (char‐, line‐ or block-wise)
+--• “s” → Select only (normal-mode -> gh, gH) - not for normal user, GUI apps use it to select text in neovim using api
+--• “o” → Operator-pending
+--• “c” → Command-line
+--• “t” → Terminal
+
 
 local keymap = vim.keymap
 -- .set first-argument (n == normal mode, i == insert mode, v == visual mode, <empty> == all modes)
@@ -27,7 +36,10 @@ keymap.set({ "n", "v" }, "^", "0", { desc = "move to start of current line", nor
 --keymap.set({ "n", "v" }, "'", '<Nop>', { noremap = true, silent = true })
 keymap.set({ "n", "v" }, "'", "g_", { desc = "move to last char of line", noremap = true, nowait = true })
 keymap.set({ "n", "v" }, "q", "A", { desc = "move and insert at end of line", noremap = true })
-keymap.set({ "n", "v" }, "a", "<C-u>zz", { desc = "move up half of viewport + cursor at middle(zz)", noremap = true })
+-- Disable the conflicting mapping for 'a' (`:verbose map a`), which was causes delay in execution
+-- remember: v (visual+select) == x(visual) + s(select)
+keymap.set("x", "a%", "<nop>", { noremap = true })
+keymap.set({ "n", "v" }, "a", "<C-u>zz", { desc = "move up half of viewport + cursor at middle(zz)", noremap = true, nowait = true})
 keymap.set({ "n", "v" }, ";", "<C-d>zz", { desc = "move down half of viewport + cursor at middle", noremap = true })
 keymap.set("n", "r", "<C-r>", { desc = "redo", noremap = true })
 

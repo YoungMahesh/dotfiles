@@ -52,5 +52,6 @@
   },
   "editor.lineNumbers": "relative",
   "vscode-neovim.neovimExecutablePaths.linux": "/opt/nvim-linux64/bin/nvim",
+  "workbench.activityBar.location": "top",
 }
 

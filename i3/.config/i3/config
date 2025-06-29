@@ -16,7 +16,15 @@ font pango:monospace 10
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
+#exec --no-startup-id dex --autostart --environment i3
+
+# autostart 
+# exec: Runs once when i3 starts
+# exec_always: Runs every time i3 is restarted/reloaded
+# --no-startup-id: Use for apps that don't support startup notifications (prevents cursor from showing loading state)
+exec --no-startup-id /home/mahesh/.local/bin/kitty
+exec --no-startup-id /snap/bin/telegram-desktop
+exec --no-startup-id /usr/bin/anytype
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.

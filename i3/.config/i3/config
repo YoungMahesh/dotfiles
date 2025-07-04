@@ -175,10 +175,23 @@ bindsym $mod+Return exec $term
 bindsym $mod+n exec --no-startup-id nautilus
 bindsym $mod+c exec --no-startup-id gnome-clocks
 bindsym $mod+g exec --no-startup-id gnome 
+bindsym $mod+b exec --no-startup-id blueman-manager
 #bindsym $mod+p exec --no-startup-id flameshot gui
-
 # start dmenu (a program launcher)
 bindsym $mod+f exec --no-startup-id dmenu_run
+# kill focused window
+bindsym $mod+q kill
+# suspend
+bindsym $mod+z exec --no-startup-id systemctl suspend
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Switch to workspace 2	$mod + 2
+# Move focused window to 2	$mod + Shift + 2
 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -207,20 +220,6 @@ bindsym $mod+9 exec --no-startup-id ~/.config/i3/open_chromium_ws9.sh
 bindsym $mod+0 workspace number $ws10
 
 # how to move to left window, right window
-
-# -> keybindings
-# kill focused window
-bindsym $mod+q kill
-# suspend
-bindsym $mod+z exec --no-startup-id systemctl suspend
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-# Switch to workspace 2	$mod + 2
-# Move focused window to 2	$mod + Shift + 2
 
 # ------- open app in specific workspace ---------
 # get window class of app

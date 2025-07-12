@@ -30,7 +30,8 @@ WantedBy=sysinit.target
 # sudo systemctl stop kanata.service
 #
 # ----------------------- installation ----------------------
-# download katana binary: https://github.com/jtroo/kanata/releases/tag/v1.6.1
+# download katana binary: https://github.com/jtroo/kanata/releases/download/v1.6.1/kanata
+#   list of kanata packages: https://github.com/jtroo/kanata/releases/tag/v1.6.1
 # install kanata binary:
 #   - chmod +x kanata
 #   - sudo mv kanata /usr/bin/

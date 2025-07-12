@@ -1,3 +1,8 @@
+" nnoremap - normal mode; vnoremap - visual mode
+" nnoremap (non-recursive map); nmap (recursive map)
+" recursive map: This creates a mapping where the RHS of the mapping is re-evaluated.
+"   If the RHS contains other mappings, those mappings are expanded and executed as well.
+
 " Move to first char of line
 nnoremap 0 ^
 vnoremap 0 ^

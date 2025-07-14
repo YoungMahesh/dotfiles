@@ -202,7 +202,7 @@ bindsym $mod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do 
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1; exec --no-startup-id pgrep kitty || $term
-bindsym $mod+2 workspace number $ws2
+bindsym $mod+2 exec --no-startup-id ~/.config/i3/open_chromium_ws2.sh
 #bindsym $mod+3 workspace number $ws3; exec --no-startup-id pgrep -f chromium || /snap/bin/chromium
 # we are using count-of-processes because we are getting one process id on `pgrep -f chromium` even when chromium is not running 
 #    this happens only on `exec` command of i3-config, to verify you can run `exec pgrep -f chromium > /home/mahesh/output` and check 'output' file

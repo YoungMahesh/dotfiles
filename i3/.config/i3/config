@@ -74,7 +74,7 @@ bindsym $mod+Shift+Right move right
 #bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+#bindsym $mod+v split v
 
 
 # change container layout (stacked, tabbed, toggle split)
@@ -175,7 +175,10 @@ bindsym $mod+Return exec $term
 bindsym $mod+n exec --no-startup-id nautilus
 bindsym $mod+c exec --no-startup-id gnome-clocks
 bindsym $mod+g exec --no-startup-id gnome 
+# bluetooth maanger
 bindsym $mod+b exec --no-startup-id blueman-manager
+# volume manager
+bindsym $mod+v exec --no-startup-id pavucontrol
 #bindsym $mod+p exec --no-startup-id flameshot gui
 # start dmenu (a program launcher)
 bindsym $mod+f exec --no-startup-id dmenu_run

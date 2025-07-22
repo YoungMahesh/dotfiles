@@ -50,6 +50,7 @@ order += "tztime local"
 
 tztime local {
         #format = "%Y-%m-%d %H:%M:%S"
-        format = "%A %Y-%m-%d %H:%M:%S"
-        # %A == Day(Sunday, Monday, etc), %Y == year, %m == month, %d == day, %H == hour, %M == minute, %S == seconds
+        format = "%A %d-%m(%B)-%Y %H:%M:%S"
+        # %A == full-day-name(Sunday, Monday, etc); %B == full-month-name(July); 
+        # %Y == year, %m == month, %d == day, %H == hour, %M == minute, %S == seconds
 }

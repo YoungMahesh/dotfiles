@@ -1,6 +1,4 @@
-# documentation - #notes-site/linux/i3wm
 # reference - https://i3wm.org/docs/userguide.html
-
 # i3 config file (v4)
 
 set $mod Mod1
@@ -219,7 +217,8 @@ bindsym $mod+5 workspace number $ws5; exec --no-startup-id pgrep remnote || remn
 bindsym $mod+6 workspace number $ws6; exec --no-startup-id pgrep anytype || anytype
 bindsym $mod+7 workspace number $ws7; exec --no-startup-id pgrep obsidian || obsidian
 # if less than 3 processes of gnome are running, execute `gnome`, there are 2 processes when gnome-ui is not running else 4
-bindsym $mod+8 workspace number $ws8; exec --no-startup-id sh -c '[ "$(pgrep -c gnome)" -lt 3 ] && gnome'
+#bindsym $mod+8 workspace number $ws8; exec --no-startup-id sh -c '[ "$(pgrep -c gnome)" -lt 3 ] && gnome'
+bindsym $mod+8 exec --no-startup-id ~/.config/i3/open_chromium_ws8.sh
 bindsym $mod+9 exec --no-startup-id ~/.config/i3/open_chromium_ws9.sh
 bindsym $mod+0 workspace number $ws10
 
@@ -239,7 +238,7 @@ assign [class="firefox_firefox"] 2
 #assign [class="Chromium"] 3
 assign [class="RemNote"] 5
 assign [class="anytype"] 6
-assign [class="gnome-control-center"] 8
+#assign [class="gnome-control-center"] 8
 assign [class="Windsurf"] 10
 
 # enter fullscreen mode for the focused container

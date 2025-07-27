@@ -79,7 +79,7 @@ bindsym $mod+Shift+Right move right
 # set default layout as tabbed
 workspace_layout tabbed
 #bindsym $mod+s layout stacking
-bindsym $mod+o layout tabbed
+bindsym $mod+' layout tabbed
 bindsym $mod+semicolon layout toggle split
 
 # toggle tiling / floating
@@ -170,20 +170,31 @@ set $term /home/mahesh/.local/kitty/bin/kitty
 bindsym $mod+Return exec $term 
 
 # launch apps with keybinding
-bindsym $mod+n exec --no-startup-id nautilus
-bindsym $mod+c exec --no-startup-id gnome-clocks
-bindsym $mod+g exec --no-startup-id gnome 
 # bluetooth maanger
 bindsym $mod+b exec --no-startup-id blueman-manager
-# volume manager
-bindsym $mod+v exec --no-startup-id pavucontrol
-#bindsym $mod+p exec --no-startup-id flameshot gui
+
+bindsym $mod+c exec --no-startup-id gnome-clocks
+
 # start dmenu (a program launcher)
 bindsym $mod+f exec --no-startup-id dmenu_run
+
+bindsym $mod+g exec --no-startup-id gnome 
+
+bindsym $mod+n exec --no-startup-id nautilus
+
+bindsym $mod+o exec --no-startup-id obsidian
+
 # kill focused window
 bindsym $mod+q kill
+
+# volume manager
+bindsym $mod+v exec --no-startup-id pavucontrol
+
+#bindsym $mod+p exec --no-startup-id flameshot gui # p = print
+
 # suspend
 bindsym $mod+z exec --no-startup-id systemctl suspend
+
 bindsym $mod+Shift+z exec systemctl poweroff   
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -215,7 +226,8 @@ bindsym $mod+4 workspace number $ws4; exec --no-startup-id pgrep telegram || tel
 #bindsym $mod+5 workspace number $ws5; exec --no-startup-id pgrep remnote > /home/mahesh/rem 
 bindsym $mod+5 workspace number $ws5; exec --no-startup-id pgrep remnote || remnote
 bindsym $mod+6 workspace number $ws6; exec --no-startup-id pgrep anytype || anytype
-bindsym $mod+7 workspace number $ws7; exec --no-startup-id pgrep obsidian || obsidian
+#bindsym $mod+7 workspace number $ws7; exec --no-startup-id pgrep obsidian || obsidian
+bindsym $mod+7 workspace number $ws7
 # if less than 3 processes of gnome are running, execute `gnome`, there are 2 processes when gnome-ui is not running else 4
 #bindsym $mod+8 workspace number $ws8; exec --no-startup-id sh -c '[ "$(pgrep -c gnome)" -lt 3 ] && gnome'
 bindsym $mod+8 exec --no-startup-id ~/.config/i3/open_chromium_ws8.sh
@@ -225,17 +237,20 @@ bindsym $mod+0 workspace number $ws10
 # how to move to left window, right window
 
 # ------- open app in specific workspace ---------
-# get window class of app
-#    1. execute: `xprop | grep WM_CLASS`; xprop is listener
-#    2. launch app (if app is not already running)
-#    3. click on app window using mouse; this will print window-class under xprop-command in step 1
+# get window class of app, execute:
+# xprop | grep WM_CLASS
+#    xprop is listener
+# 2. launch app (if app is not already running)
+# 3. click on app window using mouse; this will print window-class under xprop-command in step 1
 
 # assign workspace 4 to Telegram window-class, this will open telegram app in workspace 4 on lauch
 assign [class="TelegramDesktop"] 4
 
 assign [class="kitty"] 1
+assign [class="obsidian"] 1
 assign [class="firefox_firefox"] 2
 #assign [class="Chromium"] 3
+assign [class="Brave"] 3
 assign [class="RemNote"] 5
 assign [class="anytype"] 6
 #assign [class="gnome-control-center"] 8

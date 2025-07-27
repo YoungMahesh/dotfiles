@@ -21,7 +21,7 @@
   // git settings
   "git.openRepositoryInParentFolders": "never",
   "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.renderSideBySide": true,
+  "diffEditor.renderSideBySide": false,
 
   // language specific settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",

@@ -255,6 +255,7 @@ assign [class="RemNote"] 5
 assign [class="anytype"] 6
 #assign [class="gnome-control-center"] 8
 assign [class="Windsurf"] 10
+assign [class="Code"] 10
 
 # enter fullscreen mode for the focused container
 bindsym $mod+m fullscreen toggle

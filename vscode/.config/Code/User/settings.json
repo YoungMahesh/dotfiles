@@ -1,6 +1,6 @@
 {
   // editor UI settings
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 1.8,
   "window.titleBarStyle": "custom",
   "workbench.startupEditor": "none",
   "editor.minimap.enabled": false,
@@ -42,7 +42,8 @@
   "files.associations": {
     "*.json": "jsonc"
   },
-  "workbench.editor.enablePreview": false, // markdown preview
+  "workbench.editor.enablePreview": false,
+  "workbench.activityBar.location": "top", // markdown preview
   //"[dockerfile]": {
   //  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   //},

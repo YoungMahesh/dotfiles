@@ -79,8 +79,10 @@ bindsym $mod+Shift+Right move right
 # set default layout as tabbed
 workspace_layout tabbed
 #bindsym $mod+s layout stacking
-bindsym $mod+' layout tabbed
+bindsym $mod+m layout tabbed
 bindsym $mod+semicolon layout toggle split
+# enter fullscreen mode for the focused container
+#bindsym $mod+m fullscreen toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -190,7 +192,8 @@ bindsym $mod+q kill
 # volume manager
 bindsym $mod+v exec --no-startup-id pavucontrol
 
-#bindsym $mod+p exec --no-startup-id flameshot gui # p = print
+# p = print
+bindsym $mod+p exec --no-startup-id flameshot gui 
 
 # suspend
 bindsym $mod+z exec --no-startup-id systemctl suspend
@@ -247,7 +250,6 @@ bindsym $mod+0 workspace number $ws10
 assign [class="TelegramDesktop"] 4
 
 assign [class="kitty"] 1
-assign [class="obsidian"] 1
 assign [class="firefox_firefox"] 2
 #assign [class="Chromium"] 3
 assign [class="Brave"] 3
@@ -256,9 +258,8 @@ assign [class="anytype"] 6
 #assign [class="gnome-control-center"] 8
 assign [class="Windsurf"] 10
 assign [class="Code"] 10
+assign [class="obsidian"] 10
 
-# enter fullscreen mode for the focused container
-bindsym $mod+m fullscreen toggle
 # open some apps in fullscreen mode 
 # for_window [class=".*"] fullscreen enable   # if you enable fullscreen for all apps then dialog/prompt window will also open as fullscreen
 #for_window [class="TelegramDesktop"] fullscreen enable

@@ -167,7 +167,7 @@ bar {
 
 # start a terminal
 # set preferred terminal
-set $term /home/mahesh/.local/kitty/bin/kitty
+set $term ~/.local/kitty/bin/kitty --session ~/.config/kitty/sessions.conf
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec $term 
 

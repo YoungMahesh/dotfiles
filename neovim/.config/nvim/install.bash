@@ -16,7 +16,7 @@ mv ~/.cache/nvim{,.bak}
 #    2) npm for tsserver 
 #      on ubuntu install nodejs,npm through nvm: https://nodejs.org/en/download/package-manager
 #
-#    3) `sudo apt install ripgrep` (https://github.com/BurntSushi/ripgrep) for telescope
+#    3) `sudo apt install ripgrep fd-find` (https://github.com/BurntSushi/ripgrep) for telescope
 #    eslint_d :Mason -> eslint_d -> i
 #    sudo apt install luarocks
 #    for more     :checkhealth -> /error\c 

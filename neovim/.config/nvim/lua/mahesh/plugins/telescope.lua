@@ -137,7 +137,7 @@ return {
         -- --line-number  - includes the line number in the output.
         -- --column       - includes the column number in the output.
         -- --smart-case (similar to --ignore-case, but disables itself if the pattern contains any uppercase letters) / --ignore-case (ignore case differences)
-        -- --hidden       - includes hidden files in the search.
+        -- --hidden       - includes hidden files (files and folders starting with dot; dotfiles) in the search.
         -- 1) :help telescope.defaults.vimgrep_arguments 2) K on vimgrep_arguments here 3) rg --help
         vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--ignore-case', '--hidden', '--no-ignore' },
         file_ignore_patterns = {
@@ -147,8 +147,8 @@ return {
           -- For example the package-lock.json should be package%-lock.json
           "package%-lock.json", -- nodejs project depedency installation history
           "pnpm%-lock.yaml",
-          "%.git/",             -- we need hidden=true to see .env files, but it results in showing .git files also, hence excluding them
-          "node_modules",       -- path for nodejs modules
+          "%.git/",   -- we need hidden=true to see files in dotfiles repository, but this results in showing .git files also, hence excluding them
+          "node_modules",   -- path for nodejs modules
           -- output of 'nextjs build', trailng '/' ensures only folder is exclude and not any files with name 'next' in it
           -- '.', is special character which will match with anything, to avoid hiding folders with 'next' in it, use "%" before '.'
           "%.next/",

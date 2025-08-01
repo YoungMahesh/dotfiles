@@ -20,6 +20,7 @@ return {
     'williamboman/mason.nvim',
     lazy = false,
     config = true,
+    -- To upgrade this package (if needed), then :Lazy -> move cursor to 'mason.nvim' -> press u
     
     -- get path where mason is installing packages: 
     --    :lua print(require("mason-core.path").install_prefix())

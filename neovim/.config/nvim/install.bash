@@ -6,6 +6,7 @@ mv ~/.local/share/nvim{,.bak} # location of plugins actual-code
 mv ~/.local/state/nvim{,.bak}
 mv ~/.cache/nvim{,.bak}
 
+# ----------------------- local ----------------------
 # modify code below into full-bash script during next installation, e.g. use curl to auto-download neovim binary
 # 1. download Tarball by visiting page: https://github.com/neovim/neovim/releases/tag/v0.10.1
 # 2. installation script for downloaded Tarball: https://github.com/neovim/neovim/blob/master/INSTALL.md#linux
@@ -20,6 +21,8 @@ mv ~/.cache/nvim{,.bak}
 #    eslint_d :Mason -> eslint_d -> i
 #    sudo apt install luarocks
 #    for more     :checkhealth -> /error\c 
+#
+#    x) `npm i tree-sitter-cli -g` for nvim-treesitter
 #
 #    4) disabled: image.lua 
 #      sudo apt install libmagickwand-dev
@@ -36,3 +39,13 @@ mv ~/.cache/nvim{,.bak}
 #    verify path using `echo $XDG_CONFIG_HOME`
 #    neovim will look for $XDG_CONFIG_HOME=/nvim/init.lua
 #    :help config, default path: ~/.config/nvim/init.lua
+
+# ----------------- vps server via ssh -----------------------
+# 1) sudo apt install ripgrep fd-find (details in above-section)
+# 2) :checkhealth
+#   i) if using kitty, copy xterm-kitty to server
+#     -> remote server needs to know about terminal-info, terminal-type; most of them does not recognize kitty
+#     -> kitty stores it's terminal info in xterm-kitty, which you can find with `find ~/.local/kitty -name "*xterm-kitty*"` 
+#         if you not sure about path check kitty-path using `which kitty`
+#     -> copy this xterm-kitty to `/usr/share/terminfo/x` on vps-server
+#

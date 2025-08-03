@@ -60,4 +60,8 @@
     "command": "editor.action.inlineSuggest.commit",
     "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   },
+  {
+    "key": "ctrl+;",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  }
 ]

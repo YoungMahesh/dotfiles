@@ -25,12 +25,11 @@
   "diffEditor.renderSideBySide": false,
 
   // copilot settings
-  "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "github.copilot.enable": {
-    "*": true,
-    //"plaintext": false,
-    //"markdown": false,
-    //"python": false
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
   },
 
   // language specific settings
@@ -43,7 +42,16 @@
     "*.json": "jsonc"
   },
   "workbench.editor.enablePreview": false,
-  "workbench.activityBar.location": "top", // markdown preview
+  "workbench.activityBar.location": "top",
+  "kilo-code.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "kilo-code.deniedCommands": [], // markdown preview
   //"[dockerfile]": {
   //  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   //},

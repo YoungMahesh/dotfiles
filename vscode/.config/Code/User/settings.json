@@ -51,7 +51,8 @@
     "git diff",
     "git show"
   ],
-  "kilo-code.deniedCommands": [], // markdown preview
+  "kilo-code.deniedCommands": [],
+  "editor.lineNumbers": "relative", // markdown preview
   //"[dockerfile]": {
   //  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   //},

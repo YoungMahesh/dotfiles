@@ -253,6 +253,7 @@ assign [class="kitty"] 1
 assign [class="firefox_firefox"] 2
 #assign [class="Chromium"] 3
 assign [class="Brave"] 3
+assign [class="protonvpn-app"] 3
 assign [class="RemNote"] 5
 assign [class="anytype"] 6
 #assign [class="gnome-control-center"] 8

@@ -1,0 +1,2 @@
+# stop the beep sound in bash when completion does not exist
+set bell-style none

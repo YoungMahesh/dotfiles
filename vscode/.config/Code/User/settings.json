@@ -52,7 +52,16 @@
     "git show"
   ],
   "kilo-code.deniedCommands": [],
-  "editor.lineNumbers": "relative", // markdown preview
+  "editor.lineNumbers": "relative",
+  "roo-cline.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "roo-cline.deniedCommands": [], // markdown preview
   //"[dockerfile]": {
   //  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   //},

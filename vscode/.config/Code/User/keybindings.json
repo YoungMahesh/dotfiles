@@ -34,6 +34,10 @@
   },
   // file manager
   {
+    "key": "ctrl+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
     "key": "ctrl+e",
     "command": "workbench.files.action.focusFilesExplorer"
   },
@@ -54,7 +58,7 @@
     "key": "ctrl+v",
     "command": "-editor.action.clipboardPasteAction"
   },
-  // github copilot extension
+  // AI extensions 
   { // accept github-copilot suggestion
     "key": "tab",
     "command": "editor.action.inlineSuggest.commit",
@@ -63,5 +67,9 @@
   {
     "key": "ctrl+;",
     "command": "workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "kilo-code.addToContext"
   }
 ]

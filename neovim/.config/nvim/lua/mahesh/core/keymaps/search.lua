@@ -1,14 +1,13 @@
 -- related: ../options.lua#search
 
 ---------------------- ->search ---------------------------------
--- 1) search text by typing ->   /<search-text>  -> in normal mode
+-- 1) search text in normal-mode by typing -   /<search-text> -> enter 
 --    append \c to make search case-insensitive
--- 2) search hovered word, line, group-of-words ->  type `*` in normal mode
--- move through search results -> enter, after this use `n` or `N` to move through search-results
+--    move to next-word using `n`, to previous-word using `N`
+-- 2) search hovered word, line, group-of-words ->  type `*` to activate search, then `n` to move next-block, `N` to move previous-block
 
 vim.keymap.set('n', 'n', 'nzz', {desc='n = next-result, zz = cursor at center of screen'})
 vim.keymap.set('n', 'N', 'Nzz')
--- x for visual mode, v for visual-block mode, n for normal mode
 
 vim.keymap.set('v', '/', "\"fy/\\V<C-R>f<CR>", { desc = 'Search highlighted text in current buffer' } )
 

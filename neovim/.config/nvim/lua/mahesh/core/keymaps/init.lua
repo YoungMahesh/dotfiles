@@ -33,7 +33,6 @@ local keymap = vim.keymap
 -- <C-u> == Ctrl+u
 keymap.set({ "n", "v" }, "0", "^", { desc = "move to first char of current line", noremap = true })
 keymap.set({ "n", "v" }, "^", "0", { desc = "move to start of current line", noremap = true })
---keymap.set({ "n", "v" }, "'", '<Nop>', { noremap = true, silent = true })
 keymap.set({ "n", "v" }, "'", "g_", { desc = "move to last char of line", noremap = true, nowait = true })
 keymap.set({ "n", "v" }, "q", "A", { desc = "move and insert at end of line", noremap = true })
 -- Disable the conflicting mapping for 'a' (`:verbose map a`), which was causes delay in execution
@@ -41,6 +40,7 @@ keymap.set({ "n", "v" }, "q", "A", { desc = "move and insert at end of line", no
 keymap.set("x", "a%", "<nop>", { noremap = true })
 keymap.set({ "n", "v" }, "a", "<C-u>zz", { desc = "move up half of viewport + cursor at middle(zz)", noremap = true, nowait = true})
 keymap.set({ "n", "v" }, ";", "<C-d>zz", { desc = "move down half of viewport + cursor at middle", noremap = true })
+keymap.set({ "n", "v" }, ".", ";", { desc = "repeat latest f or F", noremap = true })
 keymap.set("n", "r", "<C-r>", { desc = "redo", noremap = true })
 
 --When yanking content, it goes to the Unnamed register ("") but also to register "0. Thus, you can still paste the most recent yanked text

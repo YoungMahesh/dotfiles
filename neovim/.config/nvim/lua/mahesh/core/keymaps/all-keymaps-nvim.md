@@ -44,3 +44,4 @@
 |        | .        | repeat previous find-command                               |
 |        |          | (fa then . will execute fa again as )                      |
 |        | /        | search current-file                                        |
+| ctrl+a |          | select all in current file                                 |

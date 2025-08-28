@@ -133,3 +133,6 @@ export PATH="$PATH:/home/mahesh/.bun/bin"
 alias python=python3
 # for python-poetry
 export PATH="/home/mahesh/.local/bin:$PATH"
+
+alias tw=timew
+alias sync-data='bash ~/.config/sync/main.bash'

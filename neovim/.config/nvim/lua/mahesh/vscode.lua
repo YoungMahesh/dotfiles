@@ -55,7 +55,8 @@ keymap.set("n", "to", function()
 end, { desc = "close current file" })
 
 ----------------- bookmarks ---------------------
--- https://github.com/alefragnani/vscode-bookmarks
+-- https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks
+--    https://github.com/alefragnani/vscode-bookmarks
 keymap.set('n', 'mm', function()
   vscode.call('bookmarks.toggle')
 end, {desc = 'toggle bookmark'})

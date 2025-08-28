@@ -58,7 +58,7 @@
     "key": "ctrl+v",
     "command": "-editor.action.clipboardPasteAction"
   },
-  // AI extensions 
+  // AI extensions  - github-copilot, kilo-code
   { // accept github-copilot suggestion
     "key": "tab",
     "command": "editor.action.inlineSuggest.commit",
@@ -71,5 +71,11 @@
   {
     "key": "ctrl+l",
     "command": "kilo-code.addToContext"
+  },
+  {
+    // enable kilo-code_settings -> Inline Assist -> Quick Inline Task
+    "key": "ctrl+i",
+    "command": "kilo-code.ghost.promptCodeSuggestion",
+    "when": "editorTextFocus && kilocode.ghost.enableQuickInlineTaskKeybinding && !editorTabMovesFocus && !github.copilot.completions.enabled && !inSnippetMode"
   }
 ]

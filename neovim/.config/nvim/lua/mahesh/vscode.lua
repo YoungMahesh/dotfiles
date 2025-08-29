@@ -25,9 +25,13 @@ end, { desc = "format current file" })
 --  zm[collapseAll], gg[focusFirst], G[focusLast], j[down], k[up], h[focusParentFolder], enter[open file/folder]
 
 ------------------- tab switch -------------------
-keymap.set("n", "tn", function()
-  vscode.call('workbench.action.nextEditor')
-end, { desc = "Go to next tab" })
+keymap.set("n", "<tab>", function()
+  vscode.call('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')
+  vscode.call('workbench.action.acceptSelectedQuickOpenItem')
+end, { desc = "Toggle current, previous recently used edtor" })
+ keymap.set("n", "tn", function()
+   vscode.call('workbench.action.nextEditor')
+ end, { desc = "Go to next tab" })
 keymap.set("n", "tp", function()
   vscode.call('workbench.action.previousEditor')
 end, { desc = "Go to next tab" })

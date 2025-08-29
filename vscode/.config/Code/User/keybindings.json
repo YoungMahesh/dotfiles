@@ -51,15 +51,16 @@
     "command": "renameFile",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
-  // neovim extension 
+  // neovim extension
   {
-    // paste-action is done with p with neovim, 
+    // paste-action is done with p with neovim,
     //  so free ctrl+v to be used for neovim-visual_mode
     "key": "ctrl+v",
     "command": "-editor.action.clipboardPasteAction"
   },
   // AI extensions  - github-copilot, kilo-code
-  { // accept github-copilot suggestion
+  {
+    // accept github-copilot suggestion
     "key": "tab",
     "command": "editor.action.inlineSuggest.commit",
     "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"

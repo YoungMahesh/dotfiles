@@ -63,6 +63,7 @@
   },
   "geminicodeassist.agentYoloMode": true,
   "geminicodeassist.inlineSuggestions.enableAuto": false,
+  "editor.tabSize": 2,
   //"[dockerfile]": {
   //  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   //},

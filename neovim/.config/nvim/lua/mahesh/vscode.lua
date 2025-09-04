@@ -24,6 +24,9 @@ end, { desc = "format current file" })
 -- [default explorer navigation](https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#explorerlist-navigation-bindings)
 --  zm[collapseAll], gg[focusFirst], G[focusLast], j[down], k[up], h[focusParentFolder], enter[open file/folder]
 
+
+keymap.set({ "n", "v" }, ";", "<C-d>zz", { desc = "move down half of viewport; move cursor to middle(zz)", noremap = true, nowait = true })
+
 ------------------- tab switch -------------------
 keymap.set("n", "<tab>", function()
   vscode.call('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')

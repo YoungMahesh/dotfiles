@@ -34,7 +34,7 @@
   },
   // file manager
   {
-    "key": "ctrl+b",
+    "key": "ctrl+j",
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {
@@ -78,5 +78,9 @@
     "key": "ctrl+i",
     "command": "kilo-code.ghost.promptCodeSuggestion",
     "when": "editorTextFocus && kilocode.ghost.enableQuickInlineTaskKeybinding && !editorTabMovesFocus && !github.copilot.completions.enabled && !inSnippetMode"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.showCommands"
   }
 ]

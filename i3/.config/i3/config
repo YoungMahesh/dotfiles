@@ -273,6 +273,9 @@ assign [class="obsidian"] 10
 exec --no-startup-id xset s 3600 3600
 exec --no-startup-id xset dpms 3600 3600 3600
 
+# set wallpaper
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/best-part-is-no-part.svg
+
 
 # ------------ installation -------------------------------
 

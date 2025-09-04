@@ -55,15 +55,15 @@
   ],
   "roo-cline.deniedCommands": [],
   "vscode-neovim.neovimExecutablePaths.linux": "/opt/nvim-linux64/bin/nvim",
+  "geminicodeassist.agentYoloMode": true,
+  "geminicodeassist.inlineSuggestions.enableAuto": false,
+  "editor.tabSize": 2,
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false
   },
-  "geminicodeassist.agentYoloMode": true,
-  "geminicodeassist.inlineSuggestions.enableAuto": false,
-  "editor.tabSize": 2,
   //"[dockerfile]": {
   //  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   //},

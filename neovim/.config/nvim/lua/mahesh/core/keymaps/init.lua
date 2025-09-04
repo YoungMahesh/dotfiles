@@ -37,8 +37,8 @@ keymap.set({ "n", "v" }, "q", "A", { desc = "move and insert at end of line", no
 -- Disable the conflicting mapping for 'a' (`:verbose map a`), which was causes delay in execution
 -- remember: v (visual+select) == x(visual) + s(select)
 keymap.set("x", "a%", "<nop>", { noremap = true })
-keymap.set({ "n", "v" }, "a", "<C-u>zz", { desc = "move up half of viewport + cursor at middle(zz)", noremap = true, nowait = true})
-keymap.set({ "n", "v" }, ";", "<C-d>zz", { desc = "move down half of viewport + cursor at middle", noremap = true })
+keymap.set({ "n", "v" }, "a", "<C-u>zz", { desc = "move up half of viewport; cursor at middle(zz)", noremap = true, nowait = true})
+keymap.set({ "n", "v" }, ";", "<C-d>zz", { desc = "move down half of viewport; move cursor to middle(zz)", noremap = true, nowait = true })
 -- { - to move to previous empty line, } - to move to the next empty line
 -- from inside code move to boundary
 --    [{  move to opening curly-brace {

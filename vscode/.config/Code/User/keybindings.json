@@ -2,7 +2,7 @@
 [
   // terminal
   {
-    "key": "ctrl+t",
+    "key": "ctrl+l",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
@@ -70,10 +70,6 @@
     "command": "workbench.action.toggleAuxiliaryBar"
   },
   {
-    "key": "ctrl+l",
-    "command": "kilo-code.addToContext"
-  },
-  {
     // enable kilo-code_settings -> Inline Assist -> Quick Inline Task
     "key": "ctrl+i",
     "command": "kilo-code.ghost.promptCodeSuggestion",
@@ -82,5 +78,18 @@
   {
     "key": "ctrl+k",
     "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "references-view.findReferences",
+    "when": "editorHasReferenceProvider"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "outline.focus"
   }
 ]

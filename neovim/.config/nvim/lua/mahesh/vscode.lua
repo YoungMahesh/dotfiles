@@ -2,30 +2,39 @@
 local vscode = require('vscode')
 local keymap = vim.keymap
 
--------------- save, format file ------------------------
-keymap.set('n', 'ss', function()
-  vscode.call('workbench.action.files.save')
-end, {desc = 'save file'})
-keymap.set('n', '<leader>ff', function()
-  vscode.call('editor.action.formatDocument')
-end, { desc = "format current file" })
+--------------- navigate various sections of editor ---------
+keymap.set('n', '<leader>o', function()
+  vscode.call('outline.focus')
+end, { desc = "open and focus on outline" })
+keymap.set('n', '<leader>r', function()
+  vscode.call('references-view.findReferences')
+end, { desc = "open references in references-section" })
+keymap.set({'n'}, '<leader>lr', function()
+  vscode.call('editor.action.goToReferences')
+end, { desc = 'open references in popup' })
 
---keymap.set('n', '<leader>fv', function()
---  vscode.call('workbench.view.explorer')
---end, { desc = "format current file" })
---keymap.set('n', 'go', function()
---  vscode.call('workbench.view.scm')
---end, {desc = 'git open'})
-
-------------- file explorer ---------------
+-- ------------ need heavy use of mouse, hence keymaps are not useful ----------------
+-- keymap.set('n', '<leader>e', function()
+--   vscode.call('workbench.view.explorer')
+-- end, { desc = "view explorer" })
 -- [default file manipulation](https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#explorer-file-manipulation-bindings)
 --  a[newFile], A[new folder], d[deleteFile], r[renameFile], x[cut], p[paste], y[copy]
 
 -- [default explorer navigation](https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#explorerlist-navigation-bindings)
 --  zm[collapseAll], gg[focusFirst], G[focusLast], j[down], k[up], h[focusParentFolder], enter[open file/folder]
 
+-- keymap.set({'n'}, 'go', function()
+--   vscode.call('git.openChange')
+-- end, { desc = 'open git changes' })
 
-keymap.set({ "n", "v" }, ";", "<C-d>zz", { desc = "move down half of viewport; move cursor to middle(zz)", noremap = true, nowait = true })
+
+-------------- save, format file ------------------------
+keymap.set('n', 'ss', function()
+  vscode.call('workbench.action.files.save')
+end, {desc = 'save file'})
+keymap.set('n', '<leader>f', function()
+  vscode.call('editor.action.formatDocument')
+end, { desc = "format current file" })
 
 ------------------- tab switch -------------------
 keymap.set("n", "<tab>", function()
@@ -117,14 +126,4 @@ end, { desc = "unfold code snippet" })
 --keymap.set({'x'}, 'k', function()
 --  vscode.call('cursorColumnSelectUp')
 --end, { desc = 'move down to select column' })
-
---------------- git -----------------------
-keymap.set({'n'}, 'go', function()
-  vscode.call('git.openChange')
-end, { desc = 'open git changes' })
-
--------------- references ------------------
-keymap.set({'n'}, '<leader>lr', function()
-  vscode.call('editor.action.goToReferences')
-end, { desc = 'open references' })
 

@@ -80,16 +80,7 @@
     "command": "workbench.action.showCommands"
   },
   {
-    "key": "ctrl+r",
-    "command": "references-view.findReferences",
-    "when": "editorHasReferenceProvider"
-  },
-  {
     "key": "ctrl+m",
     "command": "workbench.action.focusFirstEditorGroup"
-  },
-  {
-    "key": "ctrl+o",
-    "command": "outline.focus"
   }
 ]

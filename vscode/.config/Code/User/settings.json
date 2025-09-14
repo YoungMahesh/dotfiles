@@ -64,6 +64,8 @@
     "markdown": false,
     "scminput": false
   },
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications"
   //"[dockerfile]": {
   //  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   //},

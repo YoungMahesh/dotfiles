@@ -135,6 +135,7 @@ alias python=python3
 export PATH="/home/mahesh/.local/bin:$PATH"
 
 alias tw=timew
+alias tws='timew summary'
 alias tk=task
 alias sync-data='bash ~/.config/sync/main.bash'
 alias sync-logs='cat ~/.config/sync/logs'

@@ -24,6 +24,12 @@ opt.relativenumber = true
 
 opt.wrap = false
 
+-- fksd_skfjsdl_sklfsjdl_sklfsjd sdfks_klfsdj sdfdks
+-- By default, _ is included as a word character, if you remove it from word-character, motions like w, b, e consider them as word-boundary 
+--    and stops when _ occurs instead of skipping it
+-- :verbose set iskeyword?
+-- :set iskeyword-=_
+opt.iskeyword:remove("_")
 
 ------------------------ #search ----------------------------------------
 -- incremental-search: highlight text 'while typing' search text with :/<search-text>

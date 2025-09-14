@@ -1,0 +1,65 @@
+{
+  "window.zoomLevel": 2.5,
+  "window.titleBarStyle": "custom",
+  "workbench.startupEditor": "none",
+  "editor.minimap.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "update.mode": "none",
+  "extensions.ignoreRecommendations": true,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.commandsToSkipShell": [
+    "-workbench.action.quickOpen"
+  ],
+  "files.autoSave": "onFocusChange",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.renderSideBySide": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.prettierPath": "./node_modules/prettier",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "workbench.editor.enablePreview": false,
+  "workbench.activityBar.location": "top",
+  "kilo-code.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "kilo-code.deniedCommands": [],
+  "editor.lineNumbers": "relative",
+  "roo-cline.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "roo-cline.deniedCommands": [],
+  "vscode-neovim.neovimExecutablePaths.linux": "/opt/nvim-linux64/bin/nvim",
+  "geminicodeassist.agentYoloMode": true,
+  "geminicodeassist.inlineSuggestions.enableAuto": false,
+  "editor.tabSize": 2,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "kiroAgent.agentModelSelection": "claude-sonnet-4",
+  "kiroAgent.agentAutonomy": "Autopilot",
+  "kiroAgent.enableTabAutocomplete": false
+}

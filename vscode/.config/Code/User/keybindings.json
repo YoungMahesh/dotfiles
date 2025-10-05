@@ -82,5 +82,9 @@
   {
     "key": "ctrl+m",
     "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "ctrl+'",
+    "command": "geminicodeassist.addSnippetToContext"
   }
 ]

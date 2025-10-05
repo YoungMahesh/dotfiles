@@ -2,7 +2,6 @@
   "window.zoomLevel": 2.5,
   "window.titleBarStyle": "custom",
   "workbench.startupEditor": "none",
-  "editor.minimap.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
   "update.mode": "none",
   "extensions.ignoreRecommendations": true,
@@ -61,5 +60,6 @@
   "editor.formatOnSaveMode": "modifications",
   "kiroAgent.agentModelSelection": "claude-sonnet-4",
   "kiroAgent.agentAutonomy": "Autopilot",
-  "kiroAgent.enableTabAutocomplete": false
+  "kiroAgent.enableTabAutocomplete": false,
+  "editor.minimap.enabled": false
 }

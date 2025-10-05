@@ -65,7 +65,11 @@
     "scminput": false
   },
   "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "modifications"
+  "editor.formatOnSaveMode": "modifications",
+  "search.quickOpen.includeHistory": false,
+  "diffEditor.codeLens": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "github.copilot.nextEditSuggestions.enabled": true
   //"[dockerfile]": {
   //  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   //},

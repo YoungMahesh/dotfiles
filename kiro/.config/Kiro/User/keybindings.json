@@ -82,5 +82,15 @@
   {
     "key": "ctrl+m",
     "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+f8",
+    "command": "-editor.action.marker.next",
+    "when": "editorFocus"
   }
 ]

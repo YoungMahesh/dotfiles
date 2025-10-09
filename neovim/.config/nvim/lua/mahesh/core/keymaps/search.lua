@@ -9,7 +9,7 @@
 vim.keymap.set('n', 'n', 'nzz', {desc='n = next-result, zz = cursor at center of screen'})
 vim.keymap.set('n', 'N', 'Nzz')
 
-vim.keymap.set('v', '/', "\"fy/\\V<C-R>f<CR>", { desc = 'Search highlighted text in current buffer' } )
+vim.keymap.set('x', '/', "\"fy/\\V<C-R>f<CR>", { desc = 'Search highlighted text in current buffer' } )
 
 ---------------------- ->search and replace (single page) ---------------------------------
 --

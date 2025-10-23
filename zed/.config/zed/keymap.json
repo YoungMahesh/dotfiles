@@ -32,20 +32,50 @@
       "'": "vim::EndOfLine",
       "space f f": "editor::Format",
       "s s": "workspace::SaveAll",
-      "t ;": "pane::CloseActiveItem",
       // "space f v": "project_panel::ToggleFocus",
       "space o": "outline::Toggle"
     }
   },
   {
-    "context": "VimControl || Workspace || Editor",
+    // If no "context" is set, the bindings are always active.
     "bindings": {
       // left-dock, bottom-dock comes under "Workspace"
       // for files: vim normal mode == VimControl ; vim insert mode == Editor
       "ctrl-j": "workspace::ToggleLeftDock",
       "ctrl-l": "workspace::ToggleBottomDock",
       "ctrl-k": "command_palette::Toggle",
-      "ctrl-;": "workspace::ToggleRightDock"
+      "ctrl-;": "workspace::ToggleRightDock",
+      "ctrl-a": "editor::SelectAll",
+      "ctrl-c": "editor::Copy"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-p": null,
+      "ctrl-n": null,
+      "ctrl-a": null,
+      "ctrl-c": null
+    }
+  },
+  {
+    // panel == popup-windows (e.g. settings window)
+    // pane == current file/tab
+    "context": "Pane || VimControl",
+    "bindings": {
+      "t ;": "pane::CloseActiveItem",
+      // Navigates back in history.
+      // "t p": "pane::GoBack",
+      // "t n": "pane::GoForward",
+      // move to previous tab in tab-list
+      "t p": "pane::ActivatePreviousItem",
+      "t n": "pane::ActivateNextItem",
+      "t q": [
+        "pane::CloseOtherItems",
+        {
+          "close_pinned": false
+        }
+      ]
     }
   }
 ]

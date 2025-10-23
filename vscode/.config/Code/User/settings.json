@@ -58,18 +58,15 @@
   "geminicodeassist.agentYoloMode": true,
   "geminicodeassist.inlineSuggestions.enableAuto": false,
   "editor.tabSize": 2,
-  "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "modifications",
   "search.quickOpen.includeHistory": false,
   "diffEditor.codeLens": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
-  "github.copilot.nextEditSuggestions.enabled": true
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "[solidity]": {
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  }
   //"[dockerfile]": {
   //  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   //},

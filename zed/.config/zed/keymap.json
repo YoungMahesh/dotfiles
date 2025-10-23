@@ -1,35 +1,51 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
 [
-  // ctrl-shift-p -> vim: open default keymap
-  // ctrl-shift-p -> zed: open default keymap
-  // https://zed.dev/docs/vim#custom-key-bindings
   {
-    "context": "VimControl && !menu",
+    "context": "Workspace",
     "bindings": {
-      // put key-bindings here if you want them to work in normal & visual mode
-      "a": "vim::InsertEndOfLine",
-      ";": "vim::ScrollDown",
-      "q": "vim::ScrollUp",
-      "9": "vim::EndOfLine",
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      //";": "vim::ScrollDown",
+      // workspace::SendKeystrokes is a Zed action that simulates typing a sequence of
+      //    keystrokes into currently focused input (editor, command palette, terminal,
+      //    etc). It lets map you a single key or chord to a series of other keypresses
+      //    so you can compose behaviors from existing shortcut
+      "a": "vim::ScrollUp",
+      ";": ["workspace::SendKeystrokes", "ctrl-d z z"],
+      "q": "vim::InsertEndOfLine",
+      "'": "vim::EndOfLine",
       "space f f": "editor::Format",
       "s s": "workspace::SaveAll",
-      "ctrl-w": "pane::CloseActiveItem",
-      "space f v": "project_panel::ToggleFocus",
+      "t ;": "pane::CloseActiveItem",
+      // "space f v": "project_panel::ToggleFocus",
       "space o": "outline::Toggle"
     }
   },
   {
-    "context": "Editor && showing_completions",
+    "context": "VimControl || Workspace || Editor",
     "bindings": {
-      "ctrl-y": "editor::ConfirmCompletion",
-      "enter": "editor::Newline"
+      // left-dock, bottom-dock comes under "Workspace"
+      // for files: vim normal mode == VimControl ; vim insert mode == Editor
+      "ctrl-j": "workspace::ToggleLeftDock",
+      "ctrl-l": "workspace::ToggleBottomDock",
+      "ctrl-k": "command_palette::Toggle",
+      "ctrl-;": "workspace::ToggleRightDock"
     }
   }
-  // documentation
-  // editor::LineDown - move view of screen down by one line
-  //{
-  //  "context": "Workspace",
-  //  "bindings": {
-  //    "ctrl-t": "terminal_panel::ToggleFocus"
-  //  }
-  //}
 ]

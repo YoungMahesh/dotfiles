@@ -64,6 +64,8 @@
     "context": "Pane || VimControl",
     "bindings": {
       "t ;": "pane::CloseActiveItem",
+      "t l": "pane::SwapItemLeft",
+      "t r": "pane::SwapItemRight",
       // Navigates back in history.
       // "t p": "pane::GoBack",
       // "t n": "pane::GoForward",

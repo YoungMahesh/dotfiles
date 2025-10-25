@@ -61,15 +61,13 @@
   {
     // panel == popup-windows (e.g. settings window)
     // pane == current file/tab
-    "context": "Pane || VimControl",
+    "context": "vim_mode == normal",
     "bindings": {
       "t ;": "pane::CloseActiveItem",
       "t l": "pane::SwapItemLeft",
       "t r": "pane::SwapItemRight",
-      // Navigates back in history.
-      // "t p": "pane::GoBack",
-      // "t n": "pane::GoForward",
-      // move to previous tab in tab-list
+      // "pane::GoBack", // Navigate back in history.
+      // "pane::GoForward", // Navigate forward in history
       "t p": "pane::ActivatePreviousItem",
       "t n": "pane::ActivateNextItem",
       "t q": [

@@ -259,6 +259,7 @@ assign [class="anytype"] 6
 #assign [class="gnome-control-center"] 8
 assign [class="Windsurf"] 10
 assign [class="Code"] 10
+assign [class="dev.zed.Zed"] 10
 assign [class="obsidian"] 10
 
 # open some apps in fullscreen mode 

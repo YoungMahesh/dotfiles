@@ -1,10 +1,9 @@
-// Zed keymap
-//
 // For information on binding keys, see the Zed
 // documentation: https://zed.dev/docs/key-bindings
 //
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
+
 [
   {
     "context": "Workspace",
@@ -13,8 +12,9 @@
     }
   },
   {
-    "context": "Editor && vim_mode == insert",
+    "context": "vim_mode == insert",
     "bindings": {
+      "ctrl-v": "editor::Paste"
       // "j k": "vim::NormalBefore"
     }
   },
@@ -30,8 +30,10 @@
       ";": ["workspace::SendKeystrokes", "ctrl-d z z"],
       "q": "vim::InsertEndOfLine",
       "'": "vim::EndOfLine",
+      "r": "vim::Redo",
       "space f f": "editor::Format",
       "s s": "workspace::SaveAll",
+      "g o": "git::OpenModifiedFiles",
       // "space f v": "project_panel::ToggleFocus",
       "space o": "outline::Toggle"
     }
@@ -39,14 +41,19 @@
   {
     // If no "context" is set, the bindings are always active.
     "bindings": {
-      // left-dock, bottom-dock comes under "Workspace"
       // for files: vim normal mode == VimControl ; vim insert mode == Editor
       "ctrl-j": "workspace::ToggleLeftDock",
-      "ctrl-l": "workspace::ToggleBottomDock",
-      "ctrl-k": "command_palette::Toggle",
+      "ctrl-k": "workspace::ToggleBottomDock",
+      "ctrl-l": "command_palette::Toggle",
       "ctrl-;": "workspace::ToggleRightDock",
       "ctrl-a": "editor::SelectAll",
-      "ctrl-c": "editor::Copy"
+      // if you enable line below, you will not be able to copy errors in hover tooltip with ctrl+c
+      //"ctrl-c": "editor::Copy",
+      "ctrl-m": "editor::ToggleFocus",
+      "ctrl-e": "project_panel::ToggleFocus",
+      "ctrl-g": "git_panel::ToggleFocus"
+      //  enter: open changes of the hovered file; i: focusEditor - to write commit message
+      //  inside diff editor: z o: open changes ; z c: close changes
     }
   },
   {
@@ -55,7 +62,7 @@
       "ctrl-p": null,
       "ctrl-n": null,
       "ctrl-a": null,
-      "ctrl-c": null
+      "ctrl-l": null
     }
   },
   {
@@ -70,12 +77,41 @@
       // "pane::GoForward", // Navigate forward in history
       "t p": "pane::ActivatePreviousItem",
       "t n": "pane::ActivateNextItem",
+      "t 1": "workspace::ActivatePaneLeft",
+      "t 0": "workspace::ActivatePaneRight",
+      "t s": "pane::SplitVertical",
       "t q": [
         "pane::CloseOtherItems",
         {
           "close_pinned": false
         }
       ]
+    }
+  },
+  {
+    "context": "((os != macos && Editor) && edit_prediction_conflict)",
+    "bindings": {
+      "tab": "editor::AcceptEditPrediction"
+    }
+  },
+  {
+    "context": "(ProjectPanel && not_editing)",
+    "bindings": {
+      // enter: toggle fold/unfold directory; k: move up; j: move down
+      "o": "project_panel::NewFile",
+      "d d": "project_panel::Delete",
+      "f": "project_panel::RevealInFileManager",
+      "i": "project_panel::Rename",
+      "a": "project_panel::ScrollUp",
+      ";": "project_panel::ScrollDown",
+      "y y": "project_panel::Copy",
+      "p": "project_panel::Paste"
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-n": "agent::NewThread"
     }
   }
 ]

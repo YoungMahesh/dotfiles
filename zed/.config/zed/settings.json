@@ -19,7 +19,6 @@
     },
     "default_profile": "ask",
     "default_model": {
-      "provider": "openrouter",
       "provider": "copilot_chat",
       "model": "grok-code-fast-1"
     },

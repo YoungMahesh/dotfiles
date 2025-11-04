@@ -19,6 +19,18 @@
     }
   },
   {
+    "context": "vim_mode == insert && !showing_completions",
+    "bindings": {
+      "ctrl-n": "editor::ShowCompletions"
+    }
+  },
+  //{
+  //  "context": "TabSwitcher",
+  //  "bindings": {
+  //    "ctrl-p": "menu::SelectPrevious"
+  //  }
+  //},
+  {
     "context": "(VimControl && !menu)",
     "bindings": {
       //";": "vim::ScrollDown",
@@ -33,9 +45,12 @@
       "r": "vim::Redo",
       "space f f": "editor::Format",
       "s s": "workspace::SaveAll",
-      "g o": "git::OpenModifiedFiles",
       // "space f v": "project_panel::ToggleFocus",
-      "space o": "outline::Toggle"
+      "space o": "outline::Toggle",
+      "g o": "git::OpenModifiedFiles", // git open
+      "g r": "editor::FindAllReferences" // goto references
+      //    default g space // goto/jump to file from reference-list
+      // default: g d // go to defination
     }
   },
   {
@@ -62,7 +77,8 @@
       "ctrl-p": null,
       "ctrl-n": null,
       "ctrl-a": null,
-      "ctrl-l": null
+      "ctrl-l": null,
+      "ctrl-e": null
     }
   },
   {

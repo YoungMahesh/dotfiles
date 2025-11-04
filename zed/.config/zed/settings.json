@@ -20,7 +20,8 @@
     "default_profile": "ask",
     "default_model": {
       "provider": "openrouter",
-      "model": "x-ai/grok-code-fast-1"
+      "provider": "copilot_chat",
+      "model": "grok-code-fast-1"
     },
     "model_parameters": []
   },

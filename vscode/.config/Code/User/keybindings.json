@@ -2,7 +2,7 @@
 [
   // terminal
   {
-    "key": "ctrl+l",
+    "key": "ctrl+k",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
@@ -76,7 +76,7 @@
     "when": "editorTextFocus && kilocode.ghost.enableQuickInlineTaskKeybinding && !editorTabMovesFocus && !github.copilot.completions.enabled && !inSnippetMode"
   },
   {
-    "key": "ctrl+k",
+    "key": "ctrl+l",
     "command": "workbench.action.showCommands"
   },
   {

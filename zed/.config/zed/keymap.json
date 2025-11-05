@@ -78,7 +78,11 @@
       "ctrl-n": null,
       "ctrl-a": null,
       "ctrl-l": null,
-      "ctrl-e": null
+      "ctrl-e": null,
+      "ctrl-shift-n": "workspace::NewTerminal"
+      // default:
+      //  "ctrl-shift": switch terminal
+      //  ctrl-c: stop process
     }
   },
   {

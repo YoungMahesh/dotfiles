@@ -47,7 +47,7 @@
       "s s": "workspace::SaveAll",
       // "space f v": "project_panel::ToggleFocus",
       "space o": "outline::Toggle",
-      "g o": "git::OpenModifiedFiles", // git open
+      "g o": "git::Diff", // git open
       "g r": "editor::FindAllReferences" // goto references
       //    default g space // goto/jump to file from reference-list
       // default: g d // go to defination
@@ -97,8 +97,8 @@
       // "pane::GoForward", // Navigate forward in history
       "t p": "pane::ActivatePreviousItem",
       "t n": "pane::ActivateNextItem",
-      "t 1": "workspace::ActivatePaneLeft",
-      "t 0": "workspace::ActivatePaneRight",
+      "t 0": "workspace::ActivatePaneLeft",
+      "t 9": "workspace::ActivatePaneRight",
       "t s": "pane::SplitVertical",
       "t q": [
         "pane::CloseOtherItems",
@@ -132,6 +132,12 @@
     "context": "AgentPanel",
     "bindings": {
       "ctrl-n": "agent::NewThread"
+    }
+  },
+  {
+    "context": "!ContextEditor > (Editor && mode == full)",
+    "bindings": {
+      "ctrl-i": "assistant::InlineAssist"
     }
   }
 ]

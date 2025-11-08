@@ -246,14 +246,14 @@ bindsym $mod+0 workspace number $ws10
 # 2. launch app (if app is not already running)
 # 3. click on app window using mouse; this will print window-class under xprop-command in step 1
 
-# assign workspace 4 to Telegram window-class, this will open telegram app in workspace 4 on lauch
-assign [class="TelegramDesktop"] 4
 
 assign [class="kitty"] 1
 assign [class="firefox_firefox"] 2
 #assign [class="Chromium"] 3
 assign [class="Brave"] 3
 assign [class="protonvpn-app"] 3
+assign [class="TelegramDesktop"] 4
+assign [class="Signal"] 4
 assign [class="RemNote"] 5
 assign [class="anytype"] 6
 #assign [class="gnome-control-center"] 8

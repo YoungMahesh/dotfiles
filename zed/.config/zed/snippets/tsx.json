@@ -1,7 +1,18 @@
 {
+  "Log to console": {
+    "prefix": "conl",
+    //${1:World} you get tab on World where World is visually-selected
+    //"body": ["console.log(\"Hello, ${1:World}!\")", "$0"],
+    "body": ["console.log($0)"],
+    "description": "Logs to console"
+  },
   "try-catch block": {
     "prefix": "tryc",
     "body": ["try {", "\t$1", "} catch (err) {", "\tconsole.error(err);", "}"],
     "description": "create try-catch block"
+  },
+  "no name function": {
+    "prefix": "func0",
+    "body": ["(() => {", "\t$0", "})();"]
   }
 }

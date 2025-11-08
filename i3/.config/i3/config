@@ -16,11 +16,15 @@ font pango:monospace 10
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 #exec --no-startup-id dex --autostart --environment i3
 
+# set preferred terminal
+set $term ~/.local/kitty/bin/kitty --session ~/.config/kitty/sessions.conf
+
 # autostart 
 # exec: Runs once when i3 starts
 # exec_always: Runs every time i3 is restarted/reloaded
 # --no-startup-id: Use for apps that don't support startup notifications (prevents cursor from showing loading state)
-exec --no-startup-id /home/mahesh/.local/bin/kitty
+# exec --no-startup-id /home/mahesh/.local/bin/kitty
+exec --no-startup-id $term
 exec --no-startup-id /snap/bin/telegram-desktop
 exec --no-startup-id /usr/bin/anytype
 
@@ -165,10 +169,6 @@ bar {
 
 # ----------- my config --------
 
-# start a terminal
-# set preferred terminal
-set $term ~/.local/kitty/bin/kitty --session ~/.config/kitty/sessions.conf
-#bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec $term 
 
 # launch apps with keybinding

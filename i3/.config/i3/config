@@ -26,7 +26,8 @@ set $term ~/.local/kitty/bin/kitty --session ~/.config/kitty/sessions.conf
 # exec --no-startup-id /home/mahesh/.local/bin/kitty
 exec --no-startup-id $term
 exec --no-startup-id /snap/bin/telegram-desktop
-exec --no-startup-id /usr/bin/anytype
+#exec --no-startup-id /usr/bin/anytype
+exec --no-startup-id /usr/bin/signal-desktop --start-in-tray
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.

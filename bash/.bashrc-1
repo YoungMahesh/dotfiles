@@ -171,7 +171,7 @@ bt() {
       $on_command && $connect_command && pactl set-card-profile bluez_card.41_42_37_A3_15_00 $profile
       ;;
     *)
-      echo "Usage: bt {on | off | rock111 [headset]}"
+      echo "Usage: bt {on | off | rock111 [headset]}. You cannot switch audio-profile during call, you need to disconnect-call -> switch profile -> reconnect-call"
       ;;
   esac
 }

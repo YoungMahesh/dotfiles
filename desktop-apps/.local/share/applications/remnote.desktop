@@ -6,4 +6,4 @@ Type=Application
 # either 1) provide full path of icon (usually .png or .svg)
 #        2) put remnote.{png/svg} in ~/.local/share/icons
 # Icon=remnote
-Categories=Utility;
+Categories=Utility

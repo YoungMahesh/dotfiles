@@ -139,3 +139,41 @@ alias tws='timew summary'
 alias tk=task
 alias sync-data='bash ~/.config/sync/main.bash'
 alias sync-logs='cat ~/.config/sync/logs'
+
+
+# In Bash scripting, 
+# `$1`, `$2`, etc., are **positional parameters** (arguments) passed to a function or script.
+# `;;` is the **branch terminator** in a Bash `case` statement.
+#   - It tells Bash that the current branch (e.g., `on) ... ;;`) is complete, and to stop checking further branches for that match.
+#   - Without `;;`, Bash would continue executing the next branch, which could cause errors.
+#   - It's similar to `break` in other programming languages.
+# `esac` is the closing keyword for a `case` statement in Bash (it's "case" spelled backward).
+# `fi` is the closing keyword for a `if` statement (it's "if" spelled backward)
+#
+# bluetooth
+# it is harmless to execute `bluetoothctl connect <mac-address>` even if that device is already connected
+bt() {
+  case $1 in
+    on)
+      bluetoothctl power on
+      ;;
+    off)
+      bluetoothctl power off
+      ;;
+    rock111)
+      on_command="bluetoothctl power on"
+      connect_command="bluetoothctl connect 41:42:37:A3:15:00"
+      if [ "$2" = "headset" ]; then
+        profile="headset-head-unit-msbc"
+      else
+        profile="a2dp-sink-sbc_xq"
+      fi
+      $on_command && $connect_command && pactl set-card-profile bluez_card.41_42_37_A3_15_00 $profile
+      ;;
+    *)
+      echo "Usage: bt {on | off | rock111 [headset]}"
+      ;;
+  esac
+}
+
+

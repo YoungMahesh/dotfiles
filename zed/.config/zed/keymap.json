@@ -43,6 +43,7 @@
       "q": "vim::InsertEndOfLine",
       "'": "vim::EndOfLine",
       "r": "vim::Redo",
+      "/": "buffer_search::Deploy",
       "space f f": "editor::Format",
       "s s": "workspace::SaveAll",
       // "space f v": "project_panel::ToggleFocus",
@@ -50,7 +51,8 @@
       "g o": "git::Diff", // git open
       "g r": "editor::FindAllReferences" // goto references
       //    default g space // goto/jump to file from reference-list
-      // default: g d // go to defination
+      // go to defination: default: g d
+      // marks: m[a|b|c..] to set mark, `[a|b|c..] to visit marked position
     }
   },
   {

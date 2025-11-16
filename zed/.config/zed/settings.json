@@ -2,10 +2,11 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the command palette
 {
+  "show_edit_predictions": false,
   "agent_buffer_font_size": 18.0,
   "agent_ui_font_size": 24.0,
   "ui_font_weight": 400.0,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "git": {
     "inline_blame": {
       "enabled": false
@@ -15,7 +16,7 @@
     "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "gpt-5-mini"
+      "model": "grok-code-fast-1"
     },
     "default_profile": "ask",
     "default_model": {
@@ -42,7 +43,7 @@
     "mode": "dark",
     "light": "One Light",
     //"dark": "One Dark"
-    "dark": "GitHub Dark Default"
+    "dark": "Catppuccin Latte"
   },
   // Settings related to preview tabs.
   "preview_tabs": {

@@ -137,10 +137,13 @@ export PATH="/home/mahesh/.local/bin:$PATH"
 alias tw=timew
 alias tws='timew summary'
 alias tk=task
+alias tka='task all status:pending'
 alias sync-data='bash ~/.config/sync/main.bash'
 alias sync-logs='cat ~/.config/sync/logs'
+alias rclone1='rclone rcd --rc-web-gui'
 
 
+# ------------- bluetooth --------------------
 # In Bash scripting, 
 # `$1`, `$2`, etc., are **positional parameters** (arguments) passed to a function or script.
 # `;;` is the **branch terminator** in a Bash `case` statement.
@@ -150,7 +153,6 @@ alias sync-logs='cat ~/.config/sync/logs'
 # `esac` is the closing keyword for a `case` statement in Bash (it's "case" spelled backward).
 # `fi` is the closing keyword for a `if` statement (it's "if" spelled backward)
 #
-# bluetooth
 # it is harmless to execute `bluetoothctl connect <mac-address>` even if that device is already connected
 bt() {
   case $1 in

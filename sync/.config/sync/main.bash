@@ -1,2 +1,4 @@
-bash ~/.config/sync/taskwarrior.bash >> ~/.config/sync/logs
-bash ~/.config/sync/timewarrior.bash >> ~/.config/sync/logs
+LOG_FILE="$HOME/.config/sync/logs"
+bash ~/.config/sync/taskwarrior.bash >> "$LOG_FILE" 
+bash ~/.config/sync/timewarrior.bash >> "$LOG_FILE"
+bash ~/.config/sync/truncate-file.bash "$LOG_FILE" 

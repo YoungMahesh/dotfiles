@@ -1,10 +1,16 @@
-backup_file="timew_$(date +%Y-%m-%d_%H-%M-%S).zip"
+BACKUP_FILE_PATH="$HOME/timew_$(date +%Y-%m-%d_%H-%M-%S).zip"
+SOURCE_PATH="$HOME/.local/share/timewarrior/data"
+REMOTE_PATH="pcloud-backup:timewarrior"
 
-zip -r ~/"$backup_file" ~/.local/share/timewarrior/data > /dev/null
+zip -r "$BACKUP_FILE_PATH" "$SOURCE_PATH" > /dev/null
 
-echo "Backup created: $backup_file"
+echo "Backup created at: $BACKUP_FILE_PATH"
 
-rclone move ~/"$backup_file" pcloud-backup:timewarrior
+rclone move "$BACKUP_FILE_PATH" "$REMOTE_PATH" 
 
-echo "Backup: $backup_file, uploaded to cloud"
+echo "Backup: $BACKUP_FILE_PATH, moved to cloud"
 echo "----------------------------------------"
+
+# delete files older than 60 days
+rclone delete "$REMOTE_PATH" --min-age 60d -v
+

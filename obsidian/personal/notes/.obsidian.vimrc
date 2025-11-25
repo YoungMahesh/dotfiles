@@ -1,3 +1,5 @@
+" IMPORTANT: these keymaps will work/activate in obsidian-canvas files only after you open markdown file in obsidian
+"   flow: open markdown file -> vim-keymaps are now activated for canvas and markdown files
 " nnoremap - normal mode; vnoremap - visual mode
 " nnoremap (non-recursive map); nmap (recursive map)
 " recursive map: This creates a mapping where the RHS of the mapping is re-evaluated.

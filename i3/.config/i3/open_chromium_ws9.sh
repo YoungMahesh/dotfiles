@@ -10,5 +10,5 @@ i3-msg "workspace number 9"
 #   profile; but as we does not open multiple-profiles here, this does not matter
 if ! i3-msg '[class="Chromium" workspace="9"] focus' 2>/dev/null; then
     #chromium --new-window --profile-directory="Default" "https://t3.chat"
-    chromium --new-window --profile-directory="Default" "https://www.perplexity.ai/"
+    chromium --new-window --profile-directory="Default" "https://chatgpt.com"
 fi

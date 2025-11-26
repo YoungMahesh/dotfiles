@@ -1,3 +1,13 @@
+```bash
+# create symlink where targets are multiple 
+stow --target=~/Documents/My_First_Vault/ obsidian_master_config
+stow --target=~/Documents/My_Second_Vault/ obsidian_master_config
+
+# delete symlink
+stow -D --target=~/Documents/My_First_Vault/ obsidian_master_config
+```
+
+
 ### links
 - #notes-site == https://www.remnote.com/profile/youngmahesh -> notes
 

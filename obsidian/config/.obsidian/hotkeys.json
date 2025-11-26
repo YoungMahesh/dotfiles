@@ -2,10 +2,9 @@
   "command-palette:open": [
     {
       "modifiers": [
-        "Mod",
-        "Shift"
+        "Mod"
       ],
-      "key": "P"
+      "key": "K"
     }
   ],
   "switcher:open": [
@@ -32,5 +31,6 @@
       "key": ";"
     }
   ],
-  "markdown:add-metadata-property": []
+  "markdown:add-metadata-property": [],
+  "editor:insert-link": []
 }

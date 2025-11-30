@@ -115,9 +115,7 @@ clean_path() {
 # stripe: cli through docker, --network host tells cli to look network on host computer instead of inside docker-container
 #alias stripe='docker run --rm -it --network host stripe/stripe-cli:latest'
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
 export EDITOR=nvim
-alias vi=nvim
 
 
 # set PATH so it includes user's private bin if it exists

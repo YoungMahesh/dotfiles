@@ -43,7 +43,7 @@
     "mode": "dark",
     "light": "One Light",
     //"dark": "One Dark"
-    "dark": "Catppuccin Latte"
+    "dark": "GitHub Dark Default"
   },
   // Settings related to preview tabs.
   "preview_tabs": {

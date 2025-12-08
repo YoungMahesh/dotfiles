@@ -1,0 +1,37 @@
+{
+  // editor UI settings
+  "window.zoomLevel": 2.5,
+  "json.schemaDownload.enable": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  // editor behavior settings
+  "update.mode": "none", // do not update vscode automatically
+  "terminal.integrated.commandsToSkipShell": [
+    "-workbench.action.quickOpen" // ctrl+p for previous-command instead of quick-open while in terminal
+  ],
+  "files.autoSave": "onFocusChange",
+  // git settings
+  "git.openRepositoryInParentFolders": "never",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.renderSideBySide": false,
+  // language specific settings
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.prettierPath": "./node_modules/prettier",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "workbench.editor.enablePreview": false,
+  "workbench.activityBar.location": "top",
+  "editor.lineNumbers": "relative",
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/mahesh/.local/bin/nvim",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "search.quickOpen.includeHistory": false,
+  "diffEditor.codeLens": true,
+}

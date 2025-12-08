@@ -54,7 +54,7 @@
     "git show"
   ],
   "roo-cline.deniedCommands": [],
-  "vscode-neovim.neovimExecutablePaths.linux": "/opt/nvim-linux64/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/mahesh/.local/bin/nvim",
   "geminicodeassist.agentYoloMode": true,
   "geminicodeassist.inlineSuggestions.enableAuto": false,
   "editor.tabSize": 2,

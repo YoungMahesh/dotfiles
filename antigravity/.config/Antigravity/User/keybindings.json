@@ -1,6 +1,6 @@
 // Place your key bindings in this file to override the defaults
 [
-  // terminal
+  // UI - sidebars, terminals, commands 
   {
     "key": "ctrl+k",
     "command": "workbench.action.terminal.toggleTerminal",
@@ -10,6 +10,18 @@
     "key": "ctrl+shift+n",
     "command": "workbench.action.terminal.new",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+;",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "workbench.action.focusFirstEditorGroup"
   },
   // suggestion widget
   {
@@ -58,29 +70,10 @@
     "key": "ctrl+v",
     "command": "-editor.action.clipboardPasteAction"
   },
-  // AI extensions  - github-copilot, kilo-code
-  {
-    // accept github-copilot suggestion
-    "key": "tab",
-    "command": "editor.action.inlineSuggest.commit",
-    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+;",
-    "command": "workbench.action.toggleAuxiliaryBar"
-  },
-  {
-    // enable kilo-code_settings -> Inline Assist -> Quick Inline Task
-    "key": "ctrl+i",
-    "command": "kilo-code.ghost.promptCodeSuggestion",
-    "when": "editorTextFocus && kilocode.ghost.enableQuickInlineTaskKeybinding && !editorTabMovesFocus && !github.copilot.completions.enabled && !inSnippetMode"
-  },
+  // specific for AntiGravity-editor
   {
     "key": "ctrl+l",
-    "command": "workbench.action.showCommands"
-  },
-  {
-    "key": "ctrl+m",
-    "command": "workbench.action.focusFirstEditorGroup"
+    "command": "-antigravity.prioritized.chat.open",
+    "when": "!terminalFocus"
   },
  ]

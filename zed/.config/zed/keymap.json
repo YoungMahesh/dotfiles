@@ -44,6 +44,7 @@
       "'": "vim::EndOfLine",
       "r": "vim::Redo",
       "/": "buffer_search::Deploy",
+      ".": "vim::RepeatFind",
       "space f f": "editor::Format",
       "s s": "workspace::SaveAll",
       // "space f v": "project_panel::ToggleFocus",

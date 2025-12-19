@@ -2,9 +2,20 @@
   // you don't need to apply these settings again to the project level settings.json file, you can add extra or override these in project's
   //    gemini-cli settings.json file
   // you can set project's gemini-cli settings at path `.gemini/settings.json` in the root directory of the project
-  "selectedAuthType": "oauth-personal",
-  "hasSeenIdeIntegrationNudge": true,
-  "ideMode": true,
-  "vimMode": true,
-  "theme": "GitHub"
+  "ide": {
+    "hasSeenNudge": true,
+    "enabled": true
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "ui": {
+    "theme": "GitHub"
+  },
+  "general": {
+    "vimMode": true,
+    "previewFeatures": true
+  }
 }

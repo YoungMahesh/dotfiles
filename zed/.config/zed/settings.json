@@ -9,29 +9,103 @@
   "relative_line_numbers": "enabled",
   "git": {
     "inline_blame": {
-      "enabled": false
-    }
+      "enabled": false,
+    },
+  },
+  "language_models": {
+    "open_router": {
+      "available_models": [
+        {
+          "name": "x-ai/grok-code-fast-1",
+          // input-price: $0.2/M, output-price: $1.5/M
+          "display_name": "Grok code 0.2/1.5",
+          // max_tokens: maximum output tokens per response
+          "max_tokens": 256000,
+          "supports_tools": true,
+          "provider": {
+            "data_collection": "disallow",
+          },
+        },
+        {
+          "name": "deepseek/deepseek-v3.2",
+          "display_name": "Deepseek-3.2 0.27/.40",
+          "max_tokens": 163800,
+          "supports_tools": true,
+          "provider": {
+            "data_collection": "disallow",
+          },
+        },
+        {
+          "name": "anthropic/claude-opus-4.5",
+          "display_name": "Claude Opus-4.5 5/25",
+          "max_tokens": 64000,
+          "supports_tools": true,
+          "provider": {
+            "data_collection": "disallow",
+          },
+        },
+        {
+          "name": "anthropic/claude-haiku-4.5",
+          "display_name": "Claude Haiku-4.5 1/5",
+          "max_tokens": 64000,
+          "supports_tools": true,
+          "provider": {
+            "data_collection": "disallow",
+          },
+        },
+        {
+          "name": "nex-agi/deepseek-v3.1-nex-n1:free",
+          "display_name": "Deepseek-3.1 nex-n1:free",
+          "max_tokens": 163800,
+          "supports_tools": true,
+          "provider": {
+            "data_collection": "disallow",
+          },
+        },
+        {
+          "name": "xiaomi/mimo-v2-flash:free",
+          "display_name": "Xiaomi Mimo-2:free",
+          "max_tokens": 100000,
+          "supports_tools": true,
+          "provider": {
+            "data_collection": "disallow",
+          },
+        },
+        {
+          "name": "kwaipilot/kat-coder-pro:free",
+          "display_name": "Kat Coder pro:free",
+          "max_tokens": 100000,
+          "supports_tools": true,
+          "provider": {
+            "data_collection": "disallow",
+          },
+        },
+      ],
+    },
   },
   "agent": {
+    "enabled": false,
     "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "grok-code-fast-1"
+      "model": "grok-code-fast-1",
     },
     "default_profile": "ask",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "grok-code-fast-1"
+      "provider": "openrouter",
+      "model": "x-ai/grok-code-fast-1",
     },
-    "model_parameters": []
+
+    "model_parameters": [],
+    "enable_feedback": false,
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "none",
   },
   "autosave": "on_focus_change",
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "vim_mode": true,
   "icon_theme": "Catppuccin Latte",
@@ -41,9 +115,9 @@
   "buffer_font_size": 22.0,
   "theme": {
     "mode": "dark",
-    "light": "One Light",
+    "light": "Gruvbox Light Hard",
     //"dark": "One Dark"
-    "dark": "GitHub Dark Default"
+    "dark": "GitHub Dark Default",
   },
   // Settings related to preview tabs.
   "preview_tabs": {
@@ -55,8 +129,8 @@
     // Whether to open tabs in preview mode when selected from the file finder.
     "enable_preview_from_file_finder": false,
     // Whether a preview tab gets replaced when code navigation is used to navigate away from the tab.
-    "enable_preview_from_code_navigation": false
-  }
+    "enable_keep_preview_on_code_navigation": false,
+  },
   // "languages": {
   //   "TypeScript": {
   //     "formatter": {

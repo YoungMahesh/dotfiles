@@ -2,6 +2,13 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the command palette
 {
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+  },
+  "title_bar": {
+    "show_menus": false,
+  },
   "show_edit_predictions": false,
   "agent_buffer_font_size": 18.0,
   "agent_ui_font_size": 24.0,
@@ -55,11 +62,13 @@
         },
         {
           "name": "nex-agi/deepseek-v3.1-nex-n1:free",
-          "display_name": "Deepseek-3.1 nex-n1:free",
+          "display_name": "free:Deepseek-3.1 nex-n1",
           "max_tokens": 163800,
           "supports_tools": true,
           "provider": {
-            "data_collection": "disallow",
+            // "data_collection": "deny",
+            //    if used deny, zed-editor gives warning: Value is not accepted. Valid values: "allow", "disallow". (1)
+            //    if used 'disallow', openrouter API gives error: Invalid option: expected one of "deny"|"allow"
           },
         },
         {
@@ -84,20 +93,12 @@
     },
   },
   "agent": {
-    "enabled": false,
-    "always_allow_tool_actions": true,
-    "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "grok-code-fast-1",
-    },
-    "default_profile": "ask",
     "default_model": {
       "provider": "openrouter",
-      "model": "x-ai/grok-code-fast-1",
+      "model": "nex-agi/deepseek-v3.1-nex-n1:free"
     },
-
+    "default_profile": "ask",
     "model_parameters": [],
-    "enable_feedback": false,
   },
   "features": {
     "edit_prediction_provider": "none",

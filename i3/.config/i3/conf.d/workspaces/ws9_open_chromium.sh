@@ -8,6 +8,6 @@ i3-msg "workspace number 9"
 # Try to focus existing Chromium window in workspace 9
 # bug: if multiple profiles of chromium opened in workspace; switching out and back to workspace 9 always leads to focus on non 'Default'
 #   profile; but as we does not open multiple-profiles here, this does not matter
-if ! i3-msg '[class="Chromium" workspace="9"] focus' 2>/dev/null; then
-    chromium --new-window --profile-directory="Default" "https://chatgpt.com"
+if ! i3-msg '[class="Google-chrome" workspace="9"] focus' 2>/dev/null; then
+    google-chrome --new-window --profile-directory="Default" "https://chatgpt.com"
 fi

@@ -43,8 +43,7 @@ vnoremap tp :<C-u>obcommand workspace:previous-tab<CR>
 " -------------- Execute obsidian commands --------------------------- 
 " get list of all command-ids(e.g. workspace:next-tab): open obsidian console (ctrl+shift+i) -> execute: app.commands.commands
 " connect obsidian-vimrc with obsidian hotkeys: https://notes.bauer.codes/Obsidian#Current+obsidian.vimrc
-
-
+" requirement for smooth execution: default mode for new tabs must be - editing
 exmap nextTab obcommand workspace:next-tab
 nnoremap tn :nextTab<cr>
 exmap prevTab obcommand workspace:previous-tab

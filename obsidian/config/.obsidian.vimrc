@@ -52,9 +52,10 @@ exmap closeTab obcommand workspace:close
 nnoremap t; :closeTab<cr>
 exmap newTab obcommand workspace:new-tab
 nnoremap tt :newTab<cr>
-exmap openInNew obcommand editor:open-link-in-new-leaf
-nnoremap to :openInNew<cr>
 
+" go to
+exmap openInNew obcommand editor:open-link-in-new-leaf
+nnoremap gd :openInNew<cr>
 
 exmap foldAll obcommand editor:fold-all
 nnoremap zM :foldAll<cr>

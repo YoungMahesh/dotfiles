@@ -1,6 +1,6 @@
 {
   "vimMode": true,
-  "newFileLocation": "root",
+  "newFileLocation": "current",
   "pdfExportSettings": {
     "includeName": true,
     "pageSize": "Letter",

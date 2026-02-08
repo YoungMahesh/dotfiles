@@ -2,6 +2,9 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the command palette
 {
+  "edit_predictions": {
+    "provider": "none"
+  },
   "tabs": {
     "file_icons": true,
     "git_status": true,
@@ -99,9 +102,6 @@
     },
     "default_profile": "ask",
     "model_parameters": [],
-  },
-  "features": {
-    "edit_prediction_provider": "none",
   },
   "autosave": "on_focus_change",
   "telemetry": {

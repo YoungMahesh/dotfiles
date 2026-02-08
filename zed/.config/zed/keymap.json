@@ -9,20 +9,20 @@
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
-    }
+    },
   },
   {
     "context": "vim_mode == insert",
     "bindings": {
-      "ctrl-v": "editor::Paste"
+      "ctrl-v": "editor::Paste",
       // "j k": "vim::NormalBefore"
-    }
+    },
   },
   {
     "context": "vim_mode == insert && !showing_completions",
     "bindings": {
-      "ctrl-n": "editor::ShowCompletions"
-    }
+      "ctrl-n": "editor::ShowCompletions",
+    },
   },
   //{
   //  "context": "TabSwitcher",
@@ -50,12 +50,13 @@
       // "space f v": "project_panel::ToggleFocus",
       "space o": "outline::Toggle",
       "g o": "git::Diff", // git open
-      "g r": "editor::FindAllReferences" // goto references
+      "g r": "editor::FindAllReferences", // goto references
       //    default g space // goto/jump to file from reference-list
       // go to defination: default: g d
       // marks: m[a|b|c..] to set mark, `[a|b|c..] to visit marked position
-    }
+    },
   },
+
   {
     // If no "context" is set, the bindings are always active.
     "bindings": {
@@ -69,11 +70,12 @@
       //"ctrl-c": "editor::Copy",
       "ctrl-m": "editor::ToggleFocus",
       "ctrl-e": "project_panel::ToggleFocus",
-      "ctrl-g": "git_panel::ToggleFocus"
+      "ctrl-g": "git_panel::ToggleFocus",
       //  enter: open changes of the hovered file; i: focusEditor - to write commit message
       //  inside diff editor: z o: open changes ; z c: close changes
-    }
+    },
   },
+
   {
     "context": "Terminal",
     "bindings": {
@@ -82,11 +84,11 @@
       "ctrl-a": null,
       "ctrl-l": null,
       "ctrl-e": null,
-      "ctrl-shift-n": "workspace::NewTerminal"
+      "ctrl-shift-n": "workspace::NewTerminal",
       // default:
       //  "ctrl-shift": switch terminal
       //  ctrl-c: stop process
-    }
+    },
   },
   {
     // panel == popup-windows (e.g. settings window)
@@ -103,19 +105,20 @@
       "t 0": "workspace::ActivatePaneLeft",
       "t 9": "workspace::ActivatePaneRight",
       "t s": "pane::SplitVertical",
+      "t t": "pane::TogglePinTab",
       "t q": [
         "pane::CloseOtherItems",
         {
-          "close_pinned": false
-        }
-      ]
-    }
+          "close_pinned": false,
+        },
+      ],
+    },
   },
   {
     "context": "((os != macos && Editor) && edit_prediction_conflict)",
     "bindings": {
-      "tab": "editor::AcceptEditPrediction"
-    }
+      "tab": "editor::AcceptEditPrediction",
+    },
   },
   {
     "context": "(ProjectPanel && not_editing)",
@@ -128,19 +131,19 @@
       "a": "project_panel::ScrollUp",
       ";": "project_panel::ScrollDown",
       "y y": "project_panel::Copy",
-      "p": "project_panel::Paste"
-    }
+      "p": "project_panel::Paste",
+    },
   },
   {
     "context": "AgentPanel",
     "bindings": {
-      "ctrl-n": "agent::NewThread"
-    }
+      "ctrl-n": "agent::NewThread",
+    },
   },
   {
     "context": "!ContextEditor > (Editor && mode == full)",
     "bindings": {
-      "ctrl-i": "assistant::InlineAssist"
-    }
-  }
+      "ctrl-i": "assistant::InlineAssist",
+    },
+  },
 ]

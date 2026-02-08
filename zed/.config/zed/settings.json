@@ -118,7 +118,9 @@
     "mode": "dark",
     "light": "Gruvbox Light Hard",
     //"dark": "One Dark"
-    "dark": "GitHub Dark Default",
+    // problems with "Github Dark default": 
+    //    does not have distinct background-color for tab which makes it difficult to recognize current tab from the topbar tab-list
+    "dark": "Ayu Dark",
   },
   // Settings related to preview tabs.
   "preview_tabs": {

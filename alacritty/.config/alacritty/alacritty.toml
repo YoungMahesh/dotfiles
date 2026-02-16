@@ -23,6 +23,7 @@ bindings = [
 { key = "N", mods = "Control|Shift", action = "CreateNewWindow"},
 { key = "F11", action = "ToggleFullscreen"}, # 'view-split on left/right' does not work in Fullscreen on ubuntu 
 ]
+# ctrl+shift+w = close current window
 
 
 ### installation

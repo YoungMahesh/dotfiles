@@ -1,3 +1,4 @@
+source ~/.scripts/aliases.bash
 source ~/.scripts/bluetooth.bash
 source ~/.scripts/brightness.bash
 source ~/.scripts/fzf.bash

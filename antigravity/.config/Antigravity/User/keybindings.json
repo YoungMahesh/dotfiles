@@ -1,79 +1,85 @@
 // Place your key bindings in this file to override the defaults
 [
-  // UI - sidebars, terminals, commands 
+  // UI - sidebars, terminals, commands
   {
     "key": "ctrl+k",
     "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
+    "when": "terminal.active",
   },
   {
     "key": "ctrl+shift+n",
     "command": "workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile",
   },
   {
     "key": "ctrl+;",
-    "command": "workbench.action.toggleAuxiliaryBar"
+    "command": "workbench.action.toggleAuxiliaryBar",
   },
   {
     "key": "ctrl+l",
-    "command": "workbench.action.showCommands"
+    "command": "workbench.action.showCommands",
   },
   {
     "key": "ctrl+m",
-    "command": "workbench.action.focusFirstEditorGroup"
+    "command": "workbench.action.focusFirstEditorGroup",
   },
   // suggestion widget
   {
     "key": "ctrl+n",
     "command": "editor.action.triggerSuggest",
-    "when": "!suggestWidgetVisible && editorTextFocus"
+    "when": "!suggestWidgetVisible && editorTextFocus",
   },
   {
     "key": "ctrl+n",
     "command": "selectNextSuggestion",
-    "when": "suggestWidgetVisible"
+    "when": "suggestWidgetVisible",
   },
   {
     "key": "ctrl+y",
     "command": "acceptSelectedSuggestion",
-    "when": "suggestWidgetVisible"
+    "when": "suggestWidgetVisible",
   },
   {
     "key": "ctrl+p",
     "command": "selectPrevSuggestion",
-    "when": "suggestWidgetVisible"
+    "when": "suggestWidgetVisible",
   },
   // file manager
   {
     "key": "ctrl+j",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "command": "workbench.action.toggleSidebarVisibility",
   },
   {
     "key": "ctrl+e",
-    "command": "workbench.files.action.focusFilesExplorer"
+    "command": "workbench.files.action.focusFilesExplorer",
   },
   {
     "key": "d",
     "command": "moveFileToTrash",
-    "when": "explorerResourceMoveableToTrash && filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+    "when": "explorerResourceMoveableToTrash && filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus",
   },
   {
     "key": "r",
     "command": "renameFile",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
   },
   // neovim extension
   {
     // paste-action is done with p with neovim,
     //  so free ctrl+v to be used for neovim-visual_mode
     "key": "ctrl+v",
-    "command": "-editor.action.clipboardPasteAction"
+    "command": "-editor.action.clipboardPasteAction",
   },
   // specific for AntiGravity-editor
   {
     "key": "ctrl+l",
     "command": "-antigravity.prioritized.chat.open",
-    "when": "!terminalFocus"
+    "when": "!terminalFocus",
   },
- ]
+  {
+    "key": "shift+escape",
+    "command": "workbench.action.toggleMaximizedAuxiliaryBar",
+    // "when": "isAuxiliaryWindowFocusedContext",
+    // "when": "auxiliaryBarFocus",
+  },
+]

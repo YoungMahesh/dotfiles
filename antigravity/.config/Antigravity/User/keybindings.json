@@ -79,7 +79,13 @@
   {
     "key": "shift+escape",
     "command": "workbench.action.toggleMaximizedAuxiliaryBar",
-    // "when": "isAuxiliaryWindowFocusedContext",
-    // "when": "auxiliaryBarFocus",
+    // Following "when" values are not working in antigravity-editor:
+    //    "when": "isAuxiliaryWindowFocusedContext",
+    //    "when": "auxiliaryBarFocus",
+  },
+  {
+    "key": "ctrl+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
   },
 ]

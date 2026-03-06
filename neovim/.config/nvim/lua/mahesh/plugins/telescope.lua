@@ -1,16 +1,24 @@
 -- :checkhealth telescope
+-- :help telescope
+-- :help telescope.command
 return {
-  'nvim-telescope/telescope.nvim',
-  tag = '0.1.8',
+
+  'nvim-telescope/telescope.nvim', version = '*',
   dependencies = {
-    'nvim-lua/plenary.nvim',
-    {
-      "nvim-telescope/telescope-live-grep-args.nvim",
-      -- This will not install any breaking changes.
-      -- For major updates, this must be adjusted manually.
-      version = "^1.0.0",
-    },
+      -- lua functions to read/write files
+      'nvim-lua/plenary.nvim',
+      -- optional but recommended
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+
+  -- REMOVE
+     {
+       "nvim-telescope/telescope-live-grep-args.nvim",
+       -- This will not install any breaking changes.
+       -- For major updates, this must be adjusted manually.
+       version = "^1.0.0",
+     },
   },
+
   config = function()
     local builtin = require('telescope.builtin')
     local keymap = vim.keymap
@@ -50,14 +58,19 @@ return {
     end
 
 
-    --keymap.set('n', '<c-o>', function()
-    --  builtin.find_files({
-    --    hidden = true, no_ignore = true
-    --  })
-    --end, {desc = 'search files in cwd'} )
+
     keymap.set('n', '<c-p>', function()
       builtin.find_files({
-        hidden = true, no_ignore = true,
+
+      -- no_ignore=true - show files form paths which are mentioned in .gitignore
+      --    large directories like node_modules are handled through defaults.file_ignore_patterns in telescope.setup
+      -- no_ignore = true,
+      --
+      -- list files ignored in .gitignore:
+      --   use .gitignore negation pattern: e.g. put `!node_modules` in ".ignore" file and list files in node_modules
+      --
+      -- hidden=true - show files starting with . - like .env
+        hidden = true,
         attach_mappings = new_tab_on_result_select
       })
     end, { desc = 'search files in cwd; open in new tab' })
@@ -109,12 +122,6 @@ return {
       })
     end)
 
-    -- :help telescope.command
-    -- no_ignore=true - show files form paths which are mentioned in .gitignore
-    --    large directories like node_modules are handled through defaults.file_ignore_patterns in telescope.setup
-    -- hidden=true - show files starting with . - like .env
-    -- <C-p> = Ctrl+p
-    
     telescope.setup {
       -- `:help telelscope.defaults`
       defaults = {

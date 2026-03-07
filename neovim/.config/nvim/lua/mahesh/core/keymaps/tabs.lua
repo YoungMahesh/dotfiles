@@ -27,6 +27,8 @@ keymap.set('n', 'tq',
   { noremap = true, silent = true, desc = 'close all tabs except current' }
 )
 
+keymap.set("n", "ts", "<cmd>vsplit<cr>", { desc = "Split window vertically" })
+
 -- Function to close all buffers except current one
 --local function close_other_buffers()
 --    -- Store current buffer number

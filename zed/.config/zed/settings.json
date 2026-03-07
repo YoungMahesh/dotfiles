@@ -2,6 +2,7 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the command palette
 {
+  "diff_view_style": "unified",
   "edit_predictions": {
     "provider": "none"
   },

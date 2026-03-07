@@ -2,27 +2,32 @@
 [
   // UI - sidebars, terminals, commands
   {
+    "key": "ctrl+j",
+    "command": "workbench.action.toggleSidebarVisibility",
+  },
+  {
     "key": "ctrl+k",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active",
-  },
-  {
-    "key": "ctrl+shift+n",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile",
-  },
-  {
-    "key": "ctrl+;",
-    "command": "workbench.action.toggleAuxiliaryBar",
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.showCommands",
   },
   {
+    "key": "ctrl+;",
+    "command": "workbench.action.toggleAuxiliaryBar",
+  },
+  {
     "key": "ctrl+m",
     "command": "workbench.action.focusFirstEditorGroup",
   },
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile",
+  },
+
   // suggestion widget
   {
     "key": "ctrl+n",
@@ -46,10 +51,6 @@
   },
   // file manager
   {
-    "key": "ctrl+j",
-    "command": "workbench.action.toggleSidebarVisibility",
-  },
-  {
     "key": "ctrl+e",
     "command": "workbench.files.action.focusFilesExplorer",
   },
@@ -63,14 +64,17 @@
     "command": "renameFile",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
   },
-  // neovim extension
+
+  // ----------------- Start: VSCode-Neovim extension ----------------------
   {
     // paste-action is done with p with neovim,
     //  so free ctrl+v to be used for neovim-visual_mode
     "key": "ctrl+v",
     "command": "-editor.action.clipboardPasteAction",
   },
-  // specific for AntiGravity-editor
+  // ----------------- End: VSCode-Neovim extension ----------------------
+
+  // --------------- Start: AntiGravity-editor ----------------------
   {
     "key": "ctrl+l",
     "command": "-antigravity.prioritized.chat.open",
@@ -86,6 +90,58 @@
   {
     "key": "ctrl+g",
     "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
+    "when": "workbench.scm.active",
   },
+  {
+    "key": "ctrl+y",
+    "command": "antigravity.sendTextToChat",
+  },
+
+  // FIX: cannot type 'z' inAntigravity-Agent editor
+  {
+    "key": "z c",
+    "command": "-list.collapse",
+    "when": "!editorTextFocus && !inputFocus",
+  },
+  {
+    "key": "z m",
+    "command": "-list.collapseAll",
+    "when": "!editorTextFocus && !inputFocus",
+  },
+  {
+    "key": "z shift+m",
+    "command": "-list.collapseAll",
+    "when": "!editorTextFocus && !inputFocus",
+  },
+  {
+    "key": "z shift+c",
+    "command": "-list.collapseAllToFocus",
+    "when": "!editorTextFocus && !inputFocus",
+  },
+  {
+    "key": "z o",
+    "command": "-list.expand",
+    "when": "!editorTextFocus && !inputFocus",
+  },
+  {
+    "key": "z shift+o",
+    "command": "-list.expand",
+    "when": "!editorTextFocus && !inputFocus",
+  },
+  {
+    "key": "z a",
+    "command": "-list.toggleExpand",
+    "when": "!editorTextFocus && !inputFocus",
+  },
+  {
+    "key": "z shift+a",
+    "command": "-list.toggleExpand",
+    "when": "!editorTextFocus && !inputFocus",
+  },
+  {
+    "key": "ctrl+/",
+    "command": "antigravity.toggleChatFocus",
+    "when": "!terminalFocus"
+  },
+  // --------------- End: AntiGravity-editor ----------------------
 ]

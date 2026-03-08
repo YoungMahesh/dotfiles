@@ -4,7 +4,9 @@ set_brightness() {
   local state_file="$HOME/.brightness_level"
 
   # If no argument -> show current brightness
+  # -z = check if string exists, true if string is empty; here $1 - first argument;
   if [ -z "$1" ]; then
+    # -f = check if file exists
     if [ -f "$state_file" ]; then
       cat "$state_file"
     else

@@ -1,7 +1,7 @@
 path() {
   # echo "$PATH" outputs the entire PATH string
   # tr ':' '\n' translates (replaces) each colon : with a newline \n
-  echo "$PATH" | tr ':' '\n' | fzf
+  echo "$PATH" | tr ':' '\n' 
 }
 clean_path() {
     # Remove duplicates while preserving order
@@ -10,10 +10,5 @@ clean_path() {
 }
 
 # set PATH so it includes user's private bin if it exists
-#PATH="$HOME/bin:$PATH"
-# set PATH so it includes user's private bin if it exists
-#PATH="$HOME/.local/bin:$PATH"
-
-
-
+export PATH="$HOME/.local/bin:$PATH"
 

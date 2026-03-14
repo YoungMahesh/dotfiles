@@ -70,6 +70,10 @@
     "command": "workbench.action.toggleAuxiliaryBar"
   },
   {
+    "key": "shift+escape",
+    "command": "workbench.action.toggleMaximizedAuxiliaryBar",
+  },
+  {
     // enable kilo-code_settings -> Inline Assist -> Quick Inline Task
     "key": "ctrl+i",
     "command": "kilo-code.ghost.promptCodeSuggestion",

@@ -27,6 +27,13 @@
     "command": "workbench.action.terminal.new",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile",
   },
+  {
+    "key": "shift+escape",
+    "command": "workbench.action.toggleMaximizedAuxiliaryBar",
+    // Following "when" values are not working in antigravity-editor:
+    //    "when": "isAuxiliaryWindowFocusedContext",
+    //    "when": "auxiliaryBarFocus",
+  },
 
   // suggestion widget
   {
@@ -81,13 +88,6 @@
     "when": "!terminalFocus",
   },
   {
-    "key": "shift+escape",
-    "command": "workbench.action.toggleMaximizedAuxiliaryBar",
-    // Following "when" values are not working in antigravity-editor:
-    //    "when": "isAuxiliaryWindowFocusedContext",
-    //    "when": "auxiliaryBarFocus",
-  },
-  {
     "key": "ctrl+g",
     "command": "workbench.view.scm",
     "when": "workbench.scm.active",
@@ -139,7 +139,7 @@
     "when": "!editorTextFocus && !inputFocus",
   },
   {
-    "key": "ctrl+/",
+    "key": "ctrl+s",
     "command": "antigravity.toggleChatFocus",
     "when": "!terminalFocus"
   },

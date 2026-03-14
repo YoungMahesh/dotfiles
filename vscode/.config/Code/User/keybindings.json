@@ -32,6 +32,28 @@
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetVisible"
   },
+  {
+		"key": "ctrl+shift+o",
+		"command": "workbench.action.pinEditor",
+		"when": "!activeEditorIsPinned"
+	},
+	{
+		"key": "ctrl+shift+o",
+		"command": "workbench.action.unpinEditor",
+		"when": "activeEditorIsPinned"
+	},
+	{
+		"key": "ctrl+w",
+		"command": "workbench.action.closeActiveEditor"
+	},
+	{
+		"key": "ctrl+c",
+		"command": "editor.action.clipboardCopyAction"
+	},
+	{
+		"key": "ctrl+v",
+		"command": "editor.action.clipboardPasteAction"
+	},
   // file manager
   {
     "key": "ctrl+j",

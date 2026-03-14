@@ -1,9 +1,22 @@
 {
   // editor UI settings
   "window.zoomLevel": 2.5,
+  "editor.fontSize": 15,
+  "editor.tabSize": 2,
   "window.titleBarStyle": "custom",
-  "workbench.startupEditor": "none",
   "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.stickyScroll.enabled": true,
+  "workbench.startupEditor": "none",
+  "window.restoreWindows": "none",
+  
+  // ------------- git related --------------
+  "diffEditor.codeLens": true,
+  
+  
+
 
   // editor behavior settings
   "security.workspace.trust.untrustedFiles": "open",
@@ -24,61 +37,53 @@
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.renderSideBySide": false,
 
-  // language specific settings
+  // ---------- language specific settings --------------
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.prettierPath": "./node_modules/prettier",
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[solidity]": {
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.prettierPath": "./node_modules/prettier",
   "files.associations": {
     "*.json": "jsonc"
   },
   "workbench.editor.enablePreview": false,
   "workbench.activityBar.location": "top",
-  "kilo-code.allowedCommands": [
-    "npm test",
-    "npm install",
-    "tsc",
-    "git log",
-    "git diff",
-    "git show"
-  ],
-  "kilo-code.deniedCommands": [],
   "editor.lineNumbers": "relative",
-  "roo-cline.allowedCommands": [
-    "npm test",
-    "npm install",
-    "tsc",
-    "git log",
-    "git diff",
-    "git show"
-  ],
-  "roo-cline.deniedCommands": [],
   "vscode-neovim.neovimExecutablePaths.linux": "/home/mahesh/.local/bin/nvim",
-  "geminicodeassist.agentYoloMode": true,
-  "geminicodeassist.inlineSuggestions.enableAuto": false,
-  "editor.tabSize": 2,
-  "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "modifications",
   "search.quickOpen.includeHistory": false,
-  "diffEditor.codeLens": true,
-  "editor.acceptSuggestionOnCommitCharacter": false,
   "github.copilot.nextEditSuggestions.enabled": true,
-  "[solidity]": {
-    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  "workbench.browser.enableChatTools": true,
+
+  // -------------- terminal settings --------------------
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash",
+      "args": ["--login"]
+    }
   },
-  "workbench.browser.enableChatTools": true
-  //"[dockerfile]": {
-  //  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  //},
-  //"[prisma]": {
-  //  "editor.defaultFormatter": "Prisma.prisma"
-  //},
-  //"solidity.telemetry": true,
-  //"[solidity]": {
-  //  "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
-  //},
-  //"[go]": {
-  //  "editor.defaultFormatter": "golang.go"
-  //},
+
+  // ------------ excalidraw ---------------
+  "workbench.editorAssociations": {
+    "*.png": "editor.excalidraw"
+  },
+  "excalidraw.theme": "light",
+  
+  // -------------- gemini -----------------
+  "geminicodeassist.agentYoloMode": true,
+  "geminicodeassist.inlineSuggestions.enableAuto": false
 }

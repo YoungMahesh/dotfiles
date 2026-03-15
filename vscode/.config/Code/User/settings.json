@@ -85,5 +85,6 @@
   
   // -------------- gemini -----------------
   "geminicodeassist.agentYoloMode": true,
-  "geminicodeassist.inlineSuggestions.enableAuto": false
+  "geminicodeassist.inlineSuggestions.enableAuto": false,
+  "chat.viewSessions.orientation": "stacked"
 }

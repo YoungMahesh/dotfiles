@@ -1,0 +1,16 @@
+description = "Improves a given prompt by analyzing the current repository context and asking clarifying questions if needed."
+prompt = """
+I want you to help me improve a prompt for a task I am working on in this repository.
+
+Current Repository Context:
+@{.}
+
+User Original Prompt:
+{{args}}
+
+Please:
+1. Analyze the repository context (structure, tech stack, conventions) to understand the task.
+2. Refine the original prompt to be more specific, technically grounded, and effective.
+3. If the prompt is underspecified or if you need to know about specific files/logic to provide a better improvement, ask clarifying questions first.
+4. Provide the "Improved Prompt" in a clear code block, followed by an "Analysis" of why these changes were made.
+"""

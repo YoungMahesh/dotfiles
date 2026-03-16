@@ -1,0 +1,15 @@
+description = "Reviews staged changes in the current git repository for potential bugs, security issues, and adherence to best practices."
+prompt = """
+Please review the following staged changes in the git repository:
+
+!{git diff --staged}
+
+Analyze the changes for:
+1. Potential bugs or edge cases.
+2. Security vulnerabilities.
+3. Code style and consistency.
+4. Performance considerations.
+5. Adherence to best practices.
+
+Provide actionable feedback where necessary.
+"""

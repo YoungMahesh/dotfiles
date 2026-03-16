@@ -14,9 +14,6 @@
   
   // ------------- git related --------------
   "diffEditor.codeLens": true,
-  
-  
-
 
   // editor behavior settings
   "security.workspace.trust.untrustedFiles": "open",
@@ -69,13 +66,6 @@
   // -------------- terminal settings --------------------
   "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.cursorStyle": "line",
-  "terminal.integrated.profiles.linux": {
-    "bash": {
-      "path": "bash",
-      "icon": "terminal-bash",
-      "args": ["--login"]
-    }
-  },
 
   // ------------ excalidraw ---------------
   "workbench.editorAssociations": {

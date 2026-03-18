@@ -37,10 +37,11 @@ keymap.set('n', '<leader>f', function()
 end, { desc = "format current file" })
 
 ------------------- tab switch -------------------
-keymap.set("n", "<tab>", function()
-  vscode.call('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')
-  vscode.call('workbench.action.acceptSelectedQuickOpenItem')
-end, { desc = "Toggle current, previous recently used edtor" })
+-- We are using 'tab' for AI autocomplete, hence we will default ctrl+tab for tab-switch
+-- keymap.set("n", "<tab>", function()
+--   vscode.call('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')
+--   vscode.call('workbench.action.acceptSelectedQuickOpenItem')
+-- end, { desc = "Toggle current, previous recently used edtor" })
  keymap.set("n", "tn", function()
    vscode.call('workbench.action.nextEditor')
  end, { desc = "Go to next tab" })

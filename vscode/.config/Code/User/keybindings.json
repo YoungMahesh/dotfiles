@@ -50,10 +50,6 @@
 		"key": "ctrl+c",
 		"command": "editor.action.clipboardCopyAction"
 	},
-	{
-		"key": "ctrl+v",
-		"command": "editor.action.clipboardPasteAction"
-	},
   // file manager
   {
     "key": "ctrl+j",

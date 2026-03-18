@@ -39,9 +39,9 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "[solidity]": {
-    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
-  },
+  // "[solidity]": {
+  //   "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  // },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -76,5 +76,6 @@
   // -------------- gemini -----------------
   "geminicodeassist.agentYoloMode": true,
   "geminicodeassist.inlineSuggestions.enableAuto": false,
-  "chat.viewSessions.orientation": "stacked"
+  "chat.viewSessions.orientation": "stacked",
+  "github.copilot.chat.getSearchViewResultsSkill.enabled": true
 }

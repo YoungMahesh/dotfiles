@@ -108,5 +108,9 @@
   {
     "key": "ctrl+'",
     "command": "geminicodeassist.addSnippetToContext"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "github.copilot.chat.attachSelection"
   }
 ]

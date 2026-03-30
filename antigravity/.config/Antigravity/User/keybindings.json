@@ -23,6 +23,11 @@
     "command": "workbench.action.focusFirstEditorGroup",
   },
   {
+    "key": "ctrl+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active",
+  },
+  {
     "key": "ctrl+shift+n",
     "command": "workbench.action.terminal.new",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile",
@@ -87,11 +92,7 @@
     "command": "-antigravity.prioritized.chat.open",
     "when": "!terminalFocus",
   },
-  {
-    "key": "ctrl+g",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active",
-  },
+  
   {
     "key": "ctrl+y",
     "command": "antigravity.sendTextToChat",

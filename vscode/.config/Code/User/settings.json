@@ -11,7 +11,7 @@
   "editor.stickyScroll.enabled": true,
   "workbench.startupEditor": "none",
   "window.restoreWindows": "none",
-  
+
   // ------------- git related --------------
   "diffEditor.codeLens": true,
 
@@ -21,11 +21,11 @@
   "extensions.ignoreRecommendations": true,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.commandsToSkipShell": [
-    "-workbench.action.quickOpen" // ctrl+p for previous-command instead of quick-open while in terminal
+    "-workbench.action.quickOpen", // ctrl+p for previous-command instead of quick-open while in terminal
   ],
   "files.autoSave": "onFocusChange",
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+    "asvetliakov.vscode-neovim": 1,
   },
 
   // git settings
@@ -36,24 +36,11 @@
 
   // ---------- language specific settings --------------
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
   // "[solidity]": {
   //   "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
   // },
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "prettier.prettierPath": "./node_modules/prettier",
   "files.associations": {
-    "*.json": "jsonc"
+    "*.json": "jsonc",
   },
   "workbench.editor.enablePreview": false,
   "workbench.activityBar.location": "top",
@@ -69,13 +56,12 @@
 
   // ------------ excalidraw ---------------
   "workbench.editorAssociations": {
-    "*.png": "editor.excalidraw"
+    "*.png": "editor.excalidraw",
   },
   "excalidraw.theme": "light",
-  
+
   // -------------- gemini -----------------
   "geminicodeassist.agentYoloMode": true,
-  "geminicodeassist.inlineSuggestions.enableAuto": false,
   "chat.viewSessions.orientation": "stacked",
-  "github.copilot.chat.getSearchViewResultsSkill.enabled": true
+  "github.copilot.chat.getSearchViewResultsSkill.enabled": true,
 }

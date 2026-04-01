@@ -1,4 +1,5 @@
 set_brightness() {
+
   # xrandr cannot report the current brightness. It only sets brightness (multiplicative gamma factor). 
   # So the only way to know the current value is to store it yourself when you change it.
   local state_file="$HOME/.brightness_level"
@@ -14,28 +15,23 @@ set_brightness() {
     fi
     return 0
   fi
-
-
   local level=$1
 
-  # regex-verificaiton to check that number characters are provided, as argument instead of alphabet or other characters
-  if ! [[ "$level" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
-    echo "Error: Invalid brightness level. Please use a number between 1 and 10." >&2
-    return 1
-  fi
-
-  # range check (1 to 10)
-  if (( $(echo "$level < 1 || $level > 10" | bc -l) )); then
-    echo "Error: Brightness level must be between 1 and 10." >&2
+  # regex-verification, ✅ Allow ONLY:
+  # - exactly 2 digits (10–99)
+  # - OR exactly 100
+  if ! [[ "$level" =~ ^([1-9][0-9]|100)$ ]]; then
+    echo "Error: Use a number between 10 and 100 (e.g., 57)." >&2
     return 1
   fi
 
   # convert to xrandr brightness
-  # divide level by 10 using `bc`(a command-line calculator) to get a decimal value
+  # divide level by 100 using `bc`(a command-line calculator) to get a decimal value
   # scale=2 insures that result has 2 decimal places
-  local brightness=$(echo "scale=2; $level / 10" | bc)
-  
-  # set brightness using xrandr
+  # Convert percentage → xrandr value (0.10–1.00)
+  local brightness=$(echo "scale=2; $level / 100" | bc)
+
+  # Apply brightness
   # to get HDMI device name, execute `xrandr`
   xrandr --output HDMI-A-0 --brightness "$brightness"
 

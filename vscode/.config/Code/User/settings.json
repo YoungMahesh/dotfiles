@@ -5,8 +5,10 @@
   "editor.tabSize": 2,
   "window.titleBarStyle": "custom",
   "editor.minimap.enabled": false,
-  "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "modifications",
+  // "editor.formatOnSave": true,
+  // sometimes semicolons get placed at unwanted locations (causing errors) which cannot be 
+  //    removed as they get added again on save
+  // "editor.formatOnSaveMode": "modifications",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.stickyScroll.enabled": true,
   "workbench.startupEditor": "none",
@@ -64,4 +66,10 @@
   "geminicodeassist.agentYoloMode": true,
   "chat.viewSessions.orientation": "stacked",
   "github.copilot.chat.getSearchViewResultsSkill.enabled": true,
+  "json.schemaDownload.trustedDomains": {
+    "https://opencode.ai/config.json": true
+  },
+  "kilo-code.new.autocomplete.enableAutoTrigger": false,
+  "kilo-code.new.autocomplete.enableSmartInlineTaskKeybinding": false,
+  "kilo-code.new.autocomplete.enableChatAutocomplete": false,
 }

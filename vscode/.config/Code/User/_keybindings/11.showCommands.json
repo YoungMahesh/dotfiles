@@ -1,0 +1,7 @@
+[
+  // ============= Show Commands ================
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.showCommands"
+  }
+]

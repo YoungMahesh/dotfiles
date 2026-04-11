@@ -1,0 +1,9 @@
+[
+  // ==========================================
+  //               Auxiliary Bar
+  // ==========================================
+  {
+    "key": "ctrl+;",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  }
+]

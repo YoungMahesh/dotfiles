@@ -23,7 +23,9 @@
   "extensions.ignoreRecommendations": true,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.commandsToSkipShell": [
-    "-workbench.action.quickOpen", // ctrl+p for previous-command instead of quick-open while in terminal
+    "-workbench.action.quickOpen",
+    "kilo-code.new.agentManagerOpen",
+    "kilo-code.new.agentManager.showTerminal"
   ],
   "files.autoSave": "onFocusChange",
   "extensions.experimental.affinity": {

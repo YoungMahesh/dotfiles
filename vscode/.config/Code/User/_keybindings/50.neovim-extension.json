@@ -1,0 +1,10 @@
+[
+  // ==========================================
+  //               Neovim
+  // ==========================================
+  // ctrl+v is used in neovim for vertical block visual select , so disable ctrl+v in vscode
+  {
+    "key": "ctrl+v",
+    "command": "-editor.action.clipboardPasteAction"
+  }
+]

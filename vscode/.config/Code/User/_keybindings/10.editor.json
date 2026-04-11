@@ -1,0 +1,9 @@
+[
+  // ==========================================
+  //               Editor
+  // ==========================================
+  {
+    "key": "ctrl+m",
+    "command": "workbench.action.focusFirstEditorGroup"
+  }
+]

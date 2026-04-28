@@ -1,5 +1,3 @@
-# jq -s 'add' $(ls *.json | grep -v keybindings.json) > keybindings.json
-
 # exist on error
 set -e
 

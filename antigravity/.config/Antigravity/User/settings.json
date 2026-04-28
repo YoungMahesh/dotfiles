@@ -14,7 +14,6 @@
   // git settings
   "git.openRepositoryInParentFolders": "never",
   "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.renderSideBySide": false,
   // language specific settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -34,5 +33,6 @@
   "editor.formatOnSaveMode": "modifications",
   "search.quickOpen.includeHistory": false,
   "diffEditor.codeLens": true,
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "diffEditor.hideUnchangedRegions.enabled": true
 }

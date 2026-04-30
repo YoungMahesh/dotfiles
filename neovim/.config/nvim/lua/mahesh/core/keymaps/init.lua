@@ -7,6 +7,7 @@ require("mahesh.core.keymaps.search")
 require("mahesh.core.keymaps.visual-mode")
 require("mahesh.core.keymaps.terminal")
 require("mahesh.core.keymaps.window")
+require("mahesh.core.keymaps.path")
 -- NOTE: when you update keymap, to test changes, you first need to close all nvim instances
 -- check default keymap documentation: :help <keymap>
 --    some of the default keymaps are disabled in keymaps.disabled file

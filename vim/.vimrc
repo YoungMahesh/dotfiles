@@ -33,8 +33,6 @@ nnoremap sq :q!<CR>
 " use the system clipboard as the default for yank, delete, change, and put operations
 set clipboard=unnamedplus
 
-
-
 " `nnoremap` = n (normal mode) + nore (non recursive) + map (key mapping)
 
 " Comments in this file will start with quotation followed by space: `" `

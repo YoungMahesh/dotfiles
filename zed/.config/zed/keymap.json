@@ -1,149 +1,170 @@
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
+// // For information on binding keys, see the Zed
+// // documentation: https://zed.dev/docs/key-bindings
+// // To see the default key bindings run `zed: open default keymap` from the command palette.
+// [
+//   {
+//     "context": "vim_mode == insert",
+//     "bindings": {
+//       "ctrl-v": "editor::Paste",
+//     },
+//   },
+//   {
+//     "context": "vim_mode == insert && !showing_completions",
+//     "bindings": {
+//       "ctrl-n": "editor::ShowCompletions",
+//     },
+//   },
+//   //{
+//   //  "context": "TabSwitcher",
+//   //  "bindings": {
+//   //    "ctrl-p": "menu::SelectPrevious"
+//   //  }
+//   //},
+//   {
+//     "context": "(VimControl && !menu)",
+//     "bindings": {
+//       // workspace::SendKeystrokes is a Zed action that simulates typing a sequence of
+//       //    keystrokes into currently focused input (editor, command palette, terminal,
+//       //    etc). It lets map you a single key or chord to a series of other keypresses
+//       //    so you can compose behaviors from existing shortcut
+//       ";": ["workspace::SendKeystrokes", "ctrl-d z z"],
+//       "r": "vim::Redo",
+//       "/": "buffer_search::Deploy",
+//       ".": "vim::RepeatFind",
+//       // "space f v": "project_panel::ToggleFocus",
+//       "space o": "outline::Toggle",
+//       "g o": "git::Diff", // git open
+//       "g r": "editor::FindAllReferences", // goto references
+//       //    default g space // goto/jump to file from reference-list
+//       // go to defination: default: g d
+//       // marks: m[a|b|c..] to set mark, `[a|b|c..] to visit marked position
+//     },
+//   },
+
+//   {
+//     // If no "context" is set, the bindings are always active.
+//     "bindings": {
+//       // for files: vim normal mode == VimControl ; vim insert mode == Editor
+//       // if you enable line below, you will not be able to copy errors in hover tooltip with ctrl+c
+//       //"ctrl-c": "editor::Copy",
+//       "ctrl-e": "project_panel::ToggleFocus",
+//       "ctrl-g": "git_panel::ToggleFocus",
+//       //  enter: open changes of the hovered file; i: focusEditor - to write commit message
+//       //  inside diff editor: z o: open changes ; z c: close changes
+//     },
+//   },
+
+//   {
+//     "context": "Terminal",
+//     "bindings": {
+//       "ctrl-p": null,
+//       "ctrl-n": null,
+//       "ctrl-a": null,
+//       "ctrl-l": null,
+//       "ctrl-e": null,
+//       "ctrl-shift-n": "workspace::NewTerminal",
+//       // default:
+//       //  "ctrl-shift": switch terminal
+//       //  ctrl-c: stop process
+//     },
+//   },
+//   {
+//     // panel == popup-windows (e.g. settings window)
+//     // pane == current file/tab
+//     "context": "vim_mode == normal",
+//     "bindings": {
+//       "t ;": "pane::CloseActiveItem",
+//       "t l": "pane::SwapItemLeft",
+//       "t r": "pane::SwapItemRight",
+//       // "pane::GoBack", // Navigate back in history.
+//       // "pane::GoForward", // Navigate forward in history
+//       "t p": "pane::ActivatePreviousItem",
+//       "t n": "pane::ActivateNextItem",
+//       "t 0": "workspace::ActivatePaneLeft",
+//       "t 9": "workspace::ActivatePaneRight",
+//       "t s": "pane::SplitVertical",
+//       "t t": "pane::TogglePinTab",
+//       "t q": [
+//         "pane::CloseOtherItems",
+//         {
+//           "close_pinned": false,
+//         },
+//       ],
+//       // search:
+//       //    after putting keyword in search -> click escape -> only then you can use n/N to move through matches
+//       //    * to put highlighted word in search box
+//     },
+//   },
+//   // {
+//   //   "context": "(vim_mode == normal)",
+//   //   "bindings": {
+//   //     "n": "search::SelectNextMatch",
+//   //   },
+//   // },
+//   {
+//     "context": "((os != macos && Editor) && (edit_prediction && (showing_completions || in_leading_whitespace)))",
+//     "bindings": {
+//       "tab": "editor::AcceptEditPrediction",
+//     },
+//   },
+//   {
+//     "context": "(ProjectPanel && not_editing)",
+//     "bindings": {
+//       // enter: toggle fold/unfold directory; k: move up; j: move down
+//       "o": "project_panel::NewFile",
+//       "d d": "project_panel::Delete",
+//       "f": "project_panel::RevealInFileManager",
+//       "i": "project_panel::Rename",
+//       "y y": "project_panel::Copy",
+//       "p": "project_panel::Paste",
+//     },
+//   },
+//   {
+//     "context": "AgentPanel",
+//     "bindings": {
+//       "ctrl-n": "agent::NewThread",
+//     },
+//   },
+//   {
+//     "context": "!ContextEditor > (Editor && mode == full)",
+//     "bindings": {
+//       "ctrl-i": "assistant::InlineAssist",
+//     },
+//   },
+// ]
 
 [
   {
-    "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    },
-  },
-  {
-    "context": "vim_mode == insert",
-    "bindings": {
-      "ctrl-v": "editor::Paste",
-      // "j k": "vim::NormalBefore"
-    },
-  },
-  {
-    "context": "vim_mode == insert && !showing_completions",
-    "bindings": {
-      "ctrl-n": "editor::ShowCompletions",
-    },
-  },
-  //{
-  //  "context": "TabSwitcher",
-  //  "bindings": {
-  //    "ctrl-p": "menu::SelectPrevious"
-  //  }
-  //},
-  {
-    "context": "(VimControl && !menu)",
-    "bindings": {
-      //";": "vim::ScrollDown",
-      // workspace::SendKeystrokes is a Zed action that simulates typing a sequence of
-      //    keystrokes into currently focused input (editor, command palette, terminal,
-      //    etc). It lets map you a single key or chord to a series of other keypresses
-      //    so you can compose behaviors from existing shortcut
-      "a": "vim::ScrollUp",
-      ";": ["workspace::SendKeystrokes", "ctrl-d z z"],
-      "q": "vim::InsertEndOfLine",
-      "'": "vim::EndOfLine",
-      "r": "vim::Redo",
-      "/": "buffer_search::Deploy",
-      ".": "vim::RepeatFind",
-      "space f f": "editor::Format",
-      "s s": "workspace::SaveAll",
-      // "space f v": "project_panel::ToggleFocus",
-      "space o": "outline::Toggle",
-      "g o": "git::Diff", // git open
-      "g r": "editor::FindAllReferences", // goto references
-      //    default g space // goto/jump to file from reference-list
-      // go to defination: default: g d
-      // marks: m[a|b|c..] to set mark, `[a|b|c..] to visit marked position
-    },
-  },
-
-  {
-    // If no "context" is set, the bindings are always active.
-    "bindings": {
-      // for files: vim normal mode == VimControl ; vim insert mode == Editor
+      // disable recording by q in vim
+      "q": null,
       "ctrl-j": "workspace::ToggleLeftDock",
       "ctrl-k": "workspace::ToggleBottomDock",
-      "ctrl-l": "command_palette::Toggle",
       "ctrl-;": "workspace::ToggleRightDock",
-      "ctrl-a": "editor::SelectAll",
-      // if you enable line below, you will not be able to copy errors in hover tooltip with ctrl+c
-      //"ctrl-c": "editor::Copy",
       "ctrl-m": "editor::ToggleFocus",
-      "ctrl-e": "project_panel::ToggleFocus",
-      "ctrl-g": "git_panel::ToggleFocus",
-      //  enter: open changes of the hovered file; i: focusEditor - to write commit message
-      //  inside diff editor: z o: open changes ; z c: close changes
     },
   },
-
   {
-    "context": "Terminal",
+    "context": "!Terminal",
     "bindings": {
-      "ctrl-p": null,
-      "ctrl-n": null,
-      "ctrl-a": null,
-      "ctrl-l": null,
-      "ctrl-e": null,
-      "ctrl-shift-n": "workspace::NewTerminal",
-      // default:
-      //  "ctrl-shift": switch terminal
-      //  ctrl-c: stop process
+      "ctrl-l": "command_palette::Toggle",
+      "ctrl-a": "editor::SelectAll",
     },
   },
   {
-    // panel == popup-windows (e.g. settings window)
-    // pane == current file/tab
     "context": "vim_mode == normal",
     "bindings": {
-      "t ;": "pane::CloseActiveItem",
-      "t l": "pane::SwapItemLeft",
-      "t r": "pane::SwapItemRight",
-      // "pane::GoBack", // Navigate back in history.
-      // "pane::GoForward", // Navigate forward in history
-      "t p": "pane::ActivatePreviousItem",
-      "t n": "pane::ActivateNextItem",
-      "t 0": "workspace::ActivatePaneLeft",
-      "t 9": "workspace::ActivatePaneRight",
-      "t s": "pane::SplitVertical",
-      "t t": "pane::TogglePinTab",
-      "t q": [
-        "pane::CloseOtherItems",
-        {
-          "close_pinned": false,
-        },
-      ],
+      "q": "vim::InsertEndOfLine",
+      "s s": "workspace::SaveAll",
+      "space f f": "editor::Format",
     },
   },
   {
-    "context": "((os != macos && Editor) && (edit_prediction && (showing_completions || in_leading_whitespace)))",
+    "context": "(vim_mode == normal || vim_mode == visual)",
     "bindings": {
-      "tab": "editor::AcceptEditPrediction",
-    },
-  },
-  {
-    "context": "(ProjectPanel && not_editing)",
-    "bindings": {
-      // enter: toggle fold/unfold directory; k: move up; j: move down
-      "o": "project_panel::NewFile",
-      "d d": "project_panel::Delete",
-      "f": "project_panel::RevealInFileManager",
-      "i": "project_panel::Rename",
-      "a": "project_panel::ScrollUp",
-      ";": "project_panel::ScrollDown",
-      "y y": "project_panel::Copy",
-      "p": "project_panel::Paste",
-    },
-  },
-  {
-    "context": "AgentPanel",
-    "bindings": {
-      "ctrl-n": "agent::NewThread",
-    },
-  },
-  {
-    "context": "!ContextEditor > (Editor && mode == full)",
-    "bindings": {
-      "ctrl-i": "assistant::InlineAssist",
+      "a": "vim::ScrollUp",
+      ";": "vim::ScrollDown",
+      "'": "vim::EndOfLine",
     },
   },
 ]

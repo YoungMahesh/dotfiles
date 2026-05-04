@@ -2,6 +2,7 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the command palette
 {
+  "format_on_save": "off",
   "project_panel": {
     "dock": "left"
   },

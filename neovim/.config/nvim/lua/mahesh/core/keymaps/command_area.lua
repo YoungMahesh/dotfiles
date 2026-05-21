@@ -1,0 +1,3 @@
+-- command_aread: area when at bottom of editor, which get activated on clicking `:`
+-- to list messages shown in command area execute:  :messages
+--    list shows oldest messages first and newest messages last

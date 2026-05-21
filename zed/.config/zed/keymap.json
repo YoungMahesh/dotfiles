@@ -3,23 +3,11 @@
 // // To see the default key bindings run `zed: open default keymap` from the command palette.
 // [
 //   {
-//     "context": "vim_mode == insert",
-//     "bindings": {
-//       "ctrl-v": "editor::Paste",
-//     },
-//   },
-//   {
 //     "context": "vim_mode == insert && !showing_completions",
 //     "bindings": {
 //       "ctrl-n": "editor::ShowCompletions",
 //     },
 //   },
-//   //{
-//   //  "context": "TabSwitcher",
-//   //  "bindings": {
-//   //    "ctrl-p": "menu::SelectPrevious"
-//   //  }
-//   //},
 //   {
 //     "context": "(VimControl && !menu)",
 //     "bindings": {
@@ -28,8 +16,6 @@
 //       //    etc). It lets map you a single key or chord to a series of other keypresses
 //       //    so you can compose behaviors from existing shortcut
 //       ";": ["workspace::SendKeystrokes", "ctrl-d z z"],
-//       "r": "vim::Redo",
-//       "/": "buffer_search::Deploy",
 //       ".": "vim::RepeatFind",
 //       // "space f v": "project_panel::ToggleFocus",
 //       "space o": "outline::Toggle",
@@ -40,60 +26,20 @@
 //       // marks: m[a|b|c..] to set mark, `[a|b|c..] to visit marked position
 //     },
 //   },
-
 //   {
 //     // If no "context" is set, the bindings are always active.
 //     "bindings": {
 //       // for files: vim normal mode == VimControl ; vim insert mode == Editor
 //       // if you enable line below, you will not be able to copy errors in hover tooltip with ctrl+c
 //       //"ctrl-c": "editor::Copy",
-//       "ctrl-e": "project_panel::ToggleFocus",
-//       "ctrl-g": "git_panel::ToggleFocus",
 //       //  enter: open changes of the hovered file; i: focusEditor - to write commit message
 //       //  inside diff editor: z o: open changes ; z c: close changes
 //     },
 //   },
-
 //   {
-//     "context": "Terminal",
-//     "bindings": {
-//       "ctrl-p": null,
-//       "ctrl-n": null,
-//       "ctrl-a": null,
-//       "ctrl-l": null,
-//       "ctrl-e": null,
-//       "ctrl-shift-n": "workspace::NewTerminal",
-//       // default:
-//       //  "ctrl-shift": switch terminal
-//       //  ctrl-c: stop process
-//     },
-//   },
-//   {
-//     // panel == popup-windows (e.g. settings window)
-//     // pane == current file/tab
 //     "context": "vim_mode == normal",
 //     "bindings": {
-//       "t ;": "pane::CloseActiveItem",
-//       "t l": "pane::SwapItemLeft",
-//       "t r": "pane::SwapItemRight",
-//       // "pane::GoBack", // Navigate back in history.
-//       // "pane::GoForward", // Navigate forward in history
-//       "t p": "pane::ActivatePreviousItem",
-//       "t n": "pane::ActivateNextItem",
-//       "t 0": "workspace::ActivatePaneLeft",
-//       "t 9": "workspace::ActivatePaneRight",
-//       "t s": "pane::SplitVertical",
-//       "t t": "pane::TogglePinTab",
-//       "t q": [
-//         "pane::CloseOtherItems",
-//         {
-//           "close_pinned": false,
-//         },
-//       ],
-//       // search:
-//       //    after putting keyword in search -> click escape -> only then you can use n/N to move through matches
-//       //    * to put highlighted word in search box
-//     },
+///     },
 //   },
 //   // {
 //   //   "context": "(vim_mode == normal)",
@@ -107,30 +53,7 @@
 //       "tab": "editor::AcceptEditPrediction",
 //     },
 //   },
-//   {
-//     "context": "(ProjectPanel && not_editing)",
-//     "bindings": {
-//       // enter: toggle fold/unfold directory; k: move up; j: move down
-//       "o": "project_panel::NewFile",
-//       "d d": "project_panel::Delete",
-//       "f": "project_panel::RevealInFileManager",
-//       "i": "project_panel::Rename",
-//       "y y": "project_panel::Copy",
-//       "p": "project_panel::Paste",
-//     },
-//   },
-//   {
-//     "context": "AgentPanel",
-//     "bindings": {
-//       "ctrl-n": "agent::NewThread",
-//     },
-//   },
-//   {
-//     "context": "!ContextEditor > (Editor && mode == full)",
-//     "bindings": {
-//       "ctrl-i": "assistant::InlineAssist",
-//     },
-//   },
+
 // ]
 
 [
@@ -139,24 +62,62 @@
       // disable recording by q in vim
       "q": null,
       "ctrl-j": "workspace::ToggleLeftDock",
-      "ctrl-k": "workspace::ToggleBottomDock",
+      // "ctrl-k": "workspace::ToggleBottomDock",
+      "ctrl-k": "terminal_panel::Toggle",
       "ctrl-;": "workspace::ToggleRightDock",
       "ctrl-m": "editor::ToggleFocus",
+      "ctrl-l": "command_palette::Toggle",
+      "ctrl-a": "editor::SelectAll",
+      "ctrl-e": "project_panel::ToggleFocus",
+      "ctrl-g": "git_panel::ToggleFocus",
+      "ctrl-p": "file_finder::Toggle",
     },
   },
   {
-    "context": "!Terminal",
+    "context": "Terminal",
     "bindings": {
-      "ctrl-l": "command_palette::Toggle",
-      "ctrl-a": "editor::SelectAll",
+      "ctrl-p": null,
+      "ctrl-n": null,
+      "ctrl-a": null,
+      "ctrl-l": null,
+      "ctrl-e": null,
+      "ctrl-shift-n": "workspace::NewTerminal",
+      // default:
+      //  "ctrl-shift": switch terminal
+      //  ctrl-c: stop process
     },
   },
   {
     "context": "vim_mode == normal",
     "bindings": {
+    },
+  },
+  {
+    "context": "(vim_mode == normal && Editor)",
+    "bindings": {
       "q": "vim::InsertEndOfLine",
+      "r": "vim::Redo",
       "s s": "workspace::SaveAll",
       "space f f": "editor::Format",
+      "g r": "editor::FindAllReferences", // goto references
+
+      // panel == popup-windows (e.g. settings window)
+      // pane == current file/tab
+      "t ;": "pane::CloseActiveItem",
+      "t l": "pane::SwapItemLeft",
+      "t r": "pane::SwapItemRight",
+      "t p": "pane::ActivatePreviousItem",
+      "t n": "pane::ActivateNextItem",
+      "t 0": "workspace::ActivatePaneLeft",
+      "t 9": "workspace::ActivatePaneRight",
+      "t s": "pane::SplitVertical",
+      "t t": "pane::TogglePinTab",
+      "t q": [
+        "pane::CloseOtherItems",
+        {
+          "close_pinned": false,
+        },
+      ],
     },
   },
   {
@@ -165,6 +126,30 @@
       "a": "vim::ScrollUp",
       ";": "vim::ScrollDown",
       "'": "vim::EndOfLine",
+    },
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "ctrl-v": "editor::Paste",
+    },
+  },
+  {
+    "context": "(ProjectPanel && not_editing)",
+    "bindings": {
+      // enter: toggle fold/unfold directory; k: move up; j: move down
+      "o": "project_panel::NewFile",
+      "d d": "project_panel::Delete",
+      "f": "project_panel::RevealInFileManager",
+      "i": "project_panel::Rename",
+      "y y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+    },
+  },
+  {
+    "context": "(Terminal || AgentPanel || (Editor && mode == full) )",
+    "bindings": {
+      "ctrl-s": "agent::AddSelectionToThread",
     },
   },
 ]

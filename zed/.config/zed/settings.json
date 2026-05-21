@@ -163,7 +163,7 @@
       "provider": "MiniMax",
       "model": "MiniMax-M2.7"
     },
-    "default_profile": "write",
+    "default_profile": "ask",
     "model_parameters": [],
   },
   "autosave": "on_focus_change",

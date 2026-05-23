@@ -17,8 +17,6 @@
 //       //    so you can compose behaviors from existing shortcut
 //       ";": ["workspace::SendKeystrokes", "ctrl-d z z"],
 //       ".": "vim::RepeatFind",
-//       // "space f v": "project_panel::ToggleFocus",
-//       "space o": "outline::Toggle",
 //       "g o": "git::Diff", // git open
 //       "g r": "editor::FindAllReferences", // goto references
 //       //    default g space // goto/jump to file from reference-list
@@ -71,6 +69,14 @@
       "ctrl-e": "project_panel::ToggleFocus",
       "ctrl-g": "git_panel::ToggleFocus",
       "ctrl-p": "file_finder::Toggle",
+      "ctrl-o": "outline_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "OutlinePanel && not_editing",
+    "bindings": {
+      "z c": "outline_panel::CollapseSelectedEntry",
+      "z o": "outline_panel::ExpandSelectedEntry",
     },
   },
   {
@@ -89,8 +95,7 @@
   },
   {
     "context": "vim_mode == normal",
-    "bindings": {
-    },
+    "bindings": {},
   },
   {
     "context": "(vim_mode == normal && Editor)",

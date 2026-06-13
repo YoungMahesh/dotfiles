@@ -3,6 +3,7 @@
 // custom settings, run `zed: open default settings` from the command palette
 {
   "format_on_save": "off",
+  "cli_default_open_behavior": "new_window",
   "project_panel": {
     "dock": "left"
   },
@@ -38,6 +39,25 @@
   },
   "language_models": {
     "openai_compatible": {
+      "General Compute": {
+        "api_url": "https://api.generalcompute.com/v1",
+        "available_models": [
+          {
+            "name": "minimax-m2.7",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+              "interleaved_reasoning": false
+            }
+          }
+        ]
+      },
       "MiniMax": {
         "api_url": "https://api.minimax.io/v1",
         "available_models": [
@@ -160,8 +180,8 @@
     ],
     "default_model": {
       "enable_thinking": false,
-      "provider": "MiniMax",
-      "model": "MiniMax-M2.7"
+      "provider": "General Compute",
+      "model": "minimax-m2.7"
     },
     "default_profile": "ask",
     "model_parameters": [],
@@ -172,7 +192,11 @@
     "metrics": false,
   },
   "vim_mode": true,
-  "icon_theme": "Catppuccin Latte",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Latte"
+  },
   // above 22 this top and bottom part of popup window (e.g. settings window) get cutoff
   //    from the screen, you cannot see the borders of window, cannot access some options
   "ui_font_size": 22.0,

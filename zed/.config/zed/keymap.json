@@ -106,6 +106,11 @@
       "space f f": "editor::Format",
       "g r": "editor::FindAllReferences", // goto references
 
+      "g o": "editor::ExpandAllDiffHunks",
+      "g c": "editor::CollapseAllDiffHunks",
+      "g s": "git::StageAndNext",
+      "g u": "git::UnstageAndNext",
+
       // panel == popup-windows (e.g. settings window)
       // pane == current file/tab
       "t ;": "pane::CloseActiveItem",

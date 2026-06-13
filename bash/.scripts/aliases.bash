@@ -7,3 +7,6 @@ alias sync-logs='cat ~/.config/sync/logs'
 
 alias copy='xclip -selection clipboard'
 
+alias vpn1='wg-quick up wg0'
+alias vpn0='sudo wg-quick down wg0'
+

@@ -38,6 +38,9 @@
     },
   },
   "language_models": {
+    "opencode": {
+      "show_zen_models": false
+    },
     "openai_compatible": {
       "General Compute": {
         "api_url": "https://api.generalcompute.com/v1",

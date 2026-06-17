@@ -11,11 +11,16 @@ MODE="$1"
 case "$MODE" in
   "vscode")
     OUTPUT="$HOME/dotfiles/vscode/.config/Code/User/keybindings.json"
-    EXCLUDED=("$OUTPUT" "60.antigravity.json")
+    EXCLUDED=("$OUTPUT" "60.antigravity.json" "61.antigravity_neovim.json")
     ;;
   "antigravity")
     OUTPUT="$HOME/dotfiles/antigravity/.config/Antigravity/User/keybindings.json"
     EXCLUDED=("$OUTPUT")
+    ;;
+  "antigravity2")
+    OUTPUT="$HOME/dotfiles/antigravity2/.config/Antigravity IDE/User/keybindings.json"
+    # antigravity v2 have built-in neovim support
+    EXCLUDED=("$OUTPUT" "50.neovim-extension.json" "61.antigravity_neovim.json")
     ;;
   *)
     echo "Error: Invalid mode \"$MODE\". Use 'vscode' or 'antigravity'."

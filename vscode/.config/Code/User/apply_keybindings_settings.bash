@@ -19,17 +19,20 @@ case "$MODE" in
     KEYBINDINGS_OUTPUT="$HOME/dotfiles/vscode/.config/Code/User/keybindings.json"
     SETTINGS_OUTPUT="$HOME/dotfiles/vscode/.config/Code/User/settings.json"
     EXCLUDED_KEYBINDINGS=("60.antigravity.json" "61.antigravity_neovim.json")
+    EXCLUDED_SETTINGS=()
     ;;
   "antigravity")
     KEYBINDINGS_OUTPUT="$HOME/dotfiles/antigravity/.config/Antigravity/User/keybindings.json"
     SETTINGS_OUTPUT="$HOME/dotfiles/antigravity/.config/Antigravity/User/settings.json"
     EXCLUDED_KEYBINDINGS=()
+    EXCLUDED_SETTINGS=()
     ;;
   "antigravity2")
     KEYBINDINGS_OUTPUT="$HOME/dotfiles/antigravity2/.config/Antigravity IDE/User/keybindings.json"
     SETTINGS_OUTPUT="$HOME/dotfiles/antigravity2/.config/Antigravity IDE/User/settings.json"
     # antigravity v2 has built-in neovim support
     EXCLUDED_KEYBINDINGS=("50.neovim-extension.json" "61.antigravity_neovim.json")
+    EXCLUDED_SETTINGS=("29.neovim.json")
     ;;
   *)
     echo "Error: Invalid mode \"$MODE\". Use 'vscode', 'antigravity', or 'antigravity2'."
@@ -86,6 +89,21 @@ echo "{" > "$SETTINGS_OUTPUT"
 first_setting=true
 
 for file in "$SCRIPT_DIR"/_settings/*.json; do
+  filename=$(basename "$file")
+
+  # check if the current file is in the exclusion list
+  skip=false
+  for excl in "${EXCLUDED_SETTINGS[@]}"; do
+    if [[ "$filename" == "$excl" ]]; then
+      skip=true
+      break
+    fi
+  done
+  if [[ "$skip" == true ]]; then
+    echo "Skipping $file"
+    continue
+  fi
+
   echo "Processing $file"
   content=$(sed '1d;$d' "$file")
 

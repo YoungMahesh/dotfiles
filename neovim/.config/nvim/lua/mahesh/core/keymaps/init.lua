@@ -59,7 +59,6 @@ keymap.set("n", "r", "<C-r>", { desc = "redo", noremap = true })
 --    File navigation: Opening a new file or jumping to a specific line number (e.g., 42G).
 --    Tag navigation: Using Ctrl-] to jump to a tag definition.
 --    Quickfix/Location lists: Navigating through these lists.
-keymap.set('n', 'x', '<nop>', { noremap = true, silent = true })
 keymap.set('n', 'xn', '<C-i>', {desc='move to next position in jump-list', noremap = true, silent = true })
 keymap.set('n', 'xp', '<C-o>', {desc='move to previous position in jump-list', noremap = true, silent = true })
 

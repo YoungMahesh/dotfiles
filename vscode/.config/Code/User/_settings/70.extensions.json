@@ -1,0 +1,16 @@
+{
+  // =========================================================================
+  // Extension Settings
+  // =========================================================================
+  "extensions.ignoreRecommendations": true,
+  // Improve performance
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1,
+    "vscodevim.vim": 1
+  },
+  // ------------ excalidraw ---------------
+  "workbench.editorAssociations": {
+    "*.png": "editor.excalidraw"
+  },
+  "excalidraw.theme": "light"
+}

@@ -1,0 +1,19 @@
+{
+  // =========================================================================
+  // VIM - settings
+  // =========================================================================
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    // select all text
+    "<C-a>": false,
+    // search text in current file
+    "<C-f>": false,
+    // search files in current project
+    "<C-p>": false
+  }
+}

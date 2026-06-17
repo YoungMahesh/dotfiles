@@ -1,0 +1,21 @@
+{
+  // =========================================================================
+  // LLM Settings
+  // =========================================================================
+  "chat.viewSessions.orientation": "stacked",
+
+  // gemini
+  "geminicodeassist.agentYoloMode": true,
+
+  // github copilot
+  "github.copilot.chat.getSearchViewResultsSkill.enabled": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "json.schemaDownload.trustedDomains": {
+    "https://opencode.ai/config.json": true
+  },
+
+  // kilo code
+  "kilo-code.new.autocomplete.enableAutoTrigger": false,
+  "kilo-code.new.autocomplete.enableSmartInlineTaskKeybinding": false,
+  "kilo-code.new.autocomplete.enableChatAutocomplete": false
+}

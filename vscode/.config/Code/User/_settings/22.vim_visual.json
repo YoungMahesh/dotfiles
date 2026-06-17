@@ -1,0 +1,47 @@
+{
+  // =========================================================================
+  // VIM - VISUAL MODE KEYBINDINGS
+  // =========================================================================
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // 0 -> move to first non-blank char of current line
+    {
+      "before": ["0"],
+      "after": ["^"]
+    },
+    // ^ -> move to start (col 0) of current line
+    {
+      "before": ["^"],
+      "after": ["0"]
+    },
+    // ' -> move to last non-blank char of current line
+    {
+      "before": ["'"],
+      "after": ["g", "_"]
+    },
+    // q -> enter block insert/append mode at end of line (A)
+    {
+      "before": ["q"],
+      "after": ["A"]
+    },
+    // a% -> disable conflicting mapping in visual mode
+    {
+      "before": ["a", "%"],
+      "commands": []
+    },
+    // a -> move up half viewport and center cursor (zz)
+    {
+      "before": ["a"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    // ; -> move down half viewport and center cursor (zz)
+    {
+      "before": [";"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    // . -> repeat latest f, t, F, or T
+    {
+      "before": ["."],
+      "after": [";"]
+    }
+  ]
+}

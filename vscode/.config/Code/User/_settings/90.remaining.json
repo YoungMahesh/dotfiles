@@ -1,62 +1,9 @@
 {
-  // ------------- git related --------------
-  "diffEditor.codeLens": true,
-
-  // editor behavior settings
+  // =========================================================================
+  // Remaining Settings
+  // =========================================================================
   "security.workspace.trust.untrustedFiles": "open",
   "update.mode": "none", // do not update vscode automatically
-  "extensions.ignoreRecommendations": true,
-  "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "terminal.integrated.commandsToSkipShell": [
-    "-workbench.action.quickOpen",
-    "kilo-code.new.agentManagerOpen",
-    "kilo-code.new.agentManager.showTerminal"
-  ],
-  "files.autoSave": "onFocusChange",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-
-  // git settings
-  "git.openRepositoryInParentFolders": "never",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.hideUnchangedRegions.enabled": true,
-  "diffEditor.renderSideBySide": false,
-
-  // ---------- language specific settings --------------
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // "[solidity]": {
-  //   "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
-  // },
-  "files.associations": {
-    "*.json": "jsonc"
-  },
-  "workbench.editor.enablePreview": false,
-  "workbench.activityBar.location": "top",
-  "editor.lineNumbers": "relative",
-  "vscode-neovim.neovimExecutablePaths.linux": "/home/mahesh/.local/bin/nvim",
   "search.quickOpen.includeHistory": false,
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "workbench.browser.enableChatTools": true,
-
-  // -------------- terminal settings --------------------
-  "terminal.integrated.defaultProfile.linux": "bash",
-  "terminal.integrated.cursorStyle": "line",
-
-  // ------------ excalidraw ---------------
-  "workbench.editorAssociations": {
-    "*.png": "editor.excalidraw"
-  },
-  "excalidraw.theme": "light",
-
-  // -------------- gemini -----------------
-  "geminicodeassist.agentYoloMode": true,
-  "chat.viewSessions.orientation": "stacked",
-  "github.copilot.chat.getSearchViewResultsSkill.enabled": true,
-  "json.schemaDownload.trustedDomains": {
-    "https://opencode.ai/config.json": true
-  },
-  "kilo-code.new.autocomplete.enableAutoTrigger": false,
-  "kilo-code.new.autocomplete.enableSmartInlineTaskKeybinding": false,
-  "kilo-code.new.autocomplete.enableChatAutocomplete": false
+  "workbench.browser.enableChatTools": true
 }

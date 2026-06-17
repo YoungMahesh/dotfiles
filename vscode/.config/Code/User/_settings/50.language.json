@@ -1,0 +1,13 @@
+{
+  // =========================================================================
+  // Language Settings
+  // =========================================================================
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "[solidity]": {
+  //   "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  // },
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "workbench.editor.enablePreview": false
+}

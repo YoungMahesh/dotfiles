@@ -1,0 +1,13 @@
+{
+  // =========================================================================
+  // Terminal Settings
+  // =========================================================================
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.commandsToSkipShell": [
+    "-workbench.action.quickOpen",
+    "kilo-code.new.agentManagerOpen",
+    "kilo-code.new.agentManager.showTerminal"
+  ]
+}

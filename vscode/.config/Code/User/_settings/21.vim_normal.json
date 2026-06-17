@@ -1,0 +1,147 @@
+{
+  // =========================================================================
+  // VIM - NORMAL MODE KEYBINDINGS
+  // =========================================================================
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // <leader>f -> Format code in current file
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+
+    // =========================================================================
+    // VIM - NORMAL MODE VIM MOTIONS
+    // =========================================================================
+    // 0 -> move to first non-blank char of current line
+    {
+      "before": ["0"],
+      "after": ["^"]
+    },
+    // ^ -> move to start (col 0) of current line
+    {
+      "before": ["^"],
+      "after": ["0"]
+    },
+    // ' -> move to last non-blank char of current line
+    {
+      "before": ["'"],
+      "after": ["g", "_"]
+    },
+    // q -> move and insert at end of line (A)
+    {
+      "before": ["q"],
+      "after": ["A"]
+    },
+    // a -> move up half viewport and center cursor (zz)
+    {
+      "before": ["a"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    // ; -> move down half viewport and center cursor (zz)
+    {
+      "before": [";"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    // . -> repeat latest f, t, F, or T
+    {
+      "before": ["."],
+      "after": [";"]
+    },
+    // r -> redo
+    {
+      "before": ["r"],
+      "after": ["<C-r>"]
+    },
+    // x -> disable default character deletion
+    {
+      "before": ["x"],
+      "commands": []
+    },
+    // xn -> move to next position in jump-list
+    {
+      "before": ["x", "n"],
+      "after": ["<C-i>"]
+    },
+    // xp -> move to previous position in jump-list
+    {
+      "before": ["x", "p"],
+      "after": ["<C-o>"]
+    },
+
+    // =========================================================================
+    // VIM - NORMAL MODE FILE COMMANDS
+    // =========================================================================
+    // ss -> Save file
+    {
+      "before": ["s", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+    // ss -> save all files
+    {
+      "before": ["s", "s"],
+      "commands": ["workbench.action.files.saveFiles"]
+    },
+    // sq -> close all files
+    {
+      "before": ["s", "q"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
+    // sx -> save all files and close all
+    {
+      "before": ["s", "x"],
+      "commands": [
+        "workbench.action.files.saveFiles",
+        "workbench.action.closeAllEditors"
+      ]
+    },
+
+    // =========================================================================
+    // VIM - NORMAL MODE TAB KEYBINDINGS
+    // =========================================================================
+    // tn -> Go to next tab
+    {
+      "before": ["t", "n"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    // tp -> Go to previous tab
+    {
+      "before": ["t", "p"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    // tl -> Move tab to left
+    {
+      "before": ["t", "l"],
+      "commands": ["workbench.action.moveEditorLeftInGroup"]
+    },
+    // tr -> Move tab to right
+    {
+      "before": ["t", "r"],
+      "commands": ["workbench.action.moveEditorRightInGroup"]
+    },
+    // tt -> Pin current tab
+    {
+      "before": ["t", "t"],
+      "commands": ["workbench.action.pinEditor"]
+    },
+    // tu -> Unpin current tab
+    {
+      "before": ["t", "u"],
+      "commands": ["workbench.action.unpinEditor"]
+    },
+    // t; -> Close current file
+    {
+      "before": ["t", ";"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    // tq -> Close other files
+    {
+      "before": ["t", "q"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    // to -> Open new untitled file
+    {
+      "before": ["t", "o"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    }
+  ]
+}

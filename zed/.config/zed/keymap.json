@@ -63,15 +63,29 @@
       // "ctrl-k": "workspace::ToggleBottomDock",
       "ctrl-k": "terminal_panel::Toggle",
       "ctrl-;": "workspace::ToggleRightDock",
+      // default ctrl-g works same as this + it works with git diff toggle also
       "ctrl-m": "editor::ToggleFocus",
       "ctrl-l": "command_palette::Toggle",
       "ctrl-a": "editor::SelectAll",
       "ctrl-e": "project_panel::ToggleFocus",
       "ctrl-g": "git_panel::ToggleFocus",
-      "ctrl-p": "file_finder::Toggle",
+      // "ctrl-p": "file_finder::Toggle",
+      "ctrl-p": "menu::SelectPrevious",
       "ctrl-o": "outline_panel::ToggleFocus",
     },
   },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-p": "file_finder::Toggle",
+    }
+  },
+  // {
+  //   "context": "Editor && (showing_code_actions || showing_completions)",
+  //   "bindings": {
+  //     "ctrl-p": "editor::ContextMenuPrevious",
+  //   }
+  // },
   {
     "context": "OutlinePanel && not_editing",
     "bindings": {
@@ -103,7 +117,7 @@
       "q": "vim::InsertEndOfLine",
       "r": "vim::Redo",
       "s s": "workspace::SaveAll",
-      "space f f": "editor::Format",
+      "space f": "editor::Format",
       "g r": "editor::FindAllReferences", // goto references
 
       "g o": "editor::ExpandAllDiffHunks",
@@ -160,6 +174,15 @@
     "context": "(Terminal || AgentPanel || (Editor && mode == full) )",
     "bindings": {
       "ctrl-s": "agent::AddSelectionToThread",
+    },
+  },
+  {
+    // Zed documents mode == full as the normal code editor mode
+    // auto_height is an internal editor mode used for embedded editors that automatically grow to fit their content rather than occupying a full editor pane.
+    "context": "GitCommit > Editor && mode == auto_height",
+    "bindings": {
+      "ctrl-enter": "git::Commit",
+      "ctrl-p": "git::Push",
     },
   },
 ]

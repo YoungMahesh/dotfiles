@@ -9,6 +9,3 @@ clean_path() {
     echo "PATH cleaned and updated."
 }
 
-# set PATH so it includes user's private bin if it exists
-export PATH="$HOME/.local/bin:$PATH"
-

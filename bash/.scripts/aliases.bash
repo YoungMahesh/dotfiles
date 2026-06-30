@@ -13,4 +13,5 @@ alias vpn21='wg-quick up secondary'
 alias vpn20='sudo wg-quick down secondary'
 
 # neovim
+alias vi='nvim'
 alias vit='NVIM_APPNAME=nvim-typescript nvim'

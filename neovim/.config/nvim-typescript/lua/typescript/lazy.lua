@@ -16,6 +16,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 vim.opt.runtimepath:prepend(vim.fn.expand("~/.config/nvim-common"))
 require("lazy").setup({
-    -- { import = "mahesh.plugins" },
+    { import = "typescript.plugins" },
     { import = "common.plugins" }
 })

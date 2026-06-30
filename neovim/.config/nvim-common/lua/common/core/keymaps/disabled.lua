@@ -4,4 +4,4 @@ keymap.set("n", "s", "<Nop>", { noremap = true, desc = "remove key s" }) -- avoi
 keymap.set("n", "x", "<Nop>", { noremap = true, silent=true, desc = "remove key x" }) -- avoid accidental-execution of x while using sx
 keymap.set("n", "T", "<Nop>", { noremap = true })                        -- used by tmux-config
 keymap.set('n', 'cn', '<Nop>', { noremap = true })                       -- avoid accidental-execution (cn), `:help cn`
-
+keymap.set("n", "t", "<Nop>", {})   -- t is used in for tabs.lua

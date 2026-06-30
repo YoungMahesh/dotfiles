@@ -1,13 +1,14 @@
-require("mahesh.core.keymaps.disabled")
-require("mahesh.core.keymaps.mark")
-require("mahesh.core.keymaps.netrw")
-require("mahesh.core.keymaps.quickfix")
-require("mahesh.core.keymaps.tabs")
-require("mahesh.core.keymaps.search")
-require("mahesh.core.keymaps.visual-mode")
-require("mahesh.core.keymaps.terminal")
-require("mahesh.core.keymaps.window")
-require("mahesh.core.keymaps.path")
+require("common.core.keymaps.disabled")
+require("common.core.keymaps.mark")
+require("common.core.keymaps.netrw")
+require("common.core.keymaps.quickfix")
+require("common.core.keymaps.tabs")
+require("common.core.keymaps.search")
+require("common.core.keymaps.visual-mode")
+require("common.core.keymaps.terminal")
+require("common.core.keymaps.window")
+require("common.core.keymaps.path")
+require("common.core.keymaps.myvimrc")
 -- NOTE: when you update keymap, to test changes, you first need to close all nvim instances
 -- check default keymap documentation: :help <keymap>
 --    some of the default keymaps are disabled in keymaps.disabled file
@@ -19,7 +20,7 @@ require("mahesh.core.keymaps.path")
 -- check all keymaps in command mode: `:cmap`
 -- check all keymaps in select mode: `:smap`
 
---• “n” → Normal 
+--• “n” → Normal
 --• “i” → Insert (n -> i -> i)
 --• “v” → Visual-block = Visual + Select (any visual or select mode)
 --• “x” → Visual only (char‐, line‐ or block-wise)
@@ -80,7 +81,7 @@ keymap.set('n', '<C-a>', '0ggvG$', { desc = 'select all text on current page/buf
 -- :buffers  = view buffers
 
 -- ------------------------ :help window -------------------------------------
--- <C-w> is used for closing 
+-- <C-w> is used for closing
 --keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
 --keymap.set("n", "<leader>ww", "<C-w>w", { desc = "Cycle cursor to the next window" })
 --keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
@@ -160,8 +161,13 @@ keymap.set('n', '<leader>.', '<cmd>vsplit ~/.local/share/nvim/raw.txt<cr>', {des
 --  })
 --  vim.cmd('edit ~/.local/share/nvim/raw.txt') -- open file content
 --
---  -- :q or keymap you created for closing tab will close popup 
+--  -- :q or keymap you created for closing tab will close popup
 --end, { desc = 'open raw.txt file in a popup' })
 
 keymap.set('n', '<leader>m', "<cmd>put =execute('messages')<cr>", {desc = 'copy neovim messages to buffer'})
 
+----------------- keymaps -------------------
+-- find keymaps: :map <leader>ff
+--    provides file-path except for mahesh.vscode
+--
+-- c- == ctrl (e.g. <c-p> = Ctrl+p )

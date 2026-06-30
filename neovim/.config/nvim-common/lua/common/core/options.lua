@@ -25,7 +25,7 @@ opt.relativenumber = true
 opt.wrap = false
 
 -- fksd_skfjsdl_sklfsjdl_sklfsjd sdfks_klfsdj sdfdks
--- By default, _ is included as a word character, if you remove it from word-character, motions like w, b, e consider them as word-boundary 
+-- By default, _ is included as a word character, if you remove it from word-character, motions like w, b, e consider them as word-boundary
 --    and stops when _ occurs instead of skipping it
 -- :verbose set iskeyword?
 -- :set iskeyword-=_
@@ -45,7 +45,7 @@ opt.foldmethod = 'indent' -- :set foldmethod=syntax,manual,indent
 
 -- by default, all folds are closed, to keep all folds open when we open new file :set foldenable!
 opt.foldenable = false
--- pressing zc will turn on folding (see :help zc), and this will make Vim apply 'foldlevel' which is 0 by default (meaning all folds will be closed). 
+-- pressing zc will turn on folding (see :help zc), and this will make Vim apply 'foldlevel' which is 0 by default (meaning all folds will be closed).
 -- So if you set 'foldlevel' to a high value in your vimrc it should work as expected. https://stackoverflow.com/a/5786588/12344647
 opt.foldlevel = 50
 
@@ -59,3 +59,8 @@ vim.g.markdown_recommended_style = 0 -- without this pressing tab will create 4 
 -- high foldlevel is needed to keep all folds open by default
 -- opt.foldlevel = 100 -- :h
 
+------------ fix :checkhealth warnings ---------------------------
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0

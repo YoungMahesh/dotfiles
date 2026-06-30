@@ -1,3 +1,4 @@
 vim.opt.runtimepath:prepend(vim.fn.expand("~/.config/nvim-common"))
 require("common.core")
-require("mahesh.lazy")
+require("vscode.vscode")
+

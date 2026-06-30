@@ -39,6 +39,7 @@
   },
   "language_models": {
     "opencode": {
+      "show_free_models": false,
       "show_zen_models": false
     },
     "openai_compatible": {
@@ -153,6 +154,11 @@
     },
   },
   "agent": {
+    "inline_assistant_model": {
+      "provider": "opencode",
+      "model": "go/deepseek-v4-flash",
+      "enable_thinking": false
+    },
     "dock": "right",
     "favorite_models": [
       {
@@ -182,9 +188,10 @@
       }
     ],
     "default_model": {
-      "enable_thinking": false,
-      "provider": "General Compute",
-      "model": "minimax-m2.7"
+      "effort": "high",
+      "enable_thinking": true,
+      "provider": "opencode",
+      "model": "go/deepseek-v4-flash"
     },
     "default_profile": "ask",
     "model_parameters": [],

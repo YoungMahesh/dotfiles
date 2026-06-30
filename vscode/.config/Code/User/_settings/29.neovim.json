@@ -2,5 +2,5 @@
   // =========================================================================
   // Neovim settings
   // =========================================================================
-  "vscode-neovim.neovimExecutablePaths.linux": "/home/mahesh/.local/bin/nvim"
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/mahesh/.local/bin/nvim-vscode"
 }

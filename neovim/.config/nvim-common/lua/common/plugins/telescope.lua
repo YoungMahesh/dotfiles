@@ -2,21 +2,12 @@
 -- :help telescope
 -- :help telescope.command
 return {
-
-  'nvim-telescope/telescope.nvim', version = '*',
+ 'nvim-telescope/telescope.nvim', version = '*',
   dependencies = {
       -- lua functions to read/write files
       'nvim-lua/plenary.nvim',
       -- optional but recommended
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-
-  -- REMOVE
-     {
-       "nvim-telescope/telescope-live-grep-args.nvim",
-       -- This will not install any breaking changes.
-       -- For major updates, this must be adjusted manually.
-       version = "^1.0.0",
-     },
   },
 
   config = function()
@@ -42,7 +33,7 @@ return {
         local selection = action_state.get_selected_entry()
           if selection == nil then
             vim.notify("No results found") -- shown after clicking 'Enter' in telescope-window
-            -- you cannot close telescope window prompt from here because this function (select_default) executes 
+            -- you cannot close telescope window prompt from here because this function (select_default) executes
             --    after you click 'Enter' in telescope window prompt
         else
           local file_path = selection.filename or selection[1]
@@ -61,6 +52,7 @@ return {
 
     keymap.set('n', '<c-p>', function()
       builtin.find_files({
+          cwd = vim.fn.getcwd(-1),  -- force global working directory
 
       -- no_ignore=true - show files form paths which are mentioned in .gitignore
       --    large directories like node_modules are handled through defaults.file_ignore_patterns in telescope.setup
@@ -165,7 +157,5 @@ return {
         }
       }
     }
-
-    telescope.load_extension("live_grep_args")
   end,
 }

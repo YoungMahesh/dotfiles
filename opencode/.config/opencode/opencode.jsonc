@@ -44,15 +44,20 @@
     //    // Whether to enable the MCP client. Set to false to disable it.
     // },
     // https://github.com/microsoft/playwright-mcp?tab=readme-ov-file#getting-started
-    "playwright": {
-      "type": "local",
-      "command": ["npx", "@playwright/mcp"],
-      "enabled": true,
-      "timeout": 1800000
-    },
+    // "playwright": {
+    //   "type": "local",
+    //   "command": ["npx", "@playwright/mcp"],
+    //   "enabled": true,
+    //   "timeout": 1800000
+    // },
     "context7": {
       "type": "remote",
       "url": "https://mcp.context7.com/mcp"
+    },
+    "exa": {
+      "type": "remote",
+      "url": "https://mcp.exa.ai/mcp",
+      "enabled": true
     }
   }
 }

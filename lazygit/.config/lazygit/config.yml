@@ -1,0 +1,5 @@
+# use `lazygit -c` to print all config
+keybinding:
+  universal:
+    pushFiles: p
+    pullFiles: P

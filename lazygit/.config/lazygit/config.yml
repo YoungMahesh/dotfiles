@@ -3,3 +3,6 @@ keybinding:
   universal:
     pushFiles: p
     pullFiles: P
+
+git:
+  autoFetch: true

@@ -1,0 +1,37 @@
+[
+  // reference: https://opencode.ai/docs/go/#endpoints
+	{
+		"name": "OpenCode-Chat",
+		"vendor": "customendpoint",
+		"apiKey": "${input:chat.lm.secret.-74026002}",
+		"apiType": "chat-completions",
+		"models": [
+			{
+				"id": "deepseek-v4-flash",
+				"name": "Deepseek V4 Flash",
+				"url": "https://opencode.ai/zen/go/v1/chat/completions",
+				"toolCalling": true,
+				"vision": false,
+				"maxInputTokens": 1048576,
+				"maxOutputTokens": 384000
+			}
+		]
+	},
+	{
+		"name": "OpenCode-Messages",
+		"vendor": "customendpoint",
+		"apiKey": "${input:chat.lm.secret.7c8bec6}",
+		"apiType": "messages",
+		"models": [
+			{
+				"id": "minimax-m3",
+				"name": "Minimax M3",
+				"url": "https://opencode.ai/zen/go/v1/messages",
+				"toolCalling": true,
+				"vision": true,
+				"maxInputTokens": 1000000,
+				"maxOutputTokens": 131072
+			}
+		]
+	}
+]

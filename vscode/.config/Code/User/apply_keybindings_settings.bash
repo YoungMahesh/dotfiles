@@ -18,8 +18,8 @@ case "$MODE" in
   "vscode")
     KEYBINDINGS_OUTPUT="$HOME/dotfiles/vscode/.config/Code/User/keybindings.json"
     SETTINGS_OUTPUT="$HOME/dotfiles/vscode/.config/Code/User/settings.json"
-    EXCLUDED_KEYBINDINGS=("60.antigravity.json" "61.antigravity_neovim.json")
-    EXCLUDED_SETTINGS=()
+    EXCLUDED_KEYBINDINGS=("50.neovim-extension.json" "60.antigravity.json" "61.antigravity_neovim.json")
+    EXCLUDED_SETTINGS=("29.neovim.json")
     ;;
   "antigravity")
     KEYBINDINGS_OUTPUT="$HOME/dotfiles/antigravity/.config/Antigravity/User/keybindings.json"
@@ -54,7 +54,7 @@ first_keybinding=true
 
 for file in "$SCRIPT_DIR"/_keybindings/*.json; do
   filename=$(basename "$file")
-  
+
   # check if the current file is in the exclusion list
   skip=false
   for excl in "${EXCLUDED_KEYBINDINGS[@]}"; do
@@ -67,7 +67,7 @@ for file in "$SCRIPT_DIR"/_keybindings/*.json; do
     echo "Skipping $file"
     continue
   fi
-  
+
   echo "Processing $file"
   content=$(sed '1d;$d' "$file")
 

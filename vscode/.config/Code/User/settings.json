@@ -1,9 +1,13 @@
 {
-  // editor UI settings
+  // =========================================================================
+  // UI - settings
+  // =========================================================================
   "window.zoomLevel": 2.5,
+  "window.titleBarStyle": "custom",
+  "window.restoreWindows": "none",
   "editor.fontSize": 15,
   "editor.tabSize": 2,
-  "window.titleBarStyle": "custom",
+  "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   // "editor.formatOnSave": true,
   // sometimes semicolons get placed at unwanted locations (causing errors) which cannot be
@@ -11,33 +15,238 @@
   // "editor.formatOnSaveMode": "modifications",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.stickyScroll.enabled": true,
+  "files.autoSave": "onFocusChange",
   "workbench.startupEditor": "none",
-  "window.restoreWindows": "none",
-  // ------------- git related --------------
-  "diffEditor.codeLens": true,
+  "workbench.activityBar.location": "top",
+  // =========================================================================
+  // VIM - settings
+  // =========================================================================
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    // select all text
+    "<C-a>": false,
+    // search text in current file
+    "<C-f>": false,
+    // search files in current project
+    "<C-p>": false
+  },
+  // =========================================================================
+  // VIM - NORMAL MODE KEYBINDINGS
+  // =========================================================================
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // <leader>f -> Format code in current file
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
 
-  // editor behavior settings
-  "security.workspace.trust.untrustedFiles": "open",
-  "update.mode": "none", // do not update vscode automatically
-  "extensions.ignoreRecommendations": true,
+    // =========================================================================
+    // VIM - NORMAL MODE VIM MOTIONS
+    // =========================================================================
+    // 0 -> move to first non-blank char of current line
+    {
+      "before": ["0"],
+      "after": ["^"]
+    },
+    // ^ -> move to start (col 0) of current line
+    {
+      "before": ["^"],
+      "after": ["0"]
+    },
+    // ' -> move to last non-blank char of current line
+    {
+      "before": ["'"],
+      "after": ["g", "_"]
+    },
+    // q -> move and insert at end of line (A)
+    {
+      "before": ["q"],
+      "after": ["A"]
+    },
+    // a -> move up half viewport and center cursor (zz)
+    {
+      "before": ["a"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    // ; -> move down half viewport and center cursor (zz)
+    {
+      "before": [";"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    // . -> repeat latest f, t, F, or T
+    {
+      "before": ["."],
+      "after": [";"]
+    },
+    // r -> redo
+    {
+      "before": ["r"],
+      "after": ["<C-r>"]
+    },
+    // x -> disable default character deletion
+    {
+      "before": ["x"],
+      "commands": []
+    },
+    // xn -> move to next position in jump-list
+    {
+      "before": ["x", "n"],
+      "after": ["<C-i>"]
+    },
+    // xp -> move to previous position in jump-list
+    {
+      "before": ["x", "p"],
+      "after": ["<C-o>"]
+    },
+
+    // =========================================================================
+    // VIM - NORMAL MODE FILE COMMANDS
+    // =========================================================================
+    // ss -> Save file
+    {
+      "before": ["s", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+    // ss -> save all files
+    {
+      "before": ["s", "s"],
+      "commands": ["workbench.action.files.saveFiles"]
+    },
+    // sq -> close all files
+    {
+      "before": ["s", "q"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
+    // sx -> save all files and close all
+    {
+      "before": ["s", "x"],
+      "commands": [
+        "workbench.action.files.saveFiles",
+        "workbench.action.closeAllEditors"
+      ]
+    },
+
+    // =========================================================================
+    // VIM - NORMAL MODE TAB KEYBINDINGS
+    // =========================================================================
+    // tn -> Go to next tab
+    {
+      "before": ["t", "n"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    // tp -> Go to previous tab
+    {
+      "before": ["t", "p"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    // tl -> Move tab to left
+    {
+      "before": ["t", "l"],
+      "commands": ["workbench.action.moveEditorLeftInGroup"]
+    },
+    // tr -> Move tab to right
+    {
+      "before": ["t", "r"],
+      "commands": ["workbench.action.moveEditorRightInGroup"]
+    },
+    // tt -> Pin current tab
+    {
+      "before": ["t", "t"],
+      "commands": ["workbench.action.pinEditor"]
+    },
+    // tu -> Unpin current tab
+    {
+      "before": ["t", "u"],
+      "commands": ["workbench.action.unpinEditor"]
+    },
+    // t; -> Close current file
+    {
+      "before": ["t", ";"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    // tq -> Close other files
+    {
+      "before": ["t", "q"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    // to -> Open new untitled file
+    {
+      "before": ["t", "o"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    }
+  ],
+  // =========================================================================
+  // VIM - VISUAL MODE KEYBINDINGS
+  // =========================================================================
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // 0 -> move to first non-blank char of current line
+    {
+      "before": ["0"],
+      "after": ["^"]
+    },
+    // ^ -> move to start (col 0) of current line
+    {
+      "before": ["^"],
+      "after": ["0"]
+    },
+    // ' -> move to last non-blank char of current line
+    {
+      "before": ["'"],
+      "after": ["g", "_"]
+    },
+    // q -> enter block insert/append mode at end of line (A)
+    {
+      "before": ["q"],
+      "after": ["A"]
+    },
+    // a% -> disable conflicting mapping in visual mode
+    {
+      "before": ["a", "%"],
+      "commands": []
+    },
+    // a -> move up half viewport and center cursor (zz)
+    {
+      "before": ["a"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    // ; -> move down half viewport and center cursor (zz)
+    {
+      "before": [";"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    // . -> repeat latest f, t, F, or T
+    {
+      "before": ["."],
+      "after": [";"]
+    }
+  ],
+  // =========================================================================
+  // Git Settings
+  // =========================================================================
+  "diffEditor.codeLens": true,
+  "git.openRepositoryInParentFolders": "never",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.renderSideBySide": false,
+  // =========================================================================
+  // Terminal Settings
+  // =========================================================================
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.commandsToSkipShell": [
     "-workbench.action.quickOpen",
     "kilo-code.new.agentManagerOpen",
     "kilo-code.new.agentManager.showTerminal"
   ],
-  "files.autoSave": "onFocusChange",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-
-  // git settings
-  "git.openRepositoryInParentFolders": "never",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.hideUnchangedRegions.enabled": true,
-  "diffEditor.renderSideBySide": false,
-
-  // ---------- language specific settings --------------
+  // =========================================================================
+  // Language Settings
+  // =========================================================================
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // "[solidity]": {
   //   "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
@@ -46,31 +255,44 @@
     "*.json": "jsonc"
   },
   "workbench.editor.enablePreview": false,
-  "workbench.activityBar.location": "top",
-  "editor.lineNumbers": "relative",
-  "vscode-neovim.neovimExecutablePaths.linux": "/home/mahesh/.local/bin/nvim",
-  "search.quickOpen.includeHistory": false,
+  // =========================================================================
+  // LLM Settings
+  // =========================================================================
+  "chat.viewSessions.orientation": "stacked",
+
+  // gemini
+  "geminicodeassist.agentYoloMode": true,
+
+  // github copilot
+  "github.copilot.chat.getSearchViewResultsSkill.enabled": true,
   "github.copilot.nextEditSuggestions.enabled": true,
-  "workbench.browser.enableChatTools": true,
+  "json.schemaDownload.trustedDomains": {
+    "https://opencode.ai/config.json": true
+  },
 
-  // -------------- terminal settings --------------------
-  "terminal.integrated.defaultProfile.linux": "bash",
-  "terminal.integrated.cursorStyle": "line",
-
+  // kilo code
+  "kilo-code.new.autocomplete.enableAutoTrigger": false,
+  "kilo-code.new.autocomplete.enableSmartInlineTaskKeybinding": false,
+  "kilo-code.new.autocomplete.enableChatAutocomplete": false,
+  // =========================================================================
+  // Extension Settings
+  // =========================================================================
+  "extensions.ignoreRecommendations": true,
+  // Improve performance
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1,
+    "vscodevim.vim": 1
+  },
   // ------------ excalidraw ---------------
   "workbench.editorAssociations": {
     "*.png": "editor.excalidraw"
   },
   "excalidraw.theme": "light",
-
-  // -------------- gemini -----------------
-  "geminicodeassist.agentYoloMode": true,
-  "chat.viewSessions.orientation": "stacked",
-  "github.copilot.chat.getSearchViewResultsSkill.enabled": true,
-  "json.schemaDownload.trustedDomains": {
-    "https://opencode.ai/config.json": true
-  },
-  "kilo-code.new.autocomplete.enableAutoTrigger": false,
-  "kilo-code.new.autocomplete.enableSmartInlineTaskKeybinding": false,
-  "kilo-code.new.autocomplete.enableChatAutocomplete": false
+  // =========================================================================
+  // Remaining Settings
+  // =========================================================================
+  "security.workspace.trust.untrustedFiles": "open",
+  "update.mode": "none", // do not update vscode automatically
+  "search.quickOpen.includeHistory": false,
+  "workbench.browser.enableChatTools": true
 }

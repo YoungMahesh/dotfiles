@@ -115,13 +115,5 @@
     "key": "ctrl+f",
     "command": "-workbench.action.terminal.focusFind",
     "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
-  },
-  // ==========================================
-  //               Neovim
-  // ==========================================
-  // ctrl+v is used in neovim for vertical block visual select , so disable ctrl+v in vscode
-  {
-    "key": "ctrl+v",
-    "command": "-editor.action.clipboardPasteAction"
   }
 ]

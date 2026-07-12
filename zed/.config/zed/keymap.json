@@ -17,8 +17,6 @@
 //       //    so you can compose behaviors from existing shortcut
 //       ";": ["workspace::SendKeystrokes", "ctrl-d z z"],
 //       ".": "vim::RepeatFind",
-//       "g o": "git::Diff", // git open
-//       "g r": "editor::FindAllReferences", // goto references
 //       //    default g space // goto/jump to file from reference-list
 //       // go to defination: default: g d
 //       // marks: m[a|b|c..] to set mark, `[a|b|c..] to visit marked position
@@ -118,12 +116,7 @@
       "r": "vim::Redo",
       "s s": "workspace::SaveAll",
       "space f": "editor::Format",
-      "g r": "editor::FindAllReferences", // goto references
-
-      "g o": "editor::ExpandAllDiffHunks",
-      "g c": "editor::CollapseAllDiffHunks",
-      "g s": "git::StageAndNext",
-      "g u": "git::UnstageAndNext",
+      "space r": "editor::FindAllReferences", // goto references
 
       // panel == popup-windows (e.g. settings window)
       // pane == current file/tab
@@ -143,6 +136,17 @@
         },
       ],
     },
+  },
+  {
+    "context": "Editor && !agent_diff && vim_mode == normal",
+    "bindings": {
+      "g o": "editor::ExpandAllDiffHunks",
+      "g c": "editor::CollapseAllDiffHunks",
+      "space space": "git::StageAndNext",
+      "g u": "git::UnstageAndNext",
+      "g r": "git::RestoreAndNext",
+      // "space space": "git::ToggleStaged",
+    }
   },
   {
     "context": "(vim_mode == normal || vim_mode == visual)",

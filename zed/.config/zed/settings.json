@@ -2,6 +2,7 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the command palette
 {
+  "$schema": "zed://schemas/settings",
   "context_servers": {
     "mcp-server-exa-search": {
       "enabled": true,
@@ -163,6 +164,9 @@
     },
   },
   "agent": {
+    "sandbox_permissions": {
+      "network_hosts": ["zed.dev"],
+    },
     "profiles": {
       "ask": {
         "name": "Ask",
@@ -196,6 +200,16 @@
     "tool_permissions": {
       "tools": {
         // https://zed.dev/docs/ai/tool-permissions#mcp-tools
+        "terminal": {
+          "always_allow": [
+            { "pattern": "pnpm\\s+run\\s+typecheck" },
+            { "pattern": "pnpm\\s+run\\s+lint" },
+          ],
+        },
+        "fetch": {
+          // from observation, i found - "sandbox_permissions"."network_hosts" working instead of this
+          "always_allow": [{ "pattern": "^https://zed\\.dev" }],
+        },
         "mcp:mcp-server-exa-search:web_fetch_exa": {
           "default": "allow",
         },
@@ -261,15 +275,18 @@
     // Whether a preview tab gets replaced when code navigation is used to navigate away from the tab.
     "enable_keep_preview_on_code_navigation": false,
   },
-  // "languages": {
-  //   "TypeScript": {
-  //     "formatter": {
-  //       "external": {
-  //         // "command": "npx prettier",
-  //         "command": "node_modules/.bin/prettier",
-  //         "arguments": ["--stdin-filepath", "{buffer_path}"]
-  //       }
-  //     }
-  //   }
-  // }
+  "languages": {
+    "YAML": {
+      "tab_size": 2,
+    },
+    //   "TypeScript": {
+    //     "formatter": {
+    //       "external": {
+    //         // "command": "npx prettier",
+    //         "command": "node_modules/.bin/prettier",
+    //         "arguments": ["--stdin-filepath", "{buffer_path}"]
+    //       }
+    //     }
+    //   }
+  },
 }

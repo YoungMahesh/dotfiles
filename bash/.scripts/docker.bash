@@ -1,5 +1,7 @@
 alias dc='docker container'
 alias dco='docker compose'
 alias di='docker image'
+alias din='docker inspect'
 alias dl='docker logs'
 alias dn='docker network'
+alias dv='docker volume'

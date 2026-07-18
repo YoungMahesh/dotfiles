@@ -1,11 +1,13 @@
 # --------------------------------------------------------------------------------
-# cat server.bash >> ~/.profile
+# append this to ~/.profile
 # docker
 alias dc='docker container'
 alias dco='docker compose'
 alias di='docker image'
+alias din='docker inspect'
 alias dl='docker logs'
 alias dn='docker network'
+alias dv='docker volume'
 
 # git
 alias gs='git status'

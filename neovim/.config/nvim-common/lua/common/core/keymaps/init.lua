@@ -1,6 +1,5 @@
 require("common.core.keymaps.disabled")
 require("common.core.keymaps.mark")
-require("common.core.keymaps.netrw")
 require("common.core.keymaps.quickfix")
 require("common.core.keymaps.tabs")
 require("common.core.keymaps.search")
@@ -62,7 +61,6 @@ keymap.set("n", "r", "<C-r>", { desc = "redo", noremap = true })
 --    File navigation: Opening a new file or jumping to a specific line number (e.g., 42G).
 --    Tag navigation: Using Ctrl-] to jump to a tag definition.
 --    Quickfix/Location lists: Navigating through these lists.
-keymap.set('n', 'xn', '<C-i>', { desc = 'move to next position in jump-list', noremap = true, silent = true })
 keymap.set('n', 'xp', '<C-o>', { desc = 'move to previous position in jump-list', noremap = true, silent = true })
 
 -- ---------------------------------------------------
@@ -173,3 +171,12 @@ keymap.set('n', '<leader>m', "<cmd>put =execute('messages')<cr>", { desc = 'copy
 --    provides file-path except for mahesh.vscode
 --
 -- c- == ctrl (e.g. <c-p> = Ctrl+p )
+
+------------ indentation ---------------------
+-- `<<`: move line to left
+-- `>>`: move line to right (indentation)
+
+------------ command area -----------------
+-- command_aread: area when at bottom of editor, which get activated on clicking `:`
+-- to list messages shown in command area execute:  :messages
+--    list shows oldest messages first and newest messages last

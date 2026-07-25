@@ -41,7 +41,7 @@ local function format_buffer()
   else
     vim.lsp.buf.format({ async = false, timeout_ms = 10000, formatting_options = { tabSize = 2, insertSpaces = true } })
   end
-  vim.cmd('edit!') -- Reload the buffer
+  vim.cmd('checktime') -- Reload the buffer from disk
 end
 
 vim.keymap.set('n', '<leader>ff', function()

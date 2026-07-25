@@ -29,7 +29,7 @@ opt.wrap = false
 --    and stops when _ occurs instead of skipping it
 -- :verbose set iskeyword?
 -- :set iskeyword-=_
-opt.iskeyword:remove("_")
+-- opt.iskeyword:remove("_")
 
 ------------------------ #search ----------------------------------------
 -- incremental-search: highlight text 'while typing' search text with :/<search-text>

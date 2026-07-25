@@ -5,10 +5,10 @@
 -- search text in normal-mode by typing - /<search-text> -> enter
 -- use '*' to search selected text
 -- zz = cursor at center of screen
-vim.keymap.set('n', 'n', 'nzz', {desc='move to next search match'})
-vim.keymap.set('n', 'N', 'Nzz', {desc = 'move to previous search match'})
+vim.keymap.set('n', 'n', 'nzz', { desc = 'move to next search match' })
+vim.keymap.set('n', 'N', 'Nzz', { desc = 'move to previous search match' })
 
-vim.keymap.set('x', '/', "\"fy/\\V<C-R>f<CR>", { desc = 'Search highlighted text in current buffer' } )
+vim.keymap.set('x', '/', "\"fy/\\V<C-R>f<CR>", { desc = 'Search highlighted text in current buffer' })
 
 ---------------------- ->search and replace (single page) ---------------------------------
 --
@@ -21,7 +21,7 @@ vim.keymap.set('x', '/', "\"fy/\\V<C-R>f<CR>", { desc = 'Search highlighted text
 --    3. move to next word by typing `n`
 --    4. if you want to change word, type `.` which will follow previous process, else type `n` to move to the next word
 -- Trick 2 (:help %), (:help s)
---    search and replace all lines: `:%s/<search-word>/<replace-word>/g` 
+--    search and replace all lines: `:%s/<search-word>/<replace-word>/g`
 --        %s=substitute, g=global
 --        replace `~/` with `@/`:   1) `:%s/\~\/` search for ~/, we need escape both ~ and /
 --                                  2) `:%s/\~\//@\//g` here additional code is `/@\//g` where `/` boundary between search and replace
@@ -39,7 +39,7 @@ vim.keymap.set('x', '/', "\"fy/\\V<C-R>f<CR>", { desc = 'Search highlighted text
 --      just open zed with `zed .` in path -> Ctrl+Shift+f to search in all files -> replace-one (to verify changes) -> replace all -> exit
 --  1. store search results in quickfix list
 --  2. execute ->   :cfdo %s/<text-to-remove>/<text-to-add>/g | update | bd
---    reference -> cfdo == execute in each file in quickfix list, %s == substitute, 
+--    reference -> cfdo == execute in each file in quickfix list, %s == substitute,
 --    update == save modified buffer (else we need to write all changes), bd == delete buffer (to free ram)
---    :help cfdo, :help %, :help s, :help update, :help bd 
+--    :help cfdo, :help %, :help s, :help update, :help bd
 --

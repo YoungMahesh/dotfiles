@@ -11,9 +11,9 @@ return {
         show_hidden = true
       }
     })
-    vim.keymap.set('n', '-', '<cmd>Oil<cr>', {desc = 'open parent directory'})
+    vim.keymap.set('n', '-', '<cmd>Oil<cr>', { desc = 'open parent directory' })
     -- o create new file/directory insert-below->type-name->(put / at end for directory)->enter
     -- i insert to rename file
-    -- dd delete/cut, p paste,   
+    -- dd delete/cut, p paste,
   end,
 }

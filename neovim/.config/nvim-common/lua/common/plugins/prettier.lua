@@ -20,7 +20,6 @@ local function format_buffer()
   -- check file-type using ->  `:echo &filetype` or  `:LspInfo`
   local prettier_file_types = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'markdown', 'json' }
   if vim.tbl_contains(prettier_file_types, file_type) then
-
     local prettier_cmd = find_prettier()
     -- Format the file
     -- % refers to the current file name relative to the current working directory.
@@ -32,8 +31,8 @@ local function format_buffer()
       vim.notify('Prettier encountered an error: ' .. output, vim.log.levels.ERROR)
       return
     end
-  elseif vim.tbl_contains({'sql'}, file_type) then
-  local sqlfmt = vim.fn.expand('~/.local/share/nvim/mason/bin/sql-formatter')
+  elseif vim.tbl_contains({ 'sql' }, file_type) then
+    local sqlfmt = vim.fn.expand('~/.local/share/nvim/mason/bin/sql-formatter')
     local output = vim.fn.system(sqlfmt .. ' ' .. vim.fn.shellescape(filename) .. ' -o ' .. vim.fn.shellescape(filename))
     if vim.v.shell_error ~= 0 then
       vim.notify('sqlfmt encountered an error: ' .. output, vim.log.levels.ERROR)

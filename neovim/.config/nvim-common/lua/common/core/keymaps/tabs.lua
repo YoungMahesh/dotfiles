@@ -7,7 +7,7 @@ keymap.set("n", "to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 keymap.set('n', "t;", function()
   vim.cmd('quit')
   -- getwininfo() retrieves information about all windows in the current tab
-  -- # at the start, counts the number of windows 
+  -- # at the start, counts the number of windows
   if #vim.fn.getwininfo() == 1 then
     vim.cmd('tabp')
   end
@@ -20,7 +20,7 @@ keymap.set("n", "tl", "<cmd>tabmove -1<cr>", { desc = "move current tab to left"
 keymap.set("n", "tr", "<cmd>tabmove +1<cr>", { desc = "move current tab to right" })
 -- let curpos = getcurpos() -- get cursor position,  call setpos(".", curpos) -- move cursor to original position
 -- :%bd -- closes all buffers, e# - opens the alternate file (which will be your current buffer)
--- bd# -- removes the alternate buffer from the buffer list, 
+-- bd# -- removes the alternate buffer from the buffer list,
 -- normal! zz -- bring curosr to the center of screen
 keymap.set('n', 'tq',
   ':let curpos = getcurpos() | %bd | e# | bd# | call setpos(".", curpos) | normal! zz<cr>',
@@ -35,17 +35,17 @@ keymap.set("n", "ts", "<cmd>vsplit<cr>", { desc = "Split window vertically" })
 --    local current = vim.api.nvim_get_current_buf()
 --    -- Store cursor position
 --    local curpos = vim.api.nvim_win_get_cursor(0)
---    
+--
 --    -- Get list of all buffers
 --    local buffers = vim.api.nvim_list_bufs()
---    
+--
 --    -- Close all buffers except current one
 --    for _, buf in ipairs(buffers) do
 --        if buf ~= current and vim.api.nvim_buf_is_valid(buf) then
 --            vim.api.nvim_buf_delete(buf, { force = true })
 --        end
 --    end
---    
+--
 --    -- Restore cursor position
 --    vim.api.nvim_win_set_cursor(0, curpos)
 --end

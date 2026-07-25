@@ -5,7 +5,7 @@ local keymap = vim.keymap
 -- string.byte() -> converts characters to their numeric ASCII/byte values, string.byte('a') == 97
 -- string.char() -> converts numeric ASCII/byte values to characters, string.char(97) == 'a'
 for mark = string.byte('a'), string.byte('d') do
-  keymap.set('n', '"' .. string.char(mark), '`' .. string.char(mark) .. 'zz', {noremap = true, silent = true})
+  keymap.set('n', '"' .. string.char(mark), '`' .. string.char(mark) .. 'zz', { noremap = true, silent = true })
 end
 
 keymap.set("n", "ml", "<cmd>marks abcdefABCDEF<cr>", { desc = "show marks list from a to f" })

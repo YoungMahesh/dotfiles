@@ -9,12 +9,12 @@
 -- end, {desc = 'open terminal'})
 
 vim.keymap.set('n', 'st', function()
-    local dir = vim.fn.expand('%:p:h')
-    vim.cmd('new')
-    vim.fn.termopen(vim.o.shell, {
-        cwd = dir,
-    })
-    vim.cmd('startinsert')
+  local dir = vim.fn.expand('%:p:h')
+  vim.cmd('new')
+  vim.fn.termopen(vim.o.shell, {
+    cwd = dir,
+  })
+  vim.cmd('startinsert')
 end, { desc = 'Open terminal' })
 
 

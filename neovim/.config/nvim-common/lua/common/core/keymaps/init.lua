@@ -39,8 +39,10 @@ keymap.set({ "n", "v" }, "q", "A", { desc = "move and insert at end of line", no
 -- Disable the conflicting mapping for 'a' (`:verbose map a`), which was causes delay in execution
 -- remember: v (visual+select) == x(visual) + s(select)
 keymap.set("x", "a%", "<nop>", { noremap = true })
-keymap.set({ "n", "v" }, "a", "<C-u>zz", { desc = "move up half of viewport; cursor at middle(zz)", noremap = true, nowait = true})
-keymap.set({ "n", "v" }, ";", "<C-d>zz", { desc = "move down half of viewport; move cursor to middle(zz)", noremap = true, nowait = true })
+keymap.set({ "n", "v" }, "a", "<C-u>zz",
+  { desc = "move up half of viewport; cursor at middle(zz)", noremap = true, nowait = true })
+keymap.set({ "n", "v" }, ";", "<C-d>zz",
+  { desc = "move down half of viewport; move cursor to middle(zz)", noremap = true, nowait = true })
 -- { - to move to previous empty line, } - to move to the next empty line
 -- from inside code move to boundary
 --    [{  move to opening curly-brace {
@@ -60,8 +62,8 @@ keymap.set("n", "r", "<C-r>", { desc = "redo", noremap = true })
 --    File navigation: Opening a new file or jumping to a specific line number (e.g., 42G).
 --    Tag navigation: Using Ctrl-] to jump to a tag definition.
 --    Quickfix/Location lists: Navigating through these lists.
-keymap.set('n', 'xn', '<C-i>', {desc='move to next position in jump-list', noremap = true, silent = true })
-keymap.set('n', 'xp', '<C-o>', {desc='move to previous position in jump-list', noremap = true, silent = true })
+keymap.set('n', 'xn', '<C-i>', { desc = 'move to next position in jump-list', noremap = true, silent = true })
+keymap.set('n', 'xp', '<C-o>', { desc = 'move to previous position in jump-list', noremap = true, silent = true })
 
 -- ---------------------------------------------------
 
@@ -141,7 +143,7 @@ keymap.set('n', 'td', function()
 end, { noremap = true, silent = true })
 
 ----------------------- scratch pad ------------------
-keymap.set('n', '<leader>.', '<cmd>vsplit ~/.local/share/nvim/raw.txt<cr>', {desc = 'open raw.txt in split'})
+keymap.set('n', '<leader>.', '<cmd>vsplit ~/.local/share/nvim/raw.txt<cr>', { desc = 'open raw.txt in split' })
 --vim.keymap.set('n', '<leader>.', function()
 --  -- Define height and width as percentages of the screen size
 --  local width_percent = 80
@@ -164,7 +166,7 @@ keymap.set('n', '<leader>.', '<cmd>vsplit ~/.local/share/nvim/raw.txt<cr>', {des
 --  -- :q or keymap you created for closing tab will close popup
 --end, { desc = 'open raw.txt file in a popup' })
 
-keymap.set('n', '<leader>m', "<cmd>put =execute('messages')<cr>", {desc = 'copy neovim messages to buffer'})
+keymap.set('n', '<leader>m', "<cmd>put =execute('messages')<cr>", { desc = 'copy neovim messages to buffer' })
 
 ----------------- keymaps -------------------
 -- find keymaps: :map <leader>ff

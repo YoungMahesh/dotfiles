@@ -14,4 +14,3 @@ keymap.set("n", "cl", "<cmd>ccl<CR>", { desc = "open previous item in quickfix l
 -- `Ctrl+w` to move to and out of quickfix list window
 -- chistory     " Open all quickfix lists opened until now in current session
 -- [count]chistory     " open count'th quickfix list from chistory-list
-

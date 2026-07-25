@@ -9,7 +9,7 @@ end, { desc = "open and focus on outline" })
 keymap.set('n', '<leader>r', function()
   vscode.call('references-view.findReferences')
 end, { desc = "open references in references-section" })
-keymap.set({'n'}, '<leader>lr', function()
+keymap.set({ 'n' }, '<leader>lr', function()
   vscode.call('editor.action.goToReferences')
 end, { desc = 'open references in popup' })
 
@@ -31,7 +31,7 @@ end, { desc = 'open references in popup' })
 -------------- save, format file ------------------------
 keymap.set('n', 'ss', function()
   vscode.call('workbench.action.files.save')
-end, {desc = 'save file'})
+end, { desc = 'save file' })
 keymap.set('n', '<leader>f', function()
   vscode.call('editor.action.formatDocument')
 end, { desc = "format current file" })
@@ -42,9 +42,9 @@ end, { desc = "format current file" })
 --   vscode.call('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')
 --   vscode.call('workbench.action.acceptSelectedQuickOpenItem')
 -- end, { desc = "Toggle current, previous recently used edtor" })
- keymap.set("n", "tn", function()
-   vscode.call('workbench.action.nextEditor')
- end, { desc = "Go to next tab" })
+keymap.set("n", "tn", function()
+  vscode.call('workbench.action.nextEditor')
+end, { desc = "Go to next tab" })
 keymap.set("n", "tp", function()
   vscode.call('workbench.action.previousEditor')
 end, { desc = "Go to next tab" })
@@ -76,16 +76,16 @@ end, { desc = "close current file" })
 --    https://github.com/alefragnani/vscode-bookmarks
 keymap.set('n', 'mm', function()
   vscode.call('bookmarks.toggle')
-end, {desc = 'toggle bookmark'})
+end, { desc = 'toggle bookmark' })
 keymap.set('n', 'ml', function()
   vscode.call('bookmarks.listFromAllFiles')
-end, {desc = 'list bookmarks'})
+end, { desc = 'list bookmarks' })
 keymap.set('n', 'mn', function()
   vscode.call('bookmarks.jumpToNext')
-end, {desc = 'next bookmark'})
+end, { desc = 'next bookmark' })
 keymap.set('n', 'mp', function()
   vscode.call('bookmarks.jumpToPrevious')
-end, {desc = 'previous bookmark'})
+end, { desc = 'previous bookmark' })
 
 -------------- vscode native folding -------------------
 -- neovim's built-in folding does not affect vscode text, hence we are calling vscode's fold function to natively fold
@@ -98,13 +98,13 @@ keymap.set("n", "zo", function()
 end, { desc = "unfold code snippet" })
 
 -- move over vscode folds
--- as we are using folding from vscode, neovim is unware when we move through folding, which leads to 
+-- as we are using folding from vscode, neovim is unware when we move through folding, which leads to
 -- fold-open when we use default neovim keybinding to move up, down
 -- hence use vscode keybinding for up and down movement
 
 
 -- keymap.set({'n', 'v', 'x'}, 'j', function()
--- problem: if you select few lines in visual mode by pressing 'j', and then when you press 'k' instead of moving one line up, 
+-- problem: if you select few lines in visual mode by pressing 'j', and then when you press 'k' instead of moving one line up,
 --    it moves to one line up from where selection started
 --   vscode.call('cursorDown')
 -- end, { desc = 'move down' })
@@ -127,4 +127,3 @@ end, { desc = "unfold code snippet" })
 --keymap.set({'x'}, 'k', function()
 --  vscode.call('cursorColumnSelectUp')
 --end, { desc = 'move down to select column' })
-

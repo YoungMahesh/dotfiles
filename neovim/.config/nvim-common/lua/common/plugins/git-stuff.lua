@@ -30,8 +30,8 @@ return {
           ]])
         end,
       })
-      vim.keymap.set("n", "go", "<cmd>0G<cr>", {desc = 'open git status'})
-      vim.keymap.set("n", "gl", "<cmd>0Git log<cr>", {desc = 'open git status'})
+      vim.keymap.set("n", "go", "<cmd>0G<cr>", { desc = 'open git status' })
+      vim.keymap.set("n", "gl", "<cmd>0Git log<cr>", { desc = 'open git status' })
     end,
   },
   --{

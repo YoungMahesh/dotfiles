@@ -1,4 +1,3 @@
-
 local keymap = vim.keymap
 
 -- Copy absolute directory path

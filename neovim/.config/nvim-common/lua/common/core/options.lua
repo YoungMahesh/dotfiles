@@ -10,8 +10,8 @@ local opt = vim.opt
 -- use system clipboard as default register
 opt.clipboard:append("unnamedplus")
 
-opt.tabstop = 2                     -- Tab character width (2 spaces)
-opt.shiftwidth = 2                  -- Indentation size (2 spaces)
+opt.tabstop = 2    -- Tab character width (2 spaces)
+opt.shiftwidth = 2 -- Indentation size (2 spaces)
 
 -- without expandtab when you copy code from neovim, paste into another editor, another editor will show more spaces/indentation than what you see in neovim
 opt.expandtab = true  -- Show tabs as spaces

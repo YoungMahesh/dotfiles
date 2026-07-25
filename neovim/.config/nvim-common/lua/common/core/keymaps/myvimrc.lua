@@ -7,7 +7,7 @@ vim.keymap.set('n', 'sr', function()
   vim.cmd('w')
   vim.cmd('so $MYVIMRC')
   vim.notify('reloaded new config')
-end, {desc = 'reload new config'})
+end, { desc = 'reload new config' })
 
 -- if you remove some keymap this way, then you cannot get it back even with `:so $MYVIMRC`, you need to restart neovim
 --vim.keymap.set('n', 'sd', function()

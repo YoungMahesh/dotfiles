@@ -2,12 +2,13 @@
 -- :help telescope
 -- :help telescope.command
 return {
- 'nvim-telescope/telescope.nvim', version = '*',
+  'nvim-telescope/telescope.nvim',
+  version = '*',
   dependencies = {
-      -- lua functions to read/write files
-      'nvim-lua/plenary.nvim',
-      -- optional but recommended
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    -- lua functions to read/write files
+    'nvim-lua/plenary.nvim',
+    -- optional but recommended
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   },
 
   config = function()
@@ -28,28 +29,27 @@ return {
       local action_state = require('telescope.actions.state')
 
       actions.select_default:replace(function()
-
         local selection = action_state.get_selected_entry()
-          if selection == nil then
-            vim.notify("No results found") -- shown after clicking 'Enter' in telescope-window
-            -- you cannot close telescope window prompt from here because this function (select_default) executes
-            --    after you click 'Enter' in telescope window prompt
+        if selection == nil then
+          vim.notify("No results found")   -- shown after clicking 'Enter' in telescope-window
+          -- you cannot close telescope window prompt from here because this function (select_default) executes
+          --    after you click 'Enter' in telescope window prompt
 
-            actions.close(prompt_bufnr) -- close telescope
-            return
-          end
+          actions.close(prompt_bufnr)   -- close telescope
+          return
+        end
 
-          local file_path = selection.path or selection.filename or selection[1]
-          actions.close(prompt_bufnr)
+        local file_path = selection.path or selection.filename or selection[1]
+        actions.close(prompt_bufnr)
 
-          if selection.lnum then  -- If it's a grep result with line number
-            vim.cmd('tabedit ' .. vim.fn.fnameescape(file_path))
-            vim.cmd('silent! e!')  -- force disk-reload (bypasses telescope preview ghost buffers
-            vim.api.nvim_win_set_cursor(0, {selection.lnum, selection.col or 0})
-          else
-            vim.cmd('tabedit ' .. vim.fn.fnameescape(file_path))
-            vim.cmd('silent! e!') -- force disk reload
-          end
+        if selection.lnum then    -- If it's a grep result with line number
+          vim.cmd('tabedit ' .. vim.fn.fnameescape(file_path))
+          vim.cmd('silent! e!')   -- force disk-reload (bypasses telescope preview ghost buffers
+          vim.api.nvim_win_set_cursor(0, { selection.lnum, selection.col or 0 })
+        else
+          vim.cmd('tabedit ' .. vim.fn.fnameescape(file_path))
+          vim.cmd('silent! e!')   -- force disk reload
+        end
       end)
       return true
     end
@@ -58,16 +58,16 @@ return {
 
     keymap.set('n', '<c-p>', function()
       builtin.find_files({
-          cwd = vim.fn.getcwd(-1),  -- force global working directory
+        cwd = vim.fn.getcwd(-1),   -- force global working directory
 
-      -- no_ignore=true - show files form paths which are mentioned in .gitignore
-      --    large directories like node_modules are handled through defaults.file_ignore_patterns in telescope.setup
-      -- no_ignore = true,
-      --
-      -- list files ignored in .gitignore:
-      --   use .gitignore negation pattern: e.g. put `!node_modules` in ".ignore" file and list files in node_modules
-      --
-      -- hidden=true - show files starting with . - like .env
+        -- no_ignore=true - show files form paths which are mentioned in .gitignore
+        --    large directories like node_modules are handled through defaults.file_ignore_patterns in telescope.setup
+        -- no_ignore = true,
+        --
+        -- list files ignored in .gitignore:
+        --   use .gitignore negation pattern: e.g. put `!node_modules` in ".ignore" file and list files in node_modules
+        --
+        -- hidden=true - show files starting with . - like .env
         hidden = true,
         attach_mappings = new_tab_on_result_select
       })
@@ -79,13 +79,13 @@ return {
     -- hence search through Grep
     keymap.set('n', '<leader>fk', function()
       builtin.grep_string({
-        cwd = vim.fn.getcwd(-1),  -- force global working directory
+        cwd = vim.fn.getcwd(-1), -- force global working directory
         search = vim.fn.input("Grep > "),
         attach_mappings = new_tab_on_result_select,
         additional_args = function()
           return {
-          "--glob", "!*.svg" -- exclude .svg files
-        }
+            "--glob", "!*.svg" -- exclude .svg files
+          }
         end
       })
     end, { desc = 'search string (without regex) cursor in cwd' })
@@ -93,20 +93,20 @@ return {
     -- fs - find specific (case sensitive)
     keymap.set('n', '<leader>fs', function()
       builtin.grep_string({
-        cwd = vim.fn.getcwd(-1),  -- force global working directory
+        cwd = vim.fn.getcwd(-1), -- force global working directory
         search = vim.fn.input("Grep > "),
         attach_mappings = new_tab_on_result_select,
         additional_args = function()
-            return {
-          "--case-sensitive",
-          "--glob", "!*.svg" -- exclude .svg files
-        }
+          return {
+            "--case-sensitive",
+            "--glob", "!*.svg" -- exclude .svg files
+          }
         end
       })
     end)
 
     vim.keymap.set('v', '<leader>fs', function()
-      vim.cmd('normal! "vy') -- Yank the selected text into the default register
+      vim.cmd('normal! "vy')                   -- Yank the selected text into the default register
       local selected_text = vim.fn.getreg('"') -- Get the yanked text
       vim.notify("Selected Text: " .. selected_text)
 
@@ -154,8 +154,8 @@ return {
           -- For example the package-lock.json should be package%-lock.json
           "package%-lock.json", -- nodejs project depedency installation history
           "pnpm%-lock.yaml",
-          "%.git/",   -- we need hidden=true to see files in dotfiles repository, but this results in showing .git files also, hence excluding them
-          "node_modules",   -- path for nodejs modules
+          "%.git/",             -- we need hidden=true to see files in dotfiles repository, but this results in showing .git files also, hence excluding them
+          "node_modules",       -- path for nodejs modules
           -- output of 'nextjs build', trailng '/' ensures only folder is exclude and not any files with name 'next' in it
           -- '.', is special character which will match with anything, to avoid hiding folders with 'next' in it, use "%" before '.'
           "%.next/",

@@ -1,1 +1,1 @@
-vim.keymap.set("n", "t", "<Nop>", {})   -- t is used in for tabs.lua
+vim.keymap.set("n", "t", "<Nop>", {}) -- t is used in for tabs.lua

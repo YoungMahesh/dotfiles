@@ -165,7 +165,7 @@
   },
   "agent": {
     "sandbox_permissions": {
-      "network_hosts": ["zed.dev"],
+      "network_hosts": ["zed.dev", "hardhat.org"],
     },
     "profiles": {
       "ask": {
@@ -200,6 +200,9 @@
     "tool_permissions": {
       "tools": {
         // https://zed.dev/docs/ai/tool-permissions#mcp-tools
+        "skill": {
+          "default": "allow",
+        },
         "terminal": {
           "always_allow": [
             { "pattern": "pnpm\\s+run\\s+typecheck" },
@@ -232,7 +235,7 @@
       },
     ],
     "default_model": {
-      "effort": "xhigh",
+      "effort": "max",
       "enable_thinking": true,
       "provider": "opencode",
       "model": "go/deepseek-v4-flash",
@@ -277,6 +280,9 @@
   },
   "languages": {
     "YAML": {
+      "tab_size": 2,
+    },
+    "Lua": {
       "tab_size": 2,
     },
     //   "TypeScript": {

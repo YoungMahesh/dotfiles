@@ -52,6 +52,9 @@
 
 // ]
 
+// IMPORTANT: while copying keymap context from default keymap file, copy context as it to make keymaps works
+//    e.g. use `FileFinder || (FileFinder > Picker > Editor)` instead of `FileFinder while setting keymap for ctrl-p
+//    as in default keymap file context `FileFinder || ...` is mentioned and not `FileFinder`
 [
   {
     "bindings": {
@@ -67,16 +70,15 @@
       "ctrl-a": "editor::SelectAll",
       "ctrl-e": "project_panel::ToggleFocus",
       "ctrl-g": "git_panel::ToggleFocus",
-      // "ctrl-p": "file_finder::Toggle",
-      "ctrl-p": "menu::SelectPrevious",
+      "ctrl-p": "file_finder::Toggle",
       "ctrl-o": "outline_panel::ToggleFocus",
     },
   },
   {
-    "context": "Workspace",
+    "context": "FileFinder || (FileFinder > Picker > Editor)",
     "bindings": {
-      "ctrl-p": "file_finder::Toggle",
-    }
+      "ctrl-p": "menu::SelectPrevious",
+    },
   },
   // {
   //   "context": "Editor && (showing_code_actions || showing_completions)",
@@ -146,7 +148,7 @@
       "g u": "git::UnstageAndNext",
       "g r": "git::RestoreAndNext",
       // "space space": "git::ToggleStaged",
-    }
+    },
   },
   {
     "context": "(vim_mode == normal || vim_mode == visual)",
@@ -186,7 +188,7 @@
     "context": "GitCommit > Editor && mode == auto_height",
     "bindings": {
       "ctrl-enter": "git::Commit",
-      "ctrl-p": "git::Push",
+      // "": "git::Push",
     },
   },
 ]

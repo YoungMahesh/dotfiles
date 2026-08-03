@@ -73,11 +73,11 @@ return {
       })
     end, { desc = 'search files in cwd; open in new tab' })
 
-    keymap.set('n', '<leader>fc', ":Telescope grep_string <cr>", { desc = 'Find string under cursor in cwd' })
+    keymap.set('n', '<leader>sc', ":Telescope grep_string <cr>", { desc = 'Find string under cursor in cwd' })
 
     -- traditional grep_string, uses regex, for which i need to use escape character(\) before special symbols like ".", "/", etc
     -- hence search through Grep
-    keymap.set('n', '<leader>fk', function()
+    keymap.set('n', '<leader>sk', function()
       builtin.grep_string({
         cwd = vim.fn.getcwd(-1), -- force global working directory
         search = vim.fn.input("Grep > "),
@@ -91,7 +91,7 @@ return {
     end, { desc = 'search string (without regex) cursor in cwd' })
 
     -- fs - find specific (case sensitive)
-    keymap.set('n', '<leader>fs', function()
+    keymap.set('n', '<leader>ss', function()
       builtin.grep_string({
         cwd = vim.fn.getcwd(-1), -- force global working directory
         search = vim.fn.input("Grep > "),
@@ -105,7 +105,7 @@ return {
       })
     end)
 
-    vim.keymap.set('v', '<leader>fs', function()
+    vim.keymap.set('v', '<leader>ss', function()
       vim.cmd('normal! "vy')                   -- Yank the selected text into the default register
       local selected_text = vim.fn.getreg('"') -- Get the yanked text
       vim.notify("Selected Text: " .. selected_text)

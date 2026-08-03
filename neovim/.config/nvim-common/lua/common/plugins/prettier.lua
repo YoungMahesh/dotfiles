@@ -44,7 +44,7 @@ local function format_buffer()
   vim.cmd('checktime') -- Reload the buffer from disk
 end
 
-vim.keymap.set('n', '<leader>ff', function()
+vim.keymap.set('n', '<leader>f', function()
   format_buffer()
 end, { desc = "Format current buffer with Prettier (TS/JS only)" })
 

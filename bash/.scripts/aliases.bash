@@ -19,3 +19,6 @@ alias vit='NVIM_APPNAME=nvim-typescript nvim'
 # github cli
 alias ghp='GH_CONFIG_DIR=$HOME/.config/gh-personal gh'
 alias ghw='GH_CONFIG_DIR=$HOME/.config/gh-work gh'
+
+# opencode
+alias oc2='opencode attach http://localhost:4097'

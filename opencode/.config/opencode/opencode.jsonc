@@ -1,64 +1,57 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "provider": {
-    "general-compute": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "General Compute",
-      "options": {
-        "baseURL": "https://api.generalcompute.com/v1"
-      },
-      "models": {
-        "minimax-m2.7": {
-          "name": "MiniMax M2.7",
-          "limit": { "context": 192000, "output": 32000 }
-        },
-        "deepseek-v3.2": {
-          "name": "DeepSeek V3.2",
-          "limit": { "context": 32000, "output": 32000 }
-        }
-      }
-    }
-  },
-  "permission": {
-    "read": {
-      "*": "allow",
-      "*.env": "deny",
-      "*.env.*": "deny",
-      "*.env.example": "allow"
-    }
-  },
- "formatter": {
+  "lsp": true,
+  // "provider": {
+  //   "general-compute": {
+  //     "npm": "@ai-sdk/openai-compatible",
+  //     "name": "General Compute",
+  //     "options": {
+  //       "baseURL": "https://api.generalcompute.com/v1"
+  //     },
+  //     "models": {
+  //       "minimax-m2.7": {
+  //         "name": "MiniMax M2.7",
+  //         "limit": { "context": 192000, "output": 32000 }
+  //       },
+  //     }
+  //   }
+  // },
+  // "permission": {},
+  "formatter": {
     "prettier": {
       "disabled": false,
       "extensions": [".ts", ".tsx", ".js", ".jsx", ".json", ".css", ".md"],
-      "command": ["pnpm", "prettier", "--write", "$FILE"]
-    }
+      "command": ["pnpm", "exec", "prettier", "--write", "$FILE"],
+    },
   },
   "mcp": {
-    // https://github.com/ChromeDevTools/chrome-devtools-mcp?tab=readme-ov-file#mcp-client-configuration
-    // "chrome-devtools": {
-    //   "type": "local",
-    //   "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
-    //   // in milliseconds, 0 means no timeout, for 30 minutes, use 1800000
-    //   "timeout": 1800000
-    //    // Whether to enable the MCP client. Set to false to disable it.
-    // },
-    // https://github.com/microsoft/playwright-mcp?tab=readme-ov-file#getting-started
-    // "playwright": {
-    //   "type": "local",
-    //   "command": ["npx", "@playwright/mcp"],
-    //   "enabled": true,
-    //   "timeout": 1800000
-    // },
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
-      "enabled": true
-    },
     "exa": {
       "type": "remote",
       "url": "https://mcp.exa.ai/mcp",
-      "enabled": true
-    }
-  }
+      "enabled": true,
+    },
+    // https://opencode.ai/docs/mcp-servers#context7
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer ${CONTEXT7_API_KEY}",
+      },
+    },
+    // https://github.com/microsoft/playwright-mcp?tab=readme-ov-file#getting-started
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "@playwright/mcp@latest"],
+      "enabled": true,
+      //   "timeout": 1800000
+    },
+    // https://github.com/ChromeDevTools/chrome-devtools-mcp#mcp-client-configuration
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
+      // in milliseconds, 0 means no timeout, for 30 minutes, use 1800000
+      //   "timeout": 1800000
+    },
+  },
 }

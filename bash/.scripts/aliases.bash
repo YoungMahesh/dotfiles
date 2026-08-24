@@ -8,9 +8,11 @@ alias sync-logs='cat ~/.config/sync/logs'
 alias copy='xclip -selection clipboard'
 
 alias vpn11='wg-quick up primary'
-alias vpn10='sudo wg-quick down primary'
+alias vpn10='wg-quick down primary'
 alias vpn21='wg-quick up secondary'
-alias vpn20='sudo wg-quick down secondary'
+alias vpn20='wg-quick down secondary'
+alias vpn31='wg-quick up development'
+alias vpn30='wg-quick down development'
 
 # neovim
 alias vi='nvim'

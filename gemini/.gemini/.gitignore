@@ -10,3 +10,6 @@ projects.json
 trustedFolders.json
 
 antigravity-ide
+antigravity-acp
+antigravity-cli
+config

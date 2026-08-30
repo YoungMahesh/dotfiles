@@ -2,6 +2,14 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the command palette
 {
+  "agent_servers": {
+    "antigravity-acp": {
+      "default_config_options": {
+        "mode": "yolo"
+      },
+      "type": "registry"
+    }
+  },
   "$schema": "zed://schemas/settings",
   "context_servers": {
     "mcp-server-exa-search": {
@@ -231,14 +239,24 @@
       {
         "provider": "openrouter",
         "model": "openrouter/free",
-        "enable_thinking": false,
+        "enable_thinking": false
       },
+      {
+        "provider": "opencode",
+        "model": "go/minimax-m3",
+        "enable_thinking": false
+      },
+      {
+        "provider": "opencode",
+        "model": "go/mimo-v2.5",
+        "enable_thinking": true,
+        "effort": "high"
+      }
     ],
     "default_model": {
-      "effort": "max",
       "enable_thinking": true,
-      "provider": "opencode",
-      "model": "go/deepseek-v4-flash",
+      "provider": "openrouter",
+      "model": "stealth/ox-alpha",
     },
     "default_profile": "ask",
     "model_parameters": [],

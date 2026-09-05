@@ -1,4 +1,5 @@
 tmp
+bin
 state.json
 google_accounts.json
 oauth_creds.json

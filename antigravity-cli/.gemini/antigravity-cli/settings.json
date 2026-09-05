@@ -1,0 +1,7 @@
+{
+  "colorScheme": "dark",
+  "editorMode": "vim",
+  "enableTerminalSandbox": true,
+  "toolPermission": "proceed-in-sandbox",
+  "vimInsertFirst": true
+}

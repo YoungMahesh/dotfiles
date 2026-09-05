@@ -1,9 +1,8 @@
 [
-  // reference: https://opencode.ai/docs/go/#endpoints
 	{
 		"name": "OpenCode-Chat",
 		"vendor": "customendpoint",
-		"apiKey": "${input:chat.lm.secret.-74026002}",
+		"apiKey": "${input:chat.lm.secret.5e42f06a}",
 		"apiType": "chat-completions",
 		"models": [
 			{
@@ -14,13 +13,22 @@
 				"vision": false,
 				"maxInputTokens": 1048576,
 				"maxOutputTokens": 384000
+			},
+			{
+				"id": "mimo-v2.5",
+				"name": "Mimo v2.5",
+				"url": "https://opencode.ai/zen/go/v1/chat/completions",
+				"toolCalling": true,
+				"vision": true,
+				"maxInputTokens": 1048576,
+				"maxOutputTokens": 131072
 			}
 		]
 	},
 	{
 		"name": "OpenCode-Messages",
 		"vendor": "customendpoint",
-		"apiKey": "${input:chat.lm.secret.7c8bec6}",
+		"apiKey": "${input:chat.lm.secret.-be59b58}",
 		"apiType": "messages",
 		"models": [
 			{

@@ -24,3 +24,5 @@ alias ghw='GH_CONFIG_DIR=$HOME/.config/gh-work gh'
 
 # opencode
 alias oc2='opencode attach http://localhost:4097'
+
+alias agyd='agy --dangerously-skip-permissions'

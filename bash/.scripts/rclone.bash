@@ -1,1 +1,1 @@
-alias rclone1='rclone rcd --rc-web-gui'
+alias rclone1='rclone gui'

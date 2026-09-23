@@ -294,5 +294,9 @@
   "security.workspace.trust.untrustedFiles": "open",
   "update.mode": "none", // do not update vscode automatically
   "search.quickOpen.includeHistory": false,
-  "workbench.browser.enableChatTools": true
+  "workbench.browser.enableChatTools": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "remote.autoForwardPortsSource": "hybrid"
 }

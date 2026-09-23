@@ -24,7 +24,9 @@ if [ "$WINDOW_COUNT" -eq 0 ]; then
 
     # Wait for zed-editor to initialize, sending multiple requests simultaneously is not good
     sleep 1
-
     # open notes-documentation
     /home/mahesh/.local/bin/zed /home/mahesh/sync/notes/documentation
+
+    sleep 1
+    /home/mahesh/.local/bin/zed /home/mahesh/sync/notes/principles
 fi

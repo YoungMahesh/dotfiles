@@ -20,7 +20,7 @@ WINDOW_COUNT=$(i3-msg -t get_tree |
 if [ "$WINDOW_COUNT" -eq 0 ]; then
 
     # open dotfiles in zed
-    /home/mahesh/.local/bin/zed /home/mahesh/dotfiles
+    # /home/mahesh/.local/bin/zed /home/mahesh/dotfiles
 
     # Wait for zed-editor to initialize, sending multiple requests simultaneously is not good
     sleep 1

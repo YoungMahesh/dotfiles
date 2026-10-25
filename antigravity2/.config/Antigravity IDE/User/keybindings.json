@@ -6,6 +6,11 @@
     "key": "ctrl+m",
     "command": "workbench.action.focusFirstEditorGroup"
   },
+  {
+    "key": "shift+k",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
+  },
   // ============= Show Commands ================
   {
     "key": "ctrl+l",

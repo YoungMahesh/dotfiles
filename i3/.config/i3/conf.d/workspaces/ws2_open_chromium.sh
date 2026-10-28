@@ -9,6 +9,5 @@ CHROMIUM_COUNT=$(i3-msg -t get_tree | jq '.nodes[] | .. | select(.type? == "work
 if [ "$CHROMIUM_COUNT" -eq 0 ]; then
     # workspace directory-names: 1st created - 'Default'; 2nd created: 'Profile 1'; 3rd created - 'Profile 2'
     # get profile-path by visiting "chrome://version/" inside chromium
-    google-chrome --new-window --profile-directory="Profile 1"
+    google-chrome --new-window --profile-directory="Profile 1" --force-device-scale-factor=1.2
 fi
-

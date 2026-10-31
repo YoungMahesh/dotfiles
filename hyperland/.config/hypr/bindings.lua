@@ -1,19 +1,26 @@
 -- Replace SUPER + 1-9 with ALT + 1-9
 for i = 1, 9 do
     hl.unbind("SUPER + " .. i)
+    hl.unbind("ALT + " .. i)
 
-    o.bind(
+    hl.bind(
         "ALT + " .. i,
-        "Switch to workspace " .. i,
         hl.dsp.focus({ workspace = tostring(i) })
     )
 end
 
 o.bind(
-    "ALT + 1",
-    "Launch Kitty if not running",
-    hl.dsp.exec_cmd("pgrep -x kitty >/dev/null || kitty")
+    "ALT + 2",
+    "Launch Chrome if not open on workspace 2",
+    hl.dsp.exec_cmd("~/.config/hypr/scripts/ws2_open_chrome.sh")
 )
+
+
+
+
+
+
+
 
 -- Keep only your personal keybinding overrides here. Add new bindings or
 -- unbind defaults before replacing them.

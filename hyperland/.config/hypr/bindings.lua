@@ -9,6 +9,14 @@ for i = 1, 9 do
     )
 end
 
+-- Workspace 10: ALT + 0
+hl.unbind("SUPER + 0")
+hl.unbind("ALT + 0")
+hl.bind(
+    "ALT + 0",
+    hl.dsp.focus({ workspace = "10" })
+)
+
 -- Move focused window using ALT + SHIFT + 1-9
 for i = 1, 9 do
     o.bind(
@@ -18,6 +26,14 @@ for i = 1, 9 do
     )
 end
 
+-- Move focused window to workspace 10
+o.bind(
+    "ALT + SHIFT + 0",
+    "Move window to workspace 10",
+    hl.dsp.window.move({ workspace = "10" })
+)
+
+-- Chrome shortcuts
 o.bind(
     "ALT + 2",
     "Launch Chrome if not open on workspace 2",

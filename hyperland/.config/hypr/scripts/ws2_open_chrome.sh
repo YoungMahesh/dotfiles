@@ -3,8 +3,6 @@
 # Switch to workspace 2
 hyprctl dispatch 'hl.dsp.focus({ workspace = "2" })'
 
-sleep 0.5
-
 # Count Chrome windows on workspace 2
 CHROME_COUNT=$(hyprctl -j clients | jq '
     [.[] | select(

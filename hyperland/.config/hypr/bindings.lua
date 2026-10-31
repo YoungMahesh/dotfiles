@@ -15,6 +15,12 @@ o.bind(
     hl.dsp.exec_cmd("~/.config/hypr/scripts/ws2_open_chrome.sh")
 )
 
+o.bind(
+    "ALT + 3",
+    "Workspace 3 + Chrome Default",
+    hl.dsp.exec_cmd("~/.config/hypr/scripts/ws3_open_chrome.sh")
+)
+
 
 
 

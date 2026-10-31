@@ -5,7 +5,10 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Variables/#input
 hl.config({
   input = {
-    kb_options = "caps:escape,compose:ralt"
+    -- Make Caps Lock behave as Escape
+    -- path: ~/.config/xkb/symbols/omarchy_custom
+    kb_layout = "omarchy_custom",
+    kb_options = "caps:escape",
     --     -- Use multiple keyboard layouts and switch between them with Left Alt + Right Alt.
     --     kb_layout = "us,dk,eu",
     --     kb_options = "compose:caps,shift:both_capslock_cancel,grp:alts_toggle",

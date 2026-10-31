@@ -1,0 +1,8 @@
+default partial alphanumeric_keys
+
+xkb_symbols "basic" {
+    include "us(basic)"
+
+    // Escape key produces backtick and tilde
+    key <ESC> { [ grave, asciitilde ] };
+};

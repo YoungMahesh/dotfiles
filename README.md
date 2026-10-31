@@ -1,4 +1,9 @@
 ```bash
+# add a new file in dotfiles
+cp <original-file-path> <dotfiles-path>
+rm <original-file-path>
+stow <directory>
+ 
 # create symlink where targets are multiple 
 stow --target=~/Documents/My_First_Vault/ obsidian_master_config
 stow --target=~/Documents/My_Second_Vault/ obsidian_master_config

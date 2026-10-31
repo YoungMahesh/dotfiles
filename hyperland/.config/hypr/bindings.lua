@@ -9,6 +9,15 @@ for i = 1, 9 do
     )
 end
 
+-- Move focused window using ALT + SHIFT + 1-9
+for i = 1, 9 do
+    o.bind(
+        "ALT + SHIFT + " .. i,
+        "Move window to workspace " .. i,
+        hl.dsp.window.move({ workspace = tostring(i) })
+    )
+end
+
 o.bind(
     "ALT + 2",
     "Launch Chrome if not open on workspace 2",

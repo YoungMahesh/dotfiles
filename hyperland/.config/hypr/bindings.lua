@@ -46,8 +46,8 @@ o.bind(
     hl.dsp.exec_cmd("~/.config/hypr/scripts/ws3_open_chrome.sh")
 )
 
-
-
+-- close active window
+hl.bind("ALT + Q", hl.dsp.window.close())
 
 
 

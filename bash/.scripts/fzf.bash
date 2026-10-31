@@ -1,3 +1,4 @@
+unalias ff 2>/dev/null || true
 ff() {
     local custom_dirs=(~/dotfiles ~/Documents)
     local dirs=$(

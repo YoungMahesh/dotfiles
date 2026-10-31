@@ -9,6 +9,11 @@ for i = 1, 9 do
     )
 end
 
+o.bind(
+    "ALT + 1",
+    "Launch Kitty if not running",
+    hl.dsp.exec_cmd("pgrep -x kitty >/dev/null || kitty")
+)
 
 -- Keep only your personal keybinding overrides here. Add new bindings or
 -- unbind defaults before replacing them.

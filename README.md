@@ -1,14 +1,18 @@
 ```bash
-# add a new file in dotfiles
-cp <original-file-path> <dotfiles-path>
-rm <original-file-path>
-stow <directory>
- 
-# create symlink where targets are multiple 
-stow --target=~/Documents/My_First_Vault/ obsidian_master_config
-stow --target=~/Documents/My_Second_Vault/ obsidian_master_config
+# ------------ add a new file in dotfiles --------------
+# 1. create empty file in specific directory
+mkdir -p omarchy/.config/omarchy/
+touch omarchy/.config/omarchy/shell.json
+stow --adopt omarchy
+# adopt will do this:
+# 1. move `.config/omarchy/shell.json` to `dotfiles/omarchy/.config/omarchy/shell.json`
+# 2. link `.config/omarchy/shell.json` to `../../dotfiles/omarchy/.config/omarchy/shell.json`
+# dry-run stow adopt: stow -nv --adopt omarchy
 
-# delete symlink
+# ------------ use existing dotfiles ----------------------
+stow <directory>
+
+# ------------ delete symlink related to dotfiles -------------
 stow -D --target=~/Documents/My_First_Vault/ obsidian_master_config
 ```
 
@@ -28,13 +32,6 @@ git clone https://github.com/YoungMahesh/dotfiles  # download all config files
 cd dotfiles
 stow package-name  # create symlinks as defined directory - package-name 
 stow -D package-name # remove symlinks defined in directory - package-name
-
-# adopt
-# create folder structure and copy files from desired folder newly created folder
-# remember that `--adopt` will not copy files if they are not alredy existed, it only creates symlinks
-stow --adopt package-name  # copy configuration to dotfiles here, if any config file already exists, you can verify changes using git diff
-
-# ignore files documentation: https://www.gnu.org/software/stow/manual/stow.html#Ignore-Lists
 ```
 
 

@@ -95,3 +95,9 @@ o.bind("ALT + F", "Omarchy menu", "omarchy-menu toggle root")
 -- o.bind("SUPER + SHIFT + S", nil, "omarchy-capture-screenshot")
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
 -- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
+
+-- ------move forward and backward to windows within same workspace ------
+hl.unbind("ALT + TAB")
+hl.unbind("ALT + SHIFT + TAB")
+hl.bind("ALT + TAB", hl.dsp.window.cycle_next())
+hl.bind("ALT + SHIFT + TAB", hl.dsp.window.cycle_next({ next = false }))

@@ -27,3 +27,6 @@ require("default.hypr.toggles")
 
 -- Add any other personal Hyprland configuration below.
 -- o.window("qemu", { workspace = "5" })
+
+-- make every newly opened window occupy the entire workspace instead of appearing side by side
+o.window({ class = ".*" }, { maximize = true })

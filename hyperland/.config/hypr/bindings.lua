@@ -1,8 +1,5 @@
 -- Replace SUPER + 1-9 with ALT + 1-9
 for i = 1, 9 do
-    hl.unbind("SUPER + " .. i)
-    hl.unbind("ALT + " .. i)
-
     hl.bind(
         "ALT + " .. i,
         hl.dsp.focus({ workspace = tostring(i) })
@@ -10,8 +7,6 @@ for i = 1, 9 do
 end
 
 -- Workspace 10: ALT + 0
-hl.unbind("SUPER + 0")
-hl.unbind("ALT + 0")
 hl.bind(
     "ALT + 0",
     hl.dsp.focus({ workspace = "10" })
@@ -68,8 +63,7 @@ o.bind(
 -- close active window
 hl.bind("ALT + Q", hl.dsp.window.close())
 
-
-
+o.bind("ALT + F", "Omarchy menu", "omarchy-menu toggle root")
 
 
 -- Keep only your personal keybinding overrides here. Add new bindings or

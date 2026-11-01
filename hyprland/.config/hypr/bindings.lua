@@ -1,63 +1,63 @@
 -- Replace SUPER + 1-9 with ALT + 1-9
 for i = 1, 9 do
-    hl.bind(
-        "ALT + " .. i,
-        hl.dsp.focus({ workspace = tostring(i) })
-    )
+  hl.bind(
+    "ALT + " .. i,
+    hl.dsp.focus({ workspace = tostring(i) })
+  )
 end
 
 -- Workspace 10: ALT + 0
 hl.bind(
-    "ALT + 0",
-    hl.dsp.focus({ workspace = "10" })
+  "ALT + 0",
+  hl.dsp.focus({ workspace = "10" })
 )
 
 -- Move focused window using ALT + SHIFT + 1-9
 for i = 1, 9 do
-    o.bind(
-        "ALT + SHIFT + " .. i,
-        "Move window to workspace " .. i,
-        hl.dsp.window.move({ workspace = tostring(i) })
-    )
+  o.bind(
+    "ALT + SHIFT + " .. i,
+    "Move window to workspace " .. i,
+    hl.dsp.window.move({ workspace = tostring(i) })
+  )
 end
 
 -- Move focused window to workspace 10
 o.bind(
-    "ALT + SHIFT + 0",
-    "Move window to workspace 10",
-    hl.dsp.window.move({ workspace = "10" })
+  "ALT + SHIFT + 0",
+  "Move window to workspace 10",
+  hl.dsp.window.move({ workspace = "10" })
 )
 
 -- Workspace 1: focus + start kitty with the saved session
 o.bind(
-    "ALT + 1",
-    "Workspace 1 + kitty",
-    hl.dsp.exec_cmd("~/.config/hypr/scripts/ws1_open_kitty.sh")
+  "ALT + 1",
+  "Workspace 1 + kitty",
+  hl.dsp.exec_cmd("~/.config/hypr/scripts/ws1_open_kitty.sh")
 )
 
 -- Chrome shortcuts
 o.bind(
-    "ALT + 2",
-    "Launch Chrome if not open on workspace 2",
-    hl.dsp.exec_cmd("~/.config/hypr/scripts/ws2_open_chrome.sh")
+  "ALT + 2",
+  "Launch Chrome if not open on workspace 2",
+  hl.dsp.exec_cmd("~/.config/hypr/scripts/ws2_open_chrome.sh")
 )
 
 o.bind(
-    "ALT + 3",
-    "Workspace 3 + Chrome Default",
-    hl.dsp.exec_cmd("~/.config/hypr/scripts/ws3_open_chrome.sh")
+  "ALT + 3",
+  "Workspace 3 + Chrome Default",
+  hl.dsp.exec_cmd("~/.config/hypr/scripts/ws3_open_chrome.sh")
 )
 
 o.bind(
-    "ALT + 4",
-    "Workspace 4 + Chrome Profile-2",
-    hl.dsp.exec_cmd("~/.config/hypr/scripts/ws4_open_chrome.sh")
+  "ALT + 4",
+  "Workspace 4 + Chrome Profile-2",
+  hl.dsp.exec_cmd("~/.config/hypr/scripts/ws4_open_chrome.sh")
 )
 
 o.bind(
-    "ALT + 8",
-    "Launch ChatGPT in chrome",
-    hl.dsp.exec_cmd("~/.config/hypr/scripts/ws8_open_chatgpt.sh")
+  "ALT + 8",
+  "Launch ChatGPT in chrome",
+  hl.dsp.exec_cmd("~/.config/hypr/scripts/ws8_open_chatgpt.sh")
 )
 
 -- close active window

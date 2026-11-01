@@ -33,6 +33,13 @@ o.bind(
     hl.dsp.window.move({ workspace = "10" })
 )
 
+-- Workspace 1: focus + start kitty with the saved session
+o.bind(
+    "ALT + 1",
+    "Workspace 1 + kitty",
+    hl.dsp.exec_cmd("~/.config/hypr/scripts/ws1_open_kitty.sh")
+)
+
 -- Chrome shortcuts
 o.bind(
     "ALT + 2",

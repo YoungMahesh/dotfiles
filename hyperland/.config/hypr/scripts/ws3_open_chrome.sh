@@ -13,7 +13,5 @@ CHROME_COUNT=$(hyprctl -j clients | jq '
 
 # Launch Chrome only if no Chrome window exists
 if [ "$CHROME_COUNT" -eq 0 ]; then
-    google-chrome-stable --new-window \
-        --profile-directory="Default" 
-        # --force-device-scale-factor=1.2
+    google-chrome-stable --new-window --profile-directory="Default"
 fi

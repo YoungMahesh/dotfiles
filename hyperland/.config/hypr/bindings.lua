@@ -54,6 +54,12 @@ o.bind(
 )
 
 o.bind(
+    "ALT + 4",
+    "Workspace 4 + Chrome Profile-2",
+    hl.dsp.exec_cmd("~/.config/hypr/scripts/ws4_open_chrome.sh")
+)
+
+o.bind(
     "ALT + 8",
     "Launch ChatGPT in chrome",
     hl.dsp.exec_cmd("~/.config/hypr/scripts/ws8_open_chatgpt.sh")

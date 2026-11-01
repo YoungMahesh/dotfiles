@@ -8,7 +8,10 @@ hl.config({
     -- Make Caps Lock behave as Escape
     -- path: ~/.config/xkb/symbols/omarchy_custom
     kb_layout = "omarchy_custom",
+    -- Caps Lock acts as Escape
     kb_options = "caps:escape",
+    -- Tapping or holding Caps Lock acts as Escape. Pressing Shift + Caps Lock toggles Caps Lock
+    -- kb_options = "caps:escape_shifted_capslock"
     --     -- Use multiple keyboard layouts and switch between them with Left Alt + Right Alt.
     --     kb_layout = "us,dk,eu",
     --     kb_options = "compose:caps,shift:both_capslock_cancel,grp:alts_toggle",

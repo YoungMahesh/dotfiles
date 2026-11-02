@@ -60,6 +60,12 @@ o.bind(
   hl.dsp.exec_cmd("~/.config/hypr/scripts/ws8_open_chatgpt.sh")
 )
 
+o.bind(
+  "ALT + 9",
+  "Workspace 9 + Zed",
+  hl.dsp.exec_cmd("~/.config/hypr/scripts/ws9_open_documentation.sh")
+)
+
 -- close active window
 hl.bind("ALT + Q", hl.dsp.window.close())
 

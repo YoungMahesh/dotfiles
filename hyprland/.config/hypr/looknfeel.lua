@@ -9,7 +9,8 @@ hl.config({
     border_size = 0,
 
     -- Change to niri-like side-scrolling layout.
-    layout = "scrolling",
+    -- layout = "scrolling",
+    layout = "dwindle", -- tiles all windows on screen simultaneously
   },
 })
 

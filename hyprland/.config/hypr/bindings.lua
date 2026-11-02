@@ -101,3 +101,6 @@ hl.unbind("ALT + TAB")
 hl.unbind("ALT + SHIFT + TAB")
 hl.bind("ALT + TAB", hl.dsp.window.cycle_next())
 hl.bind("ALT + SHIFT + TAB", hl.dsp.window.cycle_next({ next = false }))
+
+-- Toggle between Fullscreen (single window) and Tiled (all windows visible)
+hl.bind("ALT + SPACE", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))

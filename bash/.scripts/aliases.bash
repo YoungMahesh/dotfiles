@@ -14,9 +14,9 @@ alias vpn20='wg-quick down secondary'
 alias vpn31='wg-quick up development'
 alias vpn30='wg-quick down development'
 
-# neovim
-alias vi='nvim'
-alias vit='NVIM_APPNAME=nvim-typescript nvim'
+# vim
+alias vi='vim'
+alias v='vim'
 
 # github cli
 alias ghp='GH_CONFIG_DIR=$HOME/.config/gh-personal gh'

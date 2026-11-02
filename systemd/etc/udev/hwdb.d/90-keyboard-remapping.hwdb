@@ -1,0 +1,47 @@
+# ==============================================================================
+# /etc/udev/hwdb.d/90-keyboard-remapping.hwdb
+#
+# Remap physical Escape key to Grave/Tilde (`) at the kernel input level.
+#
+# After modifying this file, apply changes by running:
+#   sudo systemd-hwdb update
+#   sudo udevadm trigger --subsystem-match=input --action=change
+#
+# SYNTAX RULES FOR HWDB:
+# 1. Match headers (evdev:...) must start at column 0 (no leading spaces).
+# 2. Properties (KEYBOARD_KEY_...) must start with at least ONE space.
+# 3. Do NOT put comments or blank lines between a match header and its property!
+#    Comments must stay ABOVE the match header or at the top/bottom of the file.
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Built-in Laptop Keyboards (AT / PS/2 driver)
+#
+# Match Pattern:
+#   evdev:  Linux Event Device subsystem (/dev/input/event*)
+#   atkbd:  Standard AT/PS2 keyboard driver (internal laptop keyboards)
+#   dmi:*:  Match any machine manufacturer/model BIOS information
+#
+# Key Remapping:
+#   01:    Standard AT scancode for physical Escape
+#   grave: Linux keycode KEY_GRAVE (backtick ` and tilde ~)
+# ------------------------------------------------------------------------------
+evdev:atkbd:dmi:*
+ KEYBOARD_KEY_01=grave
+
+# ------------------------------------------------------------------------------
+# 2. External USB and Bluetooth Keyboards (HID driver)
+#
+# Match Pattern:
+#   evdev:input: Target Linux input devices
+#   b*:          Any bus (USB 0003, Bluetooth 0005, etc.)
+#   v*:          Any vendor ID
+#   p*:          Any product model ID
+#   e*:          Any version revision
+#
+# Key Remapping:
+#   70029: USB HID Usage Page 0x07 (Keyboard), Usage ID 0x29 (Escape)
+#   grave: Maps physical USB Escape to emit KEY_GRAVE
+# ------------------------------------------------------------------------------
+evdev:input:b*v*p*e*
+ KEYBOARD_KEY_70029=grave

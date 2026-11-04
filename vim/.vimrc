@@ -1,3 +1,7 @@
+" arch-based distros like OmarchyOS install vim without keyboard support, use gvim:
+"   `pacman -S gvim` (this will replace vim package with gvim, but your vim command will work as before)
+"    to install vim with keyboard support
+
 " Move to first char of line
 nnoremap 0 ^
 vnoremap 0 ^

@@ -1,3 +1,7 @@
+# IMPORTANT: on first setup (e.g. re-installed operating system),
+#   execute `sudo systemctl enable --now hyprsunset.service` to start hyprsunset service
+#   immediately (`--now`) and on each boot (`enable`)
+
 set_brightness() {
 
   # xrandr cannot report the current brightness. It only sets brightness (multiplicative gamma factor).

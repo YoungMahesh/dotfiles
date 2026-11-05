@@ -29,4 +29,6 @@ require("default.hypr.toggles")
 -- o.window("qemu", { workspace = "5" })
 
 -- make every newly opened window occupy the entire workspace instead of appearing side by side
-o.window({ class = ".*" }, { maximize = true })
+-- Problem: If you maximize every window.
+--    Modal dialogs cannot retain their own size and position, hence they open with a broken state
+-- o.window({ class = ".*" }, { maximize = true })

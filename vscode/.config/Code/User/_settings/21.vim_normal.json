@@ -2,6 +2,8 @@
   // =========================================================================
   // VIM - NORMAL MODE KEYBINDINGS
   // =========================================================================
+  // Fix VSCodeVim Escape key not working with custom Linux (Hyprland/XKB) keyboard remapping
+  "keyboard.dispatch": "keyCode",
   "vim.normalModeKeyBindingsNonRecursive": [
     // <leader>f -> Format code in current file
     {

@@ -1,0 +1,23 @@
+[Unit]
+# Human-readable description of this service
+Description=Apply custom keyboard remapping
+
+# Request systemd to start the udev daemon along with this service
+Wants=systemd-udevd.service
+
+# Ensure this service runs after the udev daemon has started
+After=systemd-udevd.service
+
+[Service]
+# Run commands once and exit after successful execution
+Type=oneshot
+
+# Rebuild the hardware database using custom .hwdb rules
+ExecStart=/usr/bin/systemd-hwdb update
+
+# Re-trigger input devices so udev applies the updated keyboard mappings
+ExecStart=/usr/bin/udevadm trigger --subsystem-match=input --action=change
+
+[Install]
+# Start this service automatically during normal system boot
+WantedBy=multi-user.target

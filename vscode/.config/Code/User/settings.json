@@ -296,5 +296,6 @@
   "security.workspace.trust.untrustedFiles": "open",
   "update.mode": "none", // do not update vscode automatically
   "search.quickOpen.includeHistory": false,
-  "workbench.browser.enableChatTools": true
+  "workbench.browser.enableChatTools": true,
+  "workbench.secondarySideBar.defaultVisibility": "hidden"
 }

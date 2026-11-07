@@ -23,6 +23,26 @@
   },
   "format_on_save": "off",
   "cli_default_open_behavior": "new_window",
+  "terminal": {
+    "working_directory": "current_project_directory",
+    "cursor_shape": "bar",
+    // Whether or not selecting text in the terminal will automatically
+    // copy to the system clipboard.
+    "copy_on_select": true,
+    // Activate the python virtual environment, if one is found, in the
+    // terminal's working directory (as resolved by the working_directory
+    // setting). Set this to "off" to disable this behavior.
+    "detect_venv": {
+      "on": {
+        // Default directories to search for virtual environments, relative
+        // to the current working directory. We recommend overriding this
+        // in your project's settings, rather than globally.
+        "directories": [".venv"],
+        // Can also be `csh`, `fish`, `nushell` and `power_shell`
+        "activate_script": "default",
+      },
+    },
+  },
   "project_panel": {
     "dock": "left",
   },
@@ -242,19 +262,19 @@
       {
         "provider": "openrouter",
         "model": "openrouter/free",
-        "enable_thinking": false
+        "enable_thinking": false,
       },
       {
         "provider": "opencode",
         "model": "go/minimax-m3",
-        "enable_thinking": false
+        "enable_thinking": false,
       },
       {
         "provider": "opencode",
         "model": "go/mimo-v2.5",
         "enable_thinking": true,
-        "effort": "high"
-      }
+        "effort": "high",
+      },
     ],
     "default_model": {
       "enable_thinking": true,

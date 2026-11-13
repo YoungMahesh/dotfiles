@@ -19,13 +19,33 @@
       ],
       "center": [
         {
-          "id": "omarchy.indicators"
+          "id": "omarchy.indicators",
+          "_comment": "names of all indicators: ls $OMARCHY_PATH/shell/plugins/bar/indicators/",
+          "_docs": [
+            "https://github.com/omacom/omarchy/blob/quattro/shell/plugins/bar/README.md#module-catalogue"
+          ],
+          "items": ["Dictation", "Reminder"]
         },
         {
           "id": "omarchy.clock",
           "format": "ddd d MMM h:mm AP",
           "formatAlt": "d MMMM 'W'ww yyyy",
           "verticalFormat": "HH\n—\nmm"
+        },
+        {
+          "id": "screenshot",
+          "type": "command",
+          "exec": "echo '📷'",
+          "tooltip": "Select screenshot area",
+          "_docs": "https://github.com/omacom/omarchy/blob/quattro/docs/omarchy-shell.md?utm_source=chatgpt.com#custom-bar-modules",
+          "_comment": [
+            "omarchy capture screenshot smart - Smart selection",
+            "omarchy capture screenshot region - Freeform area selection",
+            "omarchy capture screenshot windows - Select a window",
+            "omarchy capture screenshot fullscreen - Capture entire screen",
+            "omarchy capture screenshot scroll - Scrolling region"
+          ],
+          "onClick": "omarchy capture screenshot region"
         },
         {
           "id": "omarchy.keyboard-layout"

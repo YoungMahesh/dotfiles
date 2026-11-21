@@ -110,3 +110,7 @@ hl.bind("ALT + SHIFT + TAB", hl.dsp.window.cycle_next({ next = false }))
 
 -- Toggle between Fullscreen (single window) and Tiled (all windows visible)
 hl.bind("ALT + m", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
+
+-- ----------------- dictation --------------------------
+o.bind("CTRL+0", "Toggle dictation", "voxtype record toggle")
+ 

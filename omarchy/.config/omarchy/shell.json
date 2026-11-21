@@ -24,7 +24,10 @@
           "_docs": [
             "https://github.com/omacom/omarchy/blob/quattro/shell/plugins/bar/README.md#module-catalogue"
           ],
-          "items": ["Dictation", "Reminder"]
+          "items": [
+            "Dictation",
+            "Reminder"
+          ]
         },
         {
           "id": "omarchy.clock",
